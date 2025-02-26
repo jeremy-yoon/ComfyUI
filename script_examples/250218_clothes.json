@@ -1,0 +1,341 @@
+{
+  "1": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "2": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "6",
+        2
+      ],
+      "negative": [
+        "6",
+        3
+      ],
+      "control_net": [
+        "5",
+        0
+      ],
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용2"
+    }
+  },
+  "3": {
+    "inputs": {
+      "image": "Frame 84.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "4": {
+    "inputs": {
+      "preprocessor": "FakeScribblePreprocessor",
+      "resolution": 512,
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "AIO_Preprocessor",
+    "_meta": {
+      "title": "AIO Aux Preprocessor"
+    }
+  },
+  "5": {
+    "inputs": {
+      "control_net_name": "SDXL\\controlnet-canny-sdxl-1.0\\diffusion_pytorch_model_V2.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드2"
+    }
+  },
+  "6": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": "pixel art, round plush, melting plush, plush wearing pajama, ribbon, clothes are dragging on the floor, fluffy blankets, side view, soft colors, (soft lighting:1.4), soft shading, white background, simple background",
+      "positive_l": "pixel art, round plush, melting plush, plush wearing pajama, ribbon, clothes are dragging on the floor, fluffy blankets, side view, soft colors, (soft lighting:1.4), soft shading, white background, simple background",
+      "negative_g": "hand, arm, foot, (outline:1.4), particles",
+      "negative_l": "hand, arm, foot, (outline:1.4), particles",
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": 0
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "7": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "None",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 6,
+      "cfg": 3,
+      "denoise": 0.6,
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": [
+        "46",
+        0
+      ],
+      "sdxl_pipe": [
+        "6",
+        0
+      ],
+      "optional_positive": [
+        "2",
+        0
+      ],
+      "optional_negative": [
+        "2",
+        1
+      ],
+      "optional_latent": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixels": [
+        "16",
+        0
+      ],
+      "vae": [
+        "6",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "13": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "7",
+        11
+      ]
+    },
+    "class_type": "K-Centroid Auto Downscale",
+    "_meta": {
+      "title": "🔍 K-Centroid Auto Downscale"
+    }
+  },
+  "14": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "15": {
+    "inputs": {
+      "images": [
+        "7",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "Frame 87.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "32": {
+    "inputs": {
+      "amount": 4,
+      "samples": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "RepeatLatentBatch",
+    "_meta": {
+      "title": "잠재 데이터 반복 배치 생성"
+    }
+  },
+  "34": {
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "잠재 데이터에 노이즈 마스크 설정"
+    }
+  },
+  "35": {
+    "inputs": {
+      "image": "Frame 82ㄴㅇㄻㅇㄴㅁㄹㄴㅁㄴ (4).png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "36": {
+    "inputs": {
+      "mask": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "마스크 반전"
+    }
+  },
+  "39": {
+    "inputs": {
+      "pixels": [
+        "7",
+        11
+      ],
+      "vae": [
+        "7",
+        9
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "43": {
+    "inputs": {
+      "image": "Frame 82ㄴㅇㄻㅇㄴㅁㄹㄴㅁㄴ123.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "45": {
+    "inputs": {
+      "samples": [
+        "39",
+        0
+      ],
+      "mask": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "잠재 데이터에 노이즈 마스크 설정"
+    }
+  },
+  "46": {
+    "inputs": {
+      "seed": 978935742808300
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "seed"
+    }
+  },
+  "49": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": 1,
+      "samples": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "LatentUpscaleBy",
+    "_meta": {
+      "title": "잠재 데이터 크기 배율 조정"
+    }
+  }
+}

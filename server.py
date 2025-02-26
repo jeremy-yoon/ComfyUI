@@ -2,6 +2,7 @@ import os
 import sys
 import asyncio
 import traceback
+import random
 
 import nodes
 import folder_paths
@@ -34,6 +35,7 @@ from app.model_manager import ModelFileManager
 from app.custom_node_manager import CustomNodeManager
 from typing import Optional
 from api_server.routes.internal.internal_routes import InternalRoutes
+from api_server.routes.custom import CustomRoutes
 
 class BinaryEventTypes:
     PREVIEW_IMAGE = 1
@@ -79,7 +81,7 @@ def create_cors_middleware(allowed_origin: str):
 
         response.headers['Access-Control-Allow-Origin'] = allowed_origin
         response.headers['Access-Control-Allow-Methods'] = 'POST, GET, DELETE, PUT, OPTIONS'
-        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, ngrok-skip-browser-warning'
         response.headers['Access-Control-Allow-Credentials'] = 'true'
         return response
 
@@ -158,6 +160,7 @@ class PromptServer():
         self.model_file_manager = ModelFileManager()
         self.custom_node_manager = CustomNodeManager()
         self.internal_routes = InternalRoutes(self)
+        self.custom_routes = CustomRoutes(self)
         self.supports = ["custom_nodes_from_web"]
         self.prompt_queue = None
         self.loop = loop
@@ -169,7 +172,8 @@ class PromptServer():
         if args.enable_cors_header:
             middlewares.append(create_cors_middleware(args.enable_cors_header))
         else:
-            middlewares.append(create_origin_only_middleware())
+            # Allow all origins by default
+            middlewares.append(create_cors_middleware("*"))
 
         max_upload_size = round(args.max_upload_size * 1024 * 1024)
         self.app = web.Application(client_max_size=max_upload_size, middlewares=middlewares)
@@ -709,6 +713,14 @@ class PromptServer():
         self.model_file_manager.add_routes(self.routes)
         self.custom_node_manager.add_routes(self.routes, self.app, nodes.LOADED_MODULE_DIRS.items())
         self.app.add_subapp('/internal', self.internal_routes.get_app())
+
+        # Add custom routes
+        custom_routes = self.custom_routes.get_routes()
+        for route in custom_routes:
+            method = route.method
+            path = route.path
+            handler = route.handler
+            self.routes.route(method, path)(handler)
 
         # Prefix every route with /api for easier matching for delegation.
         # This is very useful for frontend dev server, which need to forward

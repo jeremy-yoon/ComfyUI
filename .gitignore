@@ -21,3 +21,19 @@ venv/
 *.log
 web_custom_versions/
 .DS_Store
+
+# 캐시 폴더 무시
+/cache/
+**/__pycache__/
+**/.cache/
+
+# 모델 파일 관련 무시 규칙
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# 10MB 이상 파일 무시 (Git LFS 사용 권장)
+*.file filter=lfs diff=lfs merge=lfs -text size>10M
