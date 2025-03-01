@@ -17,7 +17,7 @@ folder_names_and_paths: dict[str, tuple[list[str], set[str]]] = {}
 if args.base_directory:
     base_path = os.path.abspath(args.base_directory)
 else:
-    base_path = os.path.dirname(os.path.realpath(__file__))
+    base_path = "/mnt/nas/ComfyUI/"
 
 models_dir = os.path.join(base_path, "models")
 folder_names_and_paths["checkpoints"] = ([os.path.join(models_dir, "checkpoints")], supported_pt_extensions)
