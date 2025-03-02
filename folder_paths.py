@@ -21,6 +21,9 @@ else:
 
 models_dir = "/mnt/models"
 
+# 캐시 변수를 함수 정의 전에 선언
+filename_list_cache: dict[str, tuple[list[str], dict[str, float], float]] = {}
+
 def setup_model_directories(custom_models_dir=None):
     """
     모델 디렉토리를 설정합니다. 서버 시작 시 동기화 후 재설정할 수 있도록 별도 함수로 구현.
@@ -73,8 +76,6 @@ output_directory = os.path.join(base_path, "output")
 temp_directory = os.path.join(base_path, "temp")
 input_directory = os.path.join(base_path, "input")
 user_directory = os.path.join(base_path, "user")
-
-filename_list_cache: dict[str, tuple[list[str], dict[str, float], float]] = {}
 
 class CacheHelper:
     """
