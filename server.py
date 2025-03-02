@@ -3,6 +3,10 @@ import sys
 import asyncio
 import traceback
 import random
+import shutil
+import time
+import hashlib
+import filecmp
 
 import nodes
 import folder_paths
@@ -830,6 +834,9 @@ class PromptServer():
         await self.start_multi_address([(address, port)], call_on_start=call_on_start)
 
     async def start_multi_address(self, addresses, call_on_start=None, verbose=True):
+        # 서버 시작 시 모델 디렉토리 동기화
+        self.sync_model_directories()
+        
         runner = web.AppRunner(self.app, access_log=None)
         await runner.setup()
         ssl_ctx = None
@@ -862,6 +869,85 @@ class PromptServer():
 
         if call_on_start is not None:
             call_on_start(scheme, self.address, self.port)
+
+    def sync_model_directories(self):
+        """
+        "/mnt/models"와 "/mnt/nas/ComfyUI/models" 디렉토리를 비교하여
+        "/mnt/nas/ComfyUI/models"를 기준으로 "/mnt/models"를 업데이트합니다.
+        """
+        source_dir = "/mnt/nas/ComfyUI/models"
+        target_dir = "/mnt/models"
+        
+        if not os.path.exists(source_dir):
+            logging.warning(f"소스 디렉토리 {source_dir}가 존재하지 않습니다. 동기화를 건너뜁니다.")
+            return
+            
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir, exist_ok=True)
+            
+        logging.info(f"모델 디렉토리 동기화를 시작합니다: {source_dir} -> {target_dir}")
+        start_time = time.time()
+        
+        # 동기화 함수 정의
+        def sync_directories(src, dst):
+            # 소스에 있는 모든 항목 확인
+            for item in os.listdir(src):
+                src_path = os.path.join(src, item)
+                dst_path = os.path.join(dst, item)
+                
+                # 디렉토리인 경우 재귀적으로 처리
+                if os.path.isdir(src_path):
+                    if not os.path.exists(dst_path):
+                        logging.info(f"디렉토리 생성: {dst_path}")
+                        os.makedirs(dst_path, exist_ok=True)
+                    sync_directories(src_path, dst_path)
+                # 파일인 경우 복사
+                elif os.path.isfile(src_path):
+                    copy_needed = False
+                    if not os.path.exists(dst_path):
+                        copy_needed = True
+                        logging.info(f"새 파일 복사: {dst_path}")
+                    elif not filecmp.cmp(src_path, dst_path, shallow=False):
+                        copy_needed = True
+                        logging.info(f"변경된 파일 업데이트: {dst_path}")
+                    
+                    if copy_needed:
+                        try:
+                            shutil.copy2(src_path, dst_path)
+                        except Exception as e:
+                            logging.error(f"파일 복사 중 오류 발생: {src_path} -> {dst_path}: {e}")
+            
+            # 대상에만 있는 항목 삭제
+            for item in os.listdir(dst):
+                src_path = os.path.join(src, item)
+                dst_path = os.path.join(dst, item)
+                
+                if not os.path.exists(src_path):
+                    if os.path.isdir(dst_path):
+                        logging.info(f"불필요한 디렉토리 삭제: {dst_path}")
+                        try:
+                            shutil.rmtree(dst_path)
+                        except Exception as e:
+                            logging.error(f"디렉토리 삭제 중 오류 발생: {dst_path}: {e}")
+                    elif os.path.isfile(dst_path):
+                        logging.info(f"불필요한 파일 삭제: {dst_path}")
+                        try:
+                            os.remove(dst_path)
+                        except Exception as e:
+                            logging.error(f"파일 삭제 중 오류 발생: {dst_path}: {e}")
+        
+        try:
+            sync_directories(source_dir, target_dir)
+            elapsed_time = time.time() - start_time
+            logging.info(f"모델 디렉토리 동기화 완료 (소요 시간: {elapsed_time:.2f}초)")
+            
+            # 모델 디렉토리 동기화 후 folder_paths 경로 재설정
+            import folder_paths
+            folder_paths.setup_model_directories()
+            logging.info("모델 경로 재설정 완료")
+        except Exception as e:
+            logging.error(f"모델 디렉토리 동기화 중 오류 발생: {e}")
+            logging.error(traceback.format_exc())
 
     def add_on_prompt_handler(self, handler):
         self.on_prompt_handlers.append(handler)

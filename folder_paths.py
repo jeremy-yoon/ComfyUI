@@ -20,31 +20,54 @@ else:
     base_path = os.path.dirname(os.path.realpath(__file__))
 
 models_dir = "/mnt/models"
-folder_names_and_paths["checkpoints"] = ([os.path.join(models_dir, "checkpoints")], supported_pt_extensions)
-folder_names_and_paths["configs"] = ([os.path.join(models_dir, "configs")], [".yaml"])
 
-folder_names_and_paths["loras"] = ([os.path.join(models_dir, "loras")], supported_pt_extensions)
-folder_names_and_paths["vae"] = ([os.path.join(models_dir, "vae")], supported_pt_extensions)
-folder_names_and_paths["text_encoders"] = ([os.path.join(models_dir, "text_encoders"), os.path.join(models_dir, "clip")], supported_pt_extensions)
-folder_names_and_paths["diffusion_models"] = ([os.path.join(models_dir, "unet"), os.path.join(models_dir, "diffusion_models")], supported_pt_extensions)
-folder_names_and_paths["clip_vision"] = ([os.path.join(models_dir, "clip_vision")], supported_pt_extensions)
-folder_names_and_paths["style_models"] = ([os.path.join(models_dir, "style_models")], supported_pt_extensions)
-folder_names_and_paths["embeddings"] = ([os.path.join(models_dir, "embeddings")], supported_pt_extensions)
-folder_names_and_paths["diffusers"] = ([os.path.join(models_dir, "diffusers")], ["folder"])
-folder_names_and_paths["vae_approx"] = ([os.path.join(models_dir, "vae_approx")], supported_pt_extensions)
+def setup_model_directories(custom_models_dir=None):
+    """
+    모델 디렉토리를 설정합니다. 서버 시작 시 동기화 후 재설정할 수 있도록 별도 함수로 구현.
+    """
+    global models_dir, folder_names_and_paths
+    
+    if custom_models_dir:
+        models_dir = custom_models_dir
+    
+    # 기존 경로 설정을 초기화
+    for folder in list(folder_names_and_paths.keys()):
+        if any(models_dir in path for path in folder_names_and_paths[folder][0]):
+            del folder_names_and_paths[folder]
 
-folder_names_and_paths["controlnet"] = ([os.path.join(models_dir, "controlnet"), os.path.join(models_dir, "t2i_adapter")], supported_pt_extensions)
-folder_names_and_paths["gligen"] = ([os.path.join(models_dir, "gligen")], supported_pt_extensions)
+    # 모델 디렉토리 설정
+    folder_names_and_paths["checkpoints"] = ([os.path.join(models_dir, "checkpoints")], supported_pt_extensions)
+    folder_names_and_paths["configs"] = ([os.path.join(models_dir, "configs")], [".yaml"])
 
-folder_names_and_paths["upscale_models"] = ([os.path.join(models_dir, "upscale_models")], supported_pt_extensions)
+    folder_names_and_paths["loras"] = ([os.path.join(models_dir, "loras")], supported_pt_extensions)
+    folder_names_and_paths["vae"] = ([os.path.join(models_dir, "vae")], supported_pt_extensions)
+    folder_names_and_paths["text_encoders"] = ([os.path.join(models_dir, "text_encoders"), os.path.join(models_dir, "clip")], supported_pt_extensions)
+    folder_names_and_paths["diffusion_models"] = ([os.path.join(models_dir, "unet"), os.path.join(models_dir, "diffusion_models")], supported_pt_extensions)
+    folder_names_and_paths["clip_vision"] = ([os.path.join(models_dir, "clip_vision")], supported_pt_extensions)
+    folder_names_and_paths["style_models"] = ([os.path.join(models_dir, "style_models")], supported_pt_extensions)
+    folder_names_and_paths["embeddings"] = ([os.path.join(models_dir, "embeddings")], supported_pt_extensions)
+    folder_names_and_paths["diffusers"] = ([os.path.join(models_dir, "diffusers")], ["folder"])
+    folder_names_and_paths["vae_approx"] = ([os.path.join(models_dir, "vae_approx")], supported_pt_extensions)
+
+    folder_names_and_paths["controlnet"] = ([os.path.join(models_dir, "controlnet"), os.path.join(models_dir, "t2i_adapter")], supported_pt_extensions)
+    folder_names_and_paths["gligen"] = ([os.path.join(models_dir, "gligen")], supported_pt_extensions)
+
+    folder_names_and_paths["upscale_models"] = ([os.path.join(models_dir, "upscale_models")], supported_pt_extensions)
+
+    folder_names_and_paths["hypernetworks"] = ([os.path.join(models_dir, "hypernetworks")], supported_pt_extensions)
+
+    folder_names_and_paths["photomaker"] = ([os.path.join(models_dir, "photomaker")], supported_pt_extensions)
+
+    folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
+    
+    # 캐시 초기화 - 새 경로에서 파일 목록을 다시 불러오기 위함
+    global filename_list_cache
+    filename_list_cache.clear()
+
+# 초기 설정 실행
+setup_model_directories()
 
 folder_names_and_paths["custom_nodes"] = ([os.path.join(base_path, "custom_nodes")], set())
-
-folder_names_and_paths["hypernetworks"] = ([os.path.join(models_dir, "hypernetworks")], supported_pt_extensions)
-
-folder_names_and_paths["photomaker"] = ([os.path.join(models_dir, "photomaker")], supported_pt_extensions)
-
-folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
 
 output_directory = os.path.join(base_path, "output")
 temp_directory = os.path.join(base_path, "temp")
