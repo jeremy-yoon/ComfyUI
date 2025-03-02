@@ -17,9 +17,12 @@ folder_names_and_paths: dict[str, tuple[list[str], set[str]]] = {}
 if args.base_directory:
     base_path = os.path.abspath(args.base_directory)
 else:
-    base_path = "/mnt/nas/ComfyUI/"
+    # 현재 애플리케이션 디렉토리를 기본 경로로 사용
+    base_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
-models_dir = os.path.join(base_path, "models")
+# 모델 디렉토리는 별도의 경로 사용
+models_dir = "/mnt/models"
+
 folder_names_and_paths["checkpoints"] = ([os.path.join(models_dir, "checkpoints")], supported_pt_extensions)
 folder_names_and_paths["configs"] = ([os.path.join(models_dir, "configs")], [".yaml"])
 
