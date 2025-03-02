@@ -907,9 +907,13 @@ class PromptServer():
                     if not os.path.exists(dst_path):
                         copy_needed = True
                         logging.info(f"새 파일 복사: {dst_path}")
-                    elif not filecmp.cmp(src_path, dst_path, shallow=False):
-                        copy_needed = True
-                        logging.info(f"변경된 파일 업데이트: {dst_path}")
+                    else:
+                        # 파일 크기만 비교
+                        src_size = os.path.getsize(src_path)
+                        dst_size = os.path.getsize(dst_path)
+                        if src_size != dst_size:
+                            copy_needed = True
+                            logging.info(f"변경된 파일 업데이트 (크기 다름): {dst_path}")
                     
                     if copy_needed:
                         try:
