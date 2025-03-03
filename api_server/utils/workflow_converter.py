@@ -4,6 +4,8 @@ import os
 import sys
 import logging
 import importlib.util
+import asyncio
+import aiohttp
 from typing import Dict, List, Any, Tuple, Optional, Union, Set
 
 # 로깅 설정
@@ -39,40 +41,19 @@ def load_comfy_nodes() -> Dict:
 def get_default_node_mappings() -> Dict:
     """
     기본 노드 매핑 정보를 반환합니다.
-    동적 로딩 실패 시 사용됩니다.
+    이 함수는 더 이상 사용하지 않습니다.
     
     Returns:
-        Dict: 기본 노드 매핑 정보
+        Dict: 빈 딕셔너리
     """
-    default_mappings = {}
+    # 주의: 특정 노드 타입에 대한 하드코딩된 매핑 정보를 여기에 정의하지 마세요!
+    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
+    # 하드코딩된 매핑은 유지보수가 어렵고 새로운 노드 타입이나 변경사항을 반영하지 못합니다.
     
-    # 일반적인 노드 클래스의 가상 스키마 정보 생성
-    # 여기서는 스키마 대신 기본 입력값 매핑만 정의
-    class DefaultNodeClass:
-        def __init__(self, required_inputs=None):
-            self.required_inputs = required_inputs or []
-        
-        def INPUT_TYPES(self):
-            return {
-                "required": {input_name: None for input_name in self.required_inputs}
-            }
+    logger.warning("get_default_node_mappings 함수는 더 이상 사용하지 않습니다. 대신 서버에서 노드 정보를 동적으로 가져오세요.")
     
-    # 자주 사용되는 노드 타입에 대한 필수 입력값 정의
-    required_inputs = {
-        "CheckpointLoaderSimple": ["ckpt_name"],
-        "CLIPTextEncode": ["text"],
-        "EmptyLatentImage": ["width", "height", "batch_size"],
-        "KSampler": ["seed", "steps", "cfg", "sampler_name", "scheduler", "denoise"],
-        "SaveImage": ["filename_prefix"],
-        "VAEDecode": [],
-        "VAEEncode": []
-    }
-    
-    # 가상 노드 클래스 생성
-    for node_type, inputs in required_inputs.items():
-        default_mappings[node_type] = DefaultNodeClass(inputs)
-    
-    return default_mappings
+    # 빈 딕셔너리 반환
+    return {}
 
 def extract_node_schema(node_class: Any) -> Dict:
     """
@@ -240,10 +221,10 @@ def build_input_name_map(workflow: Dict) -> Dict:
     
     return input_name_map
 
-def analyze_workflow_node_types(workflow: Dict) -> Dict:
+async def analyze_workflow_node_types(workflow: Dict) -> Dict:
     """
     워크플로우에서 노드 타입별 위젯 입력 매핑을 분석합니다.
-    노드 구조와 연결 패턴을 분석하여 위젯 값의 의미를 유추합니다.
+    ComfyUI 서버에서 노드 정의 정보를 가져와 동적으로 매핑합니다.
     
     Args:
         workflow: 워크플로우 정보
@@ -254,60 +235,47 @@ def analyze_workflow_node_types(workflow: Dict) -> Dict:
     # 노드 타입별 위젯 매핑 정보
     node_type_widget_inputs = {}
     
-    # 워크플로우 분석을 통한 패턴 인식
-    link_map = build_link_map(workflow)
-    input_name_map = build_input_name_map(workflow)
+    # 주의: 특정 노드 타입에 대한 하드코딩된 위젯 매핑을 여기에 정의하지 마세요!
+    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
     
-    # 각 노드 타입별 분석
+    # 노드 타입별 처리
+    node_types = set()
     for node in workflow.get("nodes", []):
         node_type = node.get("type")
-        widget_values = node.get("widgets_values", [])
-        
-        # 이미 해당 노드 타입이 분석되었으면 스킵
-        if node_type in node_type_widget_inputs:
-            continue
-        
-        # 위젯 값이 없으면 분석 불가
-        if not widget_values:
-            continue
-        
-        # 위젯 입력 이름 찾기
-        widget_input_names = find_widget_input_names(node)
-        
-        # API 문서나 워크플로우에서 발견된 패턴 기반 입력 이름 추정
-        if node_type == "CheckpointLoaderSimple":
-            # 모델 로더는 일반적으로 첫번째 위젯이 체크포인트 이름
-            node_type_widget_inputs[node_type] = ["ckpt_name"]
-        
-        elif node_type == "CLIPTextEncode":
-            # CLIP 텍스트 인코더는 일반적으로 텍스트 입력
-            node_type_widget_inputs[node_type] = ["text"]
-        
-        elif node_type == "EmptyLatentImage":
-            # 비어있는 이미지는 일반적으로 width, height, batch_size 순서
-            if len(widget_values) >= 3:
-                node_type_widget_inputs[node_type] = ["width", "height", "batch_size"]
-        
-        elif node_type == "KSampler":
-            # KSampler는 일반적인 입력 순서 분석
-            if len(widget_values) >= 7:
-                node_type_widget_inputs[node_type] = [
-                    "seed", "control_after_generate", "steps", "cfg", 
-                    "sampler_name", "scheduler", "denoise"
-                ]
-        
-        elif node_type == "SaveImage":
-            # 이미지 저장은 일반적으로 파일 이름 접두사
-            node_type_widget_inputs[node_type] = ["filename_prefix"]
-        
-        else:
-            # 기타 노드는 위젯 입력 이름 유추
-            if widget_input_names:
-                # 위젯 입력 이름 있으면 사용
-                node_type_widget_inputs[node_type] = widget_input_names
-            elif widget_values:
-                # 일반적인 파라미터 이름 생성
-                node_type_widget_inputs[node_type] = [f"param_{i}" for i in range(len(widget_values))]
+        if node_type:
+            node_types.add(node_type)
+    
+    # 서버에서 모든 노드 타입 정보 가져오기
+    from api_server.utils.server_utils import get_comfy_nodes_info
+    node_info = await get_comfy_nodes_info()
+    
+    # 각 노드 타입 처리
+    for node_type in node_types:
+        # 해당 노드 타입의 첫 번째 노드 찾기
+        for node in workflow.get("nodes", []):
+            if node.get("type") == node_type:
+                # 위젯 값이 있는지 확인
+                widget_values = node.get("widgets_values", [])
+                if not widget_values:
+                    continue
+                
+                # 서버 노드 정보에서 입력 정보 찾기
+                node_inputs = {}
+                if node_info and node_type in node_info and "input" in node_info[node_type]:
+                    node_inputs = node_info[node_type]["input"]
+                
+                # 노드에서 위젯 입력 이름 추출
+                widget_input_names = extract_widget_inputs_from_node(node, node_inputs)
+                
+                # 위젯 입력 이름이 있으면 저장
+                if widget_input_names:
+                    node_type_widget_inputs[node_type] = widget_input_names
+                else:
+                    # 기본 이름 생성
+                    node_type_widget_inputs[node_type] = [f"param_{i}" for i in range(len(widget_values))]
+                
+                # 첫 번째 노드 처리 후 다음 노드 타입으로
+                break
     
     # 위젯 매핑 결과 로깅
     for node_type, mapping in node_type_widget_inputs.items():
@@ -411,7 +379,7 @@ def convert_api_to_workflow(api_workflow):
     # 이 함수는 향후 구현 예정
     pass
 
-def load_and_convert_workflow(workflow_path, use_dynamic_loading=True):
+async def load_and_convert_workflow(workflow_path, use_dynamic_loading=True):
     """
     파일에서 워크플로우를 로드하고 API 형식으로 변환합니다.
     
@@ -422,10 +390,13 @@ def load_and_convert_workflow(workflow_path, use_dynamic_loading=True):
     Returns:
         dict: 변환된 API 워크플로우
     """
+    if not os.path.exists(workflow_path):
+        raise FileNotFoundError(f"워크플로우 파일을 찾을 수 없습니다: {workflow_path}")
+    
     with open(workflow_path, 'r', encoding='utf-8') as f:
         workflow = json.load(f)
     
-    return convert_workflow_to_api(workflow, use_dynamic_loading)
+    return await convert_workflow_to_api(workflow, use_dynamic_loading)
 
 def save_api_workflow(api_workflow, output_path):
     """
@@ -451,28 +422,15 @@ def validate_workflow(api_workflow: Dict) -> List[str]:
     """
     missing_inputs = []
     
-    # 필수 입력이 잘 알려진 노드 타입
-    known_required_inputs = {
-        "CheckpointLoaderSimple": ["ckpt_name"],
-        "CLIPTextEncode": ["text", "clip"],
-        "EmptyLatentImage": ["width", "height", "batch_size"],
-        "KSampler": ["seed", "steps", "cfg", "sampler_name", "scheduler", "latent_image", "model", "positive", "negative"],
-        "VAEDecode": ["samples", "vae"],
-        "VAEEncode": ["pixels", "vae"],
-        "SaveImage": ["filename_prefix", "images"]
-    }
+    # 주의: 특정 노드 타입에 대한 하드코딩된 필수 입력 목록을 여기에 정의하지 마세요!
+    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
+    # 하드코딩된 매핑은 유지보수가 어렵고 새로운 노드 타입이나 변경사항을 반영하지 못합니다.
     
-    for node_id, node in api_workflow.items():
-        node_type = node.get("class_type")
-        node_inputs = node.get("inputs", {})
-        
-        # 이 노드 타입에 대한 필수 입력 확인
-        if node_type in known_required_inputs:
-            required_inputs = known_required_inputs[node_type]
-            
-            for req_input in required_inputs:
-                if req_input not in node_inputs:
-                    missing_inputs.append(f"노드 {node_id} ({node_type}): '{req_input}' 입력 누락")
+    # 비동기 방식으로 ComfyUI 서버에서 노드 정보 가져오기
+    # 이 함수는 일반적으로 비동기 컨텍스트에서 호출되지 않으므로, 
+    # routes/custom/workflow_routes.py의 validate_workflow 메서드를 대신 사용하는 것이 권장됩니다.
+    
+    logger.warning("validate_workflow 함수는 ComfyUI 서버에서 노드 정보를 가져오지 않습니다. 대신 WorkflowRoutes.validate_workflow 메서드를 사용하세요.")
     
     return missing_inputs
 
