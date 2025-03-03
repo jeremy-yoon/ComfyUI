@@ -213,6 +213,100 @@ GET /api/custom/history/{prompt_id}
 - 200: 성공
 - 400: 잘못된 요청 (프롬프트 ID 누락)
 
+## 워크플로우 API
+
+### 워크플로우를 API 형식으로 변환
+
+**엔드포인트**: `POST /api/custom/convert_to_api_workflow`
+
+**설명**: 표준 ComfyUI 워크플로우 JSON을 API 형식으로 변환합니다. 이 API 형식은 ComfyUI API를 통해 워크플로우를 실행하는 데 사용할 수 있습니다.
+
+**요청 본문**:
+```json
+{
+  "workflow": {
+    "nodes": [...],
+    "links": [...],
+    ...
+  }
+}
+```
+
+**응답**:
+```json
+{
+  "status": "success",
+  "api_workflow": {
+    "1": {
+      "class_type": "노드타입",
+      "inputs": {
+        "param1": 값,
+        "param2": [노드ID, 출력인덱스]
+      }
+    },
+    "2": { ... }
+  }
+}
+```
+
+**오류 응답**:
+```json
+{
+  "status": "error",
+  "message": "오류 메시지"
+}
+```
+
+**예제 요청**:
+```bash
+curl -X POST http://localhost:8188/api/custom/convert_to_api_workflow \
+  -H "Content-Type: application/json" \
+  -d '{
+    "workflow": {
+      "nodes": [
+        {
+          "id": 1,
+          "type": "CheckpointLoaderSimple",
+          "widgets_values": ["v1-5-pruned-emaonly.safetensors"]
+        },
+        {
+          "id": 2,
+          "type": "CLIPTextEncode",
+          "inputs": {
+            "clip": {"link": 1, "slot": 1},
+            "text": "a beautiful landscape"
+          }
+        }
+      ],
+      "links": [
+        {"source": 1, "source_slot": 1, "target": 2, "target_slot": 0}
+      ]
+    }
+  }'
+```
+
+**예제 응답**:
+```json
+{
+  "status": "success",
+  "api_workflow": {
+    "1": {
+      "class_type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "v1-5-pruned-emaonly.safetensors"
+      }
+    },
+    "2": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": ["1", 1],
+        "text": "a beautiful landscape"
+      }
+    }
+  }
+}
+```
+
 ## 공통 사항
 
 ### 에러 응답 형식
@@ -229,3 +323,134 @@ GET /api/custom/history/{prompt_id}
 ### 타입(type) 파라미터
 - `input`: 입력 파일 디렉토리 (기본값)
 - 기타 ComfyUI에서 지원하는 디렉토리 타입
+
+## 워크플로우 관리 API
+
+### 1. 워크플로우 목록 조회
+
+시스템에 저장된 API 워크플로우 목록을 조회합니다.
+
+```
+GET /api/custom/workflows
+```
+
+**Response**
+```json
+{
+  "status": "success",
+  "workflows": ["workflow1.json", "workflow2.json", "workflow3.json"]
+}
+```
+
+**Status Codes**
+- 200: 성공
+- 404: 워크플로우 디렉토리를 찾을 수 없음
+- 400: 요청 처리 중 오류 발생
+
+### 2. 워크플로우 변환
+
+일반 ComfyUI 워크플로우를 API 워크플로우로 변환합니다.
+
+```
+POST /api/custom/convert_workflow
+```
+
+**Request Body**
+```json
+{
+  "workflow_name": "my_workflow.json",
+  "save_converted": true,
+  "use_dynamic_loading": true
+}
+```
+
+**Parameters**
+- `workflow_name` (필수): 변환할 워크플로우 파일 이름
+- `save_converted` (선택, 기본값: true): 변환된 워크플로우를 파일로 저장할지 여부
+- `use_dynamic_loading` (선택, 기본값: true): ComfyUI 노드 정의를 동적으로 로드할지 여부
+
+**Response**
+```json
+{
+  "status": "success",
+  "message": "Workflow converted successfully",
+  "data": {
+    "source_path": "/path/to/original/workflow.json",
+    "output_path": "/path/to/converted/workflow_api.json",
+    "workflow": {
+      // 변환된 API 워크플로우 JSON
+    }
+  }
+}
+```
+
+**Status Codes**
+- 200: 성공
+- 400: 잘못된 요청
+- 404: 워크플로우 파일을 찾을 수 없음
+- 500: 서버 오류
+
+### 3. 워크플로우 변환 및 이미지 생성
+
+일반 ComfyUI 워크플로우를 API 워크플로우로 변환하고 즉시 이미지 생성을 시작합니다.
+
+```
+POST /api/custom/convert_and_generate
+```
+
+**Request Body**
+```json
+{
+  "workflow_name": "my_workflow.json",
+  "save_converted": false,
+  "use_dynamic_loading": true,
+  "parameters": {
+    "positive_prompt": "아름다운 풍경, 산, 호수, 고품질",
+    "negative_prompt": "낮은 품질, 흐릿함, 왜곡",
+    "seed": 12345,
+    "image_paths": {
+      "10": "input/my_image.png",
+      "20": "input/mask.png"
+    }
+  }
+}
+```
+
+**Parameters**
+- `workflow_name` (필수): 변환할 워크플로우 파일 이름
+- `save_converted` (선택, 기본값: false): 변환된 워크플로우를 파일로 저장할지 여부
+- `use_dynamic_loading` (선택, 기본값: true): ComfyUI 노드 정의를 동적으로 로드할지 여부
+- `parameters` (선택): 워크플로우 실행 시 적용할 파라미터
+  - `positive_prompt`: 긍정 프롬프트
+  - `negative_prompt`: 부정 프롬프트
+  - `seed`: 시드값
+  - `image_paths`: 노드 ID를 키로 하는 이미지 경로 매핑
+
+**Response**
+```json
+{
+  "status": "success",
+  "message": "Workflow converted and image generation queued",
+  "data": {
+    "source_path": "/path/to/original/workflow.json",
+    "output_path": "/path/to/converted/workflow_api.json",
+    "prompt_id": "550e8400-e29b-41d4-a716-446655440000",
+    "parameters": {
+      "positive_prompt": "아름다운 풍경, 산, 호수, 고품질",
+      "negative_prompt": "낮은 품질, 흐릿함, 왜곡",
+      "seed": 12345
+    }
+  }
+}
+```
+
+**참고 사항**
+- 생성된 이미지는 "/api/history/{prompt_id}" 엔드포인트를 통해 조회할 수 있습니다.
+- 워크플로우의 SaveImage 노드가 출력하는 모든 이미지가 결과에 포함됩니다.
+- 대형 워크플로우나 복잡한 이미지 생성 작업은 시간이 오래 걸릴 수 있습니다.
+
+**Status Codes**
+- 200: 성공
+- 400: 잘못된 요청
+- 404: 워크플로우 파일을 찾을 수 없음
+- 500: 서버 오류

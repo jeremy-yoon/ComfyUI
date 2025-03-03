@@ -3,12 +3,14 @@ import random
 import json
 import os
 from aiohttp import web
+from api_server.utils.workflow_converter import convert_workflow_to_api, save_api_workflow
 
 class ClothesRoutes:
     def __init__(self, prompt_server):
         self.prompt_server = prompt_server
         self.comfy_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
         self.workflow_dir = os.path.join(self.comfy_root, "user", "default", "workflows", "api")
+        self.ui_workflow_dir = os.path.join(self.comfy_root, "user", "default", "workflows")
 
     def get_routes(self):
         routes = web.RouteTableDef()
@@ -159,4 +161,223 @@ class ClothesRoutes:
                     "message": str(e)
                 }, status=400)
 
-        return routes 
+        @routes.post("/api/custom/convert_workflow")
+        async def convert_workflow(request):
+            """
+            일반 ComfyUI 워크플로우를 API 워크플로우로 변환합니다.
+            
+            요청 파라미터:
+            - workflow_name: 변환할 워크플로우 파일 이름
+            - save_converted: 변환된 워크플로우를 파일로 저장할지 여부 (선택, 기본값: True)
+            - use_dynamic_loading: ComfyUI 노드 정의를 동적으로 로드할지 여부 (선택, 기본값: True)
+            
+            응답:
+            - 성공 시: 변환된 API 워크플로우 JSON
+            - 실패 시: 오류 메시지
+            """
+            try:
+                json_data = await request.json()
+                workflow_name = json_data.get("workflow_name")
+                save_converted = json_data.get("save_converted", True)
+                use_dynamic_loading = json_data.get("use_dynamic_loading", True)
+                
+                if not workflow_name:
+                    return web.json_response({
+                        "status": "error",
+                        "message": "Workflow name is required"
+                    }, status=400)
+                
+                # UI 워크플로우 디렉토리 경로 구성
+                source_path = os.path.join(self.ui_workflow_dir, workflow_name)
+                
+                # 만약 파일명만 입력했다면 (확장자가 없는 경우) .json 확장자 추가
+                if not os.path.exists(source_path) and not source_path.endswith('.json'):
+                    source_path = source_path + '.json'
+                
+                if not os.path.exists(source_path):
+                    return web.json_response({
+                        "status": "error",
+                        "message": f"Workflow file not found: {workflow_name}"
+                    }, status=404)
+                
+                # 워크플로우 파일 로드
+                with open(source_path, 'r', encoding='utf-8') as f:
+                    workflow = json.load(f)
+                
+                # API 워크플로우로 변환
+                api_workflow = convert_workflow_to_api(workflow, use_dynamic_loading)
+                
+                # 변환된 워크플로우 저장 (선택적)
+                if save_converted:
+                    # API 워크플로우 디렉토리가 없으면 생성
+                    if not os.path.exists(self.workflow_dir):
+                        os.makedirs(self.workflow_dir, exist_ok=True)
+                    
+                    # 출력 파일 경로 구성
+                    file_name = os.path.basename(source_path)
+                    if file_name.endswith('.json'):
+                        file_name = file_name[:-5]  # .json 확장자 제거
+                    
+                    output_path = os.path.join(self.workflow_dir, f"{file_name}_api.json")
+                    
+                    # 변환된 워크플로우 저장
+                    save_api_workflow(api_workflow, output_path)
+                
+                return web.json_response({
+                    "status": "success",
+                    "message": "Workflow converted successfully",
+                    "data": {
+                        "source_path": source_path,
+                        "output_path": output_path if save_converted else None,
+                        "workflow": api_workflow
+                    }
+                })
+                
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
+                return web.json_response({
+                    "status": "error",
+                    "message": str(e)
+                }, status=500)
+
+        @routes.post("/api/custom/convert_and_generate")
+        async def convert_and_generate(request):
+            """
+            일반 ComfyUI 워크플로우를 API 워크플로우로 변환하고 즉시 이미지를 생성합니다.
+            
+            요청 파라미터:
+            - workflow_name: 변환할 워크플로우 파일 이름
+            - use_dynamic_loading: ComfyUI 노드 정의를 동적으로 로드할지 여부 (선택, 기본값: True)
+            - save_converted: 변환된 워크플로우를 파일로 저장할지 여부 (선택, 기본값: False)
+            - parameters: 워크플로우 실행 시 적용할 파라미터 (선택)
+              예: {"positive_prompt": "멋진 풍경", "negative_prompt": "저품질, 흐릿함", "seed": 12345}
+            
+            응답:
+            - 성공 시: 변환 및 생성 요청 정보
+            - 실패 시: 오류 메시지
+            """
+            try:
+                json_data = await request.json()
+                workflow_name = json_data.get("workflow_name")
+                use_dynamic_loading = json_data.get("use_dynamic_loading", True)
+                save_converted = json_data.get("save_converted", False)
+                parameters = json_data.get("parameters", {})
+                
+                if not workflow_name:
+                    return web.json_response({
+                        "status": "error",
+                        "message": "Workflow name is required"
+                    }, status=400)
+                
+                # UI 워크플로우 디렉토리 경로 구성
+                source_path = os.path.join(self.ui_workflow_dir, workflow_name)
+                
+                # 만약 파일명만 입력했다면 (확장자가 없는 경우) .json 확장자 추가
+                if not os.path.exists(source_path) and not source_path.endswith('.json'):
+                    source_path = source_path + '.json'
+                
+                if not os.path.exists(source_path):
+                    return web.json_response({
+                        "status": "error",
+                        "message": f"Workflow file not found: {workflow_name}"
+                    }, status=404)
+                
+                # 워크플로우 파일 로드
+                with open(source_path, 'r', encoding='utf-8') as f:
+                    workflow = json.load(f)
+                
+                # API 워크플로우로 변환
+                api_workflow = convert_workflow_to_api(workflow, use_dynamic_loading)
+                
+                # 변환된 워크플로우 저장 (선택적)
+                output_path = None
+                if save_converted:
+                    # API 워크플로우 디렉토리가 없으면 생성
+                    if not os.path.exists(self.workflow_dir):
+                        os.makedirs(self.workflow_dir, exist_ok=True)
+                    
+                    # 출력 파일 경로 구성
+                    file_name = os.path.basename(source_path)
+                    if file_name.endswith('.json'):
+                        file_name = file_name[:-5]  # .json 확장자 제거
+                    
+                    output_path = os.path.join(self.workflow_dir, f"{file_name}_api.json")
+                    
+                    # 변환된 워크플로우 저장
+                    save_api_workflow(api_workflow, output_path)
+                
+                # 워크플로우에 파라미터 적용
+                self._apply_parameters_to_workflow(api_workflow, parameters)
+                
+                # SaveImage 노드 찾기
+                save_image_nodes = []
+                for node_id, node_data in api_workflow.items():
+                    if node_data.get("class_type") == "SaveImage":
+                        save_image_nodes.append(node_id)
+                
+                # 프롬프트 ID 생성 및 워크플로우 실행
+                prompt_id = str(uuid.uuid4())
+                self.prompt_server.prompt_queue.put(
+                    (self.prompt_server.number, prompt_id, api_workflow, {}, save_image_nodes)
+                )
+                self.prompt_server.number += 1
+                
+                return web.json_response({
+                    "status": "success",
+                    "message": "Workflow converted and image generation queued",
+                    "data": {
+                        "source_path": source_path,
+                        "output_path": output_path,
+                        "prompt_id": prompt_id,
+                        "parameters": parameters
+                    }
+                })
+                
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
+                return web.json_response({
+                    "status": "error",
+                    "message": str(e)
+                }, status=500)
+        
+        return routes
+    
+    def _apply_parameters_to_workflow(self, workflow, parameters):
+        """
+        워크플로우에 사용자 파라미터를 적용합니다.
+        
+        Args:
+            workflow (dict): API 워크플로우
+            parameters (dict): 적용할 파라미터
+        """
+        # 프롬프트 관련 파라미터 적용
+        if "positive_prompt" in parameters or "negative_prompt" in parameters:
+            for node_id, node in workflow.items():
+                # CLIPTextEncode 노드 찾기
+                if node.get("class_type") == "CLIPTextEncode":
+                    if "positive_prompt" in parameters and "text" in node.get("inputs", {}):
+                        workflow[node_id]["inputs"]["text"] = parameters["positive_prompt"]
+                
+                # 다른 노드 타입에서 프롬프트 관련 입력 찾기
+                inputs = node.get("inputs", {})
+                if "positive_g" in inputs and "positive_prompt" in parameters:
+                    workflow[node_id]["inputs"]["positive_g"] = parameters["positive_prompt"]
+                    workflow[node_id]["inputs"]["positive_l"] = parameters["positive_prompt"]
+                if "negative_g" in inputs and "negative_prompt" in parameters:
+                    workflow[node_id]["inputs"]["negative_g"] = parameters["negative_prompt"]
+                    workflow[node_id]["inputs"]["negative_l"] = parameters["negative_prompt"]
+        
+        # 시드 적용
+        if "seed" in parameters:
+            seed_value = parameters["seed"]
+            for node_id, node in workflow.items():
+                if node.get("class_type") == "KSampler" and "seed" in node.get("inputs", {}):
+                    workflow[node_id]["inputs"]["seed"] = seed_value
+        
+        # 이미지 파일 파라미터 적용
+        if "image_paths" in parameters and isinstance(parameters["image_paths"], dict):
+            for node_id, image_path in parameters["image_paths"].items():
+                if node_id in workflow and "inputs" in workflow[node_id] and "image" in workflow[node_id]["inputs"]:
+                    workflow[node_id]["inputs"]["image"] = image_path 
