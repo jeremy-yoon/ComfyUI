@@ -20,8 +20,6 @@ logger = logging.getLogger("workflow_routes")
 class WorkflowRoutes:
     def __init__(self, prompt_server):
         self.prompt_server = prompt_server
-        self.routes = []
-        self.setup_routes()
         
         # ComfyUI 기본 경로 찾기 (현재 스크립트의 상위 디렉토리)
         self.comfy_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -33,18 +31,18 @@ class WorkflowRoutes:
         os.makedirs(self.workflow_directory, exist_ok=True)
         logger.info(f"워크플로우 디렉토리 설정: {self.workflow_directory}")
         
-        # 워크플로우를 찾을 수 있는 추가 경로
-        self.additional_workflow_paths = [
-            os.path.join(self.comfy_dir, "workflows"),  # 기본 workflows 디렉토리
-            os.path.join(os.getcwd(), "workflows"),     # 현재 작업 디렉토리의 workflows
+        # 워크플로우 디렉토리 탐색 경로 설정
+        self.workflow_search_paths = [
+            self.workflow_directory,                   # 워크플로우 기본 디렉토리
+            os.path.join(self.comfy_dir, "user/default/workflows"), # 프로젝트 루트의 workflows 디렉토리
             os.getcwd()                                # 현재 작업 디렉토리
         ]
 
-    def setup_routes(self):
+    def get_routes(self):
         """라우트를 설정합니다."""
-        workflow_routes = web.RouteTableDef()
+        routes = web.RouteTableDef()
 
-        @workflow_routes.post("/api/workflow/execute")
+        @routes.post("/api/workflow/execute")
         async def execute_workflow(request):
             """
             워크플로우 실행 API 엔드포인트
@@ -85,7 +83,7 @@ class WorkflowRoutes:
                     logger.debug(f"원본 워크플로우 데이터: {json.dumps(workflow_data, indent=2, ensure_ascii=False)}")
                     
                     # API 전용 워크플로우 파일 찾기 (원래 이름 + _api)
-                    api_workflow_name = f"{workflow_name}_api"
+                    api_workflow_name = f"{workflow_name}_api.json"
                     api_workflow_path = self.find_workflow_file(api_workflow_name)
                     
                     if api_workflow_path:
@@ -120,9 +118,9 @@ class WorkflowRoutes:
                     logger.debug(f"서버에 보내는 프롬프트 요청: {json.dumps(prompt_request, indent=2, ensure_ascii=False)}")
                     
                     # 서버에 HTTP 요청 전송
-                    comfy_host = get_config().get("comfy_host", "http://127.0.0.1:8188")
+                    comfy_host = f"http://127.0.0.1:{request.url.port}/prompt"
                     async with aiohttp.ClientSession() as session:
-                        async with session.post(f"{comfy_host}/prompt", json=prompt_request) as response:
+                        async with session.post(comfy_host, json=prompt_request) as response:
                             if response.status != 200:
                                 error_text = await response.text()
                                 logger.error(f"워크플로우 실행 오류 (상태 코드: {response.status}): {error_text}")
@@ -155,6 +153,8 @@ class WorkflowRoutes:
                     "message": str(e)
                 }, status=500)
              
+        return routes
+
     def merge_extra_data(self, api_workflow: Dict[str, Any], extra_data: Dict[str, Any]) -> Dict[str, Any]:
         """
         API 워크플로우에 추가 데이터를 병합합니다.
@@ -220,14 +220,6 @@ class WorkflowRoutes:
                         if not optional:
                             required_inputs.append(input_name)
             
-            # 필수 입력이 없는 경우의 처리
-            if not required_inputs:
-                # 주의: 여기서 하드코딩된 노드 타입별 필수 입력 목록을 사용하지 마세요!
-                # 모든 노드 타입은 서버에서 동적으로 정보를 가져와 처리해야 합니다.
-                # 하드코딩된 매핑은 유지보수가 어렵고 새로운 노드 타입이나 변경사항을 반영하지 못합니다.
-                logger.warning(f"노드 타입 '{node_type}'의 필수 입력 정보를 서버에서 가져오지 못했습니다. 검증을 건너뜁니다.")
-                continue
-            
             # 필수 입력 확인
             for req_input in required_inputs:
                 if req_input not in node_inputs:
@@ -258,7 +250,7 @@ class WorkflowRoutes:
                 return path
                 
             # 추가 경로에서 검색
-            for dir_path in self.additional_workflow_paths:
+            for dir_path in self.workflow_search_paths:
                 path = os.path.join(dir_path, workflow_name)
                 if os.path.exists(path):
                     return path
@@ -267,8 +259,4 @@ class WorkflowRoutes:
             if not workflow_name.lower().endswith('.json'):
                 return self.find_workflow_file(workflow_name + '.json', None)
                 
-        return None
-
-    def get_routes(self):
-        """설정된 라우트를 반환합니다."""
-        return self.routes 
+        return None 
