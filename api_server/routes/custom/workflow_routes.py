@@ -5,15 +5,7 @@ import logging
 import uuid
 import aiohttp
 import asyncio
-from typing import Dict, Any, List, Optional
-# from api_server.utils.workflow_converter import convert_workflow_to_api, load_and_convert_workflow, validate_workflow
-from api_server.utils.config import get_config
-from api_server.utils.server_utils import get_comfy_nodes_info
-# aiohttp와 fastapi를 동시에 사용하고 있습니다. 
-# 아래 주석 처리된 부분은 fastapi 사용 시 필요한 임포트입니다.
-# 현재 코드는 aiohttp를 기반으로 작성되어 있습니다.
-# from fastapi import APIRouter, HTTPException, BackgroundTasks, Request, Depends
-# from pydantic import BaseModel
+from typing import Dict, Any, List
 
 logger = logging.getLogger("workflow_routes")
 
@@ -100,15 +92,6 @@ class WorkflowRoutes:
                     if extra_data:
                         api_workflow = self.merge_extra_data(api_workflow, extra_data)
                     
-                    # 워크플로우 검증
-                    missing_inputs = self.validate_workflow(api_workflow)
-                    if missing_inputs:
-                        error_msg = f"워크플로우에 필수 입력 값이 누락되었습니다: {missing_inputs}"
-                        logger.error(error_msg)
-                        return web.json_response({
-                            "error": error_msg
-                        }, status=400)
-                    
                     # 서버에 워크플로우 실행 요청
                     prompt_request = {
                         "prompt": api_workflow,
@@ -171,61 +154,6 @@ class WorkflowRoutes:
             else:
                 logger.warning(f"노드 ID를 찾을 수 없습니다: {node_id}")
         return api_workflow
-
-    def validate_workflow(self, api_workflow: Dict[str, Any]) -> List[str]:
-        """
-        워크플로우가 유효한지 검사합니다.
-        모든 노드에 필수 입력이 있는지 확인합니다.
-        
-        Args:
-            api_workflow: API 형식의 워크플로우
-            
-        Returns:
-            List[str]: 누락된 필수 입력 목록
-        """
-        missing_inputs = []
-        
-        # ComfyUI 서버에서 노드 정보 가져오기 시도
-        node_info = {}
-        try:
-            # 비동기 컨텍스트가 아니므로 임시 이벤트 루프 사용
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            
-            from api_server.utils.server_utils import get_comfy_nodes_info
-            node_info = loop.run_until_complete(get_comfy_nodes_info())
-            loop.close()
-        except Exception as e:
-            logger.warning(f"노드 정보를 가져오는데 실패했습니다: {str(e)}")
-        
-        # 각 노드 검증
-        for node_id, node in api_workflow.items():
-            node_type = node.get("class_type")
-            node_inputs = node.get("inputs", {})
-            
-            # 서버 노드 정보에서 필수 입력 찾기
-            required_inputs = []
-            if node_info and node_type in node_info and "input" in node_info[node_type]:
-                for input_name, input_info in node_info[node_type]["input"].items():
-                    # 필수 입력 여부 확인 (optional 키가 없거나 False인 경우)
-                    if isinstance(input_info, dict) and input_info.get("optional", False) == False:
-                        required_inputs.append(input_name)
-                    elif isinstance(input_info, list) and len(input_info) > 1:
-                        # 리스트 형태의 입력 정보에서 필수 여부 확인
-                        optional = False
-                        for item in input_info:
-                            if isinstance(item, dict) and "optional" in item:
-                                optional = item["optional"]
-                                break
-                        if not optional:
-                            required_inputs.append(input_name)
-            
-            # 필수 입력 확인
-            for req_input in required_inputs:
-                if req_input not in node_inputs:
-                    missing_inputs.append(f"노드 {node_id} ({node_type}): '{req_input}' 입력 누락")
-        
-        return missing_inputs
 
     def find_workflow_file(self, workflow_name, workflow_path=None):
         """
