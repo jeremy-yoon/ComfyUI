@@ -141,72 +141,23 @@ def map_widgets_to_inputs(node: Dict, node_schemas: Dict) -> Dict:
         if input_name:
             inputs[input_name] = value
     
-    # 4. 일반적인 노드 타입 처리 - 하드코딩 대신 동적 처리
-    # ComfyUI 노드 타입에 따른 일반적인 규칙 적용
-    
-    # 가장 일반적인 노드 타입에 대한 기본 매핑 처리
-    # 노드 타입별 규칙 추가 대신 스키마에서 필수 입력값 정보를 활용
-    if node_type in common_node_defaults and len(widgets_values) > 0:
-        default_mappings = common_node_defaults[node_type]
-        for input_name, value_index in default_mappings.items():
-            if value_index < len(widgets_values) and input_name not in inputs:
-                inputs[input_name] = widgets_values[value_index]
-    
-    # 5. 스키마에서 찾은 필수 입력값 중 누락된 것이 있으면 기본값 설정
+    # 4. 스키마에서 찾은 필수 입력값 중 누락된 것이 있으면 처리
     for input_name in required_inputs:
         if input_name not in inputs:
             # 위젯값에서 적절한 값 찾기 시도
-            found = False
             for i, value in enumerate(widgets_values):
-                # 이름 매칭 시도
-                if input_name.lower() in get_default_input_name(node_type, i).lower():
+                # 사용되지 않은 위젯 값이라면 할당
+                used_values = list(inputs.values())
+                if value not in used_values:
                     inputs[input_name] = value
-                    found = True
                     break
-            
-            # 이름 매칭으로 찾지 못했으면 위치 기반 휴리스틱 시도
-            if not found and i < len(widgets_values):
-                inputs[input_name] = widgets_values[i]
     
-    # 6. SaveImage 노드의 경우 filename_prefix가 일반적으로 필요함
+    # 5. 일반적인 필수 입력값 처리
+    # SaveImage 노드는 다양한 워크플로우에서 일반적으로 filename_prefix가 필요
     if node_type == "SaveImage" and "filename_prefix" not in inputs and len(widgets_values) > 0:
         inputs["filename_prefix"] = widgets_values[0]
     
     return inputs
-
-# 가장 일반적인 노드 타입에 대한 기본 매핑 정보
-common_node_defaults = {
-    "CheckpointLoaderSimple": {"ckpt_name": 0},
-    "CLIPTextEncode": {"text": 0},
-    "EmptyLatentImage": {"width": 0, "height": 1, "batch_size": 2},
-    "KSampler": {"seed": 0, "steps": 2, "cfg": 3, "sampler_name": 4, "scheduler": 5, "denoise": 6},
-    "SaveImage": {"filename_prefix": 0}
-}
-
-def get_default_input_name(node_type: str, index: int) -> str:
-    """
-    노드 타입별 기본 입력 이름을 가져옵니다.
-    
-    Args:
-        node_type: 노드 타입
-        index: 위젯 인덱스
-        
-    Returns:
-        str: 기본 입력 이름
-    """
-    # 노드 타입별 기본 입력 이름 매핑
-    default_names = {
-        "CheckpointLoaderSimple": ["ckpt_name"],
-        "CLIPTextEncode": ["text"],
-        "EmptyLatentImage": ["width", "height", "batch_size"],
-        "KSampler": ["seed", "control_after_generate", "steps", "cfg", "sampler_name", "scheduler", "denoise"],
-        "SaveImage": ["filename_prefix"]
-    }
-    
-    if node_type in default_names and index < len(default_names[node_type]):
-        return default_names[node_type][index]
-    
-    return f"param_{index}"
 
 def build_input_name_map(workflow: Dict) -> Dict:
     """

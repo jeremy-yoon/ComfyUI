@@ -118,7 +118,7 @@ class WorkflowRoutes:
                 logger.info(f"워크플로우 파일 경로: {target_workflow_path}")
                 
                 # 워크플로우 로드 및 변환
-                logger.info(f"워크플로우 로드 및 변환 시작: {workflow_name}")
+                logger.info(f"워크플로우 로드 및 변환 시작: {workflow_name or os.path.basename(target_workflow_path)}")
                 try:
                     api_workflow = load_and_convert_workflow(target_workflow_path, use_dynamic_loading)
                     logger.info(f"워크플로우 변환 완료: {len(api_workflow)} 노드")
@@ -138,6 +138,11 @@ class WorkflowRoutes:
                 if extra_data:
                     logger.info(f"추가 데이터 병합: {extra_data}")
                     self.merge_extra_data(api_workflow, extra_data)
+                
+                # 워크플로우 검증
+                validation_result = self.validate_workflow(api_workflow)
+                if validation_result["issues"]:
+                    logger.warning(f"워크플로우 검증 이슈 발견: {validation_result['issues']}")
                 
                 # 프롬프트 ID 생성 (UUID 사용)
                 prompt_id = str(uuid.uuid4())
@@ -159,11 +164,15 @@ class WorkflowRoutes:
                         if response.status == 200:
                             result = await response.json()
                             prompt_id = result.get("prompt_id", prompt_id)
+                            number = result.get("number", 0)
+                            node_errors = result.get("node_errors", {})
                             logger.info(f"워크플로우 실행 요청 성공: {prompt_id}")
+                            
+                            # 원래 /prompt 엔드포인트와 동일한 형식의 응답 반환
                             return web.json_response({
-                                "status": "success",
-                                "message": "워크플로우 실행 요청 완료",
-                                "prompt_id": prompt_id
+                                "prompt_id": prompt_id,
+                                "number": number,
+                                "node_errors": node_errors
                             })
                         else:
                             error_msg = await response.text()
@@ -172,16 +181,15 @@ class WorkflowRoutes:
                             # 오류 상세 정보 파싱 시도
                             try:
                                 error_json = json.loads(error_msg)
+                                # 원래 /prompt 엔드포인트와 동일한 형식의 오류 응답 반환
                                 return web.json_response({
-                                    "error": "워크플로우 실행 실패",
-                                    "message": f"프롬프트 실행 요청 실패: {error_msg}",
-                                    "error_details": error_json
+                                    "error": error_json.get("error", "워크플로우 실행 실패"),
+                                    "node_errors": error_json.get("node_errors", {})
                                 }, status=response.status)
                             except:
                                 return web.json_response({
-                                    "error": "워크플로우 실행 실패",
-                                    "message": f"프롬프트 요청 오류: {error_msg}",
-                                    "status_code": response.status
+                                    "error": f"프롬프트 요청 오류: {error_msg}",
+                                    "node_errors": {}
                                 }, status=response.status)
                 
             except Exception as e:
@@ -264,6 +272,37 @@ class WorkflowRoutes:
                     api_workflow[node_id]["inputs"].update(inputs)
             else:
                 logger.warning(f"노드 ID를 찾을 수 없습니다: {node_id}")
+
+    def validate_workflow(self, api_workflow: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        워크플로우를 검증하고 필요한 경우 수정합니다.
+        
+        Args:
+            api_workflow: 변환된 API 워크플로우
+            
+        Returns:
+            Dict: 검증 결과 (성공 여부, 문제점 목록)
+        """
+        validation_result = {
+            "success": True,
+            "issues": []
+        }
+        
+        # 필수 입력값 검증
+        for node_id, node in api_workflow.items():
+            node_type = node.get("class_type")
+            
+            # 특수 케이스 - SaveImage 노드는 filename_prefix가 필요
+            if node_type == "SaveImage" and "filename_prefix" not in node.get("inputs", {}):
+                # 기본값 설정
+                if "inputs" not in node:
+                    node["inputs"] = {}
+                node["inputs"]["filename_prefix"] = "ComfyUI"
+                validation_result["issues"].append(f"노드 {node_id} (SaveImage): filename_prefix가 누락되어 기본값으로 설정")
+        
+        # 검증 결과 반환
+        validation_result["success"] = len(validation_result["issues"]) == 0
+        return validation_result
 
     def find_workflow_file(self, workflow_name, workflow_path=None):
         """
