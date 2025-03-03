@@ -24,6 +24,13 @@ class WorkflowRoutes:
         # 워크플로우 디렉토리가 없으면 생성
         os.makedirs(self.workflow_directory, exist_ok=True)
         logger.info(f"워크플로우 디렉토리 설정: {self.workflow_directory}")
+        
+        # 워크플로우를 찾을 수 있는 추가 경로
+        self.additional_workflow_paths = [
+            os.path.join(self.comfy_dir, "workflows"),  # 기본 workflows 디렉토리
+            os.path.join(os.getcwd(), "workflows"),     # 현재 작업 디렉토리의 workflows
+            os.getcwd()                                # 현재 작업 디렉토리
+        ]
 
     def setup_routes(self):
         """라우트를 설정합니다."""
@@ -89,30 +96,47 @@ class WorkflowRoutes:
             
             파라미터:
                 - workflow_name: 실행할 워크플로우 JSON 파일명
+                - workflow_path: (선택) 실행할 워크플로우 JSON 파일의 전체 경로
                 - extra_data: (선택) 워크플로우에 전달할 추가 데이터
             """
             try:
                 json_data = await request.json()
                 workflow_name = json_data.get("workflow_name")
+                workflow_path = json_data.get("workflow_path")
                 extra_data = json_data.get("extra_data", {})
                 use_dynamic_loading = json_data.get("use_dynamic_loading", True)
                 client_id = json_data.get("client_id", "")
                 
-                if not workflow_name:
-                    return web.json_response({"error": "workflow_name 파라미터가 필요합니다"}, status=400)
+                # 워크플로우 파일 찾기
+                if not workflow_name and not workflow_path:
+                    return web.json_response({"error": "workflow_name 또는 workflow_path 파라미터가 필요합니다"}, status=400)
                 
-                # 워크플로우 파일 경로 생성
-                workflow_path = os.path.join(self.workflow_directory, workflow_name)
+                target_workflow_path = self.find_workflow_file(workflow_name, workflow_path)
+                if not target_workflow_path:
+                    return web.json_response({"error": f"워크플로우 파일을 찾을 수 없습니다: {workflow_name or workflow_path}"}, status=404)
                 
-                # 입력 워크플로우 파일이 존재하는지 확인
-                if not os.path.exists(workflow_path):
-                    return web.json_response({"error": f"워크플로우 파일을 찾을 수 없습니다: {workflow_name}"}, status=404)
+                logger.info(f"워크플로우 파일 경로: {target_workflow_path}")
                 
                 # 워크플로우 로드 및 변환
-                api_workflow = load_and_convert_workflow(workflow_path, use_dynamic_loading)
+                logger.info(f"워크플로우 로드 및 변환 시작: {workflow_name}")
+                try:
+                    api_workflow = load_and_convert_workflow(target_workflow_path, use_dynamic_loading)
+                    logger.info(f"워크플로우 변환 완료: {len(api_workflow)} 노드")
+                except Exception as e:
+                    logger.error(f"워크플로우 변환 중 오류 발생: {str(e)}")
+                    import traceback
+                    logger.error(traceback.format_exc())
+                    return web.json_response({
+                        "error": "워크플로우 변환 실패",
+                        "message": str(e)
+                    }, status=500)
+                
+                # 디버깅을 위해 변환된 API 워크플로우 로깅
+                logger.debug(f"변환된 API 워크플로우: {json.dumps(api_workflow, indent=2)}")
                 
                 # 추가 데이터와 워크플로우 병합
                 if extra_data:
+                    logger.info(f"추가 데이터 병합: {extra_data}")
                     self.merge_extra_data(api_workflow, extra_data)
                 
                 # 프롬프트 ID 생성 (UUID 사용)
@@ -130,10 +154,12 @@ class WorkflowRoutes:
                         "client_id": client_id
                     }
                     
+                    logger.info(f"프롬프트 요청 전송: {url}")
                     async with session.post(url, json=prompt_data) as response:
                         if response.status == 200:
                             result = await response.json()
                             prompt_id = result.get("prompt_id", prompt_id)
+                            logger.info(f"워크플로우 실행 요청 성공: {prompt_id}")
                             return web.json_response({
                                 "status": "success",
                                 "message": "워크플로우 실행 요청 완료",
@@ -142,11 +168,21 @@ class WorkflowRoutes:
                         else:
                             error_msg = await response.text()
                             logger.error(f"프롬프트 실행 요청 실패: {error_msg}")
-                            return web.json_response({
-                                "error": "워크플로우 실행 실패",
-                                "message": f"프롬프트 요청 오류: {error_msg}",
-                                "status_code": response.status
-                            }, status=response.status)
+                            
+                            # 오류 상세 정보 파싱 시도
+                            try:
+                                error_json = json.loads(error_msg)
+                                return web.json_response({
+                                    "error": "워크플로우 실행 실패",
+                                    "message": f"프롬프트 실행 요청 실패: {error_msg}",
+                                    "error_details": error_json
+                                }, status=response.status)
+                            except:
+                                return web.json_response({
+                                    "error": "워크플로우 실행 실패",
+                                    "message": f"프롬프트 요청 오류: {error_msg}",
+                                    "status_code": response.status
+                                }, status=response.status)
                 
             except Exception as e:
                 logger.error(f"워크플로우 실행 중 오류 발생: {str(e)}")
@@ -228,6 +264,40 @@ class WorkflowRoutes:
                     api_workflow[node_id]["inputs"].update(inputs)
             else:
                 logger.warning(f"노드 ID를 찾을 수 없습니다: {node_id}")
+
+    def find_workflow_file(self, workflow_name, workflow_path=None):
+        """
+        워크플로우 파일을 여러 위치에서 찾습니다.
+        
+        Args:
+            workflow_name: 워크플로우 파일 이름
+            workflow_path: 전체 워크플로우 파일 경로 (선택적)
+            
+        Returns:
+            str: 찾은 워크플로우 파일 경로 또는 None
+        """
+        # 1. 전체 경로가 제공된 경우
+        if workflow_path and os.path.exists(workflow_path):
+            return workflow_path
+            
+        # 2. 파일 이름이 제공된 경우
+        if workflow_name:
+            # 기본 워크플로우 디렉토리에서 검색
+            path = os.path.join(self.workflow_directory, workflow_name)
+            if os.path.exists(path):
+                return path
+                
+            # 추가 경로에서 검색
+            for dir_path in self.additional_workflow_paths:
+                path = os.path.join(dir_path, workflow_name)
+                if os.path.exists(path):
+                    return path
+                    
+            # 확장자가 없는 경우 .json 확장자 추가하여 재시도
+            if not workflow_name.lower().endswith('.json'):
+                return self.find_workflow_file(workflow_name + '.json', None)
+                
+        return None
 
     def get_routes(self):
         """설정된 라우트를 반환합니다."""
