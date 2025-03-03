@@ -3,6 +3,7 @@ import json
 import os
 import logging
 import uuid
+import aiohttp
 from typing import Dict, Any, List, Optional
 from api_server.utils.workflow_converter import convert_workflow_to_api, load_and_convert_workflow
 
@@ -95,6 +96,7 @@ class WorkflowRoutes:
                 workflow_name = json_data.get("workflow_name")
                 extra_data = json_data.get("extra_data", {})
                 use_dynamic_loading = json_data.get("use_dynamic_loading", True)
+                client_id = json_data.get("client_id", "")
                 
                 if not workflow_name:
                     return web.json_response({"error": "workflow_name 파라미터가 필요합니다"}, status=400)
@@ -113,19 +115,38 @@ class WorkflowRoutes:
                 if extra_data:
                     self.merge_extra_data(api_workflow, extra_data)
                 
-                # 프롬프트 ID 생성
-                # 서버의 방식을 참고하여 ID 생성
-                # 1. UUID 사용
+                # 프롬프트 ID 생성 (UUID 사용)
                 prompt_id = str(uuid.uuid4())
                 
-                # API 워크플로우 실행
-                await self.prompt_server.queue_prompt(prompt_id, api_workflow)
-                
-                return web.json_response({
-                    "status": "success",
-                    "message": "워크플로우 실행 요청 완료",
-                    "prompt_id": prompt_id
-                })
+                # /prompt 엔드포인트로 요청 전송
+                # ComfyUI 서버는 /prompt 엔드포인트를 통해 워크플로우 실행을 처리함
+                async with aiohttp.ClientSession() as session:
+                    # 로컬 서버에 요청 보내기
+                    url = f"http://127.0.0.1:{request.url.port}/prompt"
+                    
+                    # 프롬프트 데이터 구성
+                    prompt_data = {
+                        "prompt": api_workflow,
+                        "client_id": client_id
+                    }
+                    
+                    async with session.post(url, json=prompt_data) as response:
+                        if response.status == 200:
+                            result = await response.json()
+                            prompt_id = result.get("prompt_id", prompt_id)
+                            return web.json_response({
+                                "status": "success",
+                                "message": "워크플로우 실행 요청 완료",
+                                "prompt_id": prompt_id
+                            })
+                        else:
+                            error_msg = await response.text()
+                            logger.error(f"프롬프트 실행 요청 실패: {error_msg}")
+                            return web.json_response({
+                                "error": "워크플로우 실행 실패",
+                                "message": f"프롬프트 요청 오류: {error_msg}",
+                                "status_code": response.status
+                            }, status=response.status)
                 
             except Exception as e:
                 logger.error(f"워크플로우 실행 중 오류 발생: {str(e)}")
