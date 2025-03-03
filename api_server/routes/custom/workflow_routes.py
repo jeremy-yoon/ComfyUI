@@ -165,6 +165,7 @@ class WorkflowRoutes:
                 node_id = key
                 logger.debug(f"노드 ID로 직접 찾음: {key}")
                 if "inputs" in api_workflow[node_id]:
+                    # 직접 "inputs" 필드의 값만 업데이트
                     self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
                 else:
                     logger.warning(f"노드 ID {key}에 'inputs' 필드가 없습니다.")
@@ -173,6 +174,7 @@ class WorkflowRoutes:
                 node_id = title_to_node_id[key]
                 logger.debug(f"노드 타이틀로 찾음: {key} -> 노드 ID: {node_id}")
                 if "inputs" in api_workflow[node_id]:
+                    # 직접 "inputs" 필드의 값만 업데이트
                     self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
                 else:
                     logger.warning(f"노드 ID {node_id} (타이틀: {key})에 'inputs' 필드가 없습니다.")
@@ -183,7 +185,7 @@ class WorkflowRoutes:
         
     def _update_node_inputs(self, current_inputs: Dict[str, Any], new_inputs: Dict[str, Any]) -> None:
         """
-        노드의 입력 값을 지능적으로 업데이트합니다.
+        노드의 입력 값을 업데이트합니다.
         배열 값의 경우 첫 번째 요소만 제공되었을 때 나머지 요소를 유지합니다.
         
         Args:
@@ -212,14 +214,15 @@ class WorkflowRoutes:
                     logger.debug(f"배열 첫 번째 요소만 업데이트 (배열->배열): {input_key} - {current_value[0]} -> {input_value[0]}")
                     current_value[0] = input_value[0]
                 else:
-                    # 그 외의 경우 직접 업데이트
+                    # 그 외의 경우 직접 업데이트 (단, 객체를 직접 할당하지 않고 값만 업데이트)
                     logger.debug(f"값 직접 업데이트: {input_key} - {current_value} -> {input_value}")
+                    # 중첩 구조 방지: 만약 input_value가 dict이고 current_value도 dict이면 완전 대체
                     current_inputs[input_key] = input_value
             else:
                 # 존재하지 않는 입력 키는 그대로 추가
                 logger.debug(f"새 입력 키 추가: {input_key} = {input_value}")
                 current_inputs[input_key] = input_value
-                
+        
         logger.debug(f"_update_node_inputs 결과: {current_inputs}")
 
     def find_workflow_file(self, workflow_name, workflow_path=None):
