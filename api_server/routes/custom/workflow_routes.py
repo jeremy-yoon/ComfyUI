@@ -144,16 +144,62 @@ class WorkflowRoutes:
         
         Args:
             api_workflow: API 워크플로우 데이터
-            extra_data: 병합할 추가 데이터 (노드 ID -> 입력 값 매핑)
+            extra_data: 병합할 추가 데이터 (노드 ID 또는 meta.title -> 입력 값 매핑)
         """
-        for node_id, inputs in extra_data.items():
-            if node_id in api_workflow:
-                # 노드의 입력 값 업데이트
+        # 타이틀을 기반으로 노드 ID를 찾는 매핑 생성
+        title_to_node_id = {}
+        for node_id, node_data in api_workflow.items():
+            if isinstance(node_data, dict) and "_meta" in node_data and "title" in node_data["_meta"]:
+                title = node_data["_meta"]["title"]
+                title_to_node_id[title] = node_id
+        
+        for key, inputs in extra_data.items():
+            # 먼저 키가 직접 노드 ID인지 확인
+            if key in api_workflow:
+                node_id = key
                 if "inputs" in api_workflow[node_id]:
-                    api_workflow[node_id]["inputs"].update(inputs)
+                    self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
+            # 그 다음 키가 노드 타이틀인지 확인
+            elif key in title_to_node_id:
+                node_id = title_to_node_id[key]
+                if "inputs" in api_workflow[node_id]:
+                    self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
             else:
-                logger.warning(f"노드 ID를 찾을 수 없습니다: {node_id}")
+                logger.warning(f"노드 ID 또는 타이틀을 찾을 수 없습니다: {key}")
+        
         return api_workflow
+        
+    def _update_node_inputs(self, current_inputs: Dict[str, Any], new_inputs: Dict[str, Any]) -> None:
+        """
+        노드의 입력 값을 지능적으로 업데이트합니다.
+        배열 값의 경우 첫 번째 요소만 제공되었을 때 나머지 요소를 유지합니다.
+        
+        Args:
+            current_inputs: 현재 노드 입력 값
+            new_inputs: 새로운 노드 입력 값
+        """
+        for input_key, input_value in new_inputs.items():
+            if input_key in current_inputs:
+                current_value = current_inputs[input_key]
+                
+                # 문자열만 제공된 경우 배열 형태를 유지
+                if isinstance(current_value, list) and not isinstance(input_value, list):
+                    # 입력값이 단일 문자열이고 현재 배열의 첫 번째 요소가 문자열인 경우
+                    if isinstance(input_value, str) and len(current_value) > 0 and isinstance(current_value[0], str):
+                        current_inputs[input_key][0] = input_value
+                    else:
+                        # 기존 배열의 첫 번째 요소만 업데이트
+                        if len(current_value) > 0:
+                            current_value[0] = input_value
+                elif isinstance(current_value, list) and isinstance(input_value, list) and len(input_value) == 1 and len(current_value) > 1:
+                    # 요소가 하나만 있는 배열이 제공된 경우, 첫 번째 요소만 업데이트하고 나머지는 유지
+                    current_value[0] = input_value[0]
+                else:
+                    # 그 외의 경우 직접 업데이트
+                    current_inputs[input_key] = input_value
+            else:
+                # 존재하지 않는 입력 키는 그대로 추가
+                current_inputs[input_key] = input_value
 
     def find_workflow_file(self, workflow_name, workflow_path=None):
         """
