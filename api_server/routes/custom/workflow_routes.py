@@ -99,75 +99,91 @@ class WorkflowRoutes:
             Returns:
                 Dict: 워크플로우 실행 응답
             """
-            workflow_name = request.match_info.get("workflow_name")
-            extra_data = request.json.get("extra_data", {})
-            client_id = request.json.get("client_id", "")
-            
-            # 워크플로우 경로 결정
-            workflow_path = self.find_workflow_file(workflow_name)
-            if not workflow_path:
-                return web.json_response({
-                    "error": f"워크플로우 '{workflow_name}'을 찾을 수 없습니다."
-                }, status=404)
-            
             try:
-                # 워크플로우 파일 로드
-                with open(workflow_path, "r", encoding="utf-8") as f:
-                    workflow_data = json.load(f)
+                # 요청 데이터를 비동기적으로 파싱
+                request_data = await request.json()
                 
-                # 워크플로우 데이터 로깅 (디버깅용)
-                logger.debug(f"원본 워크플로우 데이터: {json.dumps(workflow_data, indent=2, ensure_ascii=False)}")
+                workflow_name = request_data.get("workflow_name")
+                extra_data = request_data.get("extra_data", {})
+                client_id = request_data.get("client_id", "")
                 
-                # 워크플로우를 API 형식으로 변환 (비동기 함수 호출)
-                api_workflow = await convert_workflow_to_api(workflow_data)
-                
-                # 추가 데이터 병합
-                if extra_data:
-                    api_workflow = self.merge_extra_data(api_workflow, extra_data)
-                
-                # 워크플로우 검증
-                missing_inputs = self.validate_workflow(api_workflow)
-                if missing_inputs:
-                    error_msg = f"워크플로우에 필수 입력 값이 누락되었습니다: {missing_inputs}"
-                    logger.error(error_msg)
+                if not workflow_name:
                     return web.json_response({
-                        "error": error_msg
+                        "error": "workflow_name 파라미터가 필요합니다."
                     }, status=400)
                 
-                # 서버에 워크플로우 실행 요청
-                prompt_request = {
-                    "prompt": api_workflow,
-                    "client_id": client_id
-                }
+                # 워크플로우 경로 결정
+                workflow_path = self.find_workflow_file(workflow_name)
+                if not workflow_path:
+                    return web.json_response({
+                        "error": f"워크플로우 '{workflow_name}'을 찾을 수 없습니다."
+                    }, status=404)
                 
-                logger.debug(f"서버에 보내는 프롬프트 요청: {json.dumps(prompt_request, indent=2, ensure_ascii=False)}")
-                
-                # 서버에 HTTP 요청 전송
-                comfy_host = get_config().get("comfy_host", "http://127.0.0.1:8188")
-                async with aiohttp.ClientSession() as session:
-                    async with session.post(f"{comfy_host}/prompt", json=prompt_request) as response:
-                        if response.status != 200:
-                            error_text = await response.text()
-                            logger.error(f"워크플로우 실행 오류 (상태 코드: {response.status}): {error_text}")
-                            return web.json_response({
-                                "error": f"ComfyUI 서버에서 오류 발생: {error_text}"
-                            }, status=response.status)
-                        
-                        result = await response.json()
-                        logger.debug(f"워크플로우 실행 결과: {result}")
+                try:
+                    # 워크플로우 파일 로드
+                    with open(workflow_path, "r", encoding="utf-8") as f:
+                        workflow_data = json.load(f)
+                    
+                    # 워크플로우 데이터 로깅 (디버깅용)
+                    logger.debug(f"원본 워크플로우 데이터: {json.dumps(workflow_data, indent=2, ensure_ascii=False)}")
+                    
+                    # 워크플로우를 API 형식으로 변환 (비동기 함수 호출)
+                    api_workflow = await convert_workflow_to_api(workflow_data)
+                    
+                    # 추가 데이터 병합
+                    if extra_data:
+                        api_workflow = self.merge_extra_data(api_workflow, extra_data)
+                    
+                    # 워크플로우 검증
+                    missing_inputs = self.validate_workflow(api_workflow)
+                    if missing_inputs:
+                        error_msg = f"워크플로우에 필수 입력 값이 누락되었습니다: {missing_inputs}"
+                        logger.error(error_msg)
                         return web.json_response({
-                            "status": "success",
-                            "message": "워크플로우 실행이 시작되었습니다.",
-                            "prompt_id": result.get("prompt_id"),
-                            "node_count": len(api_workflow)
-                        })
+                            "error": error_msg
+                        }, status=400)
+                    
+                    # 서버에 워크플로우 실행 요청
+                    prompt_request = {
+                        "prompt": api_workflow,
+                        "client_id": client_id
+                    }
+                    
+                    logger.debug(f"서버에 보내는 프롬프트 요청: {json.dumps(prompt_request, indent=2, ensure_ascii=False)}")
+                    
+                    # 서버에 HTTP 요청 전송
+                    comfy_host = get_config().get("comfy_host", "http://127.0.0.1:8188")
+                    async with aiohttp.ClientSession() as session:
+                        async with session.post(f"{comfy_host}/prompt", json=prompt_request) as response:
+                            if response.status != 200:
+                                error_text = await response.text()
+                                logger.error(f"워크플로우 실행 오류 (상태 코드: {response.status}): {error_text}")
+                                return web.json_response({
+                                    "error": f"ComfyUI 서버에서 오류 발생: {error_text}"
+                                }, status=response.status)
+                                
+                            result = await response.json()
+                            logger.debug(f"워크플로우 실행 결과: {result}")
+                            return web.json_response({
+                                "status": "success",
+                                "message": "워크플로우 실행이 시작되었습니다.",
+                                "prompt_id": result.get("prompt_id"),
+                                "node_count": len(api_workflow)
+                            })
+                
+                except Exception as e:
+                    logger.error(f"워크플로우 실행 중 오류 발생: {str(e)}")
+                    import traceback
+                    logger.error(traceback.format_exc())
+                    return web.json_response({
+                        "error": "워크플로우 실행 실패",
+                        "message": str(e)
+                    }, status=500)
                 
             except Exception as e:
-                logger.error(f"워크플로우 실행 중 오류 발생: {str(e)}")
-                import traceback
-                logger.error(traceback.format_exc())
+                logger.error(f"워크플로우 실행 요청 처리 중 오류 발생: {str(e)}")
                 return web.json_response({
-                    "error": "워크플로우 실행 실패",
+                    "error": "요청 처리 실패",
                     "message": str(e)
                 }, status=500)
                 
