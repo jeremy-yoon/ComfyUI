@@ -8,6 +8,7 @@ import asyncio
 from typing import Dict, Any, List
 
 logger = logging.getLogger("workflow_routes")
+logger.setLevel(logging.DEBUG)  # 이 로거의 레벨을 DEBUG로 설정
 
 class WorkflowRoutes:
     def __init__(self, prompt_server):
@@ -90,7 +91,9 @@ class WorkflowRoutes:
                     
                     # 추가 데이터 병합
                     if extra_data:
+                        logger.debug(f"병합 전 extra_data: {json.dumps(extra_data, indent=2, ensure_ascii=False)}")
                         api_workflow = self.merge_extra_data(api_workflow, extra_data)
+                        logger.debug(f"extra_data 병합 후 워크플로우: {json.dumps(api_workflow, indent=2, ensure_ascii=False)}")
                     
                     # 서버에 워크플로우 실행 요청
                     prompt_request = {
@@ -153,17 +156,26 @@ class WorkflowRoutes:
                 title = node_data["_meta"]["title"]
                 title_to_node_id[title] = node_id
         
+        logger.debug(f"생성된 title_to_node_id 매핑: {title_to_node_id}")
+        logger.debug(f"병합할 extra_data 키: {list(extra_data.keys())}")
+        
         for key, inputs in extra_data.items():
             # 먼저 키가 직접 노드 ID인지 확인
             if key in api_workflow:
                 node_id = key
+                logger.debug(f"노드 ID로 직접 찾음: {key}")
                 if "inputs" in api_workflow[node_id]:
                     self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
+                else:
+                    logger.warning(f"노드 ID {key}에 'inputs' 필드가 없습니다.")
             # 그 다음 키가 노드 타이틀인지 확인
             elif key in title_to_node_id:
                 node_id = title_to_node_id[key]
+                logger.debug(f"노드 타이틀로 찾음: {key} -> 노드 ID: {node_id}")
                 if "inputs" in api_workflow[node_id]:
                     self._update_node_inputs(api_workflow[node_id]["inputs"], inputs)
+                else:
+                    logger.warning(f"노드 ID {node_id} (타이틀: {key})에 'inputs' 필드가 없습니다.")
             else:
                 logger.warning(f"노드 ID 또는 타이틀을 찾을 수 없습니다: {key}")
         
@@ -178,6 +190,8 @@ class WorkflowRoutes:
             current_inputs: 현재 노드 입력 값
             new_inputs: 새로운 노드 입력 값
         """
+        logger.debug(f"_update_node_inputs 호출 - 현재 입력: {current_inputs}, 새 입력: {new_inputs}")
+        
         for input_key, input_value in new_inputs.items():
             if input_key in current_inputs:
                 current_value = current_inputs[input_key]
@@ -186,20 +200,27 @@ class WorkflowRoutes:
                 if isinstance(current_value, list) and not isinstance(input_value, list):
                     # 입력값이 단일 문자열이고 현재 배열의 첫 번째 요소가 문자열인 경우
                     if isinstance(input_value, str) and len(current_value) > 0 and isinstance(current_value[0], str):
+                        logger.debug(f"배열의 첫 번째 문자열 요소 업데이트: {input_key} - {current_value[0]} -> {input_value}")
                         current_inputs[input_key][0] = input_value
                     else:
                         # 기존 배열의 첫 번째 요소만 업데이트
                         if len(current_value) > 0:
+                            logger.debug(f"배열의 첫 번째 요소 업데이트: {input_key} - {current_value[0]} -> {input_value}")
                             current_value[0] = input_value
                 elif isinstance(current_value, list) and isinstance(input_value, list) and len(input_value) == 1 and len(current_value) > 1:
                     # 요소가 하나만 있는 배열이 제공된 경우, 첫 번째 요소만 업데이트하고 나머지는 유지
+                    logger.debug(f"배열 첫 번째 요소만 업데이트 (배열->배열): {input_key} - {current_value[0]} -> {input_value[0]}")
                     current_value[0] = input_value[0]
                 else:
                     # 그 외의 경우 직접 업데이트
+                    logger.debug(f"값 직접 업데이트: {input_key} - {current_value} -> {input_value}")
                     current_inputs[input_key] = input_value
             else:
                 # 존재하지 않는 입력 키는 그대로 추가
+                logger.debug(f"새 입력 키 추가: {input_key} = {input_value}")
                 current_inputs[input_key] = input_value
+                
+        logger.debug(f"_update_node_inputs 결과: {current_inputs}")
 
     def find_workflow_file(self, workflow_name, workflow_path=None):
         """
