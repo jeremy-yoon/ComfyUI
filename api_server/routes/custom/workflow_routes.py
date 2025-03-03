@@ -2,6 +2,7 @@ from aiohttp import web
 import json
 import os
 import logging
+import uuid
 from typing import Dict, Any, List, Optional
 from api_server.utils.workflow_converter import convert_workflow_to_api, load_and_convert_workflow
 
@@ -112,8 +113,10 @@ class WorkflowRoutes:
                 if extra_data:
                     self.merge_extra_data(api_workflow, extra_data)
                 
-                # 프롬프트 서버에 워크플로우 실행 요청
-                prompt_id = str(self.prompt_server.number_prompts)
+                # 프롬프트 ID 생성
+                # 서버의 방식을 참고하여 ID 생성
+                # 1. UUID 사용
+                prompt_id = str(uuid.uuid4())
                 
                 # API 워크플로우 실행
                 await self.prompt_server.queue_prompt(prompt_id, api_workflow)
