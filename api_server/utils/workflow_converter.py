@@ -1,456 +1,295 @@
+"""
+Workflow converter module.
+
+This module provides functionality to convert ComfyUI's standard workflow JSON to API-compatible workflow JSON.
+"""
+
 import json
-import copy
 import os
 import sys
-import logging
-import importlib.util
-import asyncio
-import aiohttp
-from typing import Dict, List, Any, Tuple, Optional, Union, Set
+from typing import Dict, List, Any, Union, TextIO, Optional
+from collections import OrderedDict
 
-# 로깅 설정
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger("workflow_converter")
+# Import NODE_CLASS_MAPPINGS from ComfyUI nodes
+script_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(script_dir)
 
-def load_comfy_nodes() -> Dict:
+# Simple path finding helper
+def find_path(name: str, path: str = None) -> str:
     """
-    ComfyUI의 노드 정의를 동적으로 로드합니다.
-    
-    Returns:
-        Dict: 노드 유형 -> 노드 클래스 매핑
+    Recursively looks at parent folders starting from the given path until it finds the given name.
+    Returns the path as a Path object if found, or None otherwise.
     """
-    try:
-        # ComfyUI 경로 설정
-        comfy_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        if comfy_path not in sys.path:
-            sys.path.append(comfy_path)
-        
-        # 노드 모듈 가져오기
-        try:
-            from comfy.nodes import NODE_CLASS_MAPPINGS
-            logger.info(f"ComfyUI 노드 정의 로드 성공: {len(NODE_CLASS_MAPPINGS)} 노드 발견")
-            return NODE_CLASS_MAPPINGS
-        except ImportError:
-            logger.warning("comfy.nodes 모듈을 가져올 수 없습니다.")
-    except Exception as e:
-        logger.warning(f"ComfyUI 노드 정의 로드 실패: {str(e)}")
-    
-    logger.warning("노드 정의 없이 변환을 진행합니다.")
-    return {}
+    # If no path is given, use the current working directory
+    if path is None:
+        path = os.getcwd()
 
-def get_default_node_mappings() -> Dict:
-    """
-    기본 노드 매핑 정보를 반환합니다.
-    이 함수는 더 이상 사용하지 않습니다.
-    
-    Returns:
-        Dict: 빈 딕셔너리
-    """
-    # 주의: 특정 노드 타입에 대한 하드코딩된 매핑 정보를 여기에 정의하지 마세요!
-    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
-    # 하드코딩된 매핑은 유지보수가 어렵고 새로운 노드 타입이나 변경사항을 반영하지 못합니다.
-    
-    logger.warning("get_default_node_mappings 함수는 더 이상 사용하지 않습니다. 대신 서버에서 노드 정보를 동적으로 가져오세요.")
-    
-    # 빈 딕셔너리 반환
-    return {}
+    # Check if the current directory contains the name
+    if name in os.listdir(path):
+        path_name = os.path.join(path, name)
+        print(f"{name} found: {path_name}")
+        return path_name
 
-def extract_node_schema(node_class: Any) -> Dict:
-    """
-    노드 클래스에서 스키마 정보를 추출합니다.
-    
-    Args:
-        node_class: 노드 클래스
-        
-    Returns:
-        Dict: 노드 스키마 정보
-    """
-    schema = {
-        "inputs": {},
-        "outputs": {},
-        "widgets": [],
-        "required_inputs": []  # 필수 입력값 목록 추가
-    }
-    
-    try:
-        # 입력 정보 추출
-        if hasattr(node_class, "INPUT_TYPES"):
-            input_types = node_class.INPUT_TYPES()
-            if "required" in input_types:
-                for name, input_info in input_types["required"].items():
-                    schema["inputs"][name] = input_info
-                    schema["required_inputs"].append(name)  # 필수 입력값으로 추가
-            if "optional" in input_types:
-                for name, input_info in input_types["optional"].items():
-                    schema["inputs"][name] = input_info
-        
-        # 위젯 정보 추출
-        if hasattr(node_class, "WIDGETS"):
-            schema["widgets"] = node_class.WIDGETS
-        
-        # 출력 정보 추출
-        if hasattr(node_class, "RETURN_TYPES"):
-            return_types = node_class.RETURN_TYPES
-            return_names = getattr(node_class, "RETURN_NAMES", [None] * len(return_types))
-            for i, (type_info, name) in enumerate(zip(return_types, return_names)):
-                output_name = name if name else f"output_{i}"
-                schema["outputs"][output_name] = type_info
-    except Exception as e:
-        logger.warning(f"노드 스키마 추출 중 오류: {str(e)}")
-    
-    return schema
+    # Get the parent directory
+    parent_directory = os.path.dirname(path)
 
-def find_widget_input_names(node: Dict) -> List[str]:
-    """
-    노드에서 위젯 입력 이름을 찾습니다.
-    
-    Args:
-        node: 노드 정보
-        
-    Returns:
-        List[str]: 위젯 입력 이름 목록
-    """
-    widget_names = []
-    
-    # widgets 속성이 있는 경우 사용
-    if "widgets" in node:
-        for widget in node["widgets"]:
-            if "name" in widget:
-                widget_names.append(widget["name"])
-    
-    # widgets_values가 있지만 widgets가 없는 경우, 기본 이름 생성
-    elif "widgets_values" in node and len(node["widgets_values"]) > 0:
-        widget_count = len(node["widgets_values"])
-        # 기본 이름 생성 (param_0, param_1, ...)
-        widget_names = [f"param_{i}" for i in range(widget_count)]
-    
-    return widget_names
+    # If the parent directory is the same as the current directory, we've reached the root and stop the search
+    if parent_directory == path:
+        return None
 
-def map_widgets_to_inputs(node: Dict, node_schemas: Dict) -> Dict:
-    """
-    노드의 위젯 값을 입력 파라미터로 매핑합니다.
-    
-    Args:
-        node: 노드 정보
-        node_schemas: 노드 스키마 정보
-        
-    Returns:
-        Dict: 입력 이름 -> 값 매핑
-    """
-    if "widgets_values" not in node:
-        return {}
-    
-    widgets_values = node.get("widgets_values", [])
-    node_type = node.get("type")
-    inputs = {}
-    
-    # 위젯 입력 이름 찾기 시도
-    widget_input_names = find_widget_input_names(node)
-    
-    # 위젯 값을 해당 입력 이름과 매핑
-    for i, value in enumerate(widgets_values):
-        # 입력 이름이 있으면 해당 이름 사용
-        if i < len(widget_input_names):
-            input_name = widget_input_names[i]
-            inputs[input_name] = value
-        # 입력 이름이 없으면 인덱스 기반 이름 사용
-        else:
-            input_name = f"param_{i}"
-            inputs[input_name] = value
-    
-    return inputs
+    # Otherwise, continue the search from the parent directory
+    return find_path(name, parent_directory)
 
-def get_node_title(node: Dict) -> str:
-    """
-    노드 제목을 가져옵니다.
-    
-    Args:
-        node: 노드 정보
-        
-    Returns:
-        str: 노드 제목
-    """
-    if "title" in node and node["title"]:
-        return node["title"]
-    return node.get("type", "Unknown Node")
+# Find and add ComfyUI directory to path
+comfyui_path = find_path("ComfyUI")
+if comfyui_path:
+    sys.path.append(comfyui_path)
+    print(f"'{comfyui_path}' added to sys.path")
 
-def build_link_map(workflow: Dict) -> Dict:
-    """
-    워크플로우의 링크 정보를 매핑합니다.
-    링크 ID를 키로 하고 [소스 노드 ID, 소스 출력 인덱스, 대상 노드 ID, 대상 입력 인덱스] 배열을 값으로 합니다.
-    
-    Args:
-        workflow: 워크플로우 데이터
-        
-    Returns:
-        Dict: 링크 ID -> [소스 노드 ID, 소스 출력 인덱스, 대상 노드 ID, 대상 입력 인덱스] 매핑
-    """
-    link_map = {}
-    
-    for link in workflow.get("links", []):
-        link_id = link[0]
-        src_node_id = link[1]
-        src_output_idx = link[2]
-        dst_node_id = link[3]
-        dst_input_idx = link[4]
-        
-        link_map[link_id] = [src_node_id, src_output_idx, dst_node_id, dst_input_idx]
-    
-    return link_map
+# Import NODE_CLASS_MAPPINGS - handle the case where it might not be available
+try:
+    from nodes import NODE_CLASS_MAPPINGS
+    NODE_CLASS_MAPPINGS_AVAILABLE = True
+except ImportError:
+    print("Warning: Could not import NODE_CLASS_MAPPINGS. Using empty dictionary instead.")
+    NODE_CLASS_MAPPINGS = {}
+    NODE_CLASS_MAPPINGS_AVAILABLE = False
 
-def build_input_name_map(workflow: Dict) -> Dict:
-    """
-    노드 입력 인덱스를 입력 이름으로 매핑합니다.
-    (노드 ID, 입력 인덱스) 튜플을 키로 하고 입력 이름을 값으로 합니다.
-    
-    Args:
-        workflow: 워크플로우 데이터
-        
-    Returns:
-        Dict: (노드 ID, 입력 인덱스) -> 입력 이름 매핑
-    """
-    input_name_map = {}
-    
-    for node in workflow.get("nodes", []):
-        node_id = node["id"]
-        
-        for i, inp in enumerate(node.get("inputs", [])):
-            input_name = inp.get("name")
-            if input_name:
-                input_name_map[(node_id, i)] = input_name
-    
-    return input_name_map
 
-async def analyze_workflow_node_types(workflow: Dict) -> Dict:
-    """
-    워크플로우에서 노드 타입별 위젯 입력 매핑을 분석합니다.
-    ComfyUI 서버에서 노드 정의 정보를 가져와 동적으로 매핑합니다.
-    
-    Args:
-        workflow: 워크플로우 정보
-        
-    Returns:
-        Dict: 노드 타입 -> 위젯 입력 이름 목록 매핑
-    """
-    # 노드 타입별 위젯 매핑 정보
-    node_type_widget_inputs = {}
-    
-    # 주의: 특정 노드 타입에 대한 하드코딩된 위젯 매핑을 여기에 정의하지 마세요!
-    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
-    
-    # 노드 타입별 처리
-    node_types = set()
-    for node in workflow.get("nodes", []):
-        node_type = node.get("type")
-        if node_type:
-            node_types.add(node_type)
-    
-    # 서버에서 모든 노드 타입 정보 가져오기
-    from api_server.utils.server_utils import get_comfy_nodes_info
-    node_info = await get_comfy_nodes_info()
-    
-    # 각 노드 타입 처리
-    for node_type in node_types:
-        # 해당 노드 타입의 첫 번째 노드 찾기
-        for node in workflow.get("nodes", []):
-            if node.get("type") == node_type:
-                # 위젯 값이 있는지 확인
-                widget_values = node.get("widgets_values", [])
-                if not widget_values:
-                    continue
-                
-                # 서버 노드 정보에서 입력 정보 찾기
-                node_inputs = {}
-                if node_info and node_type in node_info and "input" in node_info[node_type]:
-                    node_inputs = node_info[node_type]["input"]
-                
-                # 노드에서 위젯 입력 이름 추출
-                widget_input_names = extract_widget_inputs_from_node(node, node_inputs)
-                
-                # 위젯 입력 이름이 있으면 저장
-                if widget_input_names:
-                    node_type_widget_inputs[node_type] = widget_input_names
-                else:
-                    # 기본 이름 생성
-                    node_type_widget_inputs[node_type] = [f"param_{i}" for i in range(len(widget_values))]
-                
-                # 첫 번째 노드 처리 후 다음 노드 타입으로
-                break
-    
-    # 위젯 매핑 결과 로깅
-    for node_type, mapping in node_type_widget_inputs.items():
-        logger.debug(f"노드 타입 '{node_type}' 위젯 매핑: {mapping}")
-    
-    return node_type_widget_inputs
+class FileHandler:
+    """Handles file reading and writing operations.
 
-def convert_workflow_to_api(workflow: Dict, use_dynamic_loading: bool = True) -> Dict:
+    This class provides methods to read and write JSON files.
     """
-    일반 ComfyUI 워크플로우 JSON을 API 워크플로우 JSON으로 변환합니다.
-    
-    Args:
-        workflow: 일반 ComfyUI 워크플로우 JSON
-        use_dynamic_loading: ComfyUI 노드 정의를 동적으로 로드할지 여부
-        
-    Returns:
-        Dict: API 워크플로우 JSON
+
+    @staticmethod
+    def read_json_file(file_path: Union[str, TextIO], encoding: str = "utf-8") -> dict:
+        """
+        Reads a JSON file and returns its contents as a dictionary.
+
+        Args:
+            file_path (Union[str, TextIO]): JSON file path or file object
+            encoding (str, optional): File encoding. Default is "utf-8"
+
+        Returns:
+            dict: JSON file contents as a dictionary
+
+        Raises:
+            FileNotFoundError: If the file cannot be found
+            ValueError: If the file is not a valid JSON
+        """
+        if hasattr(file_path, "read"):
+            return json.load(file_path)
+        with open(file_path, "r", encoding=encoding) as file:
+            data = json.load(file)
+        return data
+
+    @staticmethod
+    def write_json_file(file_path: Union[str, TextIO], data: dict, encoding: str = "utf-8") -> None:
+        """
+        Writes a dictionary to a JSON file.
+
+        Args:
+            file_path (Union[str, TextIO]): JSON file path or file object to write to
+            data (dict): Data to write
+            encoding (str, optional): File encoding. Default is "utf-8"
+
+        Raises:
+            IOError: If an error occurs during file writing
+        """
+        if hasattr(file_path, "write"):
+            json.dump(data, file_path, indent=2, ensure_ascii=False)
+            return
+
+        with open(file_path, "w", encoding=encoding) as file:
+            json.dump(data, file, indent=2, ensure_ascii=False)
+
+
+class WorkflowConverter:
     """
-    # 결과 API 워크플로우 초기화
-    api_workflow = {}
-    
-    # ComfyUI 노드 정의 로드 (선택적)
-    node_schemas = {}
-    if use_dynamic_loading:
-        node_classes = load_comfy_nodes()
-        for node_type, node_class in node_classes.items():
-            node_schemas[node_type] = extract_node_schema(node_class)
-    
-    # 링크 매핑 생성
-    link_map = build_link_map(workflow)
-    
-    # 노드별 입력 이름 매핑 (노드ID, 링크ID) -> 입력이름
-    input_name_map = build_input_name_map(workflow)
-    
-    # 워크플로우 분석을 통한 노드 타입별 위젯 입력 매핑 추출
-    node_type_widget_inputs = analyze_workflow_node_types(workflow)
-    
-    # 노드 처리
-    for node in workflow.get("nodes", []):
-        node_id = node["id"]
-        node_type = node["type"]
-        
-        # 노드 타이틀 결정
-        node_title = get_node_title(node)
-        
-        # API 노드 생성
-        api_node = {
-            "inputs": {},
-            "class_type": node_type,
-            "_meta": {
-                "title": node_title
+    Converts standard workflow JSON to API-compatible workflow JSON.
+    """
+
+    def __init__(self, workflow_data: Dict = None):
+        """
+        WorkflowConverter class constructor.
+
+        Args:
+            workflow_data (Dict, optional): Workflow data to convert. Default is None
+        """
+        self.workflow_data = workflow_data
+        self.api_workflow = {}
+        self.node_class_mappings = NODE_CLASS_MAPPINGS
+
+    def load_workflow(self, file_path: Union[str, TextIO]) -> None:
+        """
+        Loads workflow data from a JSON file.
+
+        Args:
+            file_path (Union[str, TextIO]): Workflow JSON file path or file object
+        """
+        self.workflow_data = FileHandler.read_json_file(file_path)
+
+    def convert_to_api_format(self) -> Dict:
+        """
+        Converts standard workflow data to API format.
+
+        Returns:
+            Dict: API-formatted workflow data
+        """
+        if not self.workflow_data:
+            raise ValueError("No workflow data loaded. Please load workflow data first.")
+
+        self.api_workflow = {}
+
+        # Convert node data
+        for node in self.workflow_data.get("nodes", []):
+            node_id = str(node["id"])
+            node_type = node["type"]
+            
+            # Process node inputs
+            inputs = {}
+            
+            # Process widget values
+            if "widgets_values" in node:
+                # Process widgets based on node type
+                self._process_widgets(node, inputs)
+            
+            # Process connected inputs
+            if "inputs" in node:
+                self._process_connections(node, inputs)
+            
+            # Add node to API workflow
+            self.api_workflow[node_id] = {
+                "inputs": inputs,
+                "class_type": node_type,
+                "_meta": {
+                    "title": node_type
+                }
             }
-        }
+
+        # Sort nodes by ID
+        sorted_api_workflow = OrderedDict()
+        for node_id in sorted(self.api_workflow.keys(), key=int):
+            sorted_api_workflow[node_id] = self.api_workflow[node_id]
         
-        # 위젯 값 처리 - 워크플로우 분석 결과 활용
-        if node_type in node_type_widget_inputs and "widgets_values" in node:
-            widget_inputs = {}
-            widgets_values = node.get("widgets_values", [])
+        self.api_workflow = sorted_api_workflow
+        return self.api_workflow
+
+    def _process_widgets(self, node: Dict, inputs: Dict) -> None:
+        """
+        Process node widget values.
+
+        Args:
+            node (Dict): Node data
+            inputs (Dict): Dictionary to store input data
+        """
+        node_type = node["type"]
+        widgets_values = node.get("widgets_values", [])
+        
+        # Process widgets based on node type
+        # Check if node type exists in NODE_CLASS_MAPPINGS
+        if NODE_CLASS_MAPPINGS_AVAILABLE and node_type in self.node_class_mappings:
+            # Handle specific node types
+            if node_type == "CheckpointLoaderSimple":
+                if len(widgets_values) > 0:
+                    inputs["ckpt_name"] = widgets_values[0]
             
-            # 학습된 위젯-입력 매핑 사용
-            param_names = node_type_widget_inputs[node_type]
-            for i, value in enumerate(widgets_values):
-                if i < len(param_names):
-                    widget_inputs[param_names[i]] = value
+            elif node_type == "CLIPTextEncode":
+                if len(widgets_values) > 0:
+                    inputs["text"] = widgets_values[0]
             
-            api_node["inputs"].update(widget_inputs)
+            elif node_type == "EmptyLatentImage":
+                if len(widgets_values) >= 3:
+                    inputs["width"] = widgets_values[0]
+                    inputs["height"] = widgets_values[1]
+                    inputs["batch_size"] = widgets_values[2]
+            
+            elif node_type == "KSampler":
+                if len(widgets_values) >= 7:
+                    inputs["seed"] = widgets_values[0]
+                    inputs["steps"] = widgets_values[2]
+                    inputs["cfg"] = widgets_values[3]
+                    inputs["sampler_name"] = widgets_values[4]
+                    inputs["scheduler"] = widgets_values[5]
+                    inputs["denoise"] = widgets_values[6]
+            
+            elif node_type == "SaveImage":
+                if len(widgets_values) > 0:
+                    inputs["filename_prefix"] = widgets_values[0]
+            
+            # For other node types, use a generic approach
+            else:
+                for i, value in enumerate(widgets_values):
+                    inputs[f"param_{i}"] = value
         else:
-            # 위젯 값을 직접 매핑 시도
-            widget_inputs = map_widgets_to_inputs(node, node_schemas)
-            api_node["inputs"].update(widget_inputs)
+            # For unknown node types, use a generic approach
+            for i, value in enumerate(widgets_values):
+                inputs[f"param_{i}"] = value
+
+    def _process_connections(self, node: Dict, inputs: Dict) -> None:
+        """
+        Process node connections.
+
+        Args:
+            node (Dict): Node data
+            inputs (Dict): Dictionary to store input data
+        """
+        node_inputs = node.get("inputs", [])
         
-        # 입력 연결 처리
-        for inp in node.get("inputs", []):
-            input_name = inp.get("name")
-            link_id = inp.get("link")
+        # Find connection information through workflow links
+        links = self.workflow_data.get("links", [])
+        
+        for input_data in node_inputs:
+            input_name = input_data.get("name")
+            link_id = input_data.get("link")
             
-            if link_id is not None and link_id in link_map:
-                src_node_id, src_output_idx = link_map[link_id][0:2]
-                api_node["inputs"][input_name] = [str(src_node_id), src_output_idx]
-        
-        # API 워크플로우에 노드 추가
-        api_workflow[str(node_id)] = api_node
-    
-    # 변환된 워크플로우 검증 및 로깅
-    for node_id, api_node in api_workflow.items():
-        node_type = api_node.get("class_type")
-        logger.debug(f"변환된 노드 {node_id} ({node_type}): 입력 = {api_node.get('inputs', {})}")
-    
-    return api_workflow
+            if link_id is not None:
+                # Find information for the given link ID
+                for link in links:
+                    if link[0] == link_id:
+                        # link format: [link_id, source_node_id, source_slot_index, target_node_id, target_slot_index, link_type]
+                        source_node_id = str(link[1])
+                        source_slot_index = link[2]
+                        inputs[input_name] = [source_node_id, source_slot_index]
+                        break
 
-def convert_api_to_workflow(api_workflow):
-    """
-    API 워크플로우 JSON을 일반 ComfyUI 워크플로우 JSON으로 변환합니다.
-    
-    Args:
-        api_workflow (dict): API 워크플로우 JSON
-        
-    Returns:
-        dict: 일반 ComfyUI 워크플로우 JSON
-    """
-    # 이 함수는 향후 구현 예정
-    pass
+    def save_api_workflow(self, file_path: Union[str, TextIO]) -> None:
+        """
+        Save API workflow to a JSON file.
 
-async def load_and_convert_workflow(workflow_path, use_dynamic_loading=True):
-    """
-    파일에서 워크플로우를 로드하고 API 형식으로 변환합니다.
-    
-    Args:
-        workflow_path (str): 워크플로우 JSON 파일 경로
-        use_dynamic_loading (bool): ComfyUI 노드 정의를 동적으로 로드할지 여부
-        
-    Returns:
-        dict: 변환된 API 워크플로우
-    """
-    if not os.path.exists(workflow_path):
-        raise FileNotFoundError(f"워크플로우 파일을 찾을 수 없습니다: {workflow_path}")
-    
-    with open(workflow_path, 'r', encoding='utf-8') as f:
-        workflow = json.load(f)
-    
-    return await convert_workflow_to_api(workflow, use_dynamic_loading)
+        Args:
+            file_path (Union[str, TextIO]): File path or file object to save to
 
-def save_api_workflow(api_workflow, output_path):
-    """
-    변환된 API 워크플로우를 파일로 저장합니다.
-    
-    Args:
-        api_workflow (dict): 변환된 API 워크플로우
-        output_path (str): 저장할 파일 경로
-    """
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(api_workflow, f, indent=2, ensure_ascii=False)
-
-def validate_workflow(api_workflow: Dict) -> List[str]:
-    """
-    API 워크플로우가 유효한지 검사합니다.
-    모든 노드에 필수 입력이 있는지 확인합니다.
-    
-    Args:
-        api_workflow: API 형식의 워크플로우
+        Raises:
+            ValueError: If API workflow has not been generated
+        """
+        if not self.api_workflow:
+            raise ValueError("API workflow has not been generated. Call convert_to_api_format() first.")
         
-    Returns:
-        List[str]: 누락된 필수 입력 목록 (비어있으면 모든 것이 유효함)
+        FileHandler.write_json_file(file_path, self.api_workflow)
+
+
+def convert_workflow(input_file: str, output_file: str) -> None:
     """
-    missing_inputs = []
-    
-    # 주의: 특정 노드 타입에 대한 하드코딩된 필수 입력 목록을 여기에 정의하지 마세요!
-    # 모든 노드 타입은 ComfyUI 서버에서 동적으로 정보를 가져와 처리해야 합니다.
-    # 하드코딩된 매핑은 유지보수가 어렵고 새로운 노드 타입이나 변경사항을 반영하지 못합니다.
-    
-    # 비동기 방식으로 ComfyUI 서버에서 노드 정보 가져오기
-    # 이 함수는 일반적으로 비동기 컨텍스트에서 호출되지 않으므로, 
-    # routes/custom/workflow_routes.py의 validate_workflow 메서드를 대신 사용하는 것이 권장됩니다.
-    
-    logger.warning("validate_workflow 함수는 ComfyUI 서버에서 노드 정보를 가져오지 않습니다. 대신 WorkflowRoutes.validate_workflow 메서드를 사용하세요.")
-    
-    return missing_inputs
+    Convert standard workflow JSON file to API-compatible workflow JSON file.
+
+    Args:
+        input_file (str): Input workflow JSON file path
+        output_file (str): Output API workflow JSON file path
+    """
+    converter = WorkflowConverter()
+    converter.load_workflow(input_file)
+    converter.convert_to_api_format()
+    converter.save_api_workflow(output_file)
+
 
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description="ComfyUI 워크플로우 변환기")
-    parser.add_argument("input_path", help="변환할 ComfyUI 워크플로우 JSON 파일 경로")
-    parser.add_argument("-o", "--output", help="변환된 API 워크플로우 저장 경로")
-    parser.add_argument("--no-dynamic", action="store_true", help="ComfyUI 노드 정의 동적 로딩 비활성화")
+    parser = argparse.ArgumentParser(description="Convert ComfyUI workflow to API format")
+    parser.add_argument("--input", type=str, required=True, help="Input workflow JSON file path")
+    parser.add_argument("--output", type=str, required=True, help="Output API workflow JSON file path")
+    
     args = parser.parse_args()
-    
-    output_path = args.output if args.output else args.input_path + ".api.json"
-    
-    try:
-        api_workflow = load_and_convert_workflow(args.input_path, not args.no_dynamic)
-        save_api_workflow(api_workflow, output_path)
-        logger.info(f"변환 완료: {output_path}")
-    except Exception as e:
-        logger.error(f"변환 실패: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1) 
+    convert_workflow(args.input, args.output)

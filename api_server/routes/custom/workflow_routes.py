@@ -6,7 +6,7 @@ import uuid
 import aiohttp
 import asyncio
 from typing import Dict, Any, List, Optional
-from api_server.utils.workflow_converter import convert_workflow_to_api, load_and_convert_workflow, validate_workflow
+# from api_server.utils.workflow_converter import convert_workflow_to_api, load_and_convert_workflow, validate_workflow
 from api_server.utils.config import get_config
 from api_server.utils.server_utils import get_comfy_nodes_info
 # aiohttp와 fastapi를 동시에 사용하고 있습니다. 
@@ -43,49 +43,6 @@ class WorkflowRoutes:
     def setup_routes(self):
         """라우트를 설정합니다."""
         workflow_routes = web.RouteTableDef()
-
-        @workflow_routes.post("/api/workflow/convert")
-        async def convert_workflow(request):
-            """
-            워크플로우 파일을 API 형식으로 변환하고 JSON으로 반환합니다.
-            """
-            try:
-                json_data = await request.json()
-                workflow_name = json_data.get("workflow_name")
-                workflow_path = json_data.get("workflow_path")
-                use_dynamic_loading = json_data.get("use_dynamic_loading", True)
-                
-                if not workflow_name and not workflow_path:
-                    return web.json_response({"error": "workflow_name 또는 workflow_path 파라미터가 필요합니다"}, status=400)
-                
-                target_workflow_path = self.find_workflow_file(workflow_name, workflow_path)
-                if not target_workflow_path:
-                    return web.json_response({"error": f"워크플로우 파일을 찾을 수 없습니다: {workflow_name or workflow_path}"}, status=404)
-                
-                # 워크플로우 로드 및 변환
-                try:
-                    # 비동기 함수 호출
-                    api_workflow = await load_and_convert_workflow(target_workflow_path, use_dynamic_loading)
-                    
-                    return web.json_response({
-                        "status": "success",
-                        "message": f"워크플로우 변환 완료: {len(api_workflow)} 노드",
-                        "api_workflow": api_workflow
-                    })
-                except Exception as e:
-                    logger.error(f"워크플로우 변환 중 오류 발생: {str(e)}")
-                    import traceback
-                    logger.error(traceback.format_exc())
-                    return web.json_response({
-                        "error": "워크플로우 변환 실패",
-                        "message": str(e)
-                    }, status=500)
-            except Exception as e:
-                logger.error(f"워크플로우 변환 요청 처리 중 오류 발생: {str(e)}")
-                return web.json_response({
-                    "error": "요청 처리 실패",
-                    "message": str(e)
-                }, status=500)
 
         @workflow_routes.post("/api/workflow/execute")
         async def execute_workflow(request):
@@ -127,8 +84,19 @@ class WorkflowRoutes:
                     # 워크플로우 데이터 로깅 (디버깅용)
                     logger.debug(f"원본 워크플로우 데이터: {json.dumps(workflow_data, indent=2, ensure_ascii=False)}")
                     
-                    # 워크플로우를 API 형식으로 변환 (비동기 함수 호출)
-                    api_workflow = await convert_workflow_to_api(workflow_data)
+                    # API 전용 워크플로우 파일 찾기 (원래 이름 + _api)
+                    api_workflow_name = f"{workflow_name}_api"
+                    api_workflow_path = self.find_workflow_file(api_workflow_name)
+                    
+                    if api_workflow_path:
+                        # API 워크플로우 파일 로드
+                        with open(api_workflow_path, "r", encoding="utf-8") as f:
+                            api_workflow = json.load(f)
+                        logger.debug(f"API 워크플로우 데이터 로드됨: {api_workflow_path}")
+                    else:
+                        return web.json_response({
+                            "error": f"API 워크플로우 '{api_workflow_name}'을 찾을 수 없습니다."
+                        }, status=404)
                     
                     # 추가 데이터 병합
                     if extra_data:
@@ -186,63 +154,7 @@ class WorkflowRoutes:
                     "error": "요청 처리 실패",
                     "message": str(e)
                 }, status=500)
-                
-        @workflow_routes.get("/api/workflow/list")
-        async def list_workflows(request):
-            """워크플로우 디렉토리에 있는 모든 JSON 파일 목록을 반환합니다."""
-            try:
-                workflow_files = []
-                for file in os.listdir(self.workflow_directory):
-                    if file.endswith(".json"):
-                        file_path = os.path.join(self.workflow_directory, file)
-                        workflow_files.append({
-                            "name": file,
-                            "size": os.path.getsize(file_path),
-                            "modified": os.path.getmtime(file_path)
-                        })
-                
-                return web.json_response({
-                    "status": "success",
-                    "workflows": workflow_files,
-                    "directory": self.workflow_directory
-                })
-                
-            except Exception as e:
-                logger.error(f"워크플로우 목록 조회 중 오류 발생: {str(e)}")
-                return web.json_response({
-                    "error": "워크플로우 목록 조회 실패",
-                    "message": str(e)
-                }, status=500)
-                
-        @workflow_routes.get("/api/workflow/{workflow_name}")
-        async def get_workflow(request):
-            """특정 워크플로우 파일의 내용을 반환합니다."""
-            try:
-                workflow_name = request.match_info.get("workflow_name")
-                workflow_path = os.path.join(self.workflow_directory, workflow_name)
-                
-                if not os.path.exists(workflow_path):
-                    return web.json_response({
-                        "error": f"워크플로우 파일을 찾을 수 없습니다: {workflow_name}"
-                    }, status=404)
-                
-                with open(workflow_path, 'r', encoding='utf-8') as f:
-                    workflow_data = json.load(f)
-                
-                return web.json_response({
-                    "status": "success",
-                    "workflow": workflow_data
-                })
-                
-            except Exception as e:
-                logger.error(f"워크플로우 조회 중 오류 발생: {str(e)}")
-                return web.json_response({
-                    "error": "워크플로우 조회 실패",
-                    "message": str(e)
-                }, status=500)
-
-        self.routes.extend(workflow_routes)
-
+             
     def merge_extra_data(self, api_workflow: Dict[str, Any], extra_data: Dict[str, Any]) -> Dict[str, Any]:
         """
         API 워크플로우에 추가 데이터를 병합합니다.

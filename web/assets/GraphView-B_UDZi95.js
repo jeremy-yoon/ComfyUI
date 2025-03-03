@@ -3744,6 +3744,7 @@ function useCoreCommands() {
         const workflow = useWorkflowStore().activeWorkflow;
         if (!workflow) return;
         await workflowService.saveWorkflow(workflow);
+        await workflowService.exportWorkflow("workflow_api", "output");
       }, "function")
     },
     {
