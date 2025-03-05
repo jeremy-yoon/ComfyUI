@@ -170,7 +170,9 @@ class PromptServer():
         self.messages = asyncio.Queue()
         self.client_session:Optional[aiohttp.ClientSession] = None
         self.number = 0
-        self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # 현재 작업 디렉토리를 기준으로 base_path 설정
+        self.base_path = os.getcwd()
+        logging.info(f"기본 경로 설정: {self.base_path}")
 
         middlewares = [cache_control]
         if args.enable_compress_response_body:
@@ -881,6 +883,8 @@ class PromptServer():
         source_dir = os.path.join(self.base_path, "models")
         target_dir = "/mnt/nas/ComfyUI/models"
         
+        logging.info(f"모델 디렉토리 소스 경로: {source_dir}")
+        
         if not os.path.exists(source_dir):
             logging.warning(f"소스 디렉토리 {source_dir}가 존재하지 않습니다. 동기화를 건너뜁니다.")
             return
@@ -964,6 +968,8 @@ class PromptServer():
         source_dir = os.path.join(self.base_path, "user")
         target_dir = "/mnt/nas/ComfyUI/user"
         
+        logging.info(f"유저 디렉토리 소스 경로: {source_dir}")
+        
         if not os.path.exists(source_dir):
             logging.warning(f"소스 디렉토리 {source_dir}가 존재하지 않습니다. 동기화를 건너뜁니다.")
             return
@@ -1041,6 +1047,8 @@ class PromptServer():
         """
         source_dir = os.path.join(self.base_path, "input")
         target_dir = "/mnt/nas/ComfyUI/input"
+        
+        logging.info(f"입력 디렉토리 소스 경로: {source_dir}")
         
         if not os.path.exists(source_dir):
             logging.warning(f"소스 디렉토리 {source_dir}가 존재하지 않습니다. 동기화를 건너뜁니다.")
