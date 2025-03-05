@@ -878,10 +878,10 @@ class PromptServer():
     def sync_model_directories(self):
         """
         현재 프로젝트의 models 폴더와 "/mnt/nas/ComfyUI/models" 디렉토리를 비교하여
-        현재 프로젝트의 models 폴더를 기준으로 "/mnt/nas/ComfyUI/models"를 업데이트합니다.
+        "/mnt/nas/ComfyUI/models"를 기준으로 현재 프로젝트의 models 폴더를 업데이트합니다.
         """
-        source_dir = os.path.join(self.base_path, "models")
-        target_dir = "/mnt/nas/ComfyUI/models"
+        source_dir = "/mnt/nas/ComfyUI/models"
+        target_dir = os.path.join(self.base_path, "models")
         
         logging.info(f"모델 디렉토리 소스 경로: {source_dir}")
         
@@ -963,10 +963,10 @@ class PromptServer():
     def sync_user_directories(self):
         """
         현재 프로젝트의 user 폴더와 "/mnt/nas/ComfyUI/user" 디렉토리를 비교하여
-        현재 프로젝트의 user 폴더를 기준으로 "/mnt/nas/ComfyUI/user"를 업데이트합니다.
+        "/mnt/nas/ComfyUI/user"를 기준으로 현재 프로젝트의 user 폴더를 업데이트합니다.
         """
-        source_dir = os.path.join(self.base_path, "user")
-        target_dir = "/mnt/nas/ComfyUI/user"
+        source_dir = "/mnt/nas/ComfyUI/user"
+        target_dir = os.path.join(self.base_path, "user")
         
         logging.info(f"유저 디렉토리 소스 경로: {source_dir}")
         
@@ -1043,10 +1043,10 @@ class PromptServer():
     def sync_input_directories(self):
         """
         현재 프로젝트의 input 폴더와 "/mnt/nas/ComfyUI/input" 디렉토리를 비교하여
-        현재 프로젝트의 input 폴더를 기준으로 "/mnt/nas/ComfyUI/input"를 업데이트합니다.
+        "/mnt/nas/ComfyUI/input"를 기준으로 현재 프로젝트의 input 폴더를 업데이트합니다.
         """
-        source_dir = os.path.join(self.base_path, "input")
-        target_dir = "/mnt/nas/ComfyUI/input"
+        source_dir = "/mnt/nas/ComfyUI/input"
+        target_dir = os.path.join(self.base_path, "input")
         
         logging.info(f"입력 디렉토리 소스 경로: {source_dir}")
         
