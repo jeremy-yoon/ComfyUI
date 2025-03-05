@@ -60,25 +60,18 @@ class WorkflowRoutes:
                         "error": "workflow_name 파라미터가 필요합니다."
                     }, status=400)
                 
-                # 워크플로우 경로 결정
-                workflow_path = self.find_workflow_file(workflow_name)
-                if not workflow_path:
-                    return web.json_response({
-                        "error": f"워크플로우 '{workflow_name}'을 찾을 수 없습니다."
-                    }, status=404)
+                # API 전용 워크플로우 파일 찾기 (원래 이름 + _api)
+                api_workflow_name = f"{workflow_name}_api"
+                api_workflow_path = self.find_workflow_file(api_workflow_name)
+                
+                # # 워크플로우 경로 결정
+                # workflow_path = self.find_workflow_file(workflow_name)
+                # if not workflow_path:
+                #     return web.json_response({
+                #         "error": f"워크플로우 '{workflow_name}'을 찾을 수 없습니다."
+                #     }, status=404)
                 
                 try:
-                    # 워크플로우 파일 로드
-                    with open(workflow_path, "r", encoding="utf-8") as f:
-                        workflow_data = json.load(f)
-                    
-                    # 워크플로우 데이터 로깅 (디버깅용)
-                    logger.debug(f"원본 워크플로우 데이터: {json.dumps(workflow_data, indent=2, ensure_ascii=False)}")
-                    
-                    # API 전용 워크플로우 파일 찾기 (원래 이름 + _api)
-                    api_workflow_name = f"{workflow_name}_api.json"
-                    api_workflow_path = self.find_workflow_file(api_workflow_name)
-                    
                     if api_workflow_path:
                         # API 워크플로우 파일 로드
                         with open(api_workflow_path, "r", encoding="utf-8") as f:

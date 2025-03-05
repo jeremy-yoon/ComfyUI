@@ -19,7 +19,7 @@ if args.base_directory:
 else:
     base_path = os.path.dirname(os.path.realpath(__file__))
 
-models_dir = "/mnt/models"
+models_dir = os.path.join(base_path, "models")
 
 # 캐시 변수를 함수 정의 전에 선언
 filename_list_cache: dict[str, tuple[list[str], dict[str, float], float]] = {}
@@ -71,6 +71,7 @@ def setup_model_directories(custom_models_dir=None):
 setup_model_directories()
 
 folder_names_and_paths["custom_nodes"] = ([os.path.join(base_path, "custom_nodes")], set())
+# folder_names_and_paths["custom_nodes"] = '/mnt/models/custom_nodes'
 
 output_directory = os.path.join(base_path, "output")
 temp_directory = os.path.join(base_path, "temp")
