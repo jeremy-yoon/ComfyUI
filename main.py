@@ -47,6 +47,11 @@ def apply_custom_paths():
         input_dir = os.path.abspath(args.input_directory)
         logging.info(f"Setting input directory to: {input_dir}")
         folder_paths.set_input_directory(input_dir)
+    else:
+        # 기본 input 디렉토리를 /mnt/nas/ComfyUI/input으로 설정
+        custom_input_dir = "/mnt/nas/ComfyUI/input"
+        logging.info(f"Setting default input directory to: {custom_input_dir}")
+        folder_paths.set_input_directory(custom_input_dir)
 
     if args.user_directory:
         user_dir = os.path.abspath(args.user_directory)

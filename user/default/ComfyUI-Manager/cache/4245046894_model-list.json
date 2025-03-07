@@ -3928,6 +3928,17 @@
             "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/vae/hunyuan_video_vae_bf16.safetensors"
         },
         {
+            "base": "Hunyuan Video",
+            "description": "Huyuan Video Image2Video diffusion model. repackaged version.",
+            "filename": "hunyuan_video_image_to_video_720p_bf16.safetensors",
+            "name": "Comfy-Org/hunyuan_video_image_to_video_720p_bf16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "diffusion_models/hunyuan_video",
+            "size": "25.6GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_image_to_video_720p_bf16.safetensors"
+        },
+        {
             "base": "LLaVA-Llama-3",
             "description": "llava_llama3_fp8_scaled text encoder model. This is required for using Hunyuan Video.",
             "filename": "llava_llama3_fp8_scaled.safetensors",
@@ -3948,6 +3959,17 @@
             "size": "16.1GB",
             "type": "clip",
             "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors"
+        },
+        {
+            "base": "LLaVA-Llama-3",
+            "description": "llava_llama3_vision clip vison model. This is required for using Hunyuan Video Image2Video.",
+            "filename": "llava_llama3_vision.safetensors",
+            "name": "Comfy-Org/llava_llama3_vision.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "text_encoders",
+            "size": "649MB",
+            "type": "clip_vision",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/clip_vision/llava_llama3_vision.safetensors"
         },
         {
             "base": "FLUX.1",
