@@ -1,16 +1,7 @@
 {
-  "1": {
-    "inputs": {
-      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
   "2": {
     "inputs": {
-      "image": "eyemask.png",
+      "image": "slime_mask_eye.png",
       "channel": "alpha",
       "upload": "image"
     },
@@ -22,8 +13,14 @@
   "3": {
     "inputs": {
       "upscale_method": "nearest-exact",
-      "width": 768,
-      "height": 768,
+      "width": [
+        "65",
+        0
+      ],
+      "height": [
+        "67",
+        0
+      ],
       "crop": "disabled",
       "samples": [
         "27",
@@ -48,23 +45,20 @@
       "title": "이미지 저장"
     }
   },
-  "6": {
-    "inputs": {
-      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
   "7": {
     "inputs": {
       "mode": "resize",
       "supersample": "true",
       "resampling": "bilinear",
       "rescale_factor": 2,
-      "resize_width": 768,
-      "resize_height": 768,
+      "resize_width": [
+        "65",
+        0
+      ],
+      "resize_height": [
+        "67",
+        0
+      ],
       "image": [
         "9",
         0
@@ -93,7 +87,7 @@
   },
   "9": {
     "inputs": {
-      "image": "Frame 85asas.png",
+      "image": "slime_pre_image.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -103,7 +97,7 @@
   },
   "10": {
     "inputs": {
-      "seed": 404229869207961
+      "seed": 410397469078226
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -123,38 +117,20 @@
       "title": "잠재 데이터 반복 배치 생성"
     }
   },
-  "14": {
-    "inputs": {
-      "images": [
-        "23",
-        11
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "15": {
-    "inputs": {
-      "mask": [
-        "17",
-        0
-      ]
-    },
-    "class_type": "InvertMask",
-    "_meta": {
-      "title": "마스크 반전"
-    }
-  },
   "16": {
     "inputs": {
       "mode": "resize",
       "supersample": "true",
       "resampling": "nearest",
       "rescale_factor": 2,
-      "resize_width": 768,
-      "resize_height": 768,
+      "resize_width": [
+        "65",
+        0
+      ],
+      "resize_height": [
+        "67",
+        0
+      ],
       "image": [
         "23",
         11
@@ -165,30 +141,9 @@
       "title": "Image Resize"
     }
   },
-  "17": {
-    "inputs": {
-      "image": "wrapper_clothes (1).png",
-      "channel": "alpha",
-      "upload": "image"
-    },
-    "class_type": "LoadImageMask",
-    "_meta": {
-      "title": "마스크 이미지 로드"
-    }
-  },
-  "18": {
-    "inputs": {
-      "image": "wrapper_clothes (1).png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
   "19": {
     "inputs": {
-      "image": "mask_wide_1024_3.png",
+      "image": "slime_pre_mask_basic.png",
       "channel": "alpha",
       "upload": "image"
     },
@@ -211,45 +166,6 @@
       "title": "Text Find and Replace"
     }
   },
-  "21": {
-    "inputs": {
-      "images": [
-        "40",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "22": {
-    "inputs": {
-      "strength": 1.3,
-      "start_percent": 0,
-      "end_percent": 0.3,
-      "positive": [
-        "39",
-        2
-      ],
-      "negative": [
-        "39",
-        3
-      ],
-      "control_net": [
-        "6",
-        0
-      ],
-      "image": [
-        "28",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
-    }
-  },
   "23": {
     "inputs": {
       "lora_name": "None",
@@ -265,13 +181,16 @@
       "crop": "disabled",
       "base_steps": 3,
       "cfg": 1.5,
-      "denoise": 0.77,
+      "denoise": [
+        "79",
+        1
+      ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
       "refiner_denoise": 1,
       "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
-      "image_output": "Hide",
+      "image_output": "Preview",
       "save_prefix": "ComfyUI",
       "file_type": "png",
       "embed_workflow": true,
@@ -284,11 +203,11 @@
         0
       ],
       "optional_positive": [
-        "22",
+        "55:2",
         0
       ],
       "optional_negative": [
-        "22",
+        "55:2",
         1
       ],
       "optional_latent": [
@@ -299,68 +218,6 @@
     "class_type": "ttN pipeKSamplerSDXL_v2",
     "_meta": {
       "title": "pipeKSamplerSDXL"
-    }
-  },
-  "24": {
-    "inputs": {
-      "strength": 0.5,
-      "start_percent": 0,
-      "end_percent": 0.5,
-      "positive": [
-        "32",
-        2
-      ],
-      "negative": [
-        "32",
-        3
-      ],
-      "control_net": [
-        "1",
-        0
-      ],
-      "image": [
-        "28",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
-    }
-  },
-  "25": {
-    "inputs": {
-      "images": [
-        "26",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "26": {
-    "inputs": {
-      "x": 0,
-      "y": 0,
-      "resize_source": false,
-      "destination": [
-        "16",
-        0
-      ],
-      "source": [
-        "18",
-        0
-      ],
-      "mask": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "ImageCompositeMasked",
-    "_meta": {
-      "title": "마스크된 이미지 합성"
     }
   },
   "27": {
@@ -377,16 +234,6 @@
     "class_type": "SetLatentNoiseMask",
     "_meta": {
       "title": "잠재 데이터에 노이즈 마스크 설정"
-    }
-  },
-  "28": {
-    "inputs": {
-      "image": "clothes_scribble_nohead.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
     }
   },
   "29": {
@@ -406,7 +253,7 @@
   "30": {
     "inputs": {
       "pixels": [
-        "26",
+        "58:3",
         0
       ],
       "vae": [
@@ -475,7 +322,7 @@
         0
       ],
       "mask": [
-        "34",
+        "19",
         0
       ]
     },
@@ -484,32 +331,14 @@
       "title": "잠재 데이터에 노이즈 마스크 설정"
     }
   },
-  "34": {
-    "inputs": {
-      "mask": [
-        "19",
-        0
-      ]
-    },
-    "class_type": "InvertMask",
-    "_meta": {
-      "title": "마스크 반전"
-    }
-  },
   "35": {
     "inputs": {
-      "text1": [
-        "47",
-        0
-      ],
+      "text1": "neck, arms, hands, foot, hair, outline, human, girl, boy, photorealistic",
       "text2": [
         "45",
         0
       ],
-      "text3": [
-        "46",
-        0
-      ],
+      "text3": "",
       "delimiter": ","
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -519,18 +348,12 @@
   },
   "36": {
     "inputs": {
-      "text1": [
-        "42",
-        0
-      ],
+      "text1": "white baby tiny bird fluffy, huddled, tiny round white fluffy, big eyes, chibi, fluffy wearing a long dress, wearing ",
       "text2": [
         "44",
         0
       ],
-      "text3": [
-        "43",
-        0
-      ],
+      "text3": ",(soft colors:1.2), (white background), simple background",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -559,7 +382,7 @@
       "refiner_denoise": 1,
       "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
-      "image_output": "Hide",
+      "image_output": "Preview",
       "save_prefix": "ComfyUI",
       "file_type": "png",
       "embed_workflow": true,
@@ -572,11 +395,11 @@
         0
       ],
       "optional_positive": [
-        "24",
+        "56:2",
         0
       ],
       "optional_negative": [
-        "24",
+        "56:2",
         1
       ],
       "optional_latent": [
@@ -653,47 +476,6 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "40": {
-    "inputs": {
-      "x": 0,
-      "y": 0,
-      "resize_source": false,
-      "destination": [
-        "37",
-        11
-      ],
-      "source": [
-        "18",
-        0
-      ],
-      "mask": [
-        "15",
-        0
-      ]
-    },
-    "class_type": "ImageCompositeMasked",
-    "_meta": {
-      "title": "마스크된 이미지 합성"
-    }
-  },
-  "42": {
-    "inputs": {
-      "text": "white baby tiny bird fluffy, huddled, tiny round white fluffy, big eyes, chibi, fluffy wearing a long dress, wearing "
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "text"
-    }
-  },
-  "43": {
-    "inputs": {
-      "text": ",(soft colors:1.2), (white background), simple background"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "text"
-    }
-  },
   "44": {
     "inputs": {
       "text": "pink Lunar Crown,\npink crown with crescent moon"
@@ -712,29 +494,11 @@
       "title": "input_negative_infix"
     }
   },
-  "46": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "text"
-    }
-  },
-  "47": {
-    "inputs": {
-      "text": "neck, arms, hands, foot, hair, outline, human, girl, boy, photorealistic"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "text"
-    }
-  },
   "50": {
     "inputs": {
-      "centroids": 2,
+      "centroids": 1,
       "image": [
-        "40",
+        "72",
         0
       ]
     },
@@ -755,6 +519,316 @@
     "class_type": "Text Find and Replace",
     "_meta": {
       "title": "Text Find and Replace"
+    }
+  },
+  "65": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_first_image_width"
+    }
+  },
+  "67": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_first_image_height"
+    }
+  },
+  "72": {
+    "inputs": {
+      "pixelation_size": 96,
+      "num_colors": [
+        "74",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "59:3",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "73": {
+    "inputs": {
+      "pixelation_size": 96,
+      "num_colors": [
+        "74",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "74": {
+    "inputs": {
+      "int": 24
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_num_colors"
+    }
+  },
+  "77": {
+    "inputs": {
+      "images": [
+        "23",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "78": {
+    "inputs": {
+      "images": [
+        "37",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "79": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_denoise"
+    }
+  },
+  "55:0": {
+    "inputs": {
+      "image": "slime_pre_guide_basic.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "55:1": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "55:2": {
+    "inputs": {
+      "strength": 1.3,
+      "start_percent": 0,
+      "end_percent": 0.3,
+      "positive": [
+        "39",
+        2
+      ],
+      "negative": [
+        "39",
+        3
+      ],
+      "control_net": [
+        "55:1",
+        0
+      ],
+      "image": [
+        "55:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "58:0": {
+    "inputs": {
+      "image": "slime_wrapper_eye.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "58:1": {
+    "inputs": {
+      "image": "slime_wrapper_eye.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "58:2": {
+    "inputs": {
+      "mask": [
+        "58:1",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "마스크 반전"
+    }
+  },
+  "58:3": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "73",
+        0
+      ],
+      "source": [
+        "58:0",
+        0
+      ],
+      "mask": [
+        "58:2",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "마스크된 이미지 합성"
+    }
+  },
+  "56:0": {
+    "inputs": {
+      "image": "slime_pre_guide_basic.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "56:1": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "56:2": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 0.5,
+      "positive": [
+        "32",
+        2
+      ],
+      "negative": [
+        "32",
+        3
+      ],
+      "control_net": [
+        "56:1",
+        0
+      ],
+      "image": [
+        "56:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "59:0": {
+    "inputs": {
+      "image": "slime_wrapper_eye.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "59:1": {
+    "inputs": {
+      "image": "slime_wrapper_eye.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "59:2": {
+    "inputs": {
+      "mask": [
+        "59:1",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "마스크 반전"
+    }
+  },
+  "59:3": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "37",
+        11
+      ],
+      "source": [
+        "59:0",
+        0
+      ],
+      "mask": [
+        "59:2",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "마스크된 이미지 합성"
     }
   }
 }

@@ -83,19 +83,6 @@
       "title": "Image Batch to Image List"
     }
   },
-  "8": {
-    "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "39",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "이미지 저장"
-    }
-  },
   "9": {
     "inputs": {
       "ckpt_name": "artium_v20Turboboosted.safetensors",
@@ -354,7 +341,10 @@
       "crop": "disabled",
       "base_steps": 5,
       "cfg": 2.5,
-      "denoise": 1,
+      "denoise": [
+        "44",
+        1
+      ],
       "refiner_steps": 6,
       "refiner_cfg": 3,
       "refiner_denoise": 0.5,
@@ -691,6 +681,15 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "이미지 저장"
+    }
+  },
+  "44": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_denoise"
     }
   }
 }

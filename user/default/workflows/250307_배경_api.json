@@ -35,7 +35,7 @@
       "supersample": "true",
       "resampling": "lanczos",
       "rescale_factor": 2,
-      "resize_width": 1024,
+      "resize_width": 800,
       "resize_height": 1792,
       "image": [
         "97",
@@ -404,7 +404,10 @@
       "crop": "disabled",
       "base_steps": 5,
       "cfg": 2.5,
-      "denoise": 1,
+      "denoise": [
+        "115",
+        1
+      ],
       "refiner_steps": 6,
       "refiner_cfg": 3,
       "refiner_denoise": 0.5,
@@ -554,7 +557,7 @@
   "108": {
     "inputs": {
       "pixels": [
-        "110",
+        "116",
         0
       ],
       "vae": [
@@ -579,7 +582,7 @@
   },
   "111": {
     "inputs": {
-      "seed": 530632915356058
+      "seed": 762302195199877
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -636,6 +639,33 @@
     "class_type": "Image Pixelate",
     "_meta": {
       "title": "Image Pixelate"
+    }
+  },
+  "115": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_denoise"
+    }
+  },
+  "116": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": 640,
+      "resize_height": 1344,
+      "image": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
     }
   }
 }
