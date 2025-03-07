@@ -520,7 +520,7 @@
   },
   "30": {
     "inputs": {
-      "seed": 897002841290554
+      "seed": 113143130481384
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -678,6 +678,19 @@
     "class_type": "ImageKCentroidAutoDownscale",
     "_meta": {
       "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "43": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
     }
   }
 }
