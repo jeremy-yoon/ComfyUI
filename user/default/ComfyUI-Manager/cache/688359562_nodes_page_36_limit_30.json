@@ -5,7 +5,7 @@
             "author": "",
             "category": "",
             "description": "ComfyUI diffusers wrapper nodes for WanVideo [ALPHA ACCESS FOR REGISTRY]",
-            "downloads": 394,
+            "downloads": 397,
             "icon": "",
             "id": "ComfyUI-WanVideoWrapper_ALPHA",
             "latest_version": {
@@ -417,7 +417,7 @@
             "author": "",
             "category": "",
             "description": "",
-            "downloads": 3015,
+            "downloads": 3017,
             "icon": "",
             "id": "all-in-one-style",
             "latest_version": {
@@ -537,47 +537,8 @@
         {
             "author": "",
             "category": "",
-            "description": "Prompt Stash is a simple plugin for ComfyUI that lets you save your prompts and organize them into multiple lists. It also features a pass-through functionality, so you can hook it up to an LLM node (or any text outputting node) and capture its outputs directly.",
-            "downloads": 1459,
-            "icon": "",
-            "id": "confyui-node-prompt-stash-saver",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-18T02:26:06.229802Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "eacb6779-846c-4476-9e56-57f368df85f8",
-                "node_id": "confyui-node-prompt-stash-saver",
-                "status": "NodeVersionStatusPending",
-                "version": "1.1.5"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "Prompt Stash Saver Node",
-            "publisher": {
-                "createdAt": "2024-11-04T03:32:26.387794Z",
-                "description": "",
-                "id": "phazei",
-                "logo": "",
-                "members": [],
-                "name": "phazei",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/phazei/ConfyUI-node-prompt-stash-saver",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Provides nodes and server API extensions geared towards using ComfyUI as a backend for external tools.",
-            "downloads": 14033,
+            "downloads": 14049,
             "icon": "",
             "id": "comfyui-tooling-nodes",
             "latest_version": {
@@ -616,7 +577,7 @@
             "author": "",
             "category": "",
             "description": "Added Lora Loader - Tag node, originally by badjeff",
-            "downloads": 3046,
+            "downloads": 3050,
             "icon": "",
             "id": "comfyui-mnemic-nodes",
             "latest_version": {
@@ -660,8 +621,47 @@
         {
             "author": "",
             "category": "",
+            "description": "Prompt Stash is a simple plugin for ComfyUI that lets you save your prompts and organize them into multiple lists. It also features a pass-through functionality, so you can hook it up to an LLM node (or any text outputting node) and capture its outputs directly.",
+            "downloads": 1462,
+            "icon": "",
+            "id": "confyui-node-prompt-stash-saver",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-18T02:26:06.229802Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "eacb6779-846c-4476-9e56-57f368df85f8",
+                "node_id": "confyui-node-prompt-stash-saver",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.5"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "Prompt Stash Saver Node",
+            "publisher": {
+                "createdAt": "2024-11-04T03:32:26.387794Z",
+                "description": "",
+                "id": "phazei",
+                "logo": "",
+                "members": [],
+                "name": "phazei",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/phazei/ConfyUI-node-prompt-stash-saver",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "ComfyUI nodes for Janus-Pro, a unified multimodal understanding and generation framework.",
-            "downloads": 12257,
+            "downloads": 12269,
             "icon": "",
             "id": "janus-pro",
             "latest_version": {
@@ -740,51 +740,8 @@
         {
             "author": "",
             "category": "",
-            "description": "These are custom nodes for ComfyUI native implementation of BrushNet (inpaint), PowerPaint (inpaint, object removal) and HiDiffusion (higher resolution for SD15 and SDXL)",
-            "downloads": 10077,
-            "icon": "",
-            "id": "comfyui-brushnet",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-09-07T10:04:49.253473Z",
-                "dependencies": [
-                    "diffusers>=0.27.0",
-                    "accelerate>=0.29.0",
-                    "peft>=0.7.0"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "82428ae6-f1f4-4d9f-af64-d17b260dae2d",
-                "node_id": "comfyui-brushnet",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.2"
-            },
-            "license": "{\"text\": \"Apache License 2.0\"}",
-            "name": "ComfyUI-BrushNet",
-            "publisher": {
-                "createdAt": "2024-06-14T18:14:54.044528Z",
-                "description": "",
-                "id": "nullquant",
-                "logo": "",
-                "members": [],
-                "name": "nullquant",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/nullquant/ComfyUI-BrushNet",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "The Fast and Simple Face Swap Extension Node for ComfyUI, based on ReActor SD-WebUI Face Swap Extension",
-            "downloads": 34232,
+            "downloads": 34239,
             "icon": "",
             "id": "comfyui-reactor-node",
             "latest_version": {
@@ -824,6 +781,49 @@
             "rating": 0,
             "repository": "https://github.com/Gourieff/comfyui-reactor-node",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "These are custom nodes for ComfyUI native implementation of BrushNet (inpaint), PowerPaint (inpaint, object removal) and HiDiffusion (higher resolution for SD15 and SDXL)",
+            "downloads": 10094,
+            "icon": "",
+            "id": "comfyui-brushnet",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-09-07T10:04:49.253473Z",
+                "dependencies": [
+                    "diffusers>=0.27.0",
+                    "accelerate>=0.29.0",
+                    "peft>=0.7.0"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "82428ae6-f1f4-4d9f-af64-d17b260dae2d",
+                "node_id": "comfyui-brushnet",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.2"
+            },
+            "license": "{\"text\": \"Apache License 2.0\"}",
+            "name": "ComfyUI-BrushNet",
+            "publisher": {
+                "createdAt": "2024-06-14T18:14:54.044528Z",
+                "description": "",
+                "id": "nullquant",
+                "logo": "",
+                "members": [],
+                "name": "nullquant",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/nullquant/ComfyUI-BrushNet",
+            "status": "",
             "status_detail": "",
             "tags": []
         }

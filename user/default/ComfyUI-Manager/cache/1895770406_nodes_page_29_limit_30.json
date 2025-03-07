@@ -85,7 +85,7 @@
             "author": "",
             "category": "",
             "description": "The main node makes your conditioning go towards similar concepts so to enrich your composition or further away so to make it more precise. It gathers similar pre-cond vectors for as long as the cosine similarity score diminishes. If it climbs back it stops. This allows to set a relative direction to similar concepts.\nThere are examples at the end but [a/you can also check this imgur album](https://imgur.com/a/WvPd81Y) which demonstrates the capability of improving variety.",
-            "downloads": 962,
+            "downloads": 964,
             "icon": "",
             "id": "vector_sculptor_comfyui",
             "latest_version": {
@@ -124,7 +124,7 @@
             "author": "",
             "category": "",
             "description": "Improve the interactive experience of using ComfyUI, such as making the loading of ComfyUI models more intuitive and making it easier to create model thumbnails",
-            "downloads": 1647,
+            "downloads": 1648,
             "icon": "",
             "id": "aigodlike-comfyui-studio",
             "latest_version": {
@@ -502,49 +502,8 @@
         {
             "author": "",
             "category": "",
-            "description": "This extension offers a custom node to save image to S3-compatible oss.",
-            "downloads": 440,
-            "icon": "",
-            "id": "comfyui-saveimages3",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-28T05:34:29.549659Z",
-                "dependencies": [
-                    "minio"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "33e309a6-e96d-4d07-b124-e6a3f21317b2",
-                "node_id": "comfyui-saveimages3",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-SaveImageS3",
-            "publisher": {
-                "createdAt": "2024-12-28T05:24:47.129701Z",
-                "description": "",
-                "id": "zouyu",
-                "logo": "",
-                "members": [],
-                "name": "ZouYu",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/mrchipset/ComfyUI-SaveImageS3",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "NODES:Joy Caption Two, Joy Caption Two Advanced, Joy Caption Two Load, Joy Caption Extra Options",
-            "downloads": 5935,
+            "downloads": 5949,
             "icon": "",
             "id": "comfyui_slk_joy_caption_two",
             "latest_version": {
@@ -583,6 +542,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "This extension offers a custom node to save image to S3-compatible oss.",
+            "downloads": 440,
+            "icon": "",
+            "id": "comfyui-saveimages3",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-12-28T05:34:29.549659Z",
+                "dependencies": [
+                    "minio"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "33e309a6-e96d-4d07-b124-e6a3f21317b2",
+                "node_id": "comfyui-saveimages3",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-SaveImageS3",
+            "publisher": {
+                "createdAt": "2024-12-28T05:24:47.129701Z",
+                "description": "",
+                "id": "zouyu",
+                "logo": "",
+                "members": [],
+                "name": "ZouYu",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/mrchipset/ComfyUI-SaveImageS3",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -668,48 +668,6 @@
         {
             "author": "",
             "category": "",
-            "description": "Implementation of InstantId faceswap and nodes for people generation for SDXL/Pony",
-            "downloads": 3444,
-            "icon": "",
-            "id": "comfyui-instantid-faceswap",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-03T19:03:22.881761Z",
-                "dependencies": [
-                    "insightface",
-                    "onnxruntime-gpu"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "1b017b4a-05b0-4560-b01e-56ded50a2bc4",
-                "node_id": "comfyui-instantid-faceswap",
-                "status": "NodeVersionStatusActive",
-                "version": "0.1.1"
-            },
-            "license": "{\"file\": \"LICENSE.txt\"}",
-            "name": "comfyui-instantId-faceswap",
-            "publisher": {
-                "createdAt": "2024-09-25T15:58:12.781163Z",
-                "description": "",
-                "id": "nosiu",
-                "logo": "",
-                "members": [],
-                "name": "nosiu",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/nosiu/comfyui-instantId-faceswap",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "NODES: ComfyUI-ImageFx, ComfyUI-Whisk, ComfyUI-Whisk-Prompts",
             "downloads": 541,
             "icon": "",
@@ -746,6 +704,48 @@
             },
             "rating": 0,
             "repository": "https://github.com/ainewsto/comfyui-labs-google",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Implementation of InstantId faceswap and nodes for people generation for SDXL/Pony",
+            "downloads": 3450,
+            "icon": "",
+            "id": "comfyui-instantid-faceswap",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-03T19:03:22.881761Z",
+                "dependencies": [
+                    "insightface",
+                    "onnxruntime-gpu"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "1b017b4a-05b0-4560-b01e-56ded50a2bc4",
+                "node_id": "comfyui-instantid-faceswap",
+                "status": "NodeVersionStatusActive",
+                "version": "0.1.1"
+            },
+            "license": "{\"file\": \"LICENSE.txt\"}",
+            "name": "comfyui-instantId-faceswap",
+            "publisher": {
+                "createdAt": "2024-09-25T15:58:12.781163Z",
+                "description": "",
+                "id": "nosiu",
+                "logo": "",
+                "members": [],
+                "name": "nosiu",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/nosiu/comfyui-instantId-faceswap",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -1208,40 +1208,41 @@
         {
             "author": "",
             "category": "",
-            "description": "InpaintEasy is a set of optimized local repainting (Inpaint) nodes that provide a simpler and more powerful local repainting workflow. It makes local repainting work easier and more efficient with intelligent cropping and merging functions.",
-            "downloads": 1328,
+            "description": "Tara is a powerful node for ComfyUI that integrates Large Language Models (LLMs) to enhance and automate workflow processes. With Tara, you can create complex, intelligent workflows that refine and generate content, manage API keys, and seamlessly integrate various LLMs into your projects.",
+            "downloads": 2124,
             "icon": "",
-            "id": "comfyui-inpainteasy",
+            "id": "comfyui-tara-llm-integration",
             "latest_version": {
                 "changelog": "",
                 "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-24T16:10:07.215674Z",
+                "createdAt": "2024-06-25T09:06:50.118147Z",
                 "dependencies": [
-                    "numpy"
+                    "orjson",
+                    "openai"
                 ],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "601bc916-4d77-4df5-80ec-49d0902a783c",
-                "node_id": "comfyui-inpainteasy",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.2"
+                "id": "834ff821-5296-469d-861a-886cabdd2342",
+                "node_id": "comfyui-tara-llm-integration",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
             },
             "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-InpaintEasy",
+            "name": "ComfyUI-Tara-LLM-Integration",
             "publisher": {
-                "createdAt": "2024-09-29T10:55:36.930737Z",
+                "createdAt": "2024-06-25T08:59:57.947579Z",
                 "description": "",
-                "id": "cychenyue",
+                "id": "ronniebasak",
                 "logo": "",
                 "members": [],
-                "name": "cychenyue",
+                "name": "Sohan :) ",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/CY-CHENYUE/ComfyUI-InpaintEasy",
+            "repository": "https://github.com/ronniebasak/ComfyUI-Tara-LLM-Integration",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
