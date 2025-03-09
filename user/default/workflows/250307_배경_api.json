@@ -290,15 +290,6 @@
       "title": "이미지 미리보기"
     }
   },
-  "137": {
-    "inputs": {
-      "int": 1
-    },
-    "class_type": "ttN int",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
   "138": {
     "inputs": {
       "text1": "best quality, masterpiece, (from below:0.7), 3d, (isometric:0.5), front view, floor, cute vibe, (soft colors:1.2),beautiful painterly artwork of ",
@@ -435,8 +426,8 @@
       "base_steps": 5,
       "cfg": 2.5,
       "denoise": [
-        "137",
-        1
+        "156",
+        0
       ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -597,6 +588,15 @@
     "class_type": "Image Resize",
     "_meta": {
       "title": "Image Resize"
+    }
+  },
+  "156": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
     }
   },
   "154:0": {

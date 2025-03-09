@@ -182,8 +182,8 @@
       "base_steps": 3,
       "cfg": 1.5,
       "denoise": [
-        "79",
-        1
+        "80",
+        0
       ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -618,11 +618,11 @@
       "title": "이미지 미리보기"
     }
   },
-  "79": {
+  "80": {
     "inputs": {
-      "int": 1
+      "float": 1
     },
-    "class_type": "ttN int",
+    "class_type": "ttN float",
     "_meta": {
       "title": "input_denoise"
     }

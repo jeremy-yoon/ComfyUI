@@ -580,8 +580,8 @@
       "base_steps": 3,
       "cfg": 1.5,
       "denoise": [
-        "45",
-        1
+        "46",
+        0
       ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -618,11 +618,11 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "45": {
+  "46": {
     "inputs": {
-      "int": 1
+      "float": 1
     },
-    "class_type": "ttN int",
+    "class_type": "ttN float",
     "_meta": {
       "title": "input_denoise"
     }

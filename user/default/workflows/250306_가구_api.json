@@ -354,7 +354,10 @@
       "crop": "disabled",
       "base_steps": 5,
       "cfg": 2.5,
-      "denoise": 1,
+      "denoise": [
+        "43",
+        0
+      ],
       "refiner_steps": 6,
       "refiner_cfg": 3,
       "refiner_denoise": 0.5,
@@ -678,6 +681,15 @@
     "class_type": "ImageKCentroidAutoDownscale",
     "_meta": {
       "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "43": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
     }
   }
 }

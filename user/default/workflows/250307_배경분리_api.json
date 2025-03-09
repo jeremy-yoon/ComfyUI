@@ -787,7 +787,10 @@
       "crop": "disabled",
       "base_steps": 5,
       "cfg": 2.5,
-      "denoise": 0.9500000000000001,
+      "denoise": [
+        "92",
+        0
+      ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
       "refiner_denoise": 1,
@@ -1389,6 +1392,15 @@
     "class_type": "Image Resize",
     "_meta": {
       "title": "Image Resize"
+    }
+  },
+  "92": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
     }
   },
   "28:0": {

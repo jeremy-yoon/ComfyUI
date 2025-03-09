@@ -580,8 +580,8 @@
       "base_steps": 3,
       "cfg": 1.5,
       "denoise": [
-        "45",
-        1
+        "62",
+        0
       ],
       "refiner_steps": 18,
       "refiner_cfg": 8,
@@ -616,15 +616,6 @@
     "class_type": "ttN pipeKSamplerSDXL_v2",
     "_meta": {
       "title": "pipeKSamplerSDXL"
-    }
-  },
-  "45": {
-    "inputs": {
-      "int": 1
-    },
-    "class_type": "ttN int",
-    "_meta": {
-      "title": "input_denoise"
     }
   },
   "48": {
@@ -762,6 +753,15 @@
     "class_type": "Image Pixelate",
     "_meta": {
       "title": "Image Pixelate"
+    }
+  },
+  "62": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
     }
   },
   "29:0": {

@@ -509,7 +509,10 @@
       "crop": "disabled",
       "base_steps": 20,
       "cfg": 7,
-      "denoise": 1,
+      "denoise": [
+        "121",
+        0
+      ],
       "refiner_steps": 6,
       "refiner_cfg": 3,
       "refiner_denoise": 0.5,
@@ -668,6 +671,15 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "이미지 미리보기"
+    }
+  },
+  "121": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
     }
   }
 }
