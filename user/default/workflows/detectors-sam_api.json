@@ -1,0 +1,257 @@
+{
+  "69": {
+    "inputs": {
+      "prompt": "furniture",
+      "threshold": 0.3,
+      "sam_model": [
+        "70",
+        0
+      ],
+      "grounding_dino_model": [
+        "71",
+        0
+      ],
+      "image": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "70": {
+    "inputs": {
+      "model_name": "sam_vit_h (2.56GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "71": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinT_OGC (694MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "72": {
+    "inputs": {
+      "image": "ComfyUI_39949_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "73": {
+    "inputs": {
+      "images": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "74": {
+    "inputs": {
+      "mask": [
+        "69",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "마스크를 이미지로 변환"
+    }
+  },
+  "75": {
+    "inputs": {
+      "images": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "76": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": "pixel art, simple background, grass, garden",
+      "positive_l": "",
+      "negative_g": "furniture",
+      "negative_l": "",
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": 0
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "77": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 6,
+      "cfg": 3,
+      "denoise": 0.75,
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": 271930540527368,
+      "sdxl_pipe": [
+        "76",
+        0
+      ],
+      "optional_latent": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "79": {
+    "inputs": {
+      "grow_mask_by": 8,
+      "pixels": [
+        "83",
+        0
+      ],
+      "vae": [
+        "76",
+        4
+      ],
+      "mask": [
+        "69",
+        1
+      ]
+    },
+    "class_type": "VAEEncodeForInpaint",
+    "_meta": {
+      "title": "VAE 인코드 (인페인팅용)"
+    }
+  },
+  "80": {
+    "inputs": {
+      "images": [
+        "77",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "83": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 792,
+      "resize_height": 1344,
+      "image": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "84": {
+    "inputs": {
+      "pixelation_size": 168,
+      "num_colors": 32,
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "77",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "85": {
+    "inputs": {
+      "images": [
+        "84",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "86": {
+    "inputs": {
+      "images": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  }
+}

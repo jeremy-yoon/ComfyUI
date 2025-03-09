@@ -1,12 +1,12 @@
 {
   "50": {
     "inputs": {
-      "text1": "big eyes, white fluffy, a chibi holding a ",
+      "text1": "",
       "text2": [
         "77",
         0
       ],
-      "text3": ", soft colors, (white background), simple background",
+      "text3": "",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -16,7 +16,7 @@
   },
   "52": {
     "inputs": {
-      "text1": "fur, neck, foot, hair, outline, human, girl, boy, photorealistic",
+      "text1": "outline",
       "text2": [
         "78",
         0
@@ -31,7 +31,7 @@
   },
   "53": {
     "inputs": {
-      "seed": 1033628642247671
+      "seed": 278258737793748
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -135,7 +135,7 @@
   "59": {
     "inputs": {
       "pixels": [
-        "75:3",
+        "88",
         0
       ],
       "vae": [
@@ -219,8 +219,8 @@
       "base_steps": 6,
       "cfg": 3,
       "denoise": [
-        "95",
-        1
+        "96",
+        0
       ],
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -248,7 +248,7 @@
         1
       ],
       "optional_latent": [
-        "57",
+        "54",
         0
       ]
     },
@@ -308,7 +308,7 @@
   },
   "67": {
     "inputs": {
-      "image": "slime_pre_image.png",
+      "image": "slime_pre_image_side2.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -342,7 +342,7 @@
   },
   "69": {
     "inputs": {
-      "image": "slime_pre_mask_for_hand2.png",
+      "image": "slime_pre_mask_for_hand6.png",
       "channel": "alpha",
       "upload": "image"
     },
@@ -353,7 +353,7 @@
   },
   "70": {
     "inputs": {
-      "int": 768
+      "int": 1024
     },
     "class_type": "ttN int",
     "_meta": {
@@ -362,7 +362,7 @@
   },
   "76": {
     "inputs": {
-      "int": 768
+      "int": 1024
     },
     "class_type": "ttN int",
     "_meta": {
@@ -371,7 +371,7 @@
   },
   "77": {
     "inputs": {
-      "text": "a magic wand"
+      "text": "a magic wand, 3d"
     },
     "class_type": "ttN text",
     "_meta": {
@@ -430,8 +430,8 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "81:3",
-        0
+        "84",
+        11
       ]
     },
     "class_type": "Image Pixelate",
@@ -494,7 +494,7 @@
         1
       ],
       "optional_latent": [
-        "86",
+        "59",
         0
       ]
     },
@@ -618,59 +618,13 @@
       "title": "이미지 미리보기"
     }
   },
-  "95": {
+  "96": {
     "inputs": {
-      "int": 1
+      "float": 1
     },
-    "class_type": "ttN int",
+    "class_type": "ttN float",
     "_meta": {
       "title": "input_denoise"
-    }
-  },
-  "56:0": {
-    "inputs": {
-      "image": "slime_pre_guide_for_hand4.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "56:1": {
-    "inputs": {
-      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
-  "56:2": {
-    "inputs": {
-      "strength": 1,
-      "start_percent": 0,
-      "end_percent": 0.3,
-      "positive": [
-        "55",
-        2
-      ],
-      "negative": [
-        "55",
-        3
-      ],
-      "control_net": [
-        "56:1",
-        0
-      ],
-      "image": [
-        "56:0",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
     }
   },
   "75:0": {
@@ -711,10 +665,6 @@
       "x": 0,
       "y": 0,
       "resize_source": false,
-      "destination": [
-        "88",
-        0
-      ],
       "source": [
         "75:0",
         0
@@ -727,6 +677,52 @@
     "class_type": "ImageCompositeMasked",
     "_meta": {
       "title": "마스크된 이미지 합성"
+    }
+  },
+  "56:0": {
+    "inputs": {
+      "image": "slime_pre_guide_for_hand6.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "56:1": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "56:2": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 0,
+      "positive": [
+        "55",
+        2
+      ],
+      "negative": [
+        "55",
+        3
+      ],
+      "control_net": [
+        "56:1",
+        0
+      ],
+      "image": [
+        "56:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
     }
   },
   "66:0": {

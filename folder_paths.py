@@ -63,6 +63,13 @@ def setup_model_directories(custom_models_dir=None):
 
     folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
     
+    # impact-pack 및 impact-subpack 노드에 필요한 폴더 추가
+    folder_names_and_paths["sams"] = ([os.path.join(models_dir, "sams")], supported_pt_extensions)
+    folder_names_and_paths["onnx"] = ([os.path.join(models_dir, "onnx")], {".onnx"})
+    folder_names_and_paths["ultralytics_bbox"] = ([os.path.join(models_dir, "ultralytics_bbox")], supported_pt_extensions)
+    folder_names_and_paths["ultralytics_segm"] = ([os.path.join(models_dir, "ultralytics_segm")], supported_pt_extensions)
+    folder_names_and_paths["ultralytics"] = ([os.path.join(models_dir, "ultralytics")], supported_pt_extensions)
+    
     # 캐시 초기화 - 새 경로에서 파일 목록을 다시 불러오기 위함
     global filename_list_cache
     filename_list_cache.clear()
