@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "seed": 184255879463411
+      "seed": 438786742650016
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -388,7 +388,7 @@
   "60": {
     "inputs": {
       "add_noise": true,
-      "noise_seed": 809586232931114,
+      "noise_seed": 241869371952186,
       "steps": 20,
       "start_at_step": 0,
       "end_at_step": 10000,
@@ -406,6 +406,32 @@
     "class_type": "RegionalSamplerAdvanced",
     "_meta": {
       "title": "RegionalSamplerAdvanced"
+    }
+  },
+  "63": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "64": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
     }
   },
   "29:0": {

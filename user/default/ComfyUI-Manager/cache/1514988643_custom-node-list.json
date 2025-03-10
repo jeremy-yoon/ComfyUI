@@ -4127,6 +4127,17 @@
             "title": "Jovi_Capture"
         },
         {
+            "author": "amorano",
+            "description": "Colorize ComfyUI nodes with defaults per node, node category or via regex filtering.",
+            "files": [
+                "https://github.com/Amorano/Jovi_Colorizer"
+            ],
+            "id": "jovijovi_colorizer_capture",
+            "install_type": "git-clone",
+            "reference": "https://github.com/Amorano/Jovi_Colorizer",
+            "title": "Jovi_Colorizer"
+        },
+        {
             "author": "Umikaze-job",
             "description": "This extension simply connects the nodes and specifies the output path of the generated images to a manageable path.",
             "files": [
@@ -5134,7 +5145,7 @@
         },
         {
             "author": "glibsonoran",
-            "description": "A suite of nodes that includes:  - Prompt enhancers/generators that employ remote AI services and local front-ends like: ChatGPT, Anthropic Claude, Groq, LM Studio, Oobabooga, etc.  - An Image Generator that uses Dall_e 3.  - An image metadata extractor that extracts seed, prompt, cfg, size, denoise, etc from existing AI generated images and photo metadata (from exif data) from jpeg photographs.  A tagger that appends text (tags) to the beginning, end and/or middle of a text block.  Image and text multiplexer utili",
+            "description": "A suite of nodes that includes:  - Prompt enhancers/generators that employ remote AI services and local front-ends like: ChatGPT, Anthropic Claude, Groq, Gemini, LM Studio, Oobabooga, OpenRouter etc.  - An Image Generator that uses Dall_e 3.  - An image metadata extractor that extracts seed, prompt, cfg, size, denoise, etc from existing AI generated images and photo metadata (from exif data) from jpeg photographs.  A tagger that appends text (tags) to the beginning, end and/or middle of a text block.  Image and text multiplexer utilility.  A text block remover that removes text between two named tags.",
             "files": [
                 "https://github.com/glibsonoran/Plush-for-ComfyUI"
             ],
@@ -7409,7 +7420,7 @@
         },
         {
             "author": "kadirnar",
-            "description": "Ultralytics-Powered Object Recognition for ComfyUI",
+            "description": "Nodes:Load Ultralytics Model, Ultralytics Inference, Ultralytics Visualization, Convert to Dictionary, BBox to XYWH",
             "files": [
                 "https://github.com/kadirnar/ComfyUI-YOLO"
             ],
@@ -8784,7 +8795,7 @@
             "title": "ComfyUI_Memeplex_DALLE"
         },
         {
-            "author": "if-ai",
+            "author": "impactframes",
             "description": "Various AI tools to use in Comfy UI. Starting with VL and prompt making tools using Ollma as backend will evolve as I find time.",
             "files": [
                 "https://github.com/if-ai/ComfyUI-IF_AI_tools"
@@ -8795,7 +8806,7 @@
             "title": "ComfyUI-IF_AI_tools"
         },
         {
-            "author": "if-ai",
+            "author": "impactframes",
             "description": "This repository hosts a Text-to-Speech (TTS) application that leverages Whisper Speech for voice synthesis, allowing users to train a voice model on-the-fly. It is built on ComfyUI and supports rapid training and inference processes.",
             "files": [
                 "https://github.com/if-ai/ComfyUI-IF_AI_WishperSpeechNode"
@@ -8806,7 +8817,7 @@
             "title": "ComfyUI-IF_AI_WishperSpeechNode"
         },
         {
-            "author": "if-ai",
+            "author": "impactframes",
             "description": "Talking avatars Heads for the IF_AI tools integrates dreamtalk in ComfyUI",
             "files": [
                 "https://github.com/if-ai/ComfyUI-IF_AI_HFDownloaderNode"
@@ -8817,8 +8828,8 @@
             "title": "ComfyUI-IF_AI_HFDownloaderNode"
         },
         {
-            "author": "if-ai",
-            "description": "ComfyUI MemoAvatar is a talking head avatar generator using Memory-Guided Diffusion for Expressive Talking Video Generation",
+            "author": "impactframes",
+            "description": "Talking avatars MemoAvatar Memory-Guided Diffusion for Expressive Talking Video Generation",
             "files": [
                 "https://github.com/if-ai/ComfyUI-IF_MemoAvatar"
             ],
@@ -8827,14 +8838,44 @@
             "title": "ComfyUI-IF_MemoAvatar"
         },
         {
-            "author": "if-ai",
-            "description": "ComfyUI TRELLIS is a large 3D asset generation in various formats, such as Radiance Fields, 3D Gaussians, and meshes. The cornerstone of TRELLIS is a unified Structured LATent (SLAT) representation that allows decoding to different output formats and Rectified Flow Transformers tailored for SLAT as the powerful backbones.",
+            "author": "impactframes",
+            "description": "ComfyUI IF Trellis creates a 3d mesh from a single view or multi angle pictures",
             "files": [
                 "https://github.com/if-ai/ComfyUI-IF_Trellis"
             ],
             "install_type": "git-clone",
             "reference": "https://github.com/if-ai/ComfyUI-IF_Trellis",
             "title": "ComfyUI-IF_Trellis"
+        },
+        {
+            "author": "impactframes",
+            "description": "Create Video datasets staright from YT or a video file path",
+            "files": [
+                "https://github.com/if-ai/ComfyUI-IF_DatasetMkr"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/if-ai/ComfyUI-IF_DatasetMkr",
+            "title": "IF_DatasetMkr"
+        },
+        {
+            "author": "impactframes",
+            "description": "ComfyUI extension for video-based prompting and processing with support for various models and video processing capabilities",
+            "files": [
+                "https://github.com/if-ai/ComfyUI-IF_VideoPrompts"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/if-ai/ComfyUI-IF_VideoPrompts",
+            "title": "IF_VideoPrompts"
+        },
+        {
+            "author": "impactframes",
+            "description": "Run Local and API LLMs, Features Conditioning manipulation via Omost, supports Ollama, LlamaCPP LMstudio, Koboldcpp, TextGen, Transformers or via APIs Anthropic, Groq, OpenAI, Google Gemini, Mistral, xAI and create your own charcters assistants (SystemPrompts) with custom presets and muchmore\n[w/It Might comflict with IF_AI_tools so if you have it installed please remove it before installing IF_LLM I am working on adding this tools to IF_AI_tools so you only need one or the other]",
+            "files": [
+                "https://github.com/if-ai/ComfyUI-IF_LLM"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/if-ai/ComfyUI-IF_LLM",
+            "title": "IF_LLM"
         },
         {
             "author": "dmMaze",
@@ -10291,7 +10332,7 @@
         },
         {
             "author": "smthemex",
-            "description": "You can using [a/EchoMimic](https://github.com/BadToBest/EchoMimic/tree/main) in comfyui,whitch Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditioning ",
+            "description": "You can using EchoMimic in comfyui,please using pip install install miss module",
             "files": [
                 "https://github.com/smthemex/ComfyUI_EchoMimic"
             ],
@@ -13735,7 +13776,7 @@
             "title": "Comfyui-ThinkRemover"
         },
         {
-            "author": "amorano",
+            "author": "cozy_comm",
             "description": "Post images and video to Discord. Nodes to facilitate communication using REST.",
             "files": [
                 "https://github.com/cozy-comfyui/cozy_comm"
@@ -15098,6 +15139,16 @@
             "title": "ComfyUI Flux Prompt Saver"
         },
         {
+            "author": "markuryy",
+            "description": "Metadata for loaded models",
+            "files": [
+                "https://github.com/markuryy/ComfyUI-SuperLoader"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/markuryy/ComfyUI-SuperLoader",
+            "title": "Super Loader"
+        },
+        {
             "author": "eesahe",
             "description": "InstantX's Flux union ControlNet loader and implementation",
             "files": [
@@ -15335,13 +15386,13 @@
         },
         {
             "author": "niknah",
-            "description": "ComfyUI node for to make text to speech audio using F5-TTS [a/https://github.com/SWivid/F5-TTS](https://github.com/SWivid/F5-TTS)",
+            "description": "Text to speech with F5-TTS",
             "files": [
                 "https://github.com/niknah/ComfyUI-F5-TTS"
             ],
             "install_type": "git-clone",
             "reference": "https://github.com/niknah/ComfyUI-F5-TTS",
-            "title": "ComfyUI-F5-TTS"
+            "title": "ComfyUI F5-TTS"
         },
         {
             "author": "niknah",
@@ -16021,6 +16072,17 @@
             "install_type": "git-clone",
             "reference": "https://github.com/metal3d/ComfyUI_Human_Parts",
             "title": "Human Parts Detector"
+        },
+        {
+            "author": "Metal3d",
+            "description": "A set of photo effects for ComfyUI, for the moment, only Bleach Bypass effect is provided, but more to come!",
+            "files": [
+                "https://github.com/metal3d/ComfyUI_M3D_photo_effects"
+            ],
+            "id": "ComfyUI_M3D_photo_effects",
+            "install_type": "git-clone",
+            "reference": "https://github.com/metal3d/ComfyUI_M3D_photo_effects",
+            "title": "M3D photo effects"
         },
         {
             "author": "Fuwuffy",
@@ -17445,6 +17507,16 @@
             "install_type": "git-clone",
             "reference": "https://github.com/lgldlk/ComfyUI-PC-ding-dong",
             "title": "ComfyUI-PC-ding-dong"
+        },
+        {
+            "author": "lgldlk",
+            "description": "One click replacement of smart objects or layers in PSD",
+            "files": [
+                "https://github.com/lgldlk/ComfyUI-PSD-Replace"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/lgldlk/ComfyUI-PSD-Replace",
+            "title": "ComfyUI-PSD-Replace"
         },
         {
             "author": "raspie10032",
@@ -20553,16 +20625,6 @@
             "title": "Save Image With Callback"
         },
         {
-            "author": "GoingAI1998",
-            "description": "ComfyUI_imgcanvas At present, I have not used the useful comfyui custom node about layer mixing, and I have written a comfyui runtime automatic pop-up window for layer editing node",
-            "files": [
-                "https://github.com/GoingAI1998/Comfyui_imgcanvas"
-            ],
-            "install_type": "git-clone",
-            "reference": "https://github.com/GoingAI1998/Comfyui_imgcanvas",
-            "title": "ComfyUI Web Canvas Node"
-        },
-        {
             "author": "fblissjr",
             "description": "this repo is to capture end-to-end data, metadata, and embeddings for ComfyUI workflows, specifically HunyuanVideo to start.",
             "files": [
@@ -21263,7 +21325,7 @@
         },
         {
             "author": "mie",
-            "description": "Describe a single image or all images in a directory using models such as Janus Pro, Florence2 (coming soon), or JoyCaption (coming soon), with a particular focus on building datasets for training LoRA.",
+            "description": "Describe a single image or all images in a directory using models such as Janus Pro, Florence2, or JoyCaption (testing), with a particular focus on building datasets for training LoRA.",
             "files": [
                 "https://github.com/MieMieeeee/ComfyUI-CaptionThis"
             ],
@@ -21863,16 +21925,6 @@
             "title": "Whykiki ComfyUI Toolset"
         },
         {
-            "author": "Samulebotin",
-            "description": "A voice conversion extension node for ComfyUI based on FreeVC, enabling high-quality voice conversion capabilities within the ComfyUI framework.",
-            "files": [
-                "https://github.com/Samulebotin/ComfyUI-FreeVC_wrapper"
-            ],
-            "install_type": "git-clone",
-            "reference": "https://github.com/Samulebotin/ComfyUI-FreeVC_wrapper",
-            "title": "ComfyUI-FreeVC_wrapper"
-        },
-        {
             "author": "justin-vt",
             "description": "A ComfyUI node that applies painterly/brush-stroke effects to images, using either ImageMagick (Wand) or G'MIC (gmic-py) under the hood.",
             "files": [
@@ -21893,7 +21945,7 @@
             "title": "GlitchNodes"
         },
         {
-            "author": "S4MUEL404",
+            "author": "S4MUEL-404",
             "description": "A custom node for conveniently adjusting the overlay position of two images.",
             "files": [
                 "https://github.com/S4MUEL-404/ComfyUI-Image-Position-Blend"
@@ -21901,7 +21953,29 @@
             "id": "ComfyUI-Image-Position-Blend",
             "install_type": "git-clone",
             "reference": "https://github.com/S4MUEL-404/ComfyUI-Image-Position-Blend",
-            "title": "Image Position Blend"
+            "title": "Image Position Blend",
+            "version": "1.1"
+        },
+        {
+            "author": "S4MUEL-404",
+            "description": "A custom node for ComfyUI that allows users to add text overlays to images with customizable size, font, position, and shadow.",
+            "files": [
+                "https://github.com/S4MUEL-404/ComfyUI-Text-On-Image"
+            ],
+            "id": "ComfyUI-Text-On-Image",
+            "install_type": "git-clone",
+            "reference": "https://github.com/S4MUEL-404/ComfyUI-Text-On-Image",
+            "title": "ComfyUI-Text-On-Image"
+        },
+        {
+            "author": "S4MUEL-404",
+            "description": "Quickly select preset prompts and merge them",
+            "files": [
+                "https://github.com/S4MUEL-404/ComfyUI-Prompts-Selector"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/S4MUEL-404/ComfyUI-Prompts-Selector",
+            "title": "ComfyUI-Prompts-Selector"
         },
         {
             "author": "ZYK-AI",
@@ -21913,6 +21987,47 @@
             "install_type": "git-clone",
             "reference": "https://github.com/sittere/ComfyUI-YK_Line-loading",
             "title": "ComfyUI-YK Line loading"
+        },
+        {
+            "author": "Jerome Bacquet",
+            "description": "Implementation of Instance nodes, Replicate nodes, and standard Save UI to improve the workflow into ComfyUI.",
+            "files": [
+                "https://github.com/jerome7562/ComfyUI-XenoFlow"
+            ],
+            "id": "XenoFlow",
+            "install_type": "git-clone",
+            "reference": "https://github.com/jerome7562/ComfyUI-XenoFlow",
+            "title": "ComfyUI XenoFlow"
+        },
+        {
+            "author": "chenpipi0807",
+            "description": "A powerful ComfyUI extension node that allows you to add various exquisite artistic text effects to your images, supporting a wide range of text styles and effects.",
+            "files": [
+                "https://github.com/chenpipi0807/PIP_ArtisticWords"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/chenpipi0807/PIP_ArtisticWords",
+            "title": "PIP Artistic Words for ComfyUI"
+        },
+        {
+            "author": "ifmylove2011",
+            "description": "NODES: TrimBG, TrimBG Advanced, Image Queue Loader, Load Image Alpha.\nA few tools for ComfyUI, perhaps it's exactly what you need.",
+            "files": [
+                "https://github.com/ifmylove2011/comfyui-missing-tool"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/ifmylove2011/comfyui-missing-tool",
+            "title": "comfyui-missing-tool"
+        },
+        {
+            "author": "illuminatianon",
+            "description": "A ComfyUI custom node that provides dynamic text substitution using wildcards and CSV files. Perfect for creating varied prompts with consistent relationships between terms.",
+            "files": [
+                "https://github.com/illuminatianon/comfyui-csvwildcards"
+            ],
+            "install_type": "git-clone",
+            "reference": "https://github.com/illuminatianon/comfyui-csvwildcards",
+            "title": "CSV Wildcard Node for ComfyUI"
         },
         {
             "author": "Ser-Hilary",
