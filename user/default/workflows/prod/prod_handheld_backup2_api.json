@@ -6,7 +6,7 @@
         "77",
         0
       ],
-      "text3": ", simple background, white background",
+      "text3": ", soft colors, white background",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -31,7 +31,7 @@
   },
   "53": {
     "inputs": {
-      "seed": 215310622704751
+      "seed": 925448469983827
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -135,12 +135,12 @@
   "59": {
     "inputs": {
       "pixels": [
-        "88",
+        "166",
         0
       ],
       "vae": [
-        "64",
-        9
+        "65",
+        4
       ]
     },
     "class_type": "VAEEncode",
@@ -179,7 +179,7 @@
   "64": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
-      "lora_strength": 1,
+      "lora_strength": 0.5,
       "upscale_method": "None",
       "upscale_model_name": "None",
       "factor": 2,
@@ -352,7 +352,7 @@
   },
   "77": {
     "inputs": {
-      "text": "crystal topped staff,glowing crystal orb, engraved mystical symbols, lightweight but sturdy, ornate detailing"
+      "text": " Silk Drawstring Pouch, soft silk fabric, gold embroidery, tasseled drawstring, compact size, lightweight, often tied to belt"
     },
     "class_type": "ttN text",
     "_meta": {
@@ -370,7 +370,7 @@
   },
   "79": {
     "inputs": {
-      "text1": "pixel art, symmetric",
+      "text1": "pixel art, symmetric, diagonal",
       "text2": [
         "55",
         14
@@ -399,7 +399,7 @@
   },
   "82": {
     "inputs": {
-      "pixelation_size": 96,
+      "pixelation_size": 128,
       "num_colors": [
         "89",
         1
@@ -424,7 +424,7 @@
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "58",
+        "168",
         0
       ]
     },
@@ -446,9 +446,9 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 20,
-      "cfg": 7,
-      "denoise": 0.55,
+      "base_steps": 15,
+      "cfg": 5,
+      "denoise": 0.53,
       "refiner_steps": 20,
       "refiner_cfg": 8,
       "refiner_denoise": 1,
@@ -466,6 +466,10 @@
         "65",
         0
       ],
+      "optional_model": [
+        "164",
+        0
+      ],
       "optional_positive": [
         "66:2",
         0
@@ -477,46 +481,15 @@
       "optional_latent": [
         "59",
         0
+      ],
+      "optional_clip": [
+        "164",
+        1
       ]
     },
     "class_type": "ttN pipeKSamplerSDXL_v2",
     "_meta": {
       "title": "pipeKSamplerSDXL"
-    }
-  },
-  "85": {
-    "inputs": {
-      "upscale_method": "nearest-exact",
-      "width": [
-        "70",
-        0
-      ],
-      "height": [
-        "76",
-        0
-      ],
-      "crop": "disabled",
-      "samples": [
-        "59",
-        0
-      ]
-    },
-    "class_type": "LatentUpscale",
-    "_meta": {
-      "title": "잠재 데이터 크기 조정"
-    }
-  },
-  "86": {
-    "inputs": {
-      "amount": 2,
-      "samples": [
-        "85",
-        0
-      ]
-    },
-    "class_type": "RepeatLatentBatch",
-    "_meta": {
-      "title": "잠재 데이터 반복 배치 생성"
     }
   },
   "87": {
@@ -525,17 +498,11 @@
       "supersample": "true",
       "resampling": "nearest",
       "rescale_factor": 2,
-      "resize_width": [
-        "70",
-        0
-      ],
-      "resize_height": [
-        "76",
-        0
-      ],
+      "resize_width": 1024,
+      "resize_height": 1024,
       "image": [
-        "163",
-        0
+        "64",
+        11
       ]
     },
     "class_type": "Image Resize",
@@ -545,7 +512,7 @@
   },
   "88": {
     "inputs": {
-      "pixelation_size": 96,
+      "pixelation_size": 128,
       "num_colors": [
         "89",
         1
@@ -633,9 +600,9 @@
   "106": {
     "inputs": {
       "brightness": 1,
-      "contrast": 0.9500000000000001,
-      "saturation": 1.2,
-      "gamma": 1.2,
+      "contrast": 1,
+      "saturation": 1,
+      "gamma": 1,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -671,7 +638,7 @@
   "110": {
     "inputs": {
       "images": [
-        "163",
+        "159",
         0
       ]
     },
@@ -684,8 +651,8 @@
     "inputs": {
       "rotation_angle": 45,
       "image": [
-        "64",
-        11
+        "88",
+        0
       ]
     },
     "class_type": "> Rotate Image",
@@ -732,8 +699,8 @@
       "supersample": "true",
       "resampling": "lanczos",
       "rescale_factor": 2,
-      "resize_width": 1536,
-      "resize_height": 1536,
+      "resize_width": 1024,
+      "resize_height": 1024,
       "image": [
         "160",
         0
@@ -755,10 +722,10 @@
   },
   "163": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "x": 256,
-      "y": 256,
+      "width": 768,
+      "height": 768,
+      "x": 128,
+      "y": 128,
       "image": [
         "159",
         0
@@ -767,6 +734,296 @@
     "class_type": "ImageCrop",
     "_meta": {
       "title": "이미지 자르기"
+    }
+  },
+  "164": {
+    "inputs": {
+      "lora_name": "SDXL-StickerSheet-Lora.safetensors",
+      "strength_model": 0.5,
+      "strength_clip": 1,
+      "model": [
+        "65",
+        1
+      ],
+      "clip": [
+        "65",
+        9
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "LoRA 로드"
+    }
+  },
+  "165": {
+    "inputs": {
+      "images": [
+        "84",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "166": {
+    "inputs": {
+      "pixelation_size": 128,
+      "num_colors": 16,
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "159",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "167": {
+    "inputs": {
+      "images": [
+        "166",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "168": {
+    "inputs": {
+      "mode": "horizontal",
+      "images": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "Image Flip",
+    "_meta": {
+      "title": "Image Flip"
+    }
+  },
+  "171": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 768,
+      "resize_height": 768,
+      "image": [
+        "64",
+        11
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "172": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.2,
+      "gamma": 1.2,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "171",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "173": {
+    "inputs": {
+      "pixelation_size": 96,
+      "num_colors": [
+        "89",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "174": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 0.5,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 15,
+      "cfg": 5,
+      "denoise": 0.55,
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "sdxl_pipe": [
+        "65",
+        0
+      ],
+      "optional_positive": [
+        "66:2",
+        0
+      ],
+      "optional_negative": [
+        "66:2",
+        1
+      ],
+      "optional_latent": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "175": {
+    "inputs": {
+      "pixels": [
+        "173",
+        0
+      ],
+      "vae": [
+        "65",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "176": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "gamma": 1,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "177": {
+    "inputs": {
+      "pixelation_size": 96,
+      "num_colors": [
+        "89",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "174",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "178": {
+    "inputs": {
+      "images": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "179": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "180": {
+    "inputs": {
+      "images": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "181": {
+    "inputs": {
+      "images": [
+        "173",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
     }
   },
   "56:0": {
@@ -790,7 +1047,7 @@
   },
   "56:2": {
     "inputs": {
-      "strength": 1,
+      "strength": 0.5,
       "start_percent": 0,
       "end_percent": 0,
       "positive": [

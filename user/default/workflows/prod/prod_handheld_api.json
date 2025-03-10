@@ -1,60 +1,110 @@
 {
-  "50": {
+  "1": {
     "inputs": {
-      "text1": "iconset, masterpiece, best quality, (delicate style:1.1), StickerSheet of ",
-      "text2": [
-        "77",
-        0
-      ],
-      "text3": ", white background",
-      "delimiter": ""
-    },
-    "class_type": "ttN text3BOX_3WAYconcat",
-    "_meta": {
-      "title": "3x TXT Loader MultiConcat"
-    }
-  },
-  "52": {
-    "inputs": {
-      "text1": "blurry, dirty, malformed, text, watermark, unfocused\n",
-      "text2": [
-        "78",
-        0
-      ],
-      "text3": "",
-      "delimiter": ","
-    },
-    "class_type": "ttN text3BOX_3WAYconcat",
-    "_meta": {
-      "title": "3x TXT Loader MultiConcat"
-    }
-  },
-  "53": {
-    "inputs": {
-      "seed": 490886760136937
+      "seed": 942399023452774
     },
     "class_type": "ttN seed",
     "_meta": {
       "title": "input_seed"
     }
   },
-  "54": {
+  "2": {
     "inputs": {
-      "pixels": [
-        "68",
+      "text": [
+        "22",
         0
       ],
-      "vae": [
-        "55",
-        4
-      ]
+      "find": "huddled",
+      "replace": "dragging"
     },
-    "class_type": "VAEEncode",
+    "class_type": "Text Find and Replace",
     "_meta": {
-      "title": "VAE 인코드"
+      "title": "Text Find and Replace"
     }
   },
-  "55": {
+  "3": {
+    "inputs": {
+      "text": [
+        "2",
+        0
+      ],
+      "find": "\bchibi",
+      "replace": ""
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Text Find and Replace"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "9": {
+    "inputs": {
+      "int": 24
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_num_colors"
+    }
+  },
+  "10": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "bilinear",
+      "rescale_factor": 2,
+      "resize_width": [
+        "16",
+        0
+      ],
+      "resize_height": [
+        "17",
+        0
+      ],
+      "image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "15",
+        0
+      ],
+      "mask": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "SetLatentNoiseMask",
+    "_meta": {
+      "title": "잠재 데이터에 노이즈 마스크 설정"
+    }
+  },
+  "12": {
+    "inputs": {
+      "image": "grid_pre_guide_image.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_image_path"
+    }
+  },
+  "14": {
     "inputs": {
       "ckpt_name": "artium_v20Turboboosted.safetensors",
       "config_name": "Default",
@@ -64,19 +114,19 @@
       "refiner_ckpt_name": "None",
       "refiner_config_name": "Default",
       "positive_g": [
-        "50",
+        "32",
         6
       ],
       "positive_l": [
-        "50",
+        "32",
         6
       ],
       "negative_g": [
-        "52",
+        "21",
         6
       ],
       "negative_l": [
-        "52",
+        "21",
         6
       ],
       "conditioning_aspect": "1x Empty Latent Aspect",
@@ -94,7 +144,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "53",
+        "1",
         0
       ]
     },
@@ -103,44 +153,15 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "57": {
-    "inputs": {
-      "samples": [
-        "54",
-        0
-      ],
-      "mask": [
-        "69",
-        0
-      ]
-    },
-    "class_type": "SetLatentNoiseMask",
-    "_meta": {
-      "title": "잠재 데이터에 노이즈 마스크 설정"
-    }
-  },
-  "58": {
-    "inputs": {
-      "centroids": 1,
-      "image": [
-        "106",
-        0
-      ]
-    },
-    "class_type": "ImageKCentroidAutoDownscale",
-    "_meta": {
-      "title": "ImageKCentroidAutoDownscale"
-    }
-  },
-  "59": {
+  "15": {
     "inputs": {
       "pixels": [
-        "88",
+        "10",
         0
       ],
       "vae": [
-        "64",
-        9
+        "14",
+        4
       ]
     },
     "class_type": "VAEEncode",
@@ -148,27 +169,76 @@
       "title": "VAE 인코드"
     }
   },
-  "62": {
+  "16": {
     "inputs": {
-      "text": [
-        "80",
-        0
-      ],
-      "find": "huddled",
-      "replace": "dragging"
+      "int": 1024
     },
-    "class_type": "Text Find and Replace",
+    "class_type": "ttN int",
     "_meta": {
-      "title": "Text Find and Replace"
+      "title": "input_first_image_width"
     }
   },
-  "63": {
+  "17": {
     "inputs": {
-      "text": [
-        "62",
+      "int": 1024
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_first_image_height"
+    }
+  },
+  "18": {
+    "inputs": {
+      "image": "1024_white_all.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "19": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_denoise"
+    }
+  },
+  "20": {
+    "inputs": {
+      "image": "mask_grid_x9.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "21": {
+    "inputs": {
+      "text1": "",
+      "text2": [
+        "7",
         0
       ],
-      "find": "\bchibi",
+      "text3": "",
+      "delimiter": ","
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": [
+        "25",
+        6
+      ],
+      "find": "masterpiece, best quality, (delicate:1.1),",
       "replace": ""
     },
     "class_type": "Text Find and Replace",
@@ -176,10 +246,239 @@
       "title": "Text Find and Replace"
     }
   },
-  "64": {
+  "23": {
+    "inputs": {
+      "lora_name": "SDXL-StickerSheet-Lora.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "14",
+        1
+      ],
+      "clip": [
+        "14",
+        5
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "LoRA 로드"
+    }
+  },
+  "25": {
+    "inputs": {
+      "text1": "pixel art, symmetric, diagonal",
+      "text2": [
+        "14",
+        14
+      ],
+      "text3": "",
+      "delimiter": ","
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "26": {
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "x": 128,
+      "y": 128,
+      "image": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "이미지 자르기"
+    }
+  },
+  "27": {
+    "inputs": {
+      "images": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "28": {
+    "inputs": {
+      "images": [
+        "64",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "29": {
+    "inputs": {
+      "images": [
+        "39",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "30": {
+    "inputs": {
+      "images": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "31": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "51",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "32": {
+    "inputs": {
+      "text1": "iconset, masterpiece, best quality, (delicate:1.1), StickerSheet of",
+      "text2": [
+        "66",
+        0
+      ],
+      "text3": ", soft colors, white background",
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "34": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": true,
+      "destination": [
+        "60",
+        0
+      ],
+      "source": [
+        "61",
+        0
+      ],
+      "mask": [
+        "61",
+        1
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "마스크된 이미지 합성"
+    }
+  },
+  "35": {
+    "inputs": {
+      "pixelation_size": 128,
+      "num_colors": 16,
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "36": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 1024,
+      "resize_height": 1024,
+      "image": [
+        "39",
+        11
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "37": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.2,
+      "gamma": 1.2,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "38": {
+    "inputs": {
+      "pixelation_size": 128,
+      "num_colors": [
+        "9",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "39": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
-      "lora_strength": 0.7000000000000001,
+      "lora_strength": 0.5,
       "upscale_method": "None",
       "upscale_model_name": "None",
       "factor": 2,
@@ -192,7 +491,7 @@
       "base_steps": 15,
       "cfg": 5,
       "denoise": [
-        "162",
+        "19",
         0
       ],
       "refiner_steps": 20,
@@ -205,31 +504,31 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "53",
+        "1",
         0
       ],
       "sdxl_pipe": [
-        "55",
+        "14",
         0
       ],
       "optional_model": [
-        "107",
+        "23",
         0
       ],
       "optional_positive": [
-        "56:2",
+        "24:2",
         0
       ],
       "optional_negative": [
-        "56:2",
+        "24:2",
         1
       ],
       "optional_latent": [
-        "54",
+        "15",
         0
       ],
       "optional_clip": [
-        "107",
+        "23",
         1
       ]
     },
@@ -238,7 +537,76 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "65": {
+  "40": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.2,
+      "gamma": 1.2,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "41": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 768,
+      "resize_height": 768,
+      "image": [
+        "39",
+        11
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "43": {
+    "inputs": {
+      "pixels": [
+        "35",
+        0
+      ],
+      "vae": [
+        "45",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "44": {
+    "inputs": {
+      "pixels": [
+        "56",
+        0
+      ],
+      "vae": [
+        "45",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "45": {
     "inputs": {
       "ckpt_name": "artium_v20Turboboosted.safetensors",
       "config_name": "Default",
@@ -248,19 +616,19 @@
       "refiner_ckpt_name": "None",
       "refiner_config_name": "Default",
       "positive_g": [
-        "63",
+        "3",
         0
       ],
       "positive_l": [
-        "63",
+        "3",
         0
       ],
       "negative_g": [
-        "55",
+        "14",
         15
       ],
       "negative_l": [
-        "55",
+        "14",
         15
       ],
       "conditioning_aspect": "1x Empty Latent Aspect",
@@ -278,7 +646,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "53",
+        "1",
         0
       ]
     },
@@ -287,121 +655,30 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "67": {
+  "46": {
     "inputs": {
-      "image": "grid_pre_guide_image.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
-    }
-  },
-  "68": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "bilinear",
-      "rescale_factor": 2,
-      "resize_width": [
-        "70",
-        0
-      ],
-      "resize_height": [
-        "76",
-        0
-      ],
+      "brightness": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "gamma": 1,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
       "image": [
-        "67",
+        "47",
         0
       ]
     },
-    "class_type": "Image Resize",
+    "class_type": "ColorsCorrectNode",
     "_meta": {
-      "title": "Image Resize"
+      "title": "Colors Correct Node"
     }
   },
-  "69": {
+  "47": {
     "inputs": {
-      "image": "mask_grid_x9.png",
-      "channel": "alpha",
-      "upload": "image"
-    },
-    "class_type": "LoadImageMask",
-    "_meta": {
-      "title": "마스크 이미지 로드"
-    }
-  },
-  "70": {
-    "inputs": {
-      "int": 1024
-    },
-    "class_type": "ttN int",
-    "_meta": {
-      "title": "input_first_image_width"
-    }
-  },
-  "76": {
-    "inputs": {
-      "int": 1024
-    },
-    "class_type": "ttN int",
-    "_meta": {
-      "title": "input_first_image_height"
-    }
-  },
-  "77": {
-    "inputs": {
-      "text": "Gilded Cane, carved wooden shaft, gold-plated handle, intricate filigree, gemstone top, elegant design"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
-  "78": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
-    }
-  },
-  "79": {
-    "inputs": {
-      "text1": "pixel art, symmetric design,",
-      "text2": [
-        "55",
-        14
-      ],
-      "text3": "",
-      "delimiter": ","
-    },
-    "class_type": "ttN text3BOX_3WAYconcat",
-    "_meta": {
-      "title": "3x TXT Loader MultiConcat"
-    }
-  },
-  "80": {
-    "inputs": {
-      "text": [
-        "79",
-        6
-      ],
-      "find": "masterpiece, best quality, (delicate style:1.1)",
-      "replace": ""
-    },
-    "class_type": "Text Find and Replace",
-    "_meta": {
-      "title": "Text Find and Replace"
-    }
-  },
-  "82": {
-    "inputs": {
-      "pixelation_size": 96,
+      "pixelation_size": 128,
       "num_colors": [
-        "89",
+        "9",
         1
       ],
       "init_mode": "k-means++",
@@ -411,7 +688,7 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "84",
+        "64",
         11
       ]
     },
@@ -420,20 +697,202 @@
       "title": "Image Pixelate"
     }
   },
-  "83": {
+  "49": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
+      "pixelation_size": 96,
+      "num_colors": [
+        "9",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
       "images": [
-        "58",
+        "63",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "51": {
+    "inputs": {
+      "mode": "horizontal",
+      "images": [
+        "52",
         0
       ]
     },
-    "class_type": "SaveImage",
+    "class_type": "Image Flip",
     "_meta": {
-      "title": "이미지 저장"
+      "title": "Image Flip"
     }
   },
-  "84": {
+  "52": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "53": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "54": {
+    "inputs": {
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "55": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 1,
+      "saturation": 1,
+      "gamma": 1,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "56": {
+    "inputs": {
+      "pixelation_size": 96,
+      "num_colors": [
+        "9",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "57": {
+    "inputs": {
+      "images": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "58": {
+    "inputs": {
+      "images": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "59": {
+    "inputs": {
+      "images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "60": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": 1024,
+      "resize_height": 1024,
+      "image": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "61": {
+    "inputs": {
+      "rotation_angle": 45,
+      "image": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "> Rotate Image",
+    "_meta": {
+      "title": "😼> Rotate Image"
+    }
+  },
+  "62": {
+    "inputs": {
+      "images": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "63": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
       "lora_strength": 0.5,
@@ -446,8 +905,8 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 20,
-      "cfg": 7,
+      "base_steps": 15,
+      "cfg": 5,
       "denoise": 0.55,
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -458,32 +917,79 @@
       "save_prefix": "ComfyUI",
       "file_type": "png",
       "embed_workflow": true,
-      "seed": [
-        "53",
-        0
-      ],
       "sdxl_pipe": [
-        "65",
-        0
-      ],
-      "optional_model": [
-        "165",
+        "45",
         0
       ],
       "optional_positive": [
-        "66:2",
+        "42:2",
         0
       ],
       "optional_negative": [
-        "66:2",
+        "42:2",
         1
       ],
       "optional_latent": [
-        "59",
+        "44",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "64": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 0.5,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 15,
+      "cfg": 5,
+      "denoise": 0.53,
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": [
+        "1",
+        0
+      ],
+      "sdxl_pipe": [
+        "45",
+        0
+      ],
+      "optional_model": [
+        "65",
+        0
+      ],
+      "optional_positive": [
+        "42:2",
+        0
+      ],
+      "optional_negative": [
+        "42:2",
+        1
+      ],
+      "optional_latent": [
+        "43",
         0
       ],
       "optional_clip": [
-        "165",
+        "65",
         1
       ]
     },
@@ -492,201 +998,18 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "85": {
-    "inputs": {
-      "upscale_method": "nearest-exact",
-      "width": [
-        "70",
-        0
-      ],
-      "height": [
-        "76",
-        0
-      ],
-      "crop": "disabled",
-      "samples": [
-        "59",
-        0
-      ]
-    },
-    "class_type": "LatentUpscale",
-    "_meta": {
-      "title": "잠재 데이터 크기 조정"
-    }
-  },
-  "86": {
-    "inputs": {
-      "amount": 2,
-      "samples": [
-        "85",
-        0
-      ]
-    },
-    "class_type": "RepeatLatentBatch",
-    "_meta": {
-      "title": "잠재 데이터 반복 배치 생성"
-    }
-  },
-  "87": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "nearest",
-      "rescale_factor": 2,
-      "resize_width": [
-        "70",
-        0
-      ],
-      "resize_height": [
-        "76",
-        0
-      ],
-      "image": [
-        "64",
-        11
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
-  "88": {
-    "inputs": {
-      "pixelation_size": 96,
-      "num_colors": [
-        "89",
-        1
-      ],
-      "init_mode": "k-means++",
-      "max_iterations": 100,
-      "dither": "False",
-      "dither_mode": "FloydSteinberg",
-      "color_palette_mode": "Brightness",
-      "reverse_palette": "False",
-      "images": [
-        "104",
-        0
-      ]
-    },
-    "class_type": "Image Pixelate",
-    "_meta": {
-      "title": "Image Pixelate"
-    }
-  },
-  "89": {
-    "inputs": {
-      "int": 24
-    },
-    "class_type": "ttN int",
-    "_meta": {
-      "title": "input_num_colors"
-    }
-  },
-  "92": {
-    "inputs": {
-      "images": [
-        "64",
-        11
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "93": {
-    "inputs": {
-      "images": [
-        "106",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "99": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "lanczos",
-      "rescale_factor": 2,
-      "resize_width": 768,
-      "resize_height": 768,
-      "image": [
-        "87",
-        0
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
-  "101": {
-    "inputs": {
-      "images": [
-        "88",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "104": {
-    "inputs": {
-      "brightness": 1,
-      "contrast": 1,
-      "saturation": 1.05,
-      "gamma": 1.2,
-      "hue_degrees": 0,
-      "use_color": false,
-      "hex_color": "#00FF33",
-      "image": [
-        "99",
-        0
-      ]
-    },
-    "class_type": "ColorsCorrectNode",
-    "_meta": {
-      "title": "Colors Correct Node"
-    }
-  },
-  "106": {
-    "inputs": {
-      "brightness": 1,
-      "contrast": 0.9500000000000001,
-      "saturation": 1.2,
-      "gamma": 1.2,
-      "hue_degrees": 0,
-      "use_color": false,
-      "hex_color": "#00FF33",
-      "image": [
-        "82",
-        0
-      ]
-    },
-    "class_type": "ColorsCorrectNode",
-    "_meta": {
-      "title": "Colors Correct Node"
-    }
-  },
-  "107": {
+  "65": {
     "inputs": {
       "lora_name": "SDXL-StickerSheet-Lora.safetensors",
-      "strength_model": 1,
+      "strength_model": 0.5,
       "strength_clip": 1,
       "model": [
-        "55",
+        "45",
         1
       ],
       "clip": [
-        "55",
-        5
+        "45",
+        9
       ]
     },
     "class_type": "LoraLoader",
@@ -694,123 +1017,16 @@
       "title": "LoRA 로드"
     }
   },
-  "158": {
+  "66": {
     "inputs": {
-      "rotation_angle": 45
+      "text": " Silk Drawstring Pouch, soft silk fabric, gold embroidery, tasseled drawstring, compact size, lightweight, often tied to belt"
     },
-    "class_type": "> Rotate Image",
+    "class_type": "ttN text",
     "_meta": {
-      "title": "😼> Rotate Image"
+      "title": "input_positive_infix"
     }
   },
-  "159": {
-    "inputs": {
-      "x": 0,
-      "y": 0,
-      "resize_source": true,
-      "destination": [
-        "161",
-        0
-      ],
-      "source": [
-        "158",
-        0
-      ],
-      "mask": [
-        "158",
-        1
-      ]
-    },
-    "class_type": "ImageCompositeMasked",
-    "_meta": {
-      "title": "마스크된 이미지 합성"
-    }
-  },
-  "160": {
-    "inputs": {
-      "image": "1024_white_all.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "161": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "lanczos",
-      "rescale_factor": 2,
-      "resize_width": 1536,
-      "resize_height": 1536,
-      "image": [
-        "160",
-        0
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
-  "162": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
-  "163": {
-    "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "x": 256,
-      "y": 256,
-      "image": [
-        "159",
-        0
-      ]
-    },
-    "class_type": "ImageCrop",
-    "_meta": {
-      "title": "이미지 자르기"
-    }
-  },
-  "164": {
-    "inputs": {
-      "images": [
-        "163",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
-  "165": {
-    "inputs": {
-      "lora_name": "SDXL-StickerSheet-Lora.safetensors",
-      "strength_model": 1,
-      "strength_clip": 1,
-      "model": [
-        "65",
-        1
-      ],
-      "clip": [
-        "65",
-        5
-      ]
-    },
-    "class_type": "LoraLoader",
-    "_meta": {
-      "title": "LoRA 로드"
-    }
-  },
-  "56:0": {
+  "24:0": {
     "inputs": {
       "image": "grid_x9_2.png",
       "upload": "image"
@@ -820,7 +1036,7 @@
       "title": "이미지 로드"
     }
   },
-  "56:1": {
+  "24:1": {
     "inputs": {
       "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
     },
@@ -829,25 +1045,25 @@
       "title": "컨트롤넷 모델 로드"
     }
   },
-  "56:2": {
+  "24:2": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.35000000000000003,
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0.2,
       "positive": [
-        "55",
+        "14",
         2
       ],
       "negative": [
-        "55",
+        "14",
         3
       ],
       "control_net": [
-        "56:1",
+        "24:1",
         0
       ],
       "image": [
-        "56:0",
+        "24:0",
         0
       ]
     },
@@ -856,7 +1072,7 @@
       "title": "컨트롤넷 적용"
     }
   },
-  "66:0": {
+  "42:0": {
     "inputs": {
       "image": "slime_pre_guide_for_hand4.png",
       "upload": "image"
@@ -866,7 +1082,7 @@
       "title": "이미지 로드"
     }
   },
-  "66:1": {
+  "42:1": {
     "inputs": {
       "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
     },
@@ -875,25 +1091,25 @@
       "title": "컨트롤넷 모델 로드"
     }
   },
-  "66:2": {
+  "42:2": {
     "inputs": {
       "strength": 0.5,
       "start_percent": 0,
       "end_percent": 0,
       "positive": [
-        "65",
+        "45",
         2
       ],
       "negative": [
-        "65",
+        "45",
         3
       ],
       "control_net": [
-        "66:1",
+        "42:1",
         0
       ],
       "image": [
-        "66:0",
+        "42:0",
         0
       ]
     },
