@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "seed": 849229926629249
+      "seed": 658921583808064
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -1015,7 +1015,7 @@
   },
   "66": {
     "inputs": {
-      "rotation_angle": 0,
+      "rotation_angle": 45,
       "image": [
         "37",
         0
