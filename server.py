@@ -927,25 +927,6 @@ class PromptServer():
                         except Exception as e:
                             logging.error(f"파일 복사 중 오류 발생: {src_path} -> {dst_path}: {e}")
             
-            # 대상에만 있는 항목 삭제
-            for item in os.listdir(dst):
-                src_path = os.path.join(src, item)
-                dst_path = os.path.join(dst, item)
-                
-                if not os.path.exists(src_path):
-                    if os.path.isdir(dst_path):
-                        logging.info(f"불필요한 디렉토리 삭제: {dst_path}")
-                        try:
-                            shutil.rmtree(dst_path)
-                        except Exception as e:
-                            logging.error(f"디렉토리 삭제 중 오류 발생: {dst_path}: {e}")
-                    elif os.path.isfile(dst_path):
-                        logging.info(f"불필요한 파일 삭제: {dst_path}")
-                        try:
-                            os.remove(dst_path)
-                        except Exception as e:
-                            logging.error(f"파일 삭제 중 오류 발생: {dst_path}: {e}")
-        
         try:
             sync_directories(source_dir, target_dir)
             elapsed_time = time.time() - start_time
@@ -1012,25 +993,6 @@ class PromptServer():
                         except Exception as e:
                             logging.error(f"파일 복사 중 오류 발생: {src_path} -> {dst_path}: {e}")
             
-            # 대상에만 있는 항목 삭제
-            for item in os.listdir(dst):
-                src_path = os.path.join(src, item)
-                dst_path = os.path.join(dst, item)
-                
-                if not os.path.exists(src_path):
-                    if os.path.isdir(dst_path):
-                        logging.info(f"불필요한 디렉토리 삭제: {dst_path}")
-                        try:
-                            shutil.rmtree(dst_path)
-                        except Exception as e:
-                            logging.error(f"디렉토리 삭제 중 오류 발생: {dst_path}: {e}")
-                    elif os.path.isfile(dst_path):
-                        logging.info(f"불필요한 파일 삭제: {dst_path}")
-                        try:
-                            os.remove(dst_path)
-                        except Exception as e:
-                            logging.error(f"파일 삭제 중 오류 발생: {dst_path}: {e}")
-        
         try:
             sync_directories(source_dir, target_dir)
             elapsed_time = time.time() - start_time
