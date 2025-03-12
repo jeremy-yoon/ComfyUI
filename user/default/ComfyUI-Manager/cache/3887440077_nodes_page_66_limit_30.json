@@ -140,48 +140,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Extension for Automatic1111 and ComfyUI to automatically create masks for Background/Hair/Body/Face/Clothes in Img2Img",
-            "downloads": 4743,
-            "icon": "",
-            "id": "a-person-mask-generator",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-20T00:36:43.627343Z",
-                "dependencies": [
-                    "mediapipe>=0.10.13",
-                    "wget"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "efbedce1-52a9-438c-86c7-15098dab1356",
-                "node_id": "a-person-mask-generator",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.3"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "a-person-mask-generator",
-            "publisher": {
-                "createdAt": "2024-06-15T03:58:13.943407Z",
-                "description": "",
-                "id": "djbielejeski",
-                "logo": "",
-                "members": [],
-                "name": "djbielejeski",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/djbielejeski/a-person-mask-generator",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "BetaDoggo",
             "category": "",
             "description": "A set of nodes for interfacing with the FastSDCPU webserver.",
@@ -231,6 +189,48 @@
             },
             "rating": 0,
             "repository": "https://github.com/googincheng/ComfyUX",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Extension for Automatic1111 and ComfyUI to automatically create masks for Background/Hair/Body/Face/Clothes in Img2Img",
+            "downloads": 4745,
+            "icon": "",
+            "id": "a-person-mask-generator",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-20T00:36:43.627343Z",
+                "dependencies": [
+                    "mediapipe>=0.10.13",
+                    "wget"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "efbedce1-52a9-438c-86c7-15098dab1356",
+                "node_id": "a-person-mask-generator",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.3"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "a-person-mask-generator",
+            "publisher": {
+                "createdAt": "2024-06-15T03:58:13.943407Z",
+                "description": "",
+                "id": "djbielejeski",
+                "logo": "",
+                "members": [],
+                "name": "djbielejeski",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/djbielejeski/a-person-mask-generator",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -606,6 +606,96 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "Provide utilities for batch based video generation workflows (s.a. AnimateDiff and Stable Video Diffusion).",
+            "downloads": 3205,
+            "icon": "",
+            "id": "comfyui-dream-video-batches",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-23T10:29:02.849171Z",
+                "dependencies": [
+                    "imageio",
+                    "pilgram",
+                    "scipy",
+                    "numpy<2.0,>=1.18",
+                    "torchvision",
+                    "evalidate"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "93f25948-7c5c-425f-b1f8-5801cfc20d64",
+                "node_id": "comfyui-dream-video-batches",
+                "status": "NodeVersionStatusActive",
+                "version": "1.1.4"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "comfyui-dream-video-batches",
+            "publisher": {
+                "createdAt": "2024-07-01T05:05:05.064583Z",
+                "description": "",
+                "id": "altkeyproject",
+                "logo": "",
+                "members": [],
+                "name": "Alt Key Project",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/alt-key-project/comfyui-dream-video-batches",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "LoRA Manager for ComfyUI - Access it at http://localhost:8188/loras for managing LoRA models with previews and metadata integration.",
+            "downloads": 2625,
+            "icon": "",
+            "id": "comfyui-lora-manager",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-03-11T14:02:32.422645Z",
+                "dependencies": [
+                    "aiohttp",
+                    "jinja2",
+                    "safetensors",
+                    "watchdog"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "1b3d29b3-1967-4ffb-965c-3102d9d839cf",
+                "node_id": "comfyui-lora-manager",
+                "status": "NodeVersionStatusPending",
+                "version": "0.7.36"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Lora-Manager",
+            "publisher": {
+                "createdAt": "2025-01-27T08:40:54.803374Z",
+                "description": "",
+                "id": "willmiao",
+                "logo": "",
+                "members": [],
+                "name": "Will Miao",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/willmiao/ComfyUI-Lora-Manager",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "hinablue",
             "category": "",
             "description": "Nodes:3D Pose Editor",
@@ -702,7 +792,7 @@
             "author": "",
             "category": "",
             "description": "Shows Lora information from CivitAI and outputs trigger words and example prompt",
-            "downloads": 4091,
+            "downloads": 4093,
             "icon": "",
             "id": "lora-info",
             "latest_version": {
@@ -904,50 +994,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "LoRA Manager for ComfyUI - Access it at http://localhost:8188/loras for managing LoRA models with previews and metadata integration.",
-            "downloads": 2623,
-            "icon": "",
-            "id": "comfyui-lora-manager",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-03-11T14:02:32.422645Z",
-                "dependencies": [
-                    "aiohttp",
-                    "jinja2",
-                    "safetensors",
-                    "watchdog"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "1b3d29b3-1967-4ffb-965c-3102d9d839cf",
-                "node_id": "comfyui-lora-manager",
-                "status": "NodeVersionStatusPending",
-                "version": "0.7.36"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Lora-Manager",
-            "publisher": {
-                "createdAt": "2025-01-27T08:40:54.803374Z",
-                "description": "",
-                "id": "willmiao",
-                "logo": "",
-                "members": [],
-                "name": "Will Miao",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/willmiao/ComfyUI-Lora-Manager",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "Xiangyu-CAS",
             "category": "",
             "description": "This project addresses the issue of numerous hand defects in AI-generated portrait images by using a workflow based on FLUX/FLUX-Fill to correct hand deformities. It is effective for both real-life and anime images, including those generated by DiT/SDXL/Midjourney. It supports diffusers, gradio, ComfyUI, and more",
@@ -997,33 +1043,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/nsdtcloud3d/ComfyUI-3D-Convert",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "S4MUEL-404",
-            "category": "",
-            "description": "A custom node for ComfyUI that allows users to add text overlays to images with customizable size, font, position, and shadow.",
-            "downloads": 0,
-            "icon": "",
-            "id": "ComfyUI-Text-On-Image",
-            "license": "{}",
-            "name": "ComfyUI-Text-On-Image",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/S4MUEL-404/ComfyUI-Text-On-Image",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

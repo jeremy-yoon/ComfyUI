@@ -110,7 +110,7 @@
             "author": "",
             "category": "",
             "description": "Essential nodes that are weirdly missing from ComfyUI core. With few exceptions they are new features and not commodities.",
-            "downloads": 152222,
+            "downloads": 152293,
             "icon": "",
             "id": "comfyui_essentials",
             "latest_version": {
@@ -181,7 +181,7 @@
             "author": "",
             "category": "",
             "description": "NODES: Add Mask For IC Lora, Create Context Window, Concatenate Context Window, Auto Patch",
-            "downloads": 4879,
+            "downloads": 4881,
             "icon": "",
             "id": "comfyui-in-context-lora-utils",
             "latest_version": {
@@ -220,7 +220,7 @@
             "author": "",
             "category": "",
             "description": "A set of block-based LLM agent node libraries designed for ComfyUI.This project aims to develop a complete set of nodes for LLM workflow construction based on comfyui. It allows users to quickly and conveniently build their own LLM workflows and easily integrate them into their existing SD workflows.",
-            "downloads": 5622,
+            "downloads": 5643,
             "icon": "",
             "id": "comfyui_llm_party",
             "latest_version": {
@@ -595,48 +595,6 @@
             "rating": 0,
             "repository": "https://github.com/TRI3D-LC/tri3d-comfyui-nodes",
             "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Efficiency Nodes for ComfyUI Version 2.0 A collection of ComfyUI custom nodes to help streamline workflows and reduce total node count.",
-            "downloads": 67205,
-            "icon": "https://github.com/jags111/efficiency-nodes-comfyui/blob/main/images/jagsP1.png?raw=true",
-            "id": "efficiency-nodes-comfyui",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-08-26T04:50:21.174399Z",
-                "dependencies": [
-                    "clip-interrogator",
-                    "simpleeval"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "4e240971-988a-4c0a-8907-1fdf893a16a7",
-                "node_id": "efficiency-nodes-comfyui",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.5"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "efficiency-nodes-comfyui",
-            "publisher": {
-                "createdAt": "2024-05-19T17:24:59.149675Z",
-                "description": "",
-                "id": "jags111",
-                "logo": "",
-                "members": [],
-                "name": "jags111",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/jags111/efficiency-nodes-comfyui",
-            "status": "",
             "status_detail": "",
             "tags": []
         },
@@ -1158,6 +1116,45 @@
             },
             "rating": 0,
             "repository": "https://github.com/rocing/ComfyUI-load-image-from-url-xy",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Nodes: NoisyLatentPerlin. This allows to create latent spaces filled with perlin-based noise that can actually be used by the samplers.",
+            "downloads": 741,
+            "icon": "",
+            "id": "noise_latent_perlinpinpin",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-06-22T21:14:11.904335Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "679efd96-acbf-424b-ae6f-1d3ad67bff02",
+                "node_id": "noise_latent_perlinpinpin",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "LICENSE",
+            "name": "noise_latent_perlinpinpin",
+            "publisher": {
+                "createdAt": "2024-06-22T09:09:31.04495Z",
+                "description": "",
+                "id": "extraltodeus",
+                "logo": "",
+                "members": [],
+                "name": "Extraltodeus",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Extraltodeus/noise_latent_perlinpinpin",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

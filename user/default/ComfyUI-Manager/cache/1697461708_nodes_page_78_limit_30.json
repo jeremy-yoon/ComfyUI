@@ -2,33 +2,6 @@
     "limit": 30,
     "nodes": [
         {
-            "author": "glowcone",
-            "category": "",
-            "description": "Nodes: Convert String To Int, Convert String To Float",
-            "downloads": 0,
-            "icon": "",
-            "id": "comfyui-string-converter",
-            "license": "{}",
-            "name": "String Converter",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/glowcone/comfyui-string-converter",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "AInseven",
             "category": "",
             "description": "fastblend for comfyui, and other nodes that I write for video2video. rebatch image, my openpose",
@@ -113,7 +86,7 @@
             "author": "",
             "category": "",
             "description": "Wrapper nodes to use Dynami/ToonCrafter image2video and frame interpolation models in ComfyUI",
-            "downloads": 3939,
+            "downloads": 3941,
             "icon": "",
             "id": "comfyui-dynamicrafterwrapper",
             "latest_version": {
@@ -241,7 +214,7 @@
             "author": "",
             "category": "",
             "description": "These are custom nodes for ComfyUI native implementation of BrushNet (inpaint), PowerPaint (inpaint, object removal) and HiDiffusion (higher resolution for SD15 and SDXL)",
-            "downloads": 11667,
+            "downloads": 11677,
             "icon": "",
             "id": "comfyui-brushnet",
             "latest_version": {
@@ -304,6 +277,48 @@
             "rating": 0,
             "repository": "https://github.com/gorillaframeai/GF_translate",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "This extension provides various nodes to support Lora Block Weight, Regional Nodes, Backend Cache, Prompt Utils, List Utils, Noise(Seed) Utils, ... and the Impact Pack.",
+            "downloads": 49703,
+            "icon": "",
+            "id": "comfyui-inspire-pack",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-02T15:49:21.840325Z",
+                "dependencies": [
+                    "matplotlib",
+                    "cachetools"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "382f326f-eab4-4793-a89e-b70cd7da6275",
+                "node_id": "comfyui-inspire-pack",
+                "status": "NodeVersionStatusActive",
+                "version": "1.14.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI Inspire Pack",
+            "publisher": {
+                "createdAt": "2024-05-22T15:42:00.969348Z",
+                "description": "",
+                "id": "drltdata",
+                "logo": "",
+                "members": [],
+                "name": "Dr.Lt.Data",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
+            "status": "",
             "status_detail": "",
             "tags": []
         }

@@ -1,7 +1,7 @@
 {
   "117": {
     "inputs": {
-      "seed": 965553443850429
+      "seed": 949429561776138
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -292,12 +292,12 @@
   },
   "138": {
     "inputs": {
-      "text1": "best quality, masterpiece, (from below:0.7), 3d, (isometric:0.5), front view, floor, cute vibe, (soft colors:1.2),beautiful painterly artwork of ",
+      "text1": "best quality, masterpiece, (from below:0.7), front view, flat empty ground, soft colors, beautiful painterly artwork of ",
       "text2": [
         "140",
         0
       ],
-      "text3": ",beautiful wallpaper",
+      "text3": ",simple wallpaper",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -322,7 +322,7 @@
   },
   "140": {
     "inputs": {
-      "text": "Strawberry Background, Soft pink backdrop with white polka dots and cream splashes"
+      "text": "Tropical Aquatic Habitat, A cozy eco-space with a tiny waterfall and moss-covered puddles"
     },
     "class_type": "ttN text",
     "_meta": {
@@ -396,7 +396,7 @@
       "brightness": 1,
       "contrast": 0.9500000000000001,
       "saturation": 1.8,
-      "gamma": 2.5,
+      "gamma": 1.8,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -412,8 +412,8 @@
   },
   "147": {
     "inputs": {
-      "lora_name": "None",
-      "lora_strength": 0.7000000000000001,
+      "lora_name": "Dream Painting Style [LoRA] - Pony V6 XL.safetensors",
+      "lora_strength": 1,
       "upscale_method": "None",
       "upscale_model_name": "None",
       "factor": 2,
@@ -423,8 +423,8 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 5,
-      "cfg": 2.5,
+      "base_steps": 6,
+      "cfg": 3,
       "denoise": [
         "156",
         0
@@ -620,7 +620,7 @@
   },
   "154:2": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.6,
       "start_percent": 0,
       "end_percent": 0.8,
       "positive": [

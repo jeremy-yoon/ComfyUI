@@ -1,7 +1,7 @@
 {
   "45": {
     "inputs": {
-      "seed": 481806250800391
+      "seed": 785014708425061
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -443,7 +443,7 @@
   },
   "81": {
     "inputs": {
-      "text1": "ceiling, outline, vivid colors, worst quality, human, girl, boy, watermark, text, blurry, tilted photo, repeated, display stand",
+      "text1": "shadow, outline, worst quality, human, girl, boy, watermark, text, crop, ",
       "text2": [
         "63",
         0
@@ -458,8 +458,8 @@
   },
   "82": {
     "inputs": {
-      "lora_name": "None",
-      "lora_strength": 0.7000000000000001,
+      "lora_name": "SDXL-StickerSheet-Lora.safetensors",
+      "lora_strength": 1,
       "upscale_method": "None",
       "upscale_model_name": "None",
       "factor": 2,
@@ -492,6 +492,10 @@
         "47",
         0
       ],
+      "optional_model": [
+        "96",
+        0
+      ],
       "optional_positive": [
         "90:2",
         0
@@ -503,6 +507,10 @@
       "optional_latent": [
         "46",
         0
+      ],
+      "optional_clip": [
+        "96",
+        1
       ]
     },
     "class_type": "ttN pipeKSamplerSDXL_v2",
@@ -512,7 +520,7 @@
   },
   "85": {
     "inputs": {
-      "text": "\bflying whale"
+      "text": "Surfing Leash, Neon-Colored Surfboard Ankle Strap with Vibrant Flair"
     },
     "class_type": "ttN text",
     "_meta": {
@@ -521,12 +529,12 @@
   },
   "88": {
     "inputs": {
-      "text1": "best quality, masterpiece, (from below:0.7), front view, floor, (soft colors:1.2), painting of ",
+      "text1": "best quality, masterpiece, front view, from front, StickerSheet, StickerSheet of ",
       "text2": [
         "85",
         0
       ],
-      "text3": ", simple background, white background",
+      "text3": ", soft colors, simple background, white background",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -612,6 +620,25 @@
       "title": "이미지 저장"
     }
   },
+  "96": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "47",
+        1
+      ],
+      "clip": [
+        "47",
+        5
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "LoRA 로드"
+    }
+  },
   "86:0": {
     "inputs": {
       "image": "Frame 1691019384.png",
@@ -633,9 +660,9 @@
   },
   "86:2": {
     "inputs": {
-      "strength": 1,
+      "strength": 0.3,
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0,
       "positive": [
         "47",
         2
@@ -681,7 +708,7 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0,
       "positive": [
         "86:2",
         0

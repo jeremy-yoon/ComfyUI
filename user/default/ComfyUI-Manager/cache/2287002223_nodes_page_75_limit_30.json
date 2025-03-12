@@ -2,6 +2,33 @@
     "limit": 30,
     "nodes": [
         {
+            "author": "Black Forest Labs",
+            "category": "",
+            "description": "ComfyUI nodes for Black Forest Labs API Services",
+            "downloads": 0,
+            "icon": "",
+            "id": "bfl-comfy-nodes",
+            "license": "{}",
+            "name": "Black Forest Labs API Nodes",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/black-forest-labs/bfl-comfy-nodes",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "checkbins",
             "category": "",
             "description": "These nodes allow you to make Checkbin comparisons.",
@@ -124,47 +151,6 @@
         {
             "author": "",
             "category": "",
-            "description": "Save images with generation metadata compatible with Civitai. Works with png, jpeg and webp. Stores LoRAs, models and embeddings hashes for resource recognition.",
-            "downloads": 21224,
-            "icon": "",
-            "id": "comfyui-image-saver",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-08T20:23:48.346424Z",
-                "dependencies": [
-                    "piexif"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "ff3b764d-c6e6-41ea-a629-a4da7eb6c2cc",
-                "node_id": "comfyui-image-saver",
-                "status": "NodeVersionStatusActive",
-                "version": "1.4.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI Image Saver",
-            "publisher": {
-                "createdAt": "2024-06-16T10:37:31.334416Z",
-                "description": "",
-                "id": "alexopus",
-                "logo": "",
-                "members": [],
-                "name": "alexopus",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/alexopus/ComfyUI-Image-Saver",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "",
             "downloads": 514,
             "icon": "",
@@ -208,8 +194,49 @@
         {
             "author": "",
             "category": "",
+            "description": "Save images with generation metadata compatible with Civitai. Works with png, jpeg and webp. Stores LoRAs, models and embeddings hashes for resource recognition.",
+            "downloads": 21233,
+            "icon": "",
+            "id": "comfyui-image-saver",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-12-08T20:23:48.346424Z",
+                "dependencies": [
+                    "piexif"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "ff3b764d-c6e6-41ea-a629-a4da7eb6c2cc",
+                "node_id": "comfyui-image-saver",
+                "status": "NodeVersionStatusActive",
+                "version": "1.4.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI Image Saver",
+            "publisher": {
+                "createdAt": "2024-06-16T10:37:31.334416Z",
+                "description": "",
+                "id": "alexopus",
+                "logo": "",
+                "members": [],
+                "name": "alexopus",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/alexopus/ComfyUI-Image-Saver",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "This is a custom node to convert only the Diffusion model part or CLIP model part to fp8 in ComfyUI.\nVAE fp8 conversion is not supported.\nThe advantage of this node is that you do not need to separate unet/clip/vae in advance when converting to fp8, but can use the safetenros files that ComfyUI provides.",
-            "downloads": 805,
+            "downloads": 806,
             "icon": "",
             "id": "comfyui_diffusionmodel_fp8_converter",
             "latest_version": {
@@ -280,45 +307,6 @@
             "rating": 0,
             "repository": "https://github.com/billwuhao/ComfyUI_OneButtonPrompt_Flux",
             "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Freely adjust resolution and aspect ratio, maintain pixel count of StableDiffusion model, or hook it up to upscaling nodes to get that 5k 16:10 wallpaper in just few clicks.",
-            "downloads": 1743,
-            "icon": "",
-            "id": "comfyui-yaresolutionselector",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-05-24T19:59:55.73425Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "07740c8e-0b7c-4319-94d5-e92ee0e20960",
-                "node_id": "comfyui-yaresolutionselector",
-                "status": "NodeVersionStatusActive",
-                "version": "1.2.0"
-            },
-            "license": "LICENSE",
-            "name": "yaResolution Selector",
-            "publisher": {
-                "createdAt": "2024-05-24T18:16:39.923677Z",
-                "description": "",
-                "id": "tropfchen",
-                "logo": "",
-                "members": [],
-                "name": "Tropfchen",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/Tropfchen/ComfyUI-yaResolutionSelector",
-            "status": "",
             "status_detail": "",
             "tags": []
         },
@@ -805,6 +793,45 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "",
+            "downloads": 3446,
+            "icon": "",
+            "id": "all-in-one-style",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-07-30T20:33:23.314675Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "9544163b-92ad-4637-8fdb-20c706b9dd75",
+                "node_id": "all-in-one-style",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "All-IN-ONE-style",
+            "publisher": {
+                "createdAt": "2024-06-23T07:15:12.623492Z",
+                "description": "",
+                "id": "abdallaalsw80",
+                "logo": "",
+                "members": [],
+                "name": "AbdallahAlswaiti",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/al-swaiti/All-IN-ONE-style",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "tzwm",
             "category": "",
             "description": "Calculate the execution time of all nodes.",
@@ -935,33 +962,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/KoreTeknology/ComfyUI-Universal-Styler",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "GeekyGhost",
-            "category": "",
-            "description": "GeekyRemB is a powerful and versatile image processing node for ComfyUI, designed to remove backgrounds from images with advanced customization options. This node leverages the rembg library and offers a wide range of features for fine-tuning the background removal process and enhancing the resulting images.",
-            "downloads": 0,
-            "icon": "",
-            "id": "ComfyUI-GeekyRemB",
-            "license": "{}",
-            "name": "ComfyUI-GeekyRemB",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/GeekyGhost/ComfyUI-GeekyRemB",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

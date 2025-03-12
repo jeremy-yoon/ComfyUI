@@ -526,41 +526,42 @@
         {
             "author": "",
             "category": "",
-            "description": "Scheduled prompts, scheduled float/int values and wave function nodes for animations and utility. compatable with [a/framesync](https://www.framesync.xyz/) and [a/keyframe-string-generator](https://www.chigozie.co.uk/keyframe-string-generator/) for audio synced animations in Comfyui.",
-            "downloads": 16371,
+            "description": "This ComfyUI custom node, named ControlNet Auxiliar, is designed to provide auxiliary functionalities for image processing tasks. It is particularly useful for various image manipulation and enhancement operations. The node is integrated with functionalities for converting images between different formats and applying various image processing techniques.",
+            "downloads": 5982,
             "icon": "",
-            "id": "comfyui_fizznodes",
+            "id": "comfyui-controlnetaux",
             "latest_version": {
                 "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-08-28T02:42:30.076931Z",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-06-04T12:06:28.382895Z",
                 "dependencies": [
-                    "pandas",
-                    "numexpr"
+                    "timm",
+                    "controlnet-aux==0.0.7",
+                    "mediapipe"
                 ],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "77c99af9-f349-4f1c-8063-bd27c10b4009",
-                "node_id": "comfyui_fizznodes",
+                "id": "b46d6864-257d-4168-8f26-6bf150346320",
+                "node_id": "comfyui-controlnetaux",
                 "status": "NodeVersionStatusActive",
                 "version": "1.0.2"
             },
-            "license": "{\"file\": \"LICENCE.txt\"}",
-            "name": "ComfyUI_FizzNodes",
+            "license": "LICENSE",
+            "name": "ComfyUI-ControlnetAux",
             "publisher": {
-                "createdAt": "2024-05-17T16:43:22.898144Z",
+                "createdAt": "2024-06-04T11:22:35.344933Z",
                 "description": "",
-                "id": "fizzledorf",
+                "id": "cvalentin",
                 "logo": "",
                 "members": [],
-                "name": "FizzleDorf",
+                "name": "Cornea Valentin",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
+            "repository": "https://github.com/madtunebk/ComfyUI-ControlnetAux",
             "status": "",
             "status_detail": "",
             "tags": []
@@ -825,6 +826,48 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "Scheduled prompts, scheduled float/int values and wave function nodes for animations and utility. compatable with [a/framesync](https://www.framesync.xyz/) and [a/keyframe-string-generator](https://www.chigozie.co.uk/keyframe-string-generator/) for audio synced animations in Comfyui.",
+            "downloads": 16379,
+            "icon": "",
+            "id": "comfyui_fizznodes",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-08-28T02:42:30.076931Z",
+                "dependencies": [
+                    "pandas",
+                    "numexpr"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "77c99af9-f349-4f1c-8063-bd27c10b4009",
+                "node_id": "comfyui_fizznodes",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.2"
+            },
+            "license": "{\"file\": \"LICENCE.txt\"}",
+            "name": "ComfyUI_FizzNodes",
+            "publisher": {
+                "createdAt": "2024-05-17T16:43:22.898144Z",
+                "description": "",
+                "id": "fizzledorf",
+                "logo": "",
+                "members": [],
+                "name": "FizzleDorf",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "nicolai256",
             "category": "",
             "description": "Nodes: yugioh_Presets. by Nicolai256 inspired by throttlekitty SDXLAspectRatio",
@@ -913,48 +956,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/da2el-ai/ComfyUI-d2-send-eagle",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Tara is a powerful node for ComfyUI that integrates Large Language Models (LLMs) to enhance and automate workflow processes. With Tara, you can create complex, intelligent workflows that refine and generate content, manage API keys, and seamlessly integrate various LLMs into your projects.",
-            "downloads": 2362,
-            "icon": "",
-            "id": "comfyui-tara-llm-integration",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-06-25T09:06:50.118147Z",
-                "dependencies": [
-                    "orjson",
-                    "openai"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "834ff821-5296-469d-861a-886cabdd2342",
-                "node_id": "comfyui-tara-llm-integration",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Tara-LLM-Integration",
-            "publisher": {
-                "createdAt": "2024-06-25T08:59:57.947579Z",
-                "description": "",
-                "id": "ronniebasak",
-                "logo": "",
-                "members": [],
-                "name": "Sohan :) ",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/ronniebasak/ComfyUI-Tara-LLM-Integration",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

@@ -4,6 +4,33 @@
         {
             "author": "MinusZoneAI",
             "category": "",
+            "description": "A stylized node with simple operation. The effect is achieved by I2I and lora. The clay style is currently implemented.Comes with watermark function.",
+            "downloads": 0,
+            "icon": "",
+            "id": "ComfyUI-StylizePhoto-MZ",
+            "license": "{}",
+            "name": "ComfyUI-StylizePhoto-MZ",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/MinusZoneAI/ComfyUI-StylizePhoto-MZ",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "MinusZoneAI",
+            "category": "",
             "description": "Nodes:MZ_Flux1PartialLoad_Patch. Tool nodes related to flux1",
             "downloads": 0,
             "icon": "",
@@ -213,45 +240,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/tudal/Hakkun-ComfyUI-nodes",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "A Text To Speech node using Kokoro TTS in ComfyUI. Supports 8 languages and 150 voices",
-            "downloads": 429,
-            "icon": "https://github.com/billwuhao/aiart.website/blob/master/hb.png",
-            "id": "kokorotts_mw",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-05T13:36:37.567025Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "07ea22d2-5f36-4f77-9425-07f6b4ccf5a2",
-                "node_id": "kokorotts_mw",
-                "status": "NodeVersionStatusFlagged",
-                "version": "2.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI_KokoroTTS_MW",
-            "publisher": {
-                "createdAt": "2025-01-06T14:10:29.10336Z",
-                "description": "",
-                "id": "mw",
-                "logo": "",
-                "members": [],
-                "name": "MW",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/billwuhao/ComfyUI_KokoroTTS_MW",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -485,6 +473,47 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "Manage models: browsing, download and delete.",
+            "downloads": 2755,
+            "icon": "",
+            "id": "comfyui-model-manager",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-03-04T07:17:58.085096Z",
+                "dependencies": [
+                    "markdownify"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "6f09083d-10cd-458e-9b39-04bc6414f502",
+                "node_id": "comfyui-model-manager",
+                "status": "NodeVersionStatusActive",
+                "version": "2.5.3"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Model-Manager",
+            "publisher": {
+                "createdAt": "2024-09-27T03:24:28.19546Z",
+                "description": "",
+                "id": "hayden",
+                "logo": "",
+                "members": [],
+                "name": "hayden",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/hayden-fr/ComfyUI-Model-Manager",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "MinusZoneAI",
             "category": "",
             "description": "Quantization tools are from [a/https://github.com/casper-hansen/AutoAWQ](https://github.com/casper-hansen/AutoAWQ) and [a/https://github.com/IST-DASLab/marlin](https://github.com/IST-DASLab/marlin)\nOnly applicable to graphics cards with sm_80 and above (30 series and above)\nNeed to install marlin dependencies first",
@@ -534,47 +563,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/LiJT/ComfyUI-Gemini-Prompt-Generator-JT",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Manage models: browsing, download and delete.",
-            "downloads": 2754,
-            "icon": "",
-            "id": "comfyui-model-manager",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-03-04T07:17:58.085096Z",
-                "dependencies": [
-                    "markdownify"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "6f09083d-10cd-458e-9b39-04bc6414f502",
-                "node_id": "comfyui-model-manager",
-                "status": "NodeVersionStatusActive",
-                "version": "2.5.3"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Model-Manager",
-            "publisher": {
-                "createdAt": "2024-09-27T03:24:28.19546Z",
-                "description": "",
-                "id": "hayden",
-                "logo": "",
-                "members": [],
-                "name": "hayden",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/hayden-fr/ComfyUI-Model-Manager",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -837,7 +825,7 @@
             "author": "",
             "category": "",
             "description": "This custom node allows you to generate pure python code from your ComfyUI workflow with the click of a button. Great for rapid experimentation or production deployment.",
-            "downloads": 2620,
+            "downloads": 2624,
             "icon": "",
             "id": "comfyui-to-python-extension",
             "latest_version": {
