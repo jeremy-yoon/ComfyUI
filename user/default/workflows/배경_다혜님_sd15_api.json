@@ -1,0 +1,233 @@
+{
+  "5": {
+    "inputs": {
+      "lora_name": "None",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "add_noise": "enable",
+      "noise": [
+        "18",
+        0
+      ],
+      "steps": 20,
+      "start_at_step": 0,
+      "end_at_step": 10000,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "return_with_leftover_noise": "disable",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "noise_seed": 447759378047033,
+      "pipe": [
+        "6",
+        0
+      ],
+      "optional_latent": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerAdvanced_v2",
+    "_meta": {
+      "title": "pipeKSamplerAdvanced"
+    }
+  },
+  "6": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -1,
+      "loras": "",
+      "positive": [
+        "7",
+        0
+      ],
+      "positive_token_normalization": "none",
+      "positive_weight_interpretation": "comfy",
+      "negative": [
+        "8",
+        0
+      ],
+      "negative_token_normalization": "none",
+      "negative_weight_interpretation": "comfy",
+      "empty_latent_aspect": "512 x 512 [S] 1:1",
+      "empty_latent_width": 512,
+      "empty_latent_height": 512,
+      "batch_size": 1,
+      "seed": 0,
+      "model_override": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ttN pipeLoader_v2",
+    "_meta": {
+      "title": "pipeLoader"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "masterpiece, best quality,"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "긍정"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "worst quality, blurry, wordmark"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "부정"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "5",
+        7
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "(Face)_Twinkle_Jewelry_Shining_Smile_Face_ver.A_green.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixels": [
+        "15",
+        0
+      ],
+      "vae": [
+        "6",
+        5
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "12": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "가로"
+    }
+  },
+  "13": {
+    "inputs": {
+      "int": 1344
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "세로"
+    }
+  },
+  "14": {
+    "inputs": {
+      "int": 4
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "생성 개수"
+    }
+  },
+  "15": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": [
+        "12",
+        0
+      ],
+      "resize_height": [
+        "13",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "16": {
+    "inputs": {
+      "amount": [
+        "14",
+        0
+      ],
+      "samples": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "RepeatLatentBatch",
+    "_meta": {
+      "title": "잠재 데이터 반복 배치 생성"
+    }
+  },
+  "18": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "이미지 변형도"
+    }
+  },
+  "19": {
+    "inputs": {
+      "images": [
+        "5",
+        7
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "20": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "체크포인트 로드"
+    }
+  }
+}

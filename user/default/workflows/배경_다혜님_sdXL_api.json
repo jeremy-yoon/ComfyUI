@@ -1,0 +1,249 @@
+{
+  "7": {
+    "inputs": {
+      "text": "masterpiece, best quality,"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "긍정"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "worst quality, blurry, wordmark"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "부정"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "(Face)_Twinkle_Jewelry_Shining_Smile_Face_ver.A_green.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixels": [
+        "15",
+        0
+      ],
+      "vae": [
+        "21",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "12": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "가로"
+    }
+  },
+  "13": {
+    "inputs": {
+      "int": 1344
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "세로"
+    }
+  },
+  "14": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "생성 개수"
+    }
+  },
+  "15": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": [
+        "12",
+        0
+      ],
+      "resize_height": [
+        "13",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "16": {
+    "inputs": {
+      "amount": [
+        "14",
+        0
+      ],
+      "samples": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "RepeatLatentBatch",
+    "_meta": {
+      "title": "잠재 데이터 반복 배치 생성"
+    }
+  },
+  "18": {
+    "inputs": {
+      "float": 0.5
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "이미지 변형도"
+    }
+  },
+  "19": {
+    "inputs": {
+      "images": [
+        "22",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "20": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "체크포인트 로드"
+    }
+  },
+  "21": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "7",
+        0
+      ],
+      "positive_l": [
+        "7",
+        0
+      ],
+      "negative_g": [
+        "8",
+        0
+      ],
+      "negative_l": [
+        "8",
+        0
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": 0,
+      "model_override": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "22": {
+    "inputs": {
+      "lora_name": "None",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 20,
+      "cfg": 8,
+      "denoise": [
+        "18",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": 385033228684789,
+      "sdxl_pipe": [
+        "21",
+        0
+      ],
+      "optional_latent": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "23": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "22",
+        11
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  }
+}
