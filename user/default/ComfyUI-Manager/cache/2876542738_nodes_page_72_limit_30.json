@@ -2,6 +2,60 @@
     "limit": 30,
     "nodes": [
         {
+            "author": "chaojie",
+            "category": "",
+            "description": "Nodes: Download the weights of DragNUWA [a/drag_nuwa_svd.pth](https://drive.google.com/file/d/1Z4JOley0SJCb35kFF4PCc6N6P1ftfX4i/view) and put it to ComfyUI/models/checkpoints/drag_nuwa_svd.pth\n[w/Due to changes in the torch package and versions of many other packages, it may disrupt your installation environment.]",
+            "downloads": 0,
+            "icon": "",
+            "id": "ComfyUI-DragNUWA",
+            "license": "{}",
+            "name": "ComfyUI-DragNUWA",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/chaojie/ComfyUI-DragNUWA",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "chaojie",
+            "category": "",
+            "description": "This is an ComfyUI implementation of LightGlue to generate motion brush",
+            "downloads": 0,
+            "icon": "",
+            "id": "ComfyUI-LightGlue",
+            "license": "{}",
+            "name": "ComfyUI-LightGlue",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/chaojie/ComfyUI-LightGlue",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "",
             "category": "",
             "description": "Match image/mask sizes",
@@ -473,7 +527,7 @@
             "author": "",
             "category": "",
             "description": "Scheduled prompts, scheduled float/int values and wave function nodes for animations and utility. compatable with [a/framesync](https://www.framesync.xyz/) and [a/keyframe-string-generator](https://www.chigozie.co.uk/keyframe-string-generator/) for audio synced animations in Comfyui.",
-            "downloads": 16365,
+            "downloads": 16371,
             "icon": "",
             "id": "comfyui_fizznodes",
             "latest_version": {
@@ -866,48 +920,6 @@
         {
             "author": "",
             "category": "",
-            "description": "Efficiency Nodes for ComfyUI Version 2.0 A collection of ComfyUI custom nodes to help streamline workflows and reduce total node count.",
-            "downloads": 67173,
-            "icon": "https://github.com/jags111/efficiency-nodes-comfyui/blob/main/images/jagsP1.png?raw=true",
-            "id": "efficiency-nodes-comfyui",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-08-26T04:50:21.174399Z",
-                "dependencies": [
-                    "clip-interrogator",
-                    "simpleeval"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "4e240971-988a-4c0a-8907-1fdf893a16a7",
-                "node_id": "efficiency-nodes-comfyui",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.5"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "efficiency-nodes-comfyui",
-            "publisher": {
-                "createdAt": "2024-05-19T17:24:59.149675Z",
-                "description": "",
-                "id": "jags111",
-                "logo": "",
-                "members": [],
-                "name": "jags111",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/jags111/efficiency-nodes-comfyui",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Tara is a powerful node for ComfyUI that integrates Large Language Models (LLMs) to enhance and automate workflow processes. With Tara, you can create complex, intelligent workflows that refine and generate content, manage API keys, and seamlessly integrate various LLMs into your projects.",
             "downloads": 2362,
             "icon": "",
@@ -944,49 +956,6 @@
             "rating": 0,
             "repository": "https://github.com/ronniebasak/ComfyUI-Tara-LLM-Integration",
             "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "This ComfyUI custom node, named ControlNet Auxiliar, is designed to provide auxiliary functionalities for image processing tasks. It is particularly useful for various image manipulation and enhancement operations. The node is integrated with functionalities for converting images between different formats and applying various image processing techniques.",
-            "downloads": 5979,
-            "icon": "",
-            "id": "comfyui-controlnetaux",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-06-04T12:06:28.382895Z",
-                "dependencies": [
-                    "timm",
-                    "controlnet-aux==0.0.7",
-                    "mediapipe"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "b46d6864-257d-4168-8f26-6bf150346320",
-                "node_id": "comfyui-controlnetaux",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.2"
-            },
-            "license": "LICENSE",
-            "name": "ComfyUI-ControlnetAux",
-            "publisher": {
-                "createdAt": "2024-06-04T11:22:35.344933Z",
-                "description": "",
-                "id": "cvalentin",
-                "logo": "",
-                "members": [],
-                "name": "Cornea Valentin",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/madtunebk/ComfyUI-ControlnetAux",
-            "status": "",
             "status_detail": "",
             "tags": []
         }

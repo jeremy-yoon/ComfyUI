@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 /output/
 /models/
+/custom_nodes/
 /temp/
 extra_model_paths.yaml
 /.vs

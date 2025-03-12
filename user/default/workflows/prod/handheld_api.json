@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "seed": 658921583808064
+      "seed": 410802381331811
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -359,7 +359,7 @@
   },
   "32": {
     "inputs": {
-      "text1": "iconset, masterpiece, best quality, (delicate:1.1), StickerSheet of",
+      "text1": "(iconset:0.3),masterpiece, best quality, (delicate:1.1), StickerSheet of",
       "text2": [
         "66",
         0
@@ -478,7 +478,7 @@
   "39": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
-      "lora_strength": 0.5,
+      "lora_strength": 0.7000000000000001,
       "upscale_method": "None",
       "upscale_model_name": "None",
       "factor": 2,
@@ -759,18 +759,6 @@
       "title": "ImageKCentroidAutoDownscale"
     }
   },
-  "54": {
-    "inputs": {
-      "images": [
-        "53",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "이미지 미리보기"
-    }
-  },
   "55": {
     "inputs": {
       "brightness": 1,
@@ -1019,11 +1007,50 @@
   },
   "66": {
     "inputs": {
-      "text": " Silk Drawstring Pouch, soft silk fabric, gold embroidery, tasseled drawstring, compact size, lightweight, often tied to belt"
+      "text": "crystal topped staff,glowing crystal orb, engraved mystical symbols, lightweight but sturdy, ornate detailing"
     },
     "class_type": "ttN text",
     "_meta": {
       "title": "input_positive_infix"
+    }
+  },
+  "67": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "68": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "69": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
     }
   },
   "24:0": {
