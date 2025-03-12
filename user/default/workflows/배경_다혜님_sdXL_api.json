@@ -24,7 +24,7 @@
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "이미지 로드"
+      "title": "레퍼런스 이미지"
     }
   },
   "11": {
@@ -116,7 +116,7 @@
     },
     "class_type": "ttN float",
     "_meta": {
-      "title": "이미지 변형도"
+      "title": "레퍼런스 이미지 변형도"
     }
   },
   "19": {
@@ -218,7 +218,7 @@
       "save_prefix": "ComfyUI",
       "file_type": "png",
       "embed_workflow": true,
-      "seed": 385033228684789,
+      "seed": 903394540772416,
       "sdxl_pipe": [
         "21",
         0
@@ -244,6 +244,56 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "이미지 저장"
+    }
+  },
+  "24": {
+    "inputs": {
+      "strength": [
+        "26",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "control_net": [
+        "25",
+        0
+      ],
+      "image": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "25": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "26": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "형태 적용 강도"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "(Face)_Twinkle_Jewelry_Shining_Smile_Face_ver.A_green.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "형태 적용 이미지"
     }
   }
 }

@@ -28,10 +28,18 @@
       "save_prefix": "ComfyUI",
       "file_type": "png",
       "embed_workflow": true,
-      "noise_seed": 447759378047033,
+      "noise_seed": 274691372602490,
       "pipe": [
         "6",
         0
+      ],
+      "optional_positive": [
+        "21",
+        0
+      ],
+      "optional_negative": [
+        "21",
+        1
       ],
       "optional_latent": [
         "16",
@@ -114,7 +122,7 @@
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "이미지 로드"
+      "title": "레퍼런스 이미지"
     }
   },
   "11": {
@@ -153,7 +161,7 @@
   },
   "14": {
     "inputs": {
-      "int": 4
+      "int": 1
     },
     "class_type": "ttN int",
     "_meta": {
@@ -206,7 +214,7 @@
     },
     "class_type": "ttN float",
     "_meta": {
-      "title": "이미지 변형도"
+      "title": "레퍼런스 이미지 변형도"
     }
   },
   "19": {
@@ -228,6 +236,64 @@
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
       "title": "체크포인트 로드"
+    }
+  },
+  "21": {
+    "inputs": {
+      "strength": [
+        "24",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "6",
+        2
+      ],
+      "negative": [
+        "6",
+        3
+      ],
+      "control_net": [
+        "22",
+        0
+      ],
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "22": {
+    "inputs": {
+      "control_net_name": "1.5/control_v11p_sd15_scribble_fp16.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "23": {
+    "inputs": {
+      "image": "(Face)_Twinkle_Jewelry_Shining_Smile_Face_ver.A_green.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "형태 적용 이미지"
+    }
+  },
+  "24": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "형태 적용 강도"
     }
   }
 }
