@@ -4,50 +4,6 @@
         {
             "author": "",
             "category": "",
-            "description": "This extension uses DLib or InsightFace to calculate the vicinity between two faces and to perform other operation on faces.",
-            "downloads": 13173,
-            "icon": "",
-            "id": "comfyui_faceanalysis",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-07-11T17:30:42.974219Z",
-                "dependencies": [
-                    "dlib",
-                    "onnxruntime",
-                    "insightface",
-                    "color_matcher"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "3331875d-0e80-4e67-a656-36c254efb713",
-                "node_id": "comfyui_faceanalysis",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "LICENSE",
-            "name": "ComfyUI_FaceAnalysis",
-            "publisher": {
-                "createdAt": "2024-06-05T06:22:33.072793Z",
-                "description": "",
-                "id": "matteo",
-                "logo": "",
-                "members": [],
-                "name": "Matteo",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/cubiq/ComfyUI_FaceAnalysis",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "ComfyUI nodes for image processing.",
             "downloads": 78,
             "icon": "",
@@ -516,6 +472,50 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "This extension uses DLib or InsightFace to calculate the vicinity between two faces and to perform other operation on faces.",
+            "downloads": 13180,
+            "icon": "",
+            "id": "comfyui_faceanalysis",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-07-11T17:30:42.974219Z",
+                "dependencies": [
+                    "dlib",
+                    "onnxruntime",
+                    "insightface",
+                    "color_matcher"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "3331875d-0e80-4e67-a656-36c254efb713",
+                "node_id": "comfyui_faceanalysis",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "LICENSE",
+            "name": "ComfyUI_FaceAnalysis",
+            "publisher": {
+                "createdAt": "2024-06-05T06:22:33.072793Z",
+                "description": "",
+                "id": "matteo",
+                "logo": "",
+                "members": [],
+                "name": "Matteo",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/cubiq/ComfyUI_FaceAnalysis",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "sylym",
             "category": "",
             "description": "A node suite for ComfyUI that allows you to load image sequence and generate new image sequence with different styles or content.",
@@ -690,6 +690,53 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "NODES:Joy Caption Two, Joy Caption Two Advanced, Joy Caption Two Load, Joy Caption Extra Options",
+            "downloads": 7433,
+            "icon": "",
+            "id": "comfyui_slk_joy_caption_two",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-10-22T09:13:42.755918Z",
+                "dependencies": [
+                    "huggingface_hub==0.23.4",
+                    "transformers>=4.44.0",
+                    "numpy",
+                    "sentencepiece",
+                    "pillow>=10.1.0",
+                    "bitsandbytes>=0.44.1",
+                    "peft==0.12.0"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "07f13503-7c2a-4fa0-abde-e8838f29d18c",
+                "node_id": "comfyui_slk_joy_caption_two",
+                "status": "NodeVersionStatusActive",
+                "version": "0.0.8"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI_SLK_joy_caption_two",
+            "publisher": {
+                "createdAt": "2024-10-13T20:00:30.462623Z",
+                "description": "",
+                "id": "sherlockbt",
+                "logo": "",
+                "members": [],
+                "name": "EvilBT",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "kijai",
             "category": "",
             "description": "Original repo: [a/https://github.com/luckyhzt/LVCD](https://github.com/luckyhzt/LVCD)",
@@ -820,53 +867,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/time-river/ComfyUI-CLIPSeg",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "NODES:Joy Caption Two, Joy Caption Two Advanced, Joy Caption Two Load, Joy Caption Extra Options",
-            "downloads": 7422,
-            "icon": "",
-            "id": "comfyui_slk_joy_caption_two",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-10-22T09:13:42.755918Z",
-                "dependencies": [
-                    "huggingface_hub==0.23.4",
-                    "transformers>=4.44.0",
-                    "numpy",
-                    "sentencepiece",
-                    "pillow>=10.1.0",
-                    "bitsandbytes>=0.44.1",
-                    "peft==0.12.0"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "07f13503-7c2a-4fa0-abde-e8838f29d18c",
-                "node_id": "comfyui_slk_joy_caption_two",
-                "status": "NodeVersionStatusActive",
-                "version": "0.0.8"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI_SLK_joy_caption_two",
-            "publisher": {
-                "createdAt": "2024-10-13T20:00:30.462623Z",
-                "description": "",
-                "id": "sherlockbt",
-                "logo": "",
-                "members": [],
-                "name": "EvilBT",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

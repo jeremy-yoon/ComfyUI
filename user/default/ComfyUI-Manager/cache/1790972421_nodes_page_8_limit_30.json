@@ -976,7 +976,7 @@
             "author": "",
             "category": "",
             "description": "A set of custom ComfyUI nodes for performing basic post-processing effects including Film Grain and Vignette. These effects can help to take the edge off AI imagery and make them feel more natural.",
-            "downloads": 8030,
+            "downloads": 8033,
             "icon": "",
             "id": "comfyui-propost",
             "latest_version": {

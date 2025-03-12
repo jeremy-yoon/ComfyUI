@@ -212,9 +212,9 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 6,
-      "cfg": 3,
-      "denoise": 0.6,
+      "base_steps": 15,
+      "cfg": 5,
+      "denoise": 0.55,
       "refiner_steps": 20,
       "refiner_cfg": 8,
       "refiner_denoise": 1,
@@ -267,7 +267,7 @@
   },
   "109": {
     "inputs": {
-      "text": "cozy pink bedroom, Soft pillow and teddy bear"
+      "text": "sunny yellow flower shop exterior, pastel yellow walls with white wooden trim, large arched window with hanging flower baskets and a wooden sign, beige stone flooring with small wildflowers growing between cracks, cheerful and inviting"
     },
     "class_type": "ttN text",
     "_meta": {
@@ -511,7 +511,7 @@
   },
   "121": {
     "inputs": {
-      "lora_name": "None",
+      "lora_name": "Dream Painting Style [LoRA] - Pony V6 XL.safetensors",
       "lora_strength": 0.7000000000000001,
       "upscale_method": "None",
       "upscale_model_name": "None",
@@ -568,7 +568,7 @@
       "brightness": 1,
       "contrast": 0.9500000000000001,
       "saturation": 1.8,
-      "gamma": 2.5,
+      "gamma": 1.5,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -695,7 +695,7 @@
       "crop": "disabled",
       "base_steps": 6,
       "cfg": 3,
-      "denoise": 0.6,
+      "denoise": 0.55,
       "refiner_steps": 20,
       "refiner_cfg": 8,
       "refiner_denoise": 1,
@@ -754,7 +754,7 @@
   },
   "134": {
     "inputs": {
-      "text1": "best quality, masterpiece, (from below:0.7), 3d, (isometric:0.5), front view, floor, cute vibe, (soft colors:1.2),beautiful painterly artwork of ",
+      "text1": "best quality, masterpiece, (from below:0.7), front view, ground, cute vibe, (soft colors:1.2),beautiful painterly artwork of ",
       "text2": [
         "109",
         0
@@ -778,7 +778,7 @@
   },
   "136": {
     "inputs": {
-      "seed": 974088125046571
+      "seed": 943969060088604
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -809,7 +809,7 @@
   "140": {
     "inputs": {
       "images": [
-        "104",
+        "126",
         0
       ]
     },
@@ -887,15 +887,6 @@
       "title": "잠재 데이터 반복 배치 생성"
     }
   },
-  "147": {
-    "inputs": {
-      "text": "empty pink room"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
   "148": {
     "inputs": {
       "float": 1
@@ -905,20 +896,11 @@
       "title": "input_denoise"
     }
   },
-  "149": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
-    }
-  },
   "150": {
     "inputs": {
-      "text1": "ceiling, outline, particle, worst quality, human, girl, boy, watermark, text, blurry, tilted photo, repeated, display stand",
+      "text1": "objects, ceiling, outline, particle, worst quality, human, girl, boy, watermark, text, blurry, tilted photo, repeated, display stand",
       "text2": [
-        "149",
+        "137",
         0
       ],
       "text3": "",
@@ -931,9 +913,9 @@
   },
   "151": {
     "inputs": {
-      "text1": "best quality, masterpiece, (from below:0.7), 3d, (isometric:0.5), front view, floor, cute vibe, (soft colors:1.2),simple artwork of ",
+      "text1": "best quality, masterpiece, (from below:0.7), 3d, (isometric:0.5), front view, floor, cute vibe, (soft colors:1.2), empty space, simple artwork of  ",
       "text2": [
-        "147",
+        "179",
         0
       ],
       "text3": ",simple wallpaper",
@@ -964,8 +946,8 @@
   },
   "154": {
     "inputs": {
-      "prompt": "wall and floor",
-      "threshold": 0.15,
+      "prompt": "flat wall, ground, sky",
+      "threshold": 0.38,
       "sam_model": [
         "152",
         0
@@ -1014,22 +996,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "157": {
-    "inputs": {
-      "mask": [
-        "154",
-        1
-      ]
-    },
-    "class_type": "InvertMask",
-    "_meta": {
-      "title": "마스크 반전"
-    }
-  },
   "158": {
     "inputs": {
       "mask": [
-        "157",
+        "190",
         0
       ]
     },
@@ -1052,7 +1022,7 @@
   },
   "160": {
     "inputs": {
-      "grow_mask_by": 24,
+      "grow_mask_by": 32,
       "pixels": [
         "121",
         11
@@ -1062,7 +1032,7 @@
         4
       ],
       "mask": [
-        "157",
+        "190",
         0
       ]
     },
@@ -1085,7 +1055,7 @@
         0
       ],
       "mask": [
-        "157",
+        "190",
         0
       ]
     },
@@ -1130,7 +1100,7 @@
         0
       ],
       "mask": [
-        "157",
+        "190",
         0
       ]
     },
@@ -1156,7 +1126,7 @@
       "brightness": 1,
       "contrast": 0.9500000000000001,
       "saturation": 1.8,
-      "gamma": 2.5,
+      "gamma": 1.5,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -1213,8 +1183,8 @@
   },
   "169": {
     "inputs": {
-      "lora_name": "None",
-      "lora_strength": 1,
+      "lora_name": "Dream Painting Style [LoRA] - Pony V6 XL.safetensors",
+      "lora_strength": 0.7000000000000001,
       "upscale_method": "None",
       "upscale_model_name": "4x-AnimeSharp.pth",
       "factor": 2,
@@ -1293,7 +1263,7 @@
       "brightness": 1,
       "contrast": 0.9500000000000001,
       "saturation": 1.8,
-      "gamma": 2.5,
+      "gamma": 1.5,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -1361,6 +1331,143 @@
       "title": "이미지 미리보기"
     }
   },
+  "179": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "delimiter": ",",
+      "start_index": 0,
+      "skip_every": 0,
+      "max_count": 1
+    },
+    "class_type": "TextSplitByDelimiter",
+    "_meta": {
+      "title": "Text Split By Delimiter"
+    }
+  },
+  "180": {
+    "inputs": {
+      "text": [
+        "179",
+        0
+      ],
+      "PreviewTextNode_0": "sunny yellow flower shop exterior"
+    },
+    "class_type": "PreviewTextNode",
+    "_meta": {
+      "title": "Preview Text Node"
+    }
+  },
+  "182": {
+    "inputs": {
+      "images": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "183": {
+    "inputs": {
+      "images": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "184": {
+    "inputs": {
+      "images": [
+        "166",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "185": {
+    "inputs": {
+      "images": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "186": {
+    "inputs": {
+      "images": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "187": {
+    "inputs": {
+      "masks": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "Mask Fill Holes",
+    "_meta": {
+      "title": "Mask Fill Holes"
+    }
+  },
+  "188": {
+    "inputs": {
+      "mask": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "마스크를 이미지로 변환"
+    }
+  },
+  "189": {
+    "inputs": {
+      "images": [
+        "188",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "190": {
+    "inputs": {
+      "mask": [
+        "154",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "마스크 반전"
+    }
+  },
   "105:0": {
     "inputs": {
       "image": "Frame 1691019384.png",
@@ -1382,7 +1489,7 @@
   },
   "105:2": {
     "inputs": {
-      "strength": 0.5,
+      "strength": 0.8,
       "start_percent": 0,
       "end_percent": 0.8,
       "positive": [
@@ -1399,52 +1506,6 @@
       ],
       "image": [
         "105:0",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
-    }
-  },
-  "107:0": {
-    "inputs": {
-      "image": "Frame 1691019384.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "107:1": {
-    "inputs": {
-      "control_net_name": "control-lora-depth-rank128.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
-  "107:2": {
-    "inputs": {
-      "strength": 0.5,
-      "start_percent": 0,
-      "end_percent": 0.8,
-      "positive": [
-        "117",
-        2
-      ],
-      "negative": [
-        "117",
-        3
-      ],
-      "control_net": [
-        "107:1",
-        0
-      ],
-      "image": [
-        "107:0",
         0
       ]
     },
@@ -1491,6 +1552,52 @@
       ],
       "image": [
         "106:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "107:0": {
+    "inputs": {
+      "image": "Frame 1691019384.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "107:1": {
+    "inputs": {
+      "control_net_name": "control-lora-depth-rank128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "107:2": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 0.8,
+      "positive": [
+        "117",
+        2
+      ],
+      "negative": [
+        "117",
+        3
+      ],
+      "control_net": [
+        "107:1",
+        0
+      ],
+      "image": [
+        "107:0",
         0
       ]
     },

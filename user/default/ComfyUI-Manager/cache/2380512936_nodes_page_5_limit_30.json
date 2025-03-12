@@ -177,51 +177,8 @@
         {
             "author": "",
             "category": "",
-            "description": "Custom nodes for using [a/Tripo](https://www.tripo3d.ai/) in ComfyUI to create 3D from text and image prompts.",
-            "downloads": 2856,
-            "icon": "https://www.tripo3d.ai/v1/favicon.png",
-            "id": "comfyui-tripo",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-24T10:23:24.851363Z",
-                "dependencies": [
-                    "requests",
-                    "numpy",
-                    "websockets"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "40d9acba-07ca-4bc4-b645-54a84702e50f",
-                "node_id": "comfyui-tripo",
-                "status": "NodeVersionStatusActive",
-                "version": "1.1.22"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Tripo",
-            "publisher": {
-                "createdAt": "2024-07-19T07:17:20.620201Z",
-                "description": "",
-                "id": "seed93",
-                "logo": "",
-                "members": [],
-                "name": "seed93",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/VAST-AI-Research/ComfyUI-Tripo",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Implementation of DepthCrafter nodes for ComfyUI, create consistent depth maps for your videos.",
-            "downloads": 5312,
+            "downloads": 5313,
             "icon": "https://i.imgur.com/aiqQI7U.png",
             "id": "comfyui-depthcrafter-nodes",
             "latest_version": {
@@ -256,6 +213,49 @@
             },
             "rating": 0,
             "repository": "https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Custom nodes for using [a/Tripo](https://www.tripo3d.ai/) in ComfyUI to create 3D from text and image prompts.",
+            "downloads": 2858,
+            "icon": "https://www.tripo3d.ai/v1/favicon.png",
+            "id": "comfyui-tripo",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-24T10:23:24.851363Z",
+                "dependencies": [
+                    "requests",
+                    "numpy",
+                    "websockets"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "40d9acba-07ca-4bc4-b645-54a84702e50f",
+                "node_id": "comfyui-tripo",
+                "status": "NodeVersionStatusActive",
+                "version": "1.1.22"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Tripo",
+            "publisher": {
+                "createdAt": "2024-07-19T07:17:20.620201Z",
+                "description": "",
+                "id": "seed93",
+                "logo": "",
+                "members": [],
+                "name": "seed93",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/VAST-AI-Research/ComfyUI-Tripo",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -783,7 +783,7 @@
             "author": "",
             "category": "",
             "description": "Nodes for [a/LivePortrait](https://github.com/KwaiVGI/LivePortrait)",
-            "downloads": 18769,
+            "downloads": 18775,
             "icon": "",
             "id": "comfyui-liveportraitkj",
             "latest_version": {

@@ -29,6 +29,49 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "",
+            "downloads": 4568,
+            "icon": "",
+            "id": "comfyui-ollamagemini",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-08-06T21:18:41.436752Z",
+                "dependencies": [
+                    "google-generativeai",
+                    "Pillow",
+                    "requests"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "36f98aa6-f4bb-43b6-808f-45f6c9311c09",
+                "node_id": "comfyui-ollamagemini",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-OllamaGemini",
+            "publisher": {
+                "createdAt": "2024-06-23T07:15:12.623492Z",
+                "description": "",
+                "id": "abdallaalsw80",
+                "logo": "",
+                "members": [],
+                "name": "AbdallahAlswaiti",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/al-swaiti/ComfyUI-OllamaGemini",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "taabata",
             "category": "",
             "description": "Canvas to use with ComfyUI",
@@ -318,49 +361,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "",
-            "downloads": 4564,
-            "icon": "",
-            "id": "comfyui-ollamagemini",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-08-06T21:18:41.436752Z",
-                "dependencies": [
-                    "google-generativeai",
-                    "Pillow",
-                    "requests"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "36f98aa6-f4bb-43b6-808f-45f6c9311c09",
-                "node_id": "comfyui-ollamagemini",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-OllamaGemini",
-            "publisher": {
-                "createdAt": "2024-06-23T07:15:12.623492Z",
-                "description": "",
-                "id": "abdallaalsw80",
-                "logo": "",
-                "members": [],
-                "name": "AbdallahAlswaiti",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/al-swaiti/ComfyUI-OllamaGemini",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "leeguandong",
             "category": "",
             "description": "ComfyUI nodes to use CompareModelWeights",
@@ -488,6 +488,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "This is a pack with some handy nodes for ComfyUI.",
+            "downloads": 449,
+            "icon": "",
+            "id": "handy-nodes-comfyui",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-09-14T14:08:45.067381Z",
+                "dependencies": [
+                    "numpy"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "6e1d87d6-f7e6-43ca-8472-558c23b1bf7e",
+                "node_id": "handy-nodes-comfyui",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.2"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "Handy-Nodes-ComfyUI",
+            "publisher": {
+                "createdAt": "2024-09-10T15:38:18.349809Z",
+                "description": "",
+                "id": "anhkhoatranle30",
+                "logo": "",
+                "members": [],
+                "name": "Khoa Trn",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/anhkhoatranle30/Handy-Nodes-ComfyUI",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -622,45 +663,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/OSAnimate/ComfyUI-SpriteSheetMaker",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Use the Tab key to switch between textfields",
-            "downloads": 540,
-            "icon": "",
-            "id": "comfyui-tab-handler",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-09-09T09:21:23.737867Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "d95f4ae1-74b0-4f77-b251-5166f1bdf12a",
-                "node_id": "comfyui-tab-handler",
-                "status": "NodeVersionStatusActive",
-                "version": "1.1.0"
-            },
-            "license": "{\"text\": \"MIT License\"}",
-            "name": "Tab Handler",
-            "publisher": {
-                "createdAt": "2024-07-09T07:30:07.769811Z",
-                "description": "",
-                "id": "haoming02",
-                "logo": "",
-                "members": [],
-                "name": "Haoming02",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/Haoming02/comfyui-tab-handler",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

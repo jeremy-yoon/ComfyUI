@@ -189,7 +189,7 @@
             "author": "",
             "category": "",
             "description": "A custom node for ComfyUI to parse and extract data from JSON strings.",
-            "downloads": 543,
+            "downloads": 544,
             "icon": "",
             "id": "comfyui-simple-json-node",
             "latest_version": {

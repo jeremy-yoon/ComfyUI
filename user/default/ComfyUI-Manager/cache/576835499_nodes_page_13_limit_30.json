@@ -49,40 +49,38 @@
         {
             "author": "",
             "category": "",
-            "description": "This is a pack with some handy nodes for ComfyUI.",
-            "downloads": 448,
+            "description": "Use the Tab key to switch between textfields",
+            "downloads": 541,
             "icon": "",
-            "id": "handy-nodes-comfyui",
+            "id": "comfyui-tab-handler",
             "latest_version": {
                 "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-09-14T14:08:45.067381Z",
-                "dependencies": [
-                    "numpy"
-                ],
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-09-09T09:21:23.737867Z",
+                "dependencies": [],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "6e1d87d6-f7e6-43ca-8472-558c23b1bf7e",
-                "node_id": "handy-nodes-comfyui",
+                "id": "d95f4ae1-74b0-4f77-b251-5166f1bdf12a",
+                "node_id": "comfyui-tab-handler",
                 "status": "NodeVersionStatusActive",
-                "version": "1.0.2"
+                "version": "1.1.0"
             },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "Handy-Nodes-ComfyUI",
+            "license": "{\"text\": \"MIT License\"}",
+            "name": "Tab Handler",
             "publisher": {
-                "createdAt": "2024-09-10T15:38:18.349809Z",
+                "createdAt": "2024-07-09T07:30:07.769811Z",
                 "description": "",
-                "id": "anhkhoatranle30",
+                "id": "haoming02",
                 "logo": "",
                 "members": [],
-                "name": "Khoa Trn",
+                "name": "Haoming02",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/anhkhoatranle30/Handy-Nodes-ComfyUI",
+            "repository": "https://github.com/Haoming02/comfyui-tab-handler",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -91,7 +89,7 @@
             "author": "",
             "category": "",
             "description": "Nodes:LoadLoraWithTags. Save/Load trigger words for loras from a json and auto fetch them on civitai if they are missing.",
-            "downloads": 2580,
+            "downloads": 2582,
             "icon": "",
             "id": "loadlorawithtags",
             "latest_version": {
@@ -588,7 +586,7 @@
             "author": "",
             "category": "",
             "description": "A collection of post processing nodes for ComfyUI, which enable a variety of visually striking image effects",
-            "downloads": 12267,
+            "downloads": 12269,
             "icon": "",
             "id": "comfyui-post-processing-nodes",
             "latest_version": {

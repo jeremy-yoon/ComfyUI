@@ -29,48 +29,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "This extension provides various nodes to support Lora Block Weight, Regional Nodes, Backend Cache, Prompt Utils, List Utils, Noise(Seed) Utils, ... and the Impact Pack.",
-            "downloads": 49549,
-            "icon": "",
-            "id": "comfyui-inspire-pack",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-02T15:49:21.840325Z",
-                "dependencies": [
-                    "matplotlib",
-                    "cachetools"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "382f326f-eab4-4793-a89e-b70cd7da6275",
-                "node_id": "comfyui-inspire-pack",
-                "status": "NodeVersionStatusActive",
-                "version": "1.14.1"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI Inspire Pack",
-            "publisher": {
-                "createdAt": "2024-05-22T15:42:00.969348Z",
-                "description": "",
-                "id": "drltdata",
-                "logo": "",
-                "members": [],
-                "name": "Dr.Lt.Data",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "leeguandong",
             "category": "",
             "description": "Nodes:Load Video to Images, Image to Canny, ControlNet Model Loader, VEDit Model Loader, VEdit Sampler. [a/https://github.com/SingleZombie/DiffusersExample/tree/main/ReplaceAttn](https://github.com/SingleZombie/DiffusersExample/tree/main/ReplaceAttn)",
@@ -181,8 +139,55 @@
         {
             "author": "",
             "category": "",
+            "description": "Wrapper nodes to use Dynami/ToonCrafter image2video and frame interpolation models in ComfyUI",
+            "downloads": 3928,
+            "icon": "",
+            "id": "comfyui-dynamicrafterwrapper",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-06-28T20:23:32.002779Z",
+                "dependencies": [
+                    "einops>=0.3.0",
+                    "numpy>=1.24.2",
+                    "omegaconf>=2.1.1",
+                    "pytorch_lightning>=2.2.1",
+                    "tqdm>=4.65.0",
+                    "transformers>=4.25.1",
+                    "timm"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "db553ef0-b4cb-41cf-86f0-3c1ccf01ff0d",
+                "node_id": "comfyui-dynamicrafterwrapper",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.2"
+            },
+            "license": "Apache-2.0",
+            "name": "ComfyUI-DynamiCrafterWrapper",
+            "publisher": {
+                "createdAt": "2024-06-09T11:11:54.62154Z",
+                "description": "",
+                "id": "kijai",
+                "logo": "",
+                "members": [],
+                "name": "Kijai",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/kijai/ComfyUI-DynamiCrafterWrapper",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "Nodes related to video workflows",
-            "downloads": 149457,
+            "downloads": 149515,
             "icon": "",
             "id": "comfyui-videohelpersuite",
             "latest_version": {
@@ -224,7 +229,7 @@
             "author": "",
             "category": "",
             "description": "These are custom nodes for ComfyUI native implementation of BrushNet (inpaint), PowerPaint (inpaint, object removal) and HiDiffusion (higher resolution for SD15 and SDXL)",
-            "downloads": 11602,
+            "downloads": 11609,
             "icon": "",
             "id": "comfyui-brushnet",
             "latest_version": {
@@ -267,7 +272,7 @@
             "author": "",
             "category": "",
             "description": "The Fast and Simple Face Swap Extension Node for ComfyUI, based on ReActor SD-WebUI Face Swap Extension",
-            "downloads": 35718,
+            "downloads": 35723,
             "icon": "",
             "id": "comfyui-reactor-node",
             "latest_version": {
