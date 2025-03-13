@@ -1,0 +1,548 @@
+{
+  "1": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinT_OGC (694MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model_name": "sam_vit_h (2.56GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "int": 1344
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_first_image_height"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "5": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "6": {
+    "inputs": {
+      "int": 24
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_num_colors"
+    }
+  },
+  "7": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "8": {
+    "inputs": {
+      "int": 640
+    },
+    "class_type": "ttN int",
+    "_meta": {
+      "title": "input_first_image_width"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "20",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "10": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "30",
+        0
+      ],
+      "positive_l": [
+        "30",
+        0
+      ],
+      "negative_g": [
+        "12",
+        0
+      ],
+      "negative_l": [
+        "12",
+        0
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixels": [
+        "18",
+        0
+      ],
+      "vae": [
+        "10",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "12": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "13": {
+    "inputs": {
+      "pixels": [
+        "14",
+        0
+      ],
+      "vae": [
+        "16",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "14": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "destination": [
+        "15",
+        0
+      ],
+      "source": [
+        "20",
+        11
+      ],
+      "mask": [
+        "28",
+        1
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "마스크된 이미지 합성"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "whitebackground2.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "16": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "29",
+        0
+      ],
+      "positive_l": [
+        "29",
+        0
+      ],
+      "negative_g": [
+        "12",
+        0
+      ],
+      "negative_l": [
+        "12",
+        0
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "17": {
+    "inputs": {
+      "seed": 645955982502019
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "seed"
+    }
+  },
+  "18": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "19": {
+    "inputs": {
+      "image": "a0908d60-43a8-4b0e-a9ab-f76ff77b7b09-8a20d31c-989e-432c-a0b5-7c1967eb6408-1741783976492-0.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_image_path"
+    }
+  },
+  "20": {
+    "inputs": {
+      "lora_name": "None",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "None",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 3,
+      "cfg": 1.5,
+      "denoise": [
+        "32",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "sdxl_pipe": [
+        "10",
+        0
+      ],
+      "optional_latent": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "21": {
+    "inputs": {
+      "images": [
+        "22",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "22": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "None",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 6,
+      "cfg": 3,
+      "denoise": [
+        "31",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": [
+        "17",
+        0
+      ],
+      "sdxl_pipe": [
+        "16",
+        0
+      ],
+      "optional_latent": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "23": {
+    "inputs": {
+      "pixelation_size": 224,
+      "num_colors": [
+        "6",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "22",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "24": {
+    "inputs": {
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "25": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "26": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "27": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.2,
+      "gamma": 1.2,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "28": {
+    "inputs": {
+      "prompt": "object",
+      "threshold": 0.25,
+      "sam_model": [
+        "2",
+        0
+      ],
+      "grounding_dino_model": [
+        "1",
+        0
+      ],
+      "image": [
+        "20",
+        11
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text": "pixel art, Rose picnic table, white background"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "30": {
+    "inputs": {
+      "text": "realistic"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "default"
+    }
+  },
+  "31": {
+    "inputs": {
+      "float": 0.5
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "32": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "denoise"
+    }
+  }
+}

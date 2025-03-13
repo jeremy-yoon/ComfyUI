@@ -1,0 +1,289 @@
+{
+  "1": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": "Spring Fortress Garden Picnic Mat, Soft marble castle walls with petals dancing in the wind, grass, and a cozy picnic mat spread on the ground"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "3": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 1,
+      "upscale_method": "None",
+      "upscale_model_name": "None",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 6,
+      "cfg": 3,
+      "denoise": [
+        "12",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "sdxl_pipe": [
+        "7",
+        0
+      ],
+      "optional_latent": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "6": {
+    "inputs": {
+      "pixels": [
+        "21",
+        0
+      ],
+      "vae": [
+        "7",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "7": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "14",
+        6
+      ],
+      "positive_l": [
+        "14",
+        6
+      ],
+      "negative_g": [
+        "15",
+        0
+      ],
+      "negative_l": [
+        "15",
+        0
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "11": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 8,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "12": {
+    "inputs": {
+      "float": 0.55
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "denoise"
+    }
+  },
+  "13": {
+    "inputs": {
+      "pixelation_size": 224,
+      "num_colors": 64,
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "3",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text1": "pixel art, (from below:0.7), front view, flat empty ground, flat painting, simple painterly artwork of ",
+      "text2": [
+        "2",
+        0
+      ],
+      "text3": ",soft colors, simple wallpaper",
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "15": {
+    "inputs": {
+      "text": "photorealistic, particles, noise, artifacts, fluttering, scattering"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "16": {
+    "inputs": {
+      "mode": "rescale",
+      "supersample": "true",
+      "resampling": "bilinear",
+      "rescale_factor": 0.5,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "17": {
+    "inputs": {
+      "mode": "rescale",
+      "supersample": "true",
+      "resampling": "bilinear",
+      "rescale_factor": 16,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "18": {
+    "inputs": {
+      "image": "ComfyUI_temp_eaexn_00009_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_image_path"
+    }
+  },
+  "19": {
+    "inputs": {
+      "seed": 760134622144395
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "20": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "21": {
+    "inputs": {
+      "brightness": 1.1,
+      "contrast": 1,
+      "saturation": 1.1,
+      "gamma": 1.4000000000000001,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  }
+}
