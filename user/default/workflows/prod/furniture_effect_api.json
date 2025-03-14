@@ -1,7 +1,7 @@
 {
   "45": {
     "inputs": {
-      "seed": 425618730654823
+      "seed": 434693232859119
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -286,30 +286,6 @@
       "title": "잠재 데이터 반복 배치 생성"
     }
   },
-  "70": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "nearest",
-      "rescale_factor": 2,
-      "resize_width": [
-        "58",
-        0
-      ],
-      "resize_height": [
-        "72",
-        0
-      ],
-      "image": [
-        "82",
-        11
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
   "71": {
     "inputs": {
       "pixelation_size": 168,
@@ -324,8 +300,8 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "70",
-        0
+        "82",
+        11
       ]
     },
     "class_type": "Image Pixelate",
@@ -344,7 +320,7 @@
   },
   "74": {
     "inputs": {
-      "int": 24
+      "int": 128
     },
     "class_type": "ttN int",
     "_meta": {
@@ -354,7 +330,7 @@
   "77": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
-      "lora_strength": 0.75,
+      "lora_strength": 0.5,
       "upscale_method": "None",
       "upscale_model_name": "4x-AnimeSharp.pth",
       "factor": 2,
@@ -364,8 +340,8 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 6,
-      "cfg": 3,
+      "base_steps": 4,
+      "cfg": 2,
       "denoise": 0.6,
       "refiner_steps": 20,
       "refiner_cfg": 8,
@@ -384,9 +360,17 @@
         "55",
         0
       ],
+      "optional_model": [
+        "95",
+        0
+      ],
       "optional_latent": [
         "69",
         0
+      ],
+      "optional_clip": [
+        "95",
+        1
       ]
     },
     "class_type": "ttN pipeKSamplerSDXL_v2",
@@ -443,7 +427,7 @@
   },
   "81": {
     "inputs": {
-      "text1": "ceiling, outline, vivid colors, worst quality, human, girl, boy, watermark, text, blurry, tilted photo, repeated, display stand",
+      "text1": "worst quality, noise, particles, watermark, text",
       "text2": [
         "63",
         0
@@ -458,7 +442,7 @@
   },
   "82": {
     "inputs": {
-      "lora_name": "None",
+      "lora_name": "Dream Painting Style [LoRA] - Pony V6 XL.safetensors",
       "lora_strength": 0.7000000000000001,
       "upscale_method": "None",
       "upscale_model_name": "None",
@@ -469,8 +453,8 @@
       "height": 1024,
       "longer_side": 1024,
       "crop": "disabled",
-      "base_steps": 6,
-      "cfg": 3,
+      "base_steps": 3,
+      "cfg": 1.5,
       "denoise": [
         "94",
         0
@@ -521,12 +505,12 @@
   },
   "88": {
     "inputs": {
-      "text1": "best quality, masterpiece, (soft colors:1.2), painting of ",
+      "text1": "best quality, masterpiece, soft colors, shining,\nbeautiful dreamy paintery of ",
       "text2": [
         "85",
         0
       ],
-      "text3": ", simple background, white background",
+      "text3": ", soft colors, dreamy painting, white background",
       "delimiter": ""
     },
     "class_type": "ttN text3BOX_3WAYconcat",
@@ -599,6 +583,25 @@
       "title": "input_denoise"
     }
   },
+  "95": {
+    "inputs": {
+      "lora_name": "Dream Painting Style [LoRA] - Pony V6 XL.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "55",
+        1
+      ],
+      "clip": [
+        "55",
+        5
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "LoRA 로드"
+    }
+  },
   "86:0": {
     "inputs": {
       "image": "Frame 1691019384.png",
@@ -622,7 +625,7 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0,
       "positive": [
         "47",
         2
@@ -668,7 +671,7 @@
     "inputs": {
       "strength": 1,
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0,
       "positive": [
         "86:2",
         0
