@@ -128,24 +128,6 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "11": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "nearest",
-      "rescale_factor": 8,
-      "resize_width": 800,
-      "resize_height": 1792,
-      "image": [
-        "18",
-        0
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
   "12": {
     "inputs": {
       "float": 0.55
@@ -201,12 +183,12 @@
   },
   "16": {
     "inputs": {
-      "mode": "rescale",
+      "mode": "resize",
       "supersample": "true",
       "resampling": "bilinear",
       "rescale_factor": 0.5,
-      "resize_width": 800,
-      "resize_height": 1792,
+      "resize_width": 100,
+      "resize_height": 224,
       "image": [
         "18",
         0
@@ -219,7 +201,7 @@
   },
   "17": {
     "inputs": {
-      "mode": "rescale",
+      "mode": "resize",
       "supersample": "true",
       "resampling": "bilinear",
       "rescale_factor": 16,

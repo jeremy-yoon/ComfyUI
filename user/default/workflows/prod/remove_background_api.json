@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "mode": "rescale",
+      "mode": "resize",
       "supersample": "true",
       "resampling": "nearest",
       "rescale_factor": 8,

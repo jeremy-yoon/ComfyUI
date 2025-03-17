@@ -603,8 +603,8 @@
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
-      "saturation": 1.8,
-      "gamma": 1.8,
+      "saturation": 1.5,
+      "gamma": 1.5,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -663,8 +663,8 @@
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
-      "saturation": 1.2,
-      "gamma": 1.2,
+      "saturation": 1.1,
+      "gamma": 1.1,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
