@@ -1,4 +1,5 @@
 {
     "ModelManager.APIKey.Civitai": "267d3c70d7df0536384d0585718e4c0c",
-    "Comfy.TutorialCompleted": true
+    "Comfy.TutorialCompleted": true,
+    "Comfy.Queue.ImageFit": "contain"
 }
