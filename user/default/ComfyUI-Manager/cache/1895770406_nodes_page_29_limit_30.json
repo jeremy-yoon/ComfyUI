@@ -86,7 +86,7 @@
             "author": "",
             "category": "",
             "description": "Improved AnimateDiff integration for ComfyUI.",
-            "downloads": 62289,
+            "downloads": 62309,
             "icon": "",
             "id": "comfyui-animatediff-evolved",
             "latest_version": {
@@ -469,6 +469,51 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "A custom node for ComfyUI to integrate Google Gemini API.",
+            "downloads": 1533,
+            "icon": "",
+            "id": "gemini-api",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-21T07:30:09.091046Z",
+                "dependencies": [
+                    "google-genai>=1.5.0",
+                    "Pillow>=10.1.0",
+                    "requests",
+                    "numpy",
+                    "torch"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "6b31321d-c206-4a9b-ad04-7b762be242a7",
+                "node_id": "gemini-api",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.6"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Gemini-API",
+            "publisher": {
+                "createdAt": "2024-09-29T10:55:36.930737Z",
+                "description": "",
+                "id": "cychenyue",
+                "logo": "",
+                "members": [],
+                "name": "cychenyue",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/CY-CHENYUE/ComfyUI-Gemini-API",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "wqjuser",
             "category": "",
             "description": "Use an online large language model to describe images.",
@@ -518,51 +563,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/kijai/ComfyUI-LaVi-Bridge-Wrapper",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "A custom node for ComfyUI to integrate Google Gemini API.",
-            "downloads": 1531,
-            "icon": "",
-            "id": "gemini-api",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-21T07:30:09.091046Z",
-                "dependencies": [
-                    "google-genai>=1.5.0",
-                    "Pillow>=10.1.0",
-                    "requests",
-                    "numpy",
-                    "torch"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "6b31321d-c206-4a9b-ad04-7b762be242a7",
-                "node_id": "gemini-api",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.6"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Gemini-API",
-            "publisher": {
-                "createdAt": "2024-09-29T10:55:36.930737Z",
-                "description": "",
-                "id": "cychenyue",
-                "logo": "",
-                "members": [],
-                "name": "cychenyue",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/CY-CHENYUE/ComfyUI-Gemini-API",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -688,47 +688,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "model merging nodes powered by sd-mecha, a memory efficient state dict recipe merger",
-            "downloads": 1230,
-            "icon": "",
-            "id": "comfy-mecha",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-07T15:42:14.268203Z",
-                "dependencies": [
-                    "sd-mecha>=0.0.29"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "be6b01b8-741b-46b8-bbfa-564884a9d453",
-                "node_id": "comfy-mecha",
-                "status": "NodeVersionStatusPending",
-                "version": "1.1.29"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "mecha",
-            "publisher": {
-                "createdAt": "2024-06-11T20:42:01.939197Z",
-                "description": "",
-                "id": "ljleb",
-                "logo": "",
-                "members": [],
-                "name": "ljleb",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/ljleb/comfy-mecha",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "kijai",
             "category": "",
             "description": "Fast and accurate monocular depth estimation.",
@@ -848,6 +807,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/jeffy5/comfyui-faceless-node",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "model merging nodes powered by sd-mecha, a memory efficient state dict recipe merger",
+            "downloads": 1231,
+            "icon": "",
+            "id": "comfy-mecha",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-07T15:42:14.268203Z",
+                "dependencies": [
+                    "sd-mecha>=0.0.29"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "be6b01b8-741b-46b8-bbfa-564884a9d453",
+                "node_id": "comfy-mecha",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.29"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "mecha",
+            "publisher": {
+                "createdAt": "2024-06-11T20:42:01.939197Z",
+                "description": "",
+                "id": "ljleb",
+                "logo": "",
+                "members": [],
+                "name": "ljleb",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/ljleb/comfy-mecha",
             "status": "",
             "status_detail": "",
             "tags": []

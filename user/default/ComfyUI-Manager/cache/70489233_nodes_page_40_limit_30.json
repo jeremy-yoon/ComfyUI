@@ -439,7 +439,7 @@
             "author": "",
             "category": "",
             "description": "A minimalistic implementation of [a/Robust Video Matting (RVM)](https://github.com/PeterL1n/RobustVideoMatting/) in ComfyUI",
-            "downloads": 7675,
+            "downloads": 7679,
             "icon": "",
             "id": "comfyui-video-matting",
             "latest_version": {
@@ -559,10 +559,37 @@
             "tags": []
         },
         {
+            "author": "gisu",
+            "category": "",
+            "description": "Collection of nodes for the automation of workflows",
+            "downloads": 0,
+            "icon": "",
+            "id": "comfyui-foxpack",
+            "license": "{}",
+            "name": "foxpack",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/gisu/comfyui-foxpack",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "",
             "category": "",
             "description": "A simple, lightweight AMD GPU monitoring tool for ComfyUI that displays real-time information about your AMD GPU directly in the UI.",
-            "downloads": 175,
+            "downloads": 176,
             "icon": "",
             "id": "amdgpumonitor",
             "latest_version": {
@@ -593,33 +620,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/iDAPPA/ComfyUI-AMDGPUMonitor",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "gisu",
-            "category": "",
-            "description": "Collection of nodes for the automation of workflows",
-            "downloads": 0,
-            "icon": "",
-            "id": "comfyui-foxpack",
-            "license": "{}",
-            "name": "foxpack",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/gisu/comfyui-foxpack",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

@@ -253,7 +253,7 @@
             "author": "",
             "category": "",
             "description": "A set of useful nodes for convenient use of ComfyUI, including: Seed randomization before the generation process starts, with saving of the last used values and the ability to automatically interrupt the current generation; A function to pause the generation process; Slider nodes for convenient control of input parameters; An alternative version of the standard Reroute node.",
-            "downloads": 63967,
+            "downloads": 63978,
             "icon": "",
             "id": "comfyui-mxtoolkit",
             "latest_version": {
@@ -369,6 +369,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/cake-ml/tiny-sana-preview",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "A port of muerrilla's sd-webui-Detail-Daemon as a node for ComfyUI, to adjust sigmas that generally enhance details, and possibly remove unwanted bokeh or background blurring.",
+            "downloads": 66156,
+            "icon": "https://raw.githubusercontent.com/Jonseed/ComfyUI-Detail-Daemon/refs/heads/main/DetailDaemonIcon.jpg",
+            "id": "comfyui-detail-daemon",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-14T16:48:21.051668Z",
+                "dependencies": [
+                    "matplotlib"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "68a0f409-3510-4bc6-9ec2-e9bf05449c6c",
+                "node_id": "comfyui-detail-daemon",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.2"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Detail-Daemon",
+            "publisher": {
+                "createdAt": "2024-10-31T21:40:07.65705Z",
+                "description": "",
+                "id": "jonseed",
+                "logo": "",
+                "members": [],
+                "name": "Jonseed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Jonseed/ComfyUI-Detail-Daemon",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -604,49 +645,8 @@
         {
             "author": "",
             "category": "",
-            "description": "A port of muerrilla's sd-webui-Detail-Daemon as a node for ComfyUI, to adjust sigmas that generally enhance details, and possibly remove unwanted bokeh or background blurring.",
-            "downloads": 66136,
-            "icon": "https://raw.githubusercontent.com/Jonseed/ComfyUI-Detail-Daemon/refs/heads/main/DetailDaemonIcon.jpg",
-            "id": "comfyui-detail-daemon",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-14T16:48:21.051668Z",
-                "dependencies": [
-                    "matplotlib"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "68a0f409-3510-4bc6-9ec2-e9bf05449c6c",
-                "node_id": "comfyui-detail-daemon",
-                "status": "NodeVersionStatusPending",
-                "version": "1.1.2"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Detail-Daemon",
-            "publisher": {
-                "createdAt": "2024-10-31T21:40:07.65705Z",
-                "description": "",
-                "id": "jonseed",
-                "logo": "",
-                "members": [],
-                "name": "Jonseed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/Jonseed/ComfyUI-Detail-Daemon",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Plug-and-play ComfyUI node sets for making ControlNet hint images",
-            "downloads": 195538,
+            "downloads": 195597,
             "icon": "",
             "id": "comfyui_controlnet_aux",
             "latest_version": {
@@ -845,39 +845,41 @@
         {
             "author": "",
             "category": "",
-            "description": "Nodes:Create N-Token String",
-            "downloads": 831,
+            "description": "Custom ComfyUI Nodes for interacting with [a/Ollama](https://ollama.com/) using the [a/ollama python client](https://github.com/ollama/ollama-python).\nIntegrate the power of LLMs into CompfyUI workflows easily.",
+            "downloads": 32785,
             "icon": "",
-            "id": "comfyui-textutils",
+            "id": "comfyui-ollama",
             "latest_version": {
                 "changelog": "",
                 "comfy_node_extract_status": "success",
-                "createdAt": "2024-06-14T09:31:38.262261Z",
-                "dependencies": [],
+                "createdAt": "2025-01-10T08:53:26.100497Z",
+                "dependencies": [
+                    "ollama"
+                ],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "2fe00ff2-00c2-4e3d-8f49-a7abe7d54df7",
-                "node_id": "comfyui-textutils",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
+                "id": "91d9b21c-4ba4-4378-a4e8-052934e82f53",
+                "node_id": "comfyui-ollama",
+                "status": "NodeVersionStatusPending",
+                "version": "2.0.1"
             },
-            "license": "LICENSE",
-            "name": "ComfyUI-TextUtils",
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "comfyui-ollama",
             "publisher": {
-                "createdAt": "2024-06-14T09:22:15.461336Z",
+                "createdAt": "2024-06-25T20:33:26.18372Z",
                 "description": "",
-                "id": "wutipong",
+                "id": "stavsap",
                 "logo": "",
                 "members": [],
-                "name": "Wutipong W",
+                "name": "Stav Sapir",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/wutipong/ComfyUI-TextUtils",
-            "status": "",
+            "repository": "https://github.com/stavsap/comfyui-ollama",
+            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },

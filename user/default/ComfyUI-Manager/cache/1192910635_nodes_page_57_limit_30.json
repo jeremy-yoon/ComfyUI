@@ -5,7 +5,7 @@
             "author": "",
             "category": "",
             "description": "Advanced tiling of various shapes for ComfyUI",
-            "downloads": 794,
+            "downloads": 795,
             "icon": "",
             "id": "comfyui-advanced-tiling",
             "latest_version": {
@@ -409,7 +409,7 @@
             "author": "",
             "category": "",
             "description": "ScenarioPrompt is a custom node that helps you understand what you're prompting for each property as you build your prompts",
-            "downloads": 883,
+            "downloads": 884,
             "icon": "",
             "id": "comfyui-scenarioprompt",
             "latest_version": {

@@ -355,7 +355,7 @@
             "author": "",
             "category": "",
             "description": "An implementation of adaptive guidance for ComfyUI\nSee https://bcv-uniandes.github.io/adaptiveguidance-wp/",
-            "downloads": 6564,
+            "downloads": 6565,
             "icon": "",
             "id": "comfyui-adaptive-guidance",
             "latest_version": {
@@ -466,8 +466,50 @@
         {
             "author": "",
             "category": "",
+            "description": "",
+            "downloads": 709,
+            "icon": "",
+            "id": "comfyui-self-guidance",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-03-19T11:05:49.413714Z",
+                "dependencies": [
+                    "diffusers==0.26.3",
+                    "fuzzywuzzy==0.18.0"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "155022fe-0510-4909-8e14-391daa47d73b",
+                "node_id": "comfyui-self-guidance",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "comfyui-self-guidance",
+            "publisher": {
+                "createdAt": "2024-08-15T09:26:50.030542Z",
+                "description": "",
+                "id": "forever22777",
+                "logo": "",
+                "members": [],
+                "name": "forever22",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/forever22777/comfyui-self-guidance",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "These are nodes to animate an image with a reference video using UniAnimate. [w/Name conflict with AIFSH/ComfyUI-UniAnimate. Cannot install simulatenously.]",
-            "downloads": 3452,
+            "downloads": 3453,
             "icon": "",
             "id": "comfyui-unianimate-w",
             "latest_version": {
@@ -514,48 +556,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/Isi-dev/ComfyUI-UniAnimate-W",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "",
-            "downloads": 708,
-            "icon": "",
-            "id": "comfyui-self-guidance",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-03-19T11:05:49.413714Z",
-                "dependencies": [
-                    "diffusers==0.26.3",
-                    "fuzzywuzzy==0.18.0"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "155022fe-0510-4909-8e14-391daa47d73b",
-                "node_id": "comfyui-self-guidance",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.1"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "comfyui-self-guidance",
-            "publisher": {
-                "createdAt": "2024-08-15T09:26:50.030542Z",
-                "description": "",
-                "id": "forever22777",
-                "logo": "",
-                "members": [],
-                "name": "forever22",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/forever22777/comfyui-self-guidance",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -746,48 +746,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Optimized wrapper nodes for MimicMotion: [a/https://github.com/tencent/MimicMotion](https://github.com/tencent/MimicMotion)",
-            "downloads": 10665,
-            "icon": "",
-            "id": "comfyui-mimicmotionwrapper",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-12T17:35:02.503327Z",
-                "dependencies": [
-                    "diffusers>=0.27.0",
-                    "transformers>=4.32.1"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "7739debc-6451-4080-9548-cd3de48d90dd",
-                "node_id": "comfyui-mimicmotionwrapper",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.2"
-            },
-            "license": "{\"text\": \"Apache License 2.0\"}",
-            "name": "ComfyUI-MimicMotionWrapper",
-            "publisher": {
-                "createdAt": "2024-06-09T11:11:54.62154Z",
-                "description": "",
-                "id": "kijai",
-                "logo": "",
-                "members": [],
-                "name": "Kijai",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/kijai/ComfyUI-MimicMotionWrapper",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "kealiu",
             "category": "",
             "description": "Zero-1-to-3: Zero-shot One Image to 3D Object, unofficial porting of original [Zero123](https://github.com/cvlab-columbia/zero123)",
@@ -844,42 +802,42 @@
         {
             "author": "",
             "category": "",
-            "description": "Random nodes for ComfyUI I made to solve my struggle with ComfyUI (ex: pipe, process). Have varying quality.",
-            "downloads": 2027,
+            "description": "Optimized wrapper nodes for MimicMotion: [a/https://github.com/tencent/MimicMotion](https://github.com/tencent/MimicMotion)",
+            "downloads": 10672,
             "icon": "",
-            "id": "comfyui-0246",
+            "id": "comfyui-mimicmotionwrapper",
             "latest_version": {
                 "changelog": "",
                 "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-15T03:39:54.701299Z",
+                "createdAt": "2025-01-12T17:35:02.503327Z",
                 "dependencies": [
-                    "wrapt",
-                    "natsort"
+                    "diffusers>=0.27.0",
+                    "transformers>=4.32.1"
                 ],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "bbc56e10-7f11-451e-8bf6-6ae0002af257",
-                "node_id": "comfyui-0246",
+                "id": "7739debc-6451-4080-9548-cd3de48d90dd",
+                "node_id": "comfyui-mimicmotionwrapper",
                 "status": "NodeVersionStatusPending",
-                "version": "1.1.3"
+                "version": "1.0.2"
             },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-0246",
+            "license": "{\"text\": \"Apache License 2.0\"}",
+            "name": "ComfyUI-MimicMotionWrapper",
             "publisher": {
-                "createdAt": "2024-05-24T03:28:59.211484Z",
+                "createdAt": "2024-06-09T11:11:54.62154Z",
                 "description": "",
-                "id": "trung0246",
+                "id": "kijai",
                 "logo": "",
                 "members": [],
-                "name": "Trung0246",
+                "name": "Kijai",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/Trung0246/ComfyUI-0246",
-            "status": "",
+            "repository": "https://github.com/kijai/ComfyUI-MimicMotionWrapper",
+            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -934,6 +892,48 @@
             "rating": 0,
             "repository": "https://github.com/BahaC/ComfyUI-ZonosTTS",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Random nodes for ComfyUI I made to solve my struggle with ComfyUI (ex: pipe, process). Have varying quality.",
+            "downloads": 2028,
+            "icon": "",
+            "id": "comfyui-0246",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-15T03:39:54.701299Z",
+                "dependencies": [
+                    "wrapt",
+                    "natsort"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "bbc56e10-7f11-451e-8bf6-6ae0002af257",
+                "node_id": "comfyui-0246",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.3"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-0246",
+            "publisher": {
+                "createdAt": "2024-05-24T03:28:59.211484Z",
+                "description": "",
+                "id": "trung0246",
+                "logo": "",
+                "members": [],
+                "name": "Trung0246",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Trung0246/ComfyUI-0246",
+            "status": "",
             "status_detail": "",
             "tags": []
         },

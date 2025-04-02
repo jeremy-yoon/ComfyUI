@@ -218,6 +218,52 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "nodes for nightly moondream2 VLM inference\nsupports only captioning and visual queries at the moment",
+            "downloads": 746,
+            "icon": "",
+            "id": "comfyui-moondream2",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-12-29T13:17:53.660952Z",
+                "dependencies": [
+                    "huggingface-hub",
+                    "numpy",
+                    "onnxruntime",
+                    "onnxruntime-gpu",
+                    "pillow",
+                    "tokenizers"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "6a23d91a-f292-4879-9799-cd1b7500eb71",
+                "node_id": "comfyui-moondream2",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-moondream2",
+            "publisher": {
+                "createdAt": "2024-12-29T12:52:08.39256Z",
+                "description": "",
+                "id": "zhilemann",
+                "logo": "",
+                "members": [],
+                "name": "zhilemann",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/zhilemann/ComfyUI-moondream2",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "Vaibhavs10",
             "category": "",
             "description": "Run DDUF in ComfyUI - powered by Diffusers.",
@@ -267,52 +313,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/MinusZoneAI/ComfyUI-StylizePhoto-MZ",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "nodes for nightly moondream2 VLM inference\nsupports only captioning and visual queries at the moment",
-            "downloads": 745,
-            "icon": "",
-            "id": "comfyui-moondream2",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-29T13:17:53.660952Z",
-                "dependencies": [
-                    "huggingface-hub",
-                    "numpy",
-                    "onnxruntime",
-                    "onnxruntime-gpu",
-                    "pillow",
-                    "tokenizers"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "6a23d91a-f292-4879-9799-cd1b7500eb71",
-                "node_id": "comfyui-moondream2",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-moondream2",
-            "publisher": {
-                "createdAt": "2024-12-29T12:52:08.39256Z",
-                "description": "",
-                "id": "zhilemann",
-                "logo": "",
-                "members": [],
-                "name": "zhilemann",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/zhilemann/ComfyUI-moondream2",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -738,7 +738,7 @@
             "author": "",
             "category": "",
             "description": "Various nodes related to audio.",
-            "downloads": 483,
+            "downloads": 484,
             "icon": "",
             "id": "audio-nodes",
             "latest_version": {

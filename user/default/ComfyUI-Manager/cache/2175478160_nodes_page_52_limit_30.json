@@ -2,6 +2,33 @@
     "limit": 30,
     "nodes": [
         {
+            "author": "tungdop2",
+            "category": "",
+            "description": "The Joy Caption Alpha Two node for ComfyUI, based on https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two",
+            "downloads": 0,
+            "icon": "",
+            "id": "Comfyui_joy-caption-alpha-two",
+            "license": "{}",
+            "name": "Joy Caption Alpha Two for ComfyUI",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/tungdop2/Comfyui_joy-caption-alpha-two",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "thecooltechguy",
             "category": "",
             "description": "Easily use Magic Animate within ComfyUI!\n[w/WARN: This extension requires 15GB disk space.]",
@@ -195,6 +222,47 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "Add Switch on nodes, Make nodes amount small! It helps conveniently to use less nodes for doing the same things.  ",
+            "downloads": 712,
+            "icon": "",
+            "id": "tdxh_node_comfyui",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-05-23T17:59:38.962101Z",
+                "dependencies": [
+                    "sentencepiece"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "02fb94c4-49a0-4a8d-9a79-134eddd67db5",
+                "node_id": "tdxh_node_comfyui",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "tdxh_node_comfyui",
+            "publisher": {
+                "createdAt": "2024-05-23T15:23:16.488163Z",
+                "description": "",
+                "id": "youyegit",
+                "logo": "",
+                "members": [],
+                "name": "youyegit",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/youyegit/tdxh_node_comfyui",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "Lasse Lauwerys",
             "category": "",
             "description": "Implements proper multitouch zooming and panning into ComfyUI to make it more usable on mobile devices.",
@@ -217,45 +285,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/Iemand005/ComfyUI-Touch-Gestures",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "DPM++ 2M alt Sampler for ComfyUI (And WebUI) and Align Your Steps Scheduler",
-            "downloads": 1606,
-            "icon": "",
-            "id": "stablediffusion-dpmpp_2m_alt-sampler",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-06-18T19:27:19.663255Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "61ff7efc-601c-4890-b7d9-48662725f750",
-                "node_id": "stablediffusion-dpmpp_2m_alt-sampler",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "StableDiffusion-dpmpp_2m_alt-Sampler",
-            "publisher": {
-                "createdAt": "2024-05-24T16:56:11.842852Z",
-                "description": "",
-                "id": "slapaper",
-                "logo": "",
-                "members": [],
-                "name": "SLAPaper",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/SLAPaper/StableDiffusion-dpmpp_2m_alt-Sampler",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -357,47 +386,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/mbrostami/ComfyUI-TITrain",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Add Switch on nodes, Make nodes amount small! It helps conveniently to use less nodes for doing the same things.  ",
-            "downloads": 711,
-            "icon": "",
-            "id": "tdxh_node_comfyui",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-05-23T17:59:38.962101Z",
-                "dependencies": [
-                    "sentencepiece"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "02fb94c4-49a0-4a8d-9a79-134eddd67db5",
-                "node_id": "tdxh_node_comfyui",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "tdxh_node_comfyui",
-            "publisher": {
-                "createdAt": "2024-05-23T15:23:16.488163Z",
-                "description": "",
-                "id": "youyegit",
-                "logo": "",
-                "members": [],
-                "name": "youyegit",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/youyegit/tdxh_node_comfyui",
             "status": "",
             "status_detail": "",
             "tags": []
