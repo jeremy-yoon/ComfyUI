@@ -1,13 +1,4 @@
 {
-  "1": {
-    "inputs": {
-      "seed": 410802381331811
-    },
-    "class_type": "ttN seed",
-    "_meta": {
-      "title": "input_seed"
-    }
-  },
   "2": {
     "inputs": {
       "text": [
@@ -34,15 +25,6 @@
     "class_type": "Text Find and Replace",
     "_meta": {
       "title": "Text Find and Replace"
-    }
-  },
-  "7": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "9": {
@@ -101,7 +83,7 @@
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "input_image_path"
+      "title": "input_base_image_path"
     }
   },
   "14": {
@@ -144,7 +126,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "1",
+        "70",
         0
       ]
     },
@@ -197,15 +179,6 @@
       "title": "이미지 로드"
     }
   },
-  "19": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
   "20": {
     "inputs": {
       "image": "mask_grid_x9.png",
@@ -221,7 +194,7 @@
     "inputs": {
       "text1": "",
       "text2": [
-        "7",
+        "81",
         0
       ],
       "text3": "",
@@ -361,7 +334,7 @@
     "inputs": {
       "text1": "(iconset:0.3),masterpiece, best quality, (delicate:1.1), StickerSheet of",
       "text2": [
-        "66",
+        "80",
         0
       ],
       "text3": ", soft colors, white background",
@@ -468,6 +441,10 @@
       "images": [
         "37",
         0
+      ],
+      "color_palettes": [
+        "86",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -491,7 +468,7 @@
       "base_steps": 15,
       "cfg": 5,
       "denoise": [
-        "19",
+        "83",
         0
       ],
       "refiner_steps": 20,
@@ -504,7 +481,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "1",
+        "70",
         0
       ],
       "sdxl_pipe": [
@@ -646,7 +623,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "1",
+        "70",
         0
       ]
     },
@@ -953,7 +930,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "1",
+        "70",
         0
       ],
       "sdxl_pipe": [
@@ -1005,15 +982,6 @@
       "title": "LoRA 로드"
     }
   },
-  "66": {
-    "inputs": {
-      "text": "crystal topped staff,glowing crystal orb, engraved mystical symbols, lightweight but sturdy, ornate detailing"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
   "67": {
     "inputs": {
       "filename_prefix": "ComfyUI",
@@ -1053,6 +1021,213 @@
       "title": "이미지 저장"
     }
   },
+  "70": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "71": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "72": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "73": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "74": {
+    "inputs": {
+      "a": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "75": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "85",
+        0
+      ],
+      "b": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "76": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "77": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "78": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "79": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "80": {
+    "inputs": {
+      "text": "crystal topped staff,glowing crystal orb, engraved mystical symbols, lightweight but sturdy, ornate detailing"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "81": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "83": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "85": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "86": {
+    "inputs": {
+      "select": [
+        "79",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "77",
+        0
+      ],
+      "input2": [
+        "78",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "87": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "88": {
+    "inputs": {
+      "strength": [
+        "72",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.7000000000000001,
+      "positive": [
+        "14",
+        2
+      ],
+      "negative": [
+        "14",
+        3
+      ],
+      "control_net": [
+        "87",
+        0
+      ],
+      "image": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
   "24:0": {
     "inputs": {
       "image": "grid_x9_2.png",
@@ -1078,12 +1253,12 @@
       "start_percent": 0,
       "end_percent": 0.2,
       "positive": [
-        "14",
-        2
+        "88",
+        0
       ],
       "negative": [
-        "14",
-        3
+        "88",
+        1
       ],
       "control_net": [
         "24:1",

@@ -2,10 +2,126 @@
     "limit": 30,
     "nodes": [
         {
+            "author": "chaojie",
+            "category": "",
+            "description": "ComfyUI dust3r",
+            "downloads": 0,
+            "icon": "",
+            "id": "ComfyUI-dust3r",
+            "license": "{}",
+            "name": "ComfyUI-dust3r",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/chaojie/ComfyUI-dust3r",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Transcribe videos or audio with Whisper, either locally or via OpenAI's API",
+            "downloads": 638,
+            "icon": "",
+            "id": "saltai_whisper_transcribe",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-07-10T00:00:40.798337Z",
+                "dependencies": [
+                    "openai>=1.13.3",
+                    "pydub>=0.25.1",
+                    "moviepy>=1.0.3",
+                    "transformers>=4.39.2"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "f2481fc9-4292-4ad7-86eb-473de98f64e2",
+                "node_id": "saltai_whisper_transcribe",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "LICENSE",
+            "name": "saltai_whisper_transcribe",
+            "publisher": {
+                "createdAt": "2024-06-25T22:19:59.372874Z",
+                "description": "",
+                "id": "saltai",
+                "logo": "",
+                "members": [],
+                "name": "Salt AI",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/haohaocreates/PR-SaltAI_Whisper_Transcriber-e087b361",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "",
+            "downloads": 524,
+            "icon": "https://raw.githubusercontent.com/Bewinxed/PromptPrism/refs/heads/master/prism.png",
+            "id": "promptprism",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "not_exist",
+                "createdAt": "2025-01-02T19:20:12.10029Z",
+                "dependencies": [
+                    "anthropic>=0.42.0",
+                    "deepseek>=0.0.1.dev0",
+                    "instructor[litellm]>=1.7.2",
+                    "litellm>=1.56.6",
+                    "ollama>=0.4.5"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "ff57b410-e2ec-4177-a0a7-e5e83826c599",
+                "node_id": "promptprism",
+                "status": "NodeVersionStatusDeleted",
+                "version": "1.0.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "PromptPrism \ud83c\udf08\u20e4",
+            "publisher": {
+                "createdAt": "2025-01-02T17:11:06.252479Z",
+                "description": "",
+                "id": "bewinxed",
+                "logo": "",
+                "members": [],
+                "name": "Bewinxed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Bewinxed/PromptPrism",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "",
             "category": "",
             "description": "comfyui_kj, A tool that can package workflows into projects and publish them to a WeChat Mini Program named Kaji, allowing charges to be collected from users.",
-            "downloads": 813,
+            "downloads": 824,
             "icon": "",
             "id": "comfyui_kj",
             "latest_version": {
@@ -45,8 +161,54 @@
         {
             "author": "",
             "category": "",
+            "description": "A Text To Speech node using Step-Audio-TTS in ComfyUI. Can speak, rap, sing, or clone voice.",
+            "downloads": 1570,
+            "icon": "https://github.com/billwuhao/aiart.website/blob/master/hb.png",
+            "id": "stepaudiotts_mw",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-03-28T14:11:26.542126Z",
+                "dependencies": [
+                    "transformers>=4.48.3",
+                    "openai-whisper>=20231117",
+                    "sox>=1.5.0",
+                    "hyperpyyaml",
+                    "conformer>=0.3.2",
+                    "funasr>=1.1.3"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "18049c12-a683-40ea-8d60-b4dbd2a2e0fd",
+                "node_id": "stepaudiotts_mw",
+                "status": "NodeVersionStatusPending",
+                "version": "2.0.2"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI_StepAudioTTS",
+            "publisher": {
+                "createdAt": "2025-01-06T14:10:29.10336Z",
+                "description": "",
+                "id": "mw",
+                "logo": "",
+                "members": [],
+                "name": "MW",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/billwuhao/ComfyUI_StepAudioTTS",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "This is a ComfyUI node that connects with [a/Roboflow workflows](https://roboflow.com/workflows/build).\nRoboflow hosts hundreds of thousands of open source and custom object detection models.",
-            "downloads": 822,
+            "downloads": 828,
             "icon": "",
             "id": "comfyui-roboflow",
             "latest_version": {
@@ -77,50 +239,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/DareFail/ComfyUI-Roboflow",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Transcribe videos or audio with Whisper, either locally or via OpenAI's API",
-            "downloads": 635,
-            "icon": "",
-            "id": "saltai_whisper_transcribe",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-07-10T00:00:40.798337Z",
-                "dependencies": [
-                    "openai>=1.13.3",
-                    "pydub>=0.25.1",
-                    "moviepy>=1.0.3",
-                    "transformers>=4.39.2"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "f2481fc9-4292-4ad7-86eb-473de98f64e2",
-                "node_id": "saltai_whisper_transcribe",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "LICENSE",
-            "name": "saltai_whisper_transcribe",
-            "publisher": {
-                "createdAt": "2024-06-25T22:19:59.372874Z",
-                "description": "",
-                "id": "saltai",
-                "logo": "",
-                "members": [],
-                "name": "Salt AI",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/haohaocreates/PR-SaltAI_Whisper_Transcriber-e087b361",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -182,54 +300,8 @@
         {
             "author": "",
             "category": "",
-            "description": "A Text To Speech node using Step-Audio-TTS in ComfyUI. Can speak, rap, sing, or clone voice.",
-            "downloads": 1520,
-            "icon": "https://github.com/billwuhao/aiart.website/blob/master/hb.png",
-            "id": "stepaudiotts_mw",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-03-28T14:11:26.542126Z",
-                "dependencies": [
-                    "transformers>=4.48.3",
-                    "openai-whisper>=20231117",
-                    "sox>=1.5.0",
-                    "hyperpyyaml",
-                    "conformer>=0.3.2",
-                    "funasr>=1.1.3"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "18049c12-a683-40ea-8d60-b4dbd2a2e0fd",
-                "node_id": "stepaudiotts_mw",
-                "status": "NodeVersionStatusPending",
-                "version": "2.0.2"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI_StepAudioTTS",
-            "publisher": {
-                "createdAt": "2025-01-06T14:10:29.10336Z",
-                "description": "",
-                "id": "mw",
-                "logo": "",
-                "members": [],
-                "name": "MW",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/billwuhao/ComfyUI_StepAudioTTS",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Optimize prompts for text-to-image models at no cost.",
-            "downloads": 1233,
+            "downloads": 1246,
             "icon": "https://raw.githubusercontent.com/ciga2011/ComfyUI-PromptOptimizer/main/icon256.png",
             "id": "promptoptimizer",
             "latest_version": {
@@ -268,7 +340,7 @@
             "author": "",
             "category": "",
             "description": "A ComfyUI node that runs a JMESPath query against input JSON and outputs the result",
-            "downloads": 572,
+            "downloads": 574,
             "icon": "",
             "id": "comfyui-jmespath",
             "latest_version": {
@@ -470,49 +542,8 @@
         {
             "author": "",
             "category": "",
-            "description": "An extension for ComfyUI that allows hot reloading. Once installed, you can preview changes in real-time while developing custom nodes or installing plugins without restarting ComfyUI.",
-            "downloads": 841,
-            "icon": "",
-            "id": "comfyui_lg_hotreload",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-03-15T22:47:00.626224Z",
-                "dependencies": [
-                    "watchdog"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "449eef24-b6a4-4068-b4d3-2b9fbd138046",
-                "node_id": "comfyui_lg_hotreload",
-                "status": "NodeVersionStatusPending",
-                "version": "1.6.5"
-            },
-            "license": "{}",
-            "name": "ComfyUI-LG_HotReload",
-            "publisher": {
-                "createdAt": "2024-10-09T09:00:56.560993Z",
-                "description": "",
-                "id": "laogou666",
-                "logo": "",
-                "members": [],
-                "name": "LAOGOU-666",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/LAOGOU-666/ComfyUI-LG_HotReload",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "",
-            "downloads": 522,
+            "downloads": 524,
             "icon": "",
             "id": "comfyui-fairlab",
             "latest_version": {
@@ -549,6 +580,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/yanhuifair/ComfyUI-FairLab",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "An extension for ComfyUI that allows hot reloading. Once installed, you can preview changes in real-time while developing custom nodes or installing plugins without restarting ComfyUI.",
+            "downloads": 855,
+            "icon": "",
+            "id": "comfyui_lg_hotreload",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-03-15T22:47:00.626224Z",
+                "dependencies": [
+                    "watchdog"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "449eef24-b6a4-4068-b4d3-2b9fbd138046",
+                "node_id": "comfyui_lg_hotreload",
+                "status": "NodeVersionStatusPending",
+                "version": "1.6.5"
+            },
+            "license": "{}",
+            "name": "ComfyUI-LG_HotReload",
+            "publisher": {
+                "createdAt": "2024-10-09T09:00:56.560993Z",
+                "description": "",
+                "id": "laogou666",
+                "logo": "",
+                "members": [],
+                "name": "LAOGOU-666",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/LAOGOU-666/ComfyUI-LG_HotReload",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -773,7 +845,7 @@
             "author": "",
             "category": "",
             "description": "",
-            "downloads": 581,
+            "downloads": 583,
             "icon": "",
             "id": "comfyui-rememberingutils",
             "latest_version": {
@@ -888,63 +960,9 @@
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
-        },
-        {
-            "author": "CozyMantis",
-            "category": "",
-            "description": "Various cozy nodes, made with \ud83d\udc9a by the CozyMantis squad.",
-            "downloads": 0,
-            "icon": "",
-            "id": "cozy-utils-comfyui-nodes",
-            "license": "{}",
-            "name": "Cozy Utils",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/cozymantis/cozy-utils-comfyui-nodes",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "GamingDaveUk",
-            "category": "",
-            "description": "Nodes that I needed but couldnt find, so ended up making.",
-            "downloads": 0,
-            "icon": "",
-            "id": "daves_nodes",
-            "license": "{}",
-            "name": "Daves Nodes",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/GamingDaveUk/daves_nodes",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
         }
     ],
     "page": 79,
-    "total": 2386,
+    "total": 2388,
     "totalPages": 80
 }

@@ -1,13 +1,4 @@
 {
-  "45": {
-    "inputs": {
-      "seed": 1055017635020203
-    },
-    "class_type": "ttN seed",
-    "_meta": {
-      "title": "input_seed"
-    }
-  },
   "46": {
     "inputs": {
       "pixels": [
@@ -64,7 +55,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "45",
+        "97",
         0
       ]
     },
@@ -170,23 +161,13 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "45",
+        "97",
         0
       ]
     },
     "class_type": "ttN pipeLoaderSDXL_v2",
     "_meta": {
       "title": "pipeLoaderSDXL"
-    }
-  },
-  "56": {
-    "inputs": {
-      "image": "slime_pre_image.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
     }
   },
   "57": {
@@ -204,7 +185,7 @@
         0
       ],
       "image": [
-        "56",
+        "105",
         0
       ]
     },
@@ -220,15 +201,6 @@
     "class_type": "ttN int",
     "_meta": {
       "title": "input_first_image_width"
-    }
-  },
-  "63": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "64": {
@@ -302,6 +274,10 @@
       "images": [
         "82",
         11
+      ],
+      "color_palettes": [
+        "114",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -353,7 +329,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "45",
+        "97",
         0
       ],
       "sdxl_pipe": [
@@ -421,7 +397,7 @@
     "inputs": {
       "text1": "worst quality, human, girl, boy, watermark, text, crop, ",
       "text2": [
-        "63",
+        "103",
         0
       ],
       "text3": "",
@@ -448,7 +424,7 @@
       "base_steps": 7,
       "cfg": 3.5,
       "denoise": [
-        "94",
+        "106",
         0
       ],
       "refiner_steps": 20,
@@ -461,7 +437,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "45",
+        "97",
         0
       ],
       "sdxl_pipe": [
@@ -494,20 +470,11 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "85": {
-    "inputs": {
-      "text": "luxury window, window with red fancy curtain"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
   "88": {
     "inputs": {
       "text1": "best quality, masterpiece, front view, from front, vector art, illustration of ",
       "text2": [
-        "85",
+        "102",
         0
       ],
       "text3": ", simple background",
@@ -583,6 +550,223 @@
       "title": "input_denoise"
     }
   },
+  "97": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "98": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "99": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "100": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "101": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "102": {
+    "inputs": {
+      "text": "luxury window, window with red fancy curtain"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "103": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "105": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_base_image_path"
+    }
+  },
+  "106": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "107": {
+    "inputs": {
+      "a": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "108": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "101",
+        0
+      ],
+      "b": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "109": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "110": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "111": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "100",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "112": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "107",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "113": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "114": {
+    "inputs": {
+      "select": [
+        "112",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "110",
+        0
+      ],
+      "input2": [
+        "111",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "115": {
+    "inputs": {
+      "strength": [
+        "99",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.7000000000000001,
+      "positive": [
+        "47",
+        2
+      ],
+      "negative": [
+        "47",
+        3
+      ],
+      "control_net": [
+        "113",
+        0
+      ],
+      "image": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
   "86:0": {
     "inputs": {
       "image": "Frame 1691019384.png",
@@ -608,12 +792,12 @@
       "start_percent": 0,
       "end_percent": 0,
       "positive": [
-        "47",
-        2
+        "115",
+        0
       ],
       "negative": [
-        "47",
-        3
+        "115",
+        1
       ],
       "control_net": [
         "86:1",

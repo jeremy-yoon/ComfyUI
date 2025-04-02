@@ -64,7 +64,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "1",
+        "82",
         0
       ]
     },
@@ -89,16 +89,6 @@
       "title": "잠재 데이터에 노이즈 마스크 설정"
     }
   },
-  "12": {
-    "inputs": {
-      "image": "slime_pre_image.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
-    }
-  },
   "13": {
     "inputs": {
       "mode": "resize",
@@ -114,7 +104,7 @@
         0
       ],
       "image": [
-        "12",
+        "91",
         0
       ]
     },
@@ -130,15 +120,6 @@
     "class_type": "ttN int",
     "_meta": {
       "title": "input_first_image_width"
-    }
-  },
-  "19": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "26": {
@@ -181,6 +162,10 @@
       "images": [
         "26",
         0
+      ],
+      "color_palettes": [
+        "99",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -192,7 +177,7 @@
     "inputs": {
       "text1": "monster, fish, hair, outline, photorealistic",
       "text2": [
-        "19",
+        "88",
         0
       ],
       "text3": "",
@@ -244,20 +229,11 @@
       "title": "이미지 미리보기"
     }
   },
-  "41": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
   "43": {
     "inputs": {
       "text1": "(pixel art:0.5), white furry, beautiful eyes, soft colors",
       "text2": [
-        "41",
+        "87",
         0
       ],
       "text3": "",
@@ -284,7 +260,7 @@
       "base_steps": 15,
       "cfg": 5,
       "denoise": [
-        "57",
+        "89",
         0
       ],
       "refiner_steps": 20,
@@ -297,7 +273,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "1",
+        "82",
         0
       ],
       "sdxl_pipe": [
@@ -365,15 +341,6 @@
       "title": "이미지 미리보기"
     }
   },
-  "57": {
-    "inputs": {
-      "float": 0.9500000000000001
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
   "59": {
     "inputs": {
       "variation_seed": 0,
@@ -434,6 +401,223 @@
       "title": "ImageKCentroidAutoDownscale"
     }
   },
+  "82": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "83": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "84": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "85": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "86": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "87": {
+    "inputs": {
+      "text": "Tropical Aquatic Habitat, A cozy eco-space with a tiny waterfall and moss-covered puddles"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "88": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "89": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "91": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_base_image_path"
+    }
+  },
+  "92": {
+    "inputs": {
+      "a": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "93": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "86",
+        0
+      ],
+      "b": [
+        "94",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "94": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "95": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "96": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "97": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "92",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "98": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "99": {
+    "inputs": {
+      "select": [
+        "97",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "95",
+        0
+      ],
+      "input2": [
+        "96",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "100": {
+    "inputs": {
+      "strength": [
+        "84",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.7000000000000001,
+      "positive": [
+        "3",
+        2
+      ],
+      "negative": [
+        "3",
+        3
+      ],
+      "control_net": [
+        "98",
+        0
+      ],
+      "image": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
   "29:0": {
     "inputs": {
       "image": "slime_pre_image.png",
@@ -459,12 +643,12 @@
       "start_percent": 0,
       "end_percent": 0.3,
       "positive": [
-        "3",
-        2
+        "100",
+        0
       ],
       "negative": [
-        "3",
-        3
+        "100",
+        1
       ],
       "control_net": [
         "29:1",

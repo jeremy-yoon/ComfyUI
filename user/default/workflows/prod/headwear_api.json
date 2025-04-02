@@ -64,7 +64,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "1",
+        "58",
         0
       ]
     },
@@ -213,23 +213,13 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "1",
+        "58",
         0
       ]
     },
     "class_type": "ttN pipeLoaderSDXL_v2",
     "_meta": {
       "title": "pipeLoaderSDXL"
-    }
-  },
-  "12": {
-    "inputs": {
-      "image": "slime_pre_image.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
     }
   },
   "13": {
@@ -247,7 +237,7 @@
         0
       ],
       "image": [
-        "12",
+        "66",
         0
       ]
     },
@@ -263,15 +253,6 @@
     "class_type": "ttN int",
     "_meta": {
       "title": "input_first_image_width"
-    }
-  },
-  "19": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "20": {
@@ -391,6 +372,10 @@
       "images": [
         "56",
         0
+      ],
+      "color_palettes": [
+        "74",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -402,7 +387,7 @@
     "inputs": {
       "text1": "hair, outline, human, girl, boy, photorealistic",
       "text2": [
-        "19",
+        "64",
         0
       ],
       "text3": "",
@@ -468,7 +453,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "1",
+        "58",
         0
       ],
       "sdxl_pipe": [
@@ -540,20 +525,11 @@
       "title": "이미지 미리보기"
     }
   },
-  "41": {
-    "inputs": {
-      "text": "huge hat, magician hat, purple"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
   "43": {
     "inputs": {
       "text1": "snowman head on the floor, side view, big eyes, chibi, a \bchibi \bwearing a ",
       "text2": [
-        "41",
+        "63",
         0
       ],
       "text3": ",small head, soft colors, simple background, white background",
@@ -580,7 +556,7 @@
       "base_steps": 6,
       "cfg": 3,
       "denoise": [
-        "51",
+        "65",
         0
       ],
       "refiner_steps": 20,
@@ -593,7 +569,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "1",
+        "58",
         0
       ],
       "sdxl_pipe": [
@@ -630,15 +606,6 @@
       "title": "이미지 미리보기"
     }
   },
-  "51": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
   "56": {
     "inputs": {
       "brightness": 1,
@@ -656,6 +623,223 @@
     "class_type": "ColorsCorrectNode",
     "_meta": {
       "title": "Colors Correct Node"
+    }
+  },
+  "58": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "59": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "60": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "61": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "62": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "63": {
+    "inputs": {
+      "text": "huge hat, magician hat, purple"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "64": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "65": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "66": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_base_image_path"
+    }
+  },
+  "67": {
+    "inputs": {
+      "a": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "68": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "62",
+        0
+      ],
+      "b": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "69": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "70": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "71": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "72": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "73": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "74": {
+    "inputs": {
+      "select": [
+        "72",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "70",
+        0
+      ],
+      "input2": [
+        "71",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "75": {
+    "inputs": {
+      "strength": [
+        "60",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.7000000000000001,
+      "positive": [
+        "3",
+        2
+      ],
+      "negative": [
+        "3",
+        3
+      ],
+      "control_net": [
+        "73",
+        0
+      ],
+      "image": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
     }
   },
   "29:0": {
@@ -683,12 +867,12 @@
       "start_percent": 0,
       "end_percent": 0.3,
       "positive": [
-        "3",
-        2
+        "75",
+        0
       ],
       "negative": [
-        "3",
-        3
+        "75",
+        1
       ],
       "control_net": [
         "29:1",
@@ -796,6 +980,52 @@
       "title": "컨트롤넷 적용"
     }
   },
+  "47:0": {
+    "inputs": {
+      "image": "slime_pre_depth_only_head_melting.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "47:1": {
+    "inputs": {
+      "control_net_name": "control-lora-depth-rank128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "47:2": {
+    "inputs": {
+      "strength": 0.7000000000000001,
+      "start_percent": 0,
+      "end_percent": 0.5,
+      "positive": [
+        "30:2",
+        0
+      ],
+      "negative": [
+        "30:2",
+        1
+      ],
+      "control_net": [
+        "47:1",
+        0
+      ],
+      "image": [
+        "47:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
   "18:0": {
     "inputs": {
       "image": "slime_wrapper_eye.png",
@@ -850,52 +1080,6 @@
     "class_type": "ImageCompositeMasked",
     "_meta": {
       "title": "마스크된 이미지 합성"
-    }
-  },
-  "47:0": {
-    "inputs": {
-      "image": "slime_pre_depth_only_head_melting.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "47:1": {
-    "inputs": {
-      "control_net_name": "control-lora-depth-rank128.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
-  "47:2": {
-    "inputs": {
-      "strength": 0.7000000000000001,
-      "start_percent": 0,
-      "end_percent": 0.5,
-      "positive": [
-        "30:2",
-        0
-      ],
-      "negative": [
-        "30:2",
-        1
-      ],
-      "control_net": [
-        "47:1",
-        0
-      ],
-      "image": [
-        "47:0",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
     }
   },
   "22:0": {

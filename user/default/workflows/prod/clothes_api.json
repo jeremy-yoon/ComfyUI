@@ -60,7 +60,7 @@
         0
       ],
       "image": [
-        "9",
+        "94",
         0
       ]
     },
@@ -83,25 +83,6 @@
     "class_type": "VAEEncode",
     "_meta": {
       "title": "VAE 인코드"
-    }
-  },
-  "9": {
-    "inputs": {
-      "image": "slime_pre_image.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
-    }
-  },
-  "10": {
-    "inputs": {
-      "seed": 498885250016427
-    },
-    "class_type": "ttN seed",
-    "_meta": {
-      "title": "input_seed"
     }
   },
   "12": {
@@ -182,7 +163,7 @@
       "base_steps": 12,
       "cfg": 4,
       "denoise": [
-        "80",
+        "93",
         0
       ],
       "refiner_steps": 20,
@@ -195,7 +176,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "10",
+        "86",
         0
       ],
       "sdxl_pipe": [
@@ -306,7 +287,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "10",
+        "86",
         0
       ]
     },
@@ -335,7 +316,7 @@
     "inputs": {
       "text1": "photorealistic, shadow",
       "text2": [
-        "45",
+        "92",
         0
       ],
       "text3": "",
@@ -350,7 +331,7 @@
     "inputs": {
       "text1": "a pearl on blanket, a pearl wearing a ",
       "text2": [
-        "44",
+        "91",
         0
       ],
       "text3": ",simple background",
@@ -387,7 +368,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "10",
+        "86",
         0
       ],
       "sdxl_pipe": [
@@ -467,31 +448,13 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "10",
+        "86",
         0
       ]
     },
     "class_type": "ttN pipeLoaderSDXL_v2",
     "_meta": {
       "title": "pipeLoaderSDXL"
-    }
-  },
-  "44": {
-    "inputs": {
-      "text": "Lover's Blouse of Spring Days, White Lace Sleeve Soft green Silk Blouse"
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_positive_infix"
-    }
-  },
-  "45": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "50": {
@@ -578,6 +541,10 @@
       "images": [
         "23",
         11
+      ],
+      "color_palettes": [
+        "103",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -616,15 +583,6 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "이미지 미리보기"
-    }
-  },
-  "80": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
     }
   },
   "81": {
@@ -673,6 +631,223 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "이미지 미리보기"
+    }
+  },
+  "86": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "87": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "88": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "89": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "90": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "91": {
+    "inputs": {
+      "text": "Lover's Blouse of Spring Days, White Lace Sleeve Soft green Silk Blouse"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_positive_infix"
+    }
+  },
+  "92": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "93": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "94": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_base_image_path"
+    }
+  },
+  "96": {
+    "inputs": {
+      "a": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "97": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "90",
+        0
+      ],
+      "b": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "98": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "99": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "100": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "89",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "101": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "102": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "103": {
+    "inputs": {
+      "select": [
+        "101",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "99",
+        0
+      ],
+      "input2": [
+        "100",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "104": {
+    "inputs": {
+      "strength": [
+        "88",
+        0
+      ],
+      "start_percent": 0,
+      "end_percent": 0.7000000000000001,
+      "positive": [
+        "55:2",
+        0
+      ],
+      "negative": [
+        "55:2",
+        1
+      ],
+      "control_net": [
+        "102",
+        0
+      ],
+      "image": [
+        "87",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
     }
   },
   "55:0": {
@@ -746,11 +921,11 @@
       "start_percent": 0,
       "end_percent": 0,
       "positive": [
-        "55:2",
+        "104",
         0
       ],
       "negative": [
-        "55:2",
+        "104",
         1
       ],
       "control_net": [
@@ -759,6 +934,52 @@
       ],
       "image": [
         "83:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "56:0": {
+    "inputs": {
+      "image": "slime_pre_guide_only_head_melting_for_clothes.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "56:1": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "56:2": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 0.5,
+      "positive": [
+        "32",
+        2
+      ],
+      "negative": [
+        "32",
+        3
+      ],
+      "control_net": [
+        "56:1",
+        0
+      ],
+      "image": [
+        "56:0",
         0
       ]
     },
@@ -821,52 +1042,6 @@
     "class_type": "ImageCompositeMasked",
     "_meta": {
       "title": "마스크된 이미지 합성"
-    }
-  },
-  "56:0": {
-    "inputs": {
-      "image": "slime_pre_guide_only_head_melting_for_clothes.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "56:1": {
-    "inputs": {
-      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
-  "56:2": {
-    "inputs": {
-      "strength": 0.5,
-      "start_percent": 0,
-      "end_percent": 0.5,
-      "positive": [
-        "32",
-        2
-      ],
-      "negative": [
-        "32",
-        3
-      ],
-      "control_net": [
-        "56:1",
-        0
-      ],
-      "image": [
-        "56:0",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "컨트롤넷 적용"
     }
   },
   "59:0": {

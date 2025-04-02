@@ -1,13 +1,4 @@
 {
-  "164": {
-    "inputs": {
-      "seed": 699103758165206
-    },
-    "class_type": "ttN seed",
-    "_meta": {
-      "title": "input_seed"
-    }
-  },
   "165": {
     "inputs": {
       "pixels": [
@@ -64,7 +55,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "164",
+        "200",
         0
       ]
     },
@@ -88,7 +79,7 @@
         0
       ],
       "image": [
-        "180",
+        "198",
         0
       ]
     },
@@ -190,7 +181,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "164",
+        "200",
         0
       ]
     },
@@ -211,15 +202,6 @@
       "title": "이미지 미리보기"
     }
   },
-  "177": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
-    }
-  },
   "179": {
     "inputs": {
       "int": 256
@@ -227,16 +209,6 @@
     "class_type": "ttN int",
     "_meta": {
       "title": "input_num_colors"
-    }
-  },
-  "180": {
-    "inputs": {
-      "image": "1bcc8d87bc2efcab512bdffac3cace5b.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
     }
   },
   "181": {
@@ -257,20 +229,11 @@
       "title": "input_first_image_width"
     }
   },
-  "184": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
-    }
-  },
   "185": {
     "inputs": {
       "text1": "scattered, particle, messy, crooked, worst quality, human, girl, boy, watermark, text, blurry, tilted, ",
       "text2": [
-        "177",
+        "199",
         0
       ],
       "text3": "",
@@ -297,7 +260,7 @@
       "base_steps": 7,
       "cfg": 3.5,
       "denoise": [
-        "184",
+        "202",
         0
       ],
       "refiner_steps": 20,
@@ -310,7 +273,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "164",
+        "200",
         0
       ],
       "sdxl_pipe": [
@@ -373,7 +336,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "164",
+        "200",
         0
       ],
       "sdxl_pipe": [
@@ -407,7 +370,7 @@
     "inputs": {
       "text1": "best quality, masterpiece, vector art, ground-level shot, beautiful landscape of a ",
       "text2": [
-        "194",
+        "204",
         0
       ],
       "text3": "flat ground, close-up, out focusing, perspective shot, wide shot",
@@ -418,7 +381,82 @@
       "title": "3x TXT Loader MultiConcat"
     }
   },
-  "194": {
+  "196": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "197": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_shape_image_path"
+    }
+  },
+  "198": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_base_image_path"
+    }
+  },
+  "199": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "200": {
+    "inputs": {
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "201": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "202": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "203": {
+    "inputs": {
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "204": {
     "inputs": {
       "text": "long mountain with pink flowers of trees, white marble road, close up shot of luxury golden carriage, white palace, "
     },
@@ -427,30 +465,14 @@
       "title": "input_positive_infix"
     }
   },
-  "193:0": {
+  "206": {
     "inputs": {
-      "image": "Frame 1691019384.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "이미지 로드"
-    }
-  },
-  "193:1": {
-    "inputs": {
-      "control_net_name": "control-lora-depth-rank128.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "컨트롤넷 모델 로드"
-    }
-  },
-  "193:2": {
-    "inputs": {
-      "strength": 0.6,
+      "strength": [
+        "203",
+        0
+      ],
       "start_percent": 0,
-      "end_percent": 0.5,
+      "end_percent": 0.7000000000000001,
       "positive": [
         "175",
         2
@@ -460,17 +482,120 @@
         3
       ],
       "control_net": [
-        "193:1",
+        "207",
         0
       ],
       "image": [
-        "193:0",
+        "197",
         0
       ]
     },
     "class_type": "ControlNetApplyAdvanced",
     "_meta": {
       "title": "컨트롤넷 적용"
+    }
+  },
+  "207": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "208": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "222": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "201",
+        0
+      ],
+      "b": [
+        "228",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "228": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "245": {
+    "inputs": {
+      "a": [
+        "222",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "247": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "248": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "245",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "255": {
+    "inputs": {
+      "select": [
+        "248",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "247",
+        0
+      ],
+      "input2": [
+        "208",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
     }
   },
   "183:0": {
@@ -528,6 +653,52 @@
     "class_type": "Text Find and Replace",
     "_meta": {
       "title": "Text Find and Replace"
+    }
+  },
+  "193:0": {
+    "inputs": {
+      "image": "Frame 1691019384.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "193:1": {
+    "inputs": {
+      "control_net_name": "control-lora-depth-rank128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "193:2": {
+    "inputs": {
+      "strength": 0.6,
+      "start_percent": 0,
+      "end_percent": 0.5,
+      "positive": [
+        "206",
+        0
+      ],
+      "negative": [
+        "206",
+        1
+      ],
+      "control_net": [
+        "193:1",
+        0
+      ],
+      "image": [
+        "193:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
     }
   },
   "178:0": {
@@ -592,6 +763,10 @@
       "images": [
         "173",
         0
+      ],
+      "color_palettes": [
+        "255",
+        0
       ]
     },
     "class_type": "Image Pixelate",
@@ -603,8 +778,8 @@
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
-      "saturation": 1.1,
-      "gamma": 1.2,
+      "saturation": 1.2,
+      "gamma": 1.3,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -663,8 +838,8 @@
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
-      "saturation": 1.1,
-      "gamma": 1.1,
+      "saturation": 1.8,
+      "gamma": 1.8,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",
@@ -682,10 +857,10 @@
     "inputs": {
       "mode": "resize",
       "supersample": "true",
-      "resampling": "nearest",
+      "resampling": "lanczos",
       "rescale_factor": 2,
-      "resize_width": 100,
-      "resize_height": 224,
+      "resize_width": 800,
+      "resize_height": 1792,
       "image": [
         "190:1",
         0

@@ -1,13 +1,4 @@
 {
-  "196": {
-    "inputs": {
-      "seed": 151270365991241
-    },
-    "class_type": "ttN seed",
-    "_meta": {
-      "title": "input_seed"
-    }
-  },
   "197": {
     "inputs": {
       "pixels": [
@@ -64,7 +55,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "196",
+        "234",
         0
       ]
     },
@@ -88,7 +79,7 @@
         0
       ],
       "image": [
-        "216",
+        "235",
         0
       ]
     },
@@ -100,7 +91,7 @@
   "203": {
     "inputs": {
       "pixels": [
-        "217:2",
+        "256",
         0
       ],
       "vae": [
@@ -154,7 +145,7 @@
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "210:2",
+        "253",
         0
       ]
     },
@@ -203,7 +194,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "196",
+        "234",
         0
       ]
     },
@@ -222,15 +213,6 @@
     "class_type": "PreviewImage",
     "_meta": {
       "title": "이미지 미리보기"
-    }
-  },
-  "212": {
-    "inputs": {
-      "text": ""
-    },
-    "class_type": "ttN text",
-    "_meta": {
-      "title": "input_negative_infix"
     }
   },
   "213": {
@@ -259,7 +241,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "196",
+        "234",
         0
       ],
       "sdxl_pipe": [
@@ -285,16 +267,6 @@
       "title": "input_num_colors"
     }
   },
-  "216": {
-    "inputs": {
-      "image": "1bcc8d87bc2efcab512bdffac3cace5b.jpg",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "input_image_path"
-    }
-  },
   "218": {
     "inputs": {
       "int": 1344
@@ -317,7 +289,7 @@
     "inputs": {
       "text1": "scattered, particle, messy, crooked, worst quality, human, girl, boy, watermark, text, blurry, tilted, ",
       "text2": [
-        "212",
+        "232",
         0
       ],
       "text3": "",
@@ -331,7 +303,7 @@
   "221": {
     "inputs": {
       "images": [
-        "210:0",
+        "251",
         0
       ]
     },
@@ -344,7 +316,7 @@
     "inputs": {
       "text1": "best quality, masterpiece, vector art, low level shot, beautiful background of a ",
       "text2": [
-        "227",
+        "233",
         0
       ],
       "text3": ", fronw view,",
@@ -353,15 +325,6 @@
     "class_type": "ttN text3BOX_3WAYconcat",
     "_meta": {
       "title": "3x TXT Loader MultiConcat"
-    }
-  },
-  "224": {
-    "inputs": {
-      "float": 1
-    },
-    "class_type": "ttN float",
-    "_meta": {
-      "title": "input_denoise"
     }
   },
   "225": {
@@ -380,7 +343,7 @@
       "base_steps": 7,
       "cfg": 3.5,
       "denoise": [
-        "224",
+        "239",
         0
       ],
       "refiner_steps": 20,
@@ -393,7 +356,7 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "196",
+        "234",
         0
       ],
       "sdxl_pipe": [
@@ -418,7 +381,16 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "227": {
+  "232": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "input_negative_infix"
+    }
+  },
+  "233": {
     "inputs": {
       "text": "inside of a luxury white palace of fantasy kingdom, "
     },
@@ -427,30 +399,174 @@
       "title": "input_positive_infix"
     }
   },
-  "226:0": {
+  "234": {
     "inputs": {
-      "image": "Frame 1691019384.png",
+      "seed": 871307611478980
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "input_seed"
+    }
+  },
+  "235": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "이미지 로드"
+      "title": "input_base_image_path"
     }
   },
-  "226:1": {
+  "236": {
     "inputs": {
-      "control_net_name": "control-lora-depth-rank128.safetensors"
+      "image": "Frame 5 (1).png",
+      "upload": "image"
     },
-    "class_type": "ControlNetLoader",
+    "class_type": "LoadImage",
     "_meta": {
-      "title": "컨트롤넷 모델 로드"
+      "title": "input_shape_image_path"
     }
   },
-  "226:2": {
+  "237": {
     "inputs": {
-      "strength": 0.5,
+      "float": 0.6
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_shape_image_strength"
+    }
+  },
+  "238": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input_color_image_path"
+    }
+  },
+  "239": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_base_image_strength"
+    }
+  },
+  "240": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "input_color_image_strength"
+    }
+  },
+  "242": {
+    "inputs": {
+      "a": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "CM_BoolToInt",
+    "_meta": {
+      "title": "BoolToInt"
+    }
+  },
+  "243": {
+    "inputs": {
+      "cmp": "a > b",
+      "a": [
+        "240",
+        0
+      ],
+      "b": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "244": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float"
+    }
+  },
+  "245": {
+    "inputs": {},
+    "class_type": "Text List Concatenate",
+    "_meta": {
+      "title": "Text List Concatenate"
+    }
+  },
+  "246": {
+    "inputs": {
+      "colors": 256,
+      "mode": "Chart",
+      "image": [
+        "238",
+        0
+      ]
+    },
+    "class_type": "Image Color Palette",
+    "_meta": {
+      "title": "Image Color Palette"
+    }
+  },
+  "247": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "242",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "Math Operation ♾️Mixlab"
+    }
+  },
+  "248": {
+    "inputs": {
+      "select": [
+        "247",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "245",
+        0
+      ],
+      "input2": [
+        "246",
+        1
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "249": {
+    "inputs": {
+      "strength": [
+        "237",
+        0
+      ],
       "start_percent": 0,
-      "end_percent": 0.3,
+      "end_percent": 0.7000000000000001,
       "positive": [
         "209",
         2
@@ -460,17 +576,150 @@
         3
       ],
       "control_net": [
-        "226:1",
+        "250",
         0
       ],
       "image": [
-        "226:0",
+        "236",
         0
       ]
     },
     "class_type": "ControlNetApplyAdvanced",
     "_meta": {
       "title": "컨트롤넷 적용"
+    }
+  },
+  "250": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "251": {
+    "inputs": {
+      "pixelation_size": 224,
+      "num_colors": [
+        "215",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "213",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "252": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.8,
+      "gamma": 1.8,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "251",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "253": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "252",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "254": {
+    "inputs": {
+      "pixelation_size": 224,
+      "num_colors": [
+        "215",
+        1
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "206",
+        0
+      ],
+      "color_palettes": [
+        "248",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "255": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.8,
+      "gamma": 1.8,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "254",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "256": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "255",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
     }
   },
   "222:0": {
@@ -530,6 +779,52 @@
       "title": "Text Find and Replace"
     }
   },
+  "226:0": {
+    "inputs": {
+      "image": "Frame 1691019384.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "226:1": {
+    "inputs": {
+      "control_net_name": "control-lora-depth-rank128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "226:2": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 0.3,
+      "positive": [
+        "249",
+        0
+      ],
+      "negative": [
+        "249",
+        1
+      ],
+      "control_net": [
+        "226:1",
+        0
+      ],
+      "image": [
+        "226:0",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
   "214:0": {
     "inputs": {
       "image": "Frame 1691019340.png",
@@ -574,126 +869,6 @@
     "class_type": "ControlNetApplyAdvanced",
     "_meta": {
       "title": "컨트롤넷 적용"
-    }
-  },
-  "217:0": {
-    "inputs": {
-      "pixelation_size": 224,
-      "num_colors": [
-        "215",
-        1
-      ],
-      "init_mode": "k-means++",
-      "max_iterations": 100,
-      "dither": "False",
-      "dither_mode": "FloydSteinberg",
-      "color_palette_mode": "Brightness",
-      "reverse_palette": "False",
-      "images": [
-        "206",
-        0
-      ]
-    },
-    "class_type": "Image Pixelate",
-    "_meta": {
-      "title": "Image Pixelate"
-    }
-  },
-  "217:1": {
-    "inputs": {
-      "brightness": 1,
-      "contrast": 0.9500000000000001,
-      "saturation": 1.1,
-      "gamma": 1.2,
-      "hue_degrees": 0,
-      "use_color": false,
-      "hex_color": "#00FF33",
-      "image": [
-        "217:0",
-        0
-      ]
-    },
-    "class_type": "ColorsCorrectNode",
-    "_meta": {
-      "title": "Colors Correct Node"
-    }
-  },
-  "217:2": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "lanczos",
-      "rescale_factor": 2,
-      "resize_width": 800,
-      "resize_height": 1792,
-      "image": [
-        "217:1",
-        0
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
-    }
-  },
-  "210:0": {
-    "inputs": {
-      "pixelation_size": 224,
-      "num_colors": [
-        "215",
-        1
-      ],
-      "init_mode": "k-means++",
-      "max_iterations": 100,
-      "dither": "False",
-      "dither_mode": "FloydSteinberg",
-      "color_palette_mode": "Brightness",
-      "reverse_palette": "False",
-      "images": [
-        "213",
-        11
-      ]
-    },
-    "class_type": "Image Pixelate",
-    "_meta": {
-      "title": "Image Pixelate"
-    }
-  },
-  "210:1": {
-    "inputs": {
-      "brightness": 1,
-      "contrast": 0.9500000000000001,
-      "saturation": 1.1,
-      "gamma": 1.1,
-      "hue_degrees": 0,
-      "use_color": false,
-      "hex_color": "#00FF33",
-      "image": [
-        "210:0",
-        0
-      ]
-    },
-    "class_type": "ColorsCorrectNode",
-    "_meta": {
-      "title": "Colors Correct Node"
-    }
-  },
-  "210:2": {
-    "inputs": {
-      "mode": "resize",
-      "supersample": "true",
-      "resampling": "nearest",
-      "rescale_factor": 2,
-      "resize_width": 100,
-      "resize_height": 224,
-      "image": [
-        "210:1",
-        0
-      ]
-    },
-    "class_type": "Image Resize",
-    "_meta": {
-      "title": "Image Resize"
     }
   }
 }
