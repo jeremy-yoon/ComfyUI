@@ -83,37 +83,10 @@
             "tags": []
         },
         {
-            "author": "aburahamu",
-            "category": "",
-            "description": "This custom node detects body parts (currently only hands) from the received image and outputs the image if the skeleton can be estimated.",
-            "downloads": 0,
-            "icon": "",
-            "id": "ComfyUI-IsNiceParts",
-            "license": "{}",
-            "name": "ComfyUI-IsNiceParts",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/aburahamu/ComfyUI-IsNiceParts",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "",
             "category": "",
             "description": "Improved AnimateDiff integration for ComfyUI.",
-            "downloads": 62319,
+            "downloads": 62327,
             "icon": "",
             "id": "comfyui-animatediff-evolved",
             "latest_version": {
@@ -145,6 +118,33 @@
             "rating": 0,
             "repository": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
             "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "aburahamu",
+            "category": "",
+            "description": "This custom node detects body parts (currently only hands) from the received image and outputs the image if the skeleton can be estimated.",
+            "downloads": 0,
+            "icon": "",
+            "id": "ComfyUI-IsNiceParts",
+            "license": "{}",
+            "name": "ComfyUI-IsNiceParts",
+            "publisher": {
+                "createdAt": "2025-03-07T03:01:54.745558Z",
+                "description": "",
+                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
+                "logo": "",
+                "members": [],
+                "name": "Unclaimed",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/aburahamu/ComfyUI-IsNiceParts",
+            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -688,6 +688,49 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "A facefusion custom node for ComfyUI. Swap or restore faces for image or video",
+            "downloads": 4128,
+            "icon": "",
+            "id": "comfyui-faceless-node",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-05-29T09:27:17.964754Z",
+                "dependencies": [
+                    "filetype==1.2.0",
+                    "opencv-python==4.9.0.80",
+                    "ufile==3.2.9"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "0f480dd1-c938-4c9b-93c4-10e40caf1dae",
+                "node_id": "comfyui-faceless-node",
+                "status": "NodeVersionStatusActive",
+                "version": "0.1.0"
+            },
+            "license": "LICENSE",
+            "name": "comfyui-faceless-node",
+            "publisher": {
+                "createdAt": "2024-05-29T09:20:26.861763Z",
+                "description": "",
+                "id": "jeffrey",
+                "logo": "",
+                "members": [],
+                "name": "Jeffrey Wu",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/jeffy5/comfyui-faceless-node",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "kijai",
             "category": "",
             "description": "Fast and accurate monocular depth estimation.",
@@ -765,49 +808,6 @@
             "rating": 0,
             "repository": "https://github.com/antrobot1234/antrobots-comfyUI-nodepack",
             "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "A facefusion custom node for ComfyUI. Swap or restore faces for image or video",
-            "downloads": 4127,
-            "icon": "",
-            "id": "comfyui-faceless-node",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-05-29T09:27:17.964754Z",
-                "dependencies": [
-                    "filetype==1.2.0",
-                    "opencv-python==4.9.0.80",
-                    "ufile==3.2.9"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "0f480dd1-c938-4c9b-93c4-10e40caf1dae",
-                "node_id": "comfyui-faceless-node",
-                "status": "NodeVersionStatusActive",
-                "version": "0.1.0"
-            },
-            "license": "LICENSE",
-            "name": "comfyui-faceless-node",
-            "publisher": {
-                "createdAt": "2024-05-29T09:20:26.861763Z",
-                "description": "",
-                "id": "jeffrey",
-                "logo": "",
-                "members": [],
-                "name": "Jeffrey Wu",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/jeffy5/comfyui-faceless-node",
-            "status": "",
             "status_detail": "",
             "tags": []
         },

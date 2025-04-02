@@ -137,19 +137,6 @@
       "title": "Image Resize"
     }
   },
-  "129": {
-    "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "160:0",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "이미지 저장"
-    }
-  },
   "130": {
     "inputs": {
       "mode": "resize",
@@ -598,6 +585,32 @@
       "title": "컨트롤넷 모델 로드"
     }
   },
+  "189": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "160:0",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "190": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
   "159:0": {
     "inputs": {
       "text1": "pixel art, symmetry, ",
@@ -857,7 +870,7 @@
     "inputs": {
       "mode": "resize",
       "supersample": "true",
-      "resampling": "lanczos",
+      "resampling": "nearest",
       "rescale_factor": 2,
       "resize_width": 800,
       "resize_height": 1792,

@@ -396,7 +396,7 @@
             "author": "",
             "category": "",
             "description": "A minimalistic implementation of [a/Robust Video Matting (RVM)](https://github.com/PeterL1n/RobustVideoMatting/) in ComfyUI",
-            "downloads": 7680,
+            "downloads": 7681,
             "icon": "",
             "id": "comfyui-video-matting",
             "latest_version": {

@@ -2,45 +2,6 @@
     "limit": 30,
     "nodes": [
         {
-            "author": "",
-            "category": "",
-            "description": "A ComfyUI Custom Node that enables arrow key canvas navigation with a pan speed setting.",
-            "downloads": 619,
-            "icon": "https://avatars.githubusercontent.com/u/23065574",
-            "id": "comfyui-arrow-key-canvas-navigation",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-09-29T22:35:23.205978Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "a935a395-6b1c-484a-9ab5-bd2833c342f7",
-                "node_id": "comfyui-arrow-key-canvas-navigation",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Arrow-Key-Canvas-Navigation",
-            "publisher": {
-                "createdAt": "2024-09-29T21:32:29.743048Z",
-                "description": "",
-                "id": "codecringebinge",
-                "logo": "",
-                "members": [],
-                "name": "codecringebinge",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/codecringebinge/ComfyUI-Arrow-Key-Canvas-Navigation",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "MushroomFleet",
             "category": "",
             "description": "This project provides a collection of custom nodes designed for enhanced audio effects in ComfyUI. With an intuitive pedalboard interface, users can easily integrate and manipulate various audio effects within their workflows.",
@@ -301,6 +262,47 @@
             "rating": 0,
             "repository": "https://github.com/CY-CHENYUE/ComfyUI-MiniCPM-Plus",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "A ComfyUI extension allowing the interrogation of booru tags from images.",
+            "downloads": 46811,
+            "icon": "",
+            "id": "comfyui-wd14-tagger",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-05-21T16:25:06.271864Z",
+                "dependencies": [
+                    "onnxruntime"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "ab8fd4ef-70ad-4dbd-9ed7-271dea462aef",
+                "node_id": "comfyui-wd14-tagger",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-WD14-Tagger",
+            "publisher": {
+                "createdAt": "2024-05-21T16:17:56.310591Z",
+                "description": "",
+                "id": "pythongosssss",
+                "logo": "",
+                "members": [],
+                "name": "pythongosssss",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/pythongosssss/ComfyUI-WD14-Tagger",
+            "status": "",
             "status_detail": "",
             "tags": []
         },

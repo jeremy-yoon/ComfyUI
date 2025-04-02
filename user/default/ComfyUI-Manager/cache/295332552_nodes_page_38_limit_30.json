@@ -203,7 +203,7 @@
             "author": "",
             "category": "",
             "description": "A set of custom nodes that pause a workflow while you select images, add masks, or edit text.",
-            "downloads": 2581,
+            "downloads": 2582,
             "icon": "",
             "id": "cg-image-filter",
             "latest_version": {
@@ -274,47 +274,6 @@
             "rating": 0,
             "repository": "https://github.com/Gourieff/ComfyUI-FutureWarningIgnore",
             "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "ComfyUI nodes for Janus-Pro, a unified multimodal understanding and generation framework.",
-            "downloads": 20170,
-            "icon": "",
-            "id": "janus-pro",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-28T02:42:56.258833Z",
-                "dependencies": [
-                    "git+https://github.com/deepseek-ai/Janus.git"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "b4de79d1-592e-488a-975e-582c21c5f92c",
-                "node_id": "janus-pro",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Janus-Pro",
-            "publisher": {
-                "createdAt": "2024-09-29T10:55:36.930737Z",
-                "description": "",
-                "id": "cychenyue",
-                "logo": "",
-                "members": [],
-                "name": "cychenyue",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro",
-            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -537,7 +496,7 @@
             "author": "",
             "category": "",
             "description": "Implementation of Kolors on ComfyUI\nReference from [a/https://github.com/kijai/ComfyUI-KwaiKolorsWrapper](https://github.com/kijai/ComfyUI-KwaiKolorsWrapper)\nUsing ComfyUI Native Sampling",
-            "downloads": 3528,
+            "downloads": 3529,
             "icon": "",
             "id": "comfyui-kolors-mz",
             "latest_version": {
@@ -568,6 +527,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "ComfyUI nodes for Janus-Pro, a unified multimodal understanding and generation framework.",
+            "downloads": 20174,
+            "icon": "",
+            "id": "janus-pro",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-28T02:42:56.258833Z",
+                "dependencies": [
+                    "git+https://github.com/deepseek-ai/Janus.git"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "b4de79d1-592e-488a-975e-582c21c5f92c",
+                "node_id": "janus-pro",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Janus-Pro",
+            "publisher": {
+                "createdAt": "2024-09-29T10:55:36.930737Z",
+                "description": "",
+                "id": "cychenyue",
+                "logo": "",
+                "members": [],
+                "name": "cychenyue",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/CY-CHENYUE/ComfyUI-Janus-Pro",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

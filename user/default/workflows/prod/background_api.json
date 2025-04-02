@@ -145,7 +145,7 @@
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "210:2",
+        "257",
         0
       ]
     },
@@ -401,7 +401,7 @@
   },
   "234": {
     "inputs": {
-      "seed": 651562116424725
+      "seed": 840669035382185
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -596,6 +596,19 @@
     "class_type": "ControlNetLoader",
     "_meta": {
       "title": "컨트롤넷 모델 로드"
+    }
+  },
+  "257": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "210:0",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
     }
   },
   "222:0": {
@@ -857,7 +870,7 @@
     "inputs": {
       "mode": "resize",
       "supersample": "true",
-      "resampling": "lanczos",
+      "resampling": "nearest",
       "rescale_factor": 2,
       "resize_width": 800,
       "resize_height": 1792,

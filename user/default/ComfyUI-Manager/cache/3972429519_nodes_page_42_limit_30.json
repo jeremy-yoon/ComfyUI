@@ -4,6 +4,48 @@
         {
             "author": "",
             "category": "",
+            "description": "Nodes related to video workflows",
+            "downloads": 217716,
+            "icon": "",
+            "id": "comfyui-videohelpersuite",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-26T17:09:19.440275Z",
+                "dependencies": [
+                    "opencv-python",
+                    "imageio-ffmpeg"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "5f3a4db1-43ca-4bba-b11e-c357508bd53b",
+                "node_id": "comfyui-videohelpersuite",
+                "status": "NodeVersionStatusPending",
+                "version": "1.5.14"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-VideoHelperSuite",
+            "publisher": {
+                "createdAt": "2024-05-17T04:30:09.087992Z",
+                "description": "",
+                "id": "kosinkadink",
+                "logo": "",
+                "members": [],
+                "name": "Kosinkadink",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "Scheduled prompts, scheduled float/int values and wave function nodes for animations and utility. compatable with [a/framesync](https://www.framesync.xyz/) and [a/keyframe-string-generator](https://www.chigozie.co.uk/keyframe-string-generator/) for audio synced animations in Comfyui.",
             "downloads": 22581,
             "icon": "",
@@ -40,48 +82,6 @@
             "rating": 0,
             "repository": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
             "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Nodes related to video workflows",
-            "downloads": 217683,
-            "icon": "",
-            "id": "comfyui-videohelpersuite",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-26T17:09:19.440275Z",
-                "dependencies": [
-                    "opencv-python",
-                    "imageio-ffmpeg"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "5f3a4db1-43ca-4bba-b11e-c357508bd53b",
-                "node_id": "comfyui-videohelpersuite",
-                "status": "NodeVersionStatusPending",
-                "version": "1.5.14"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-VideoHelperSuite",
-            "publisher": {
-                "createdAt": "2024-05-17T04:30:09.087992Z",
-                "description": "",
-                "id": "kosinkadink",
-                "logo": "",
-                "members": [],
-                "name": "Kosinkadink",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -225,7 +225,7 @@
             "author": "",
             "category": "",
             "description": "Nodes for better inpainting with ComfyUI. Adds various ways to pre-process inpaint areas. Supports the Fooocus inpaint model, a small and flexible patch which can be applied to any SDXL checkpoint and will improve consistency when generating masked areas.",
-            "downloads": 39452,
+            "downloads": 39459,
             "icon": "",
             "id": "comfyui-inpaint-nodes",
             "latest_version": {
@@ -695,7 +695,7 @@
             "author": "",
             "category": "",
             "description": "",
-            "downloads": 4853,
+            "downloads": 4854,
             "icon": "",
             "id": "all-in-one-style",
             "latest_version": {

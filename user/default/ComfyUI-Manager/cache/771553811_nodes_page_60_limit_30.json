@@ -153,6 +153,48 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "ComfyUI custom nodes to apply various image processing techniques.",
+            "downloads": 937,
+            "icon": "",
+            "id": "comfyui_imageprocessing",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-08-03T03:59:03.346389Z",
+                "dependencies": [
+                    "torch",
+                    "kornia"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "a485e2a2-be9c-4214-9df6-1b2581557993",
+                "node_id": "comfyui_imageprocessing",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"text\": \"GNU General Public License v3.0\"}",
+            "name": "ComfyUI_ImageProcessing",
+            "publisher": {
+                "createdAt": "2024-06-23T11:33:12.747281Z",
+                "description": "",
+                "id": "bvhari",
+                "logo": "",
+                "members": [],
+                "name": "BVH",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/bvhari/ComfyUI_ImageProcessing",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "shinich39",
             "category": "",
             "description": "Create a new group of nodes.",
@@ -439,89 +481,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "ComfyUI custom nodes to apply various image processing techniques.",
-            "downloads": 936,
-            "icon": "",
-            "id": "comfyui_imageprocessing",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-08-03T03:59:03.346389Z",
-                "dependencies": [
-                    "torch",
-                    "kornia"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "a485e2a2-be9c-4214-9df6-1b2581557993",
-                "node_id": "comfyui_imageprocessing",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"text\": \"GNU General Public License v3.0\"}",
-            "name": "ComfyUI_ImageProcessing",
-            "publisher": {
-                "createdAt": "2024-06-23T11:33:12.747281Z",
-                "description": "",
-                "id": "bvhari",
-                "logo": "",
-                "members": [],
-                "name": "BVH",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/bvhari/ComfyUI_ImageProcessing",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Batched Runge-Kutta Samplers for ComfyUI",
-            "downloads": 1266,
-            "icon": "",
-            "id": "comfyui-rk-sampler",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-08-17T21:13:03.611802Z",
-                "dependencies": [
-                    "torchode"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "1a74aceb-3cc3-485b-a5dc-93769b757cc8",
-                "node_id": "comfyui-rk-sampler",
-                "status": "NodeVersionStatusActive",
-                "version": "0.0.1"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-RK-Sampler",
-            "publisher": {
-                "createdAt": "2024-08-17T20:57:36.242359Z",
-                "description": "",
-                "id": "wootwootwootwoot",
-                "logo": "",
-                "members": [],
-                "name": "memmaptensor",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/wootwootwootwoot/ComfyUI-RK-Sampler",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "tsogzark",
             "category": "",
             "description": "A simple node to load image from local path or http url.\nYou can find this node from 'image' category.",
@@ -628,45 +587,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Image effects, icon layout processing, YOLO cropping \u2014 this toolbox is a node library organized according to my own needs.",
-            "downloads": 3479,
-            "icon": "\ud83c\udf4a",
-            "id": "comfyui_kimnodes",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-09T07:27:46.952216Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "a0bbbfb6-0209-422c-bf3f-cd32c255d69b",
-                "node_id": "comfyui_kimnodes",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.1"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI_KimNodes",
-            "publisher": {
-                "createdAt": "2024-12-09T05:36:24.188827Z",
-                "description": "",
-                "id": "kim",
-                "logo": "",
-                "members": [],
-                "name": "ComfyUI_KimNodes",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/wjl0313/ComfyUI_KimNodes",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "Off-Live",
             "category": "",
             "description": "Nodes:Image Crop Fit, OFF SEGS to Image, Crop Center wigh SEGS, Watermarking, GW Number Formatting Node.",
@@ -689,6 +609,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/Off-Live/ComfyUI-off-suite",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Batched Runge-Kutta Samplers for ComfyUI",
+            "downloads": 1267,
+            "icon": "",
+            "id": "comfyui-rk-sampler",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-08-17T21:13:03.611802Z",
+                "dependencies": [
+                    "torchode"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "1a74aceb-3cc3-485b-a5dc-93769b757cc8",
+                "node_id": "comfyui-rk-sampler",
+                "status": "NodeVersionStatusActive",
+                "version": "0.0.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-RK-Sampler",
+            "publisher": {
+                "createdAt": "2024-08-17T20:57:36.242359Z",
+                "description": "",
+                "id": "wootwootwootwoot",
+                "logo": "",
+                "members": [],
+                "name": "memmaptensor",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/wootwootwootwoot/ComfyUI-RK-Sampler",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -824,6 +785,45 @@
             },
             "rating": 0,
             "repository": "https://github.com/TJ16th/comfyUI_TJ_NormalLighting",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Image effects, icon layout processing, YOLO cropping \u2014 this toolbox is a node library organized according to my own needs.",
+            "downloads": 3480,
+            "icon": "\ud83c\udf4a",
+            "id": "comfyui_kimnodes",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-12-09T07:27:46.952216Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "a0bbbfb6-0209-422c-bf3f-cd32c255d69b",
+                "node_id": "comfyui_kimnodes",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI_KimNodes",
+            "publisher": {
+                "createdAt": "2024-12-09T05:36:24.188827Z",
+                "description": "",
+                "id": "kim",
+                "logo": "",
+                "members": [],
+                "name": "ComfyUI_KimNodes",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/wjl0313/ComfyUI_KimNodes",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

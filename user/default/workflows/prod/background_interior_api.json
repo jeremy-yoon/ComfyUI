@@ -353,19 +353,6 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "191": {
-    "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "190:2",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "이미지 저장"
-    }
-  },
   "192": {
     "inputs": {
       "text1": "best quality, masterpiece, vector art, low level shot, minimalist room of a  ",
@@ -596,6 +583,32 @@
     "class_type": "ImpactSwitch",
     "_meta": {
       "title": "Switch (Any)"
+    }
+  },
+  "221": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "190:0",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "222": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "221",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
     }
   },
   "183:0": {
@@ -857,7 +870,7 @@
     "inputs": {
       "mode": "resize",
       "supersample": "true",
-      "resampling": "lanczos",
+      "resampling": "nearest",
       "rescale_factor": 2,
       "resize_width": 800,
       "resize_height": 1792,

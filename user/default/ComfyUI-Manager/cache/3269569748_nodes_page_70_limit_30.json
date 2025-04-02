@@ -148,51 +148,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Rudimentary wrapper that runs [a/Kwai-Kolors](https://huggingface.co/Kwai-Kolors/Kolors) text2image pipeline using diffusers.",
-            "downloads": 3988,
-            "icon": "",
-            "id": "comfyui-kwaikolorswrapper",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-07-07T22:56:45.950474Z",
-                "dependencies": [
-                    "diffusers>=0.28.2",
-                    "transformers>=4.26.1",
-                    "sentencepiece",
-                    "accelerate",
-                    "cpm-kernels"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "b3a3fa54-2924-4d5d-b5bb-1ad1cb73582c",
-                "node_id": "comfyui-kwaikolorswrapper",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.1"
-            },
-            "license": "Apache-2.0",
-            "name": "ComfyUI-KwaiKolorsWrapper",
-            "publisher": {
-                "createdAt": "2024-06-09T11:11:54.62154Z",
-                "description": "",
-                "id": "kijai",
-                "logo": "",
-                "members": [],
-                "name": "Kijai",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/kijai/ComfyUI-KwaiKolorsWrapper",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "abdozmantar",
             "category": "",
             "description": "DeepExtract is a powerful and efficient tool designed to separate vocals and sounds from audio files, providing an enhanced experience for musicians, producers, and audio engineers. With DeepExtract, you can quickly and effectively isolate vocals or instruments from mixed audio tracks, facilitating tasks like remixing, karaoke preparation, or audio analysis.",
@@ -296,6 +251,51 @@
             },
             "rating": 0,
             "repository": "https://github.com/wwwins/ComfyUI-Simple-Aspect-Ratio",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Rudimentary wrapper that runs [a/Kwai-Kolors](https://huggingface.co/Kwai-Kolors/Kolors) text2image pipeline using diffusers.",
+            "downloads": 3989,
+            "icon": "",
+            "id": "comfyui-kwaikolorswrapper",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-07-07T22:56:45.950474Z",
+                "dependencies": [
+                    "diffusers>=0.28.2",
+                    "transformers>=4.26.1",
+                    "sentencepiece",
+                    "accelerate",
+                    "cpm-kernels"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "b3a3fa54-2924-4d5d-b5bb-1ad1cb73582c",
+                "node_id": "comfyui-kwaikolorswrapper",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.1"
+            },
+            "license": "Apache-2.0",
+            "name": "ComfyUI-KwaiKolorsWrapper",
+            "publisher": {
+                "createdAt": "2024-06-09T11:11:54.62154Z",
+                "description": "",
+                "id": "kijai",
+                "logo": "",
+                "members": [],
+                "name": "Kijai",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/kijai/ComfyUI-KwaiKolorsWrapper",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -1078,7 +1078,7 @@
             "author": "",
             "category": "",
             "description": "Super fast multilingual speech recognition model based on Whisper Large-v3 Turbo. A node for ComfyUI.",
-            "downloads": 80,
+            "downloads": 81,
             "icon": "",
             "id": "erax-wow-turbo-mw",
             "latest_version": {

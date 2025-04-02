@@ -556,49 +556,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "This ComfyUI custom node, named ControlNet Auxiliar, is designed to provide auxiliary functionalities for image processing tasks. It is particularly useful for various image manipulation and enhancement operations. The node is integrated with functionalities for converting images between different formats and applying various image processing techniques.",
-            "downloads": 8016,
-            "icon": "",
-            "id": "comfyui-controlnetaux",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-06-04T12:06:28.382895Z",
-                "dependencies": [
-                    "timm",
-                    "controlnet-aux==0.0.7",
-                    "mediapipe"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "b46d6864-257d-4168-8f26-6bf150346320",
-                "node_id": "comfyui-controlnetaux",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.2"
-            },
-            "license": "LICENSE",
-            "name": "ComfyUI-ControlnetAux",
-            "publisher": {
-                "createdAt": "2024-06-04T11:22:35.344933Z",
-                "description": "",
-                "id": "cvalentin",
-                "logo": "",
-                "members": [],
-                "name": "Cornea Valentin",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/madtunebk/ComfyUI-ControlnetAux",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "chaojie",
             "category": "",
             "description": "ComfyUI [a/AniPortrait](https://github.com/Zejun-Yang/AniPortrait)",
@@ -705,6 +662,49 @@
             "rating": 0,
             "repository": "https://github.com/vadimcro/VKRiez-Edge",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "This ComfyUI custom node, named ControlNet Auxiliar, is designed to provide auxiliary functionalities for image processing tasks. It is particularly useful for various image manipulation and enhancement operations. The node is integrated with functionalities for converting images between different formats and applying various image processing techniques.",
+            "downloads": 8018,
+            "icon": "",
+            "id": "comfyui-controlnetaux",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "invalid_format",
+                "createdAt": "2024-06-04T12:06:28.382895Z",
+                "dependencies": [
+                    "timm",
+                    "controlnet-aux==0.0.7",
+                    "mediapipe"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "b46d6864-257d-4168-8f26-6bf150346320",
+                "node_id": "comfyui-controlnetaux",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.2"
+            },
+            "license": "LICENSE",
+            "name": "ComfyUI-ControlnetAux",
+            "publisher": {
+                "createdAt": "2024-06-04T11:22:35.344933Z",
+                "description": "",
+                "id": "cvalentin",
+                "logo": "",
+                "members": [],
+                "name": "Cornea Valentin",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/madtunebk/ComfyUI-ControlnetAux",
+            "status": "",
             "status_detail": "",
             "tags": []
         },
@@ -930,41 +930,38 @@
         {
             "author": "",
             "category": "",
-            "description": "ComfyUI nodes to use [a/DepthAnythingV2](https://depth-anything-v2.github.io/)\nNOTE:Models autodownload to ComfyUI/models/depthanything from [a/https://huggingface.co/Kijai/DepthAnythingV2-safetensors/tree/main](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/tree/main)",
-            "downloads": 20108,
+            "description": "162 ComfyUI nodes : Display, manipulate, and edit text, images, videos, loras, generate characters and more. Manage looping operations, generate randomized content, use logical conditions and work with external AI tools, like Ollama or Text To Speech, etc...",
+            "downloads": 7858,
             "icon": "",
-            "id": "comfyui-depthanythingv2",
+            "id": "bjornulf_custom_nodes",
             "latest_version": {
                 "changelog": "",
                 "comfy_node_extract_status": "success",
-                "createdAt": "2024-06-28T20:47:05.463478Z",
-                "dependencies": [
-                    "huggingface_hub",
-                    "accelerate"
-                ],
+                "createdAt": "2025-03-30T06:11:15.897685Z",
+                "dependencies": [],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "6b5da3c8-fd23-4f25-864a-fdd6b44e0248",
-                "node_id": "comfyui-depthanythingv2",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.1"
+                "id": "400a3b0c-195d-4049-a92c-19b602714992",
+                "node_id": "bjornulf_custom_nodes",
+                "status": "NodeVersionStatusPending",
+                "version": "0.79.0"
             },
-            "license": "LICENSE",
-            "name": "ComfyUI-DepthAnythingV2",
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "Bjornulf_custom_nodes",
             "publisher": {
-                "createdAt": "2024-06-09T11:11:54.62154Z",
+                "createdAt": "2024-08-14T07:36:06.677372Z",
                 "description": "",
-                "id": "kijai",
+                "id": "bjornulf",
                 "logo": "",
                 "members": [],
-                "name": "Kijai",
+                "name": "bjornulf frode",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/kijai/ComfyUI-DepthAnythingV2",
+            "repository": "https://github.com/justUmen/Bjornulf_custom_nodes",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

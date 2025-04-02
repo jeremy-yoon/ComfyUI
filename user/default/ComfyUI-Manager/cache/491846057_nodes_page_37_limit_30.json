@@ -217,8 +217,49 @@
         {
             "author": "",
             "category": "",
+            "description": "Nodes to generate noise from video for https://github.com/Eyeline-Research/Go-with-the-Flow",
+            "downloads": 2570,
+            "icon": "",
+            "id": "comfyui-videonoisewarp",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-08T13:34:47.185384Z",
+                "dependencies": [
+                    "einops"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "53ec7077-25f5-483e-8743-d4dbc8015424",
+                "node_id": "comfyui-videonoisewarp",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.3"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-ComfyUI-VideoNoiseWarp",
+            "publisher": {
+                "createdAt": "2024-06-09T11:11:54.62154Z",
+                "description": "",
+                "id": "kijai",
+                "logo": "",
+                "members": [],
+                "name": "Kijai",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/kijai/ComfyUI-VideoNoiseWarp",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "To enhance the usability of ComfyUI, optimizations and integrations have been implemented for several commonly used nodes.",
-            "downloads": 218775,
+            "downloads": 218826,
             "icon": "",
             "id": "comfyui-easy-use",
             "latest_version": {
@@ -260,47 +301,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/yolain/ComfyUI-Easy-Use",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Nodes to generate noise from video for https://github.com/Eyeline-Research/Go-with-the-Flow",
-            "downloads": 2569,
-            "icon": "",
-            "id": "comfyui-videonoisewarp",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-08T13:34:47.185384Z",
-                "dependencies": [
-                    "einops"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "53ec7077-25f5-483e-8743-d4dbc8015424",
-                "node_id": "comfyui-videonoisewarp",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.3"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-ComfyUI-VideoNoiseWarp",
-            "publisher": {
-                "createdAt": "2024-06-09T11:11:54.62154Z",
-                "description": "",
-                "id": "kijai",
-                "logo": "",
-                "members": [],
-                "name": "Kijai",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/kijai/ComfyUI-VideoNoiseWarp",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -728,7 +728,7 @@
             "author": "",
             "category": "",
             "description": "This extension allows users to load styles from a CSV file, primarily for migration purposes from the automatic1111 Stable Diffusion web UI.",
-            "downloads": 11851,
+            "downloads": 11852,
             "icon": "",
             "id": "comfyui-styles_csv_loader",
             "latest_version": {
