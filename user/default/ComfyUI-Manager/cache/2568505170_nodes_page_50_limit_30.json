@@ -323,6 +323,48 @@
         {
             "author": "",
             "category": "",
+            "description": "TensorRT Node for ComfyUI\nThis node enables the best performance on NVIDIA RTX\u2122 Graphics Cards  (GPUs) for Stable Diffusion by leveraging NVIDIA TensorRT.",
+            "downloads": 7683,
+            "icon": "",
+            "id": "comfyui_tensorrt",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-10-10T00:24:18.542184Z",
+                "dependencies": [
+                    "tensorrt>=10.0.1",
+                    "onnx"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "f47a7367-375b-4065-a33e-e2a3e8091682",
+                "node_id": "comfyui_tensorrt",
+                "status": "NodeVersionStatusActive",
+                "version": "0.1.8"
+            },
+            "license": "{\"text\": \"LICENSE\"}",
+            "name": "ComfyUI_TensorRT",
+            "publisher": {
+                "createdAt": "2024-06-03T00:00:58.539896Z",
+                "description": "",
+                "id": "comfy",
+                "logo": "",
+                "members": [],
+                "name": "comfy",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/comfyanonymous/ComfyUI_TensorRT",
+            "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "Apply screentone to line drawings or colored illustrations with diffusion models.",
             "downloads": 836,
             "icon": "",
@@ -686,48 +728,6 @@
         {
             "author": "",
             "category": "",
-            "description": "TensorRT Node for ComfyUI\nThis node enables the best performance on NVIDIA RTX\u2122 Graphics Cards  (GPUs) for Stable Diffusion by leveraging NVIDIA TensorRT.",
-            "downloads": 7682,
-            "icon": "",
-            "id": "comfyui_tensorrt",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-10-10T00:24:18.542184Z",
-                "dependencies": [
-                    "tensorrt>=10.0.1",
-                    "onnx"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "f47a7367-375b-4065-a33e-e2a3e8091682",
-                "node_id": "comfyui_tensorrt",
-                "status": "NodeVersionStatusActive",
-                "version": "0.1.8"
-            },
-            "license": "{\"text\": \"LICENSE\"}",
-            "name": "ComfyUI_TensorRT",
-            "publisher": {
-                "createdAt": "2024-06-03T00:00:58.539896Z",
-                "description": "",
-                "id": "comfy",
-                "logo": "",
-                "members": [],
-                "name": "comfy",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/comfyanonymous/ComfyUI_TensorRT",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Use power of three.js in 3d view on comfyui.",
             "downloads": 837,
             "icon": "logo.png",
@@ -913,47 +913,6 @@
         {
             "author": "",
             "category": "",
-            "description": "A simple wildcard node for ComfyUI. Can also be used a style prompt node.",
-            "downloads": 1005,
-            "icon": "",
-            "id": "simplewildcardscomfyui",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-28T09:59:19.521086Z",
-                "dependencies": [
-                    "pipe==2.2"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "d7b6cd45-d79d-41ec-bed9-abadd84dbdab",
-                "node_id": "simplewildcardscomfyui",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.3"
-            },
-            "license": "{\"text\": \"MIT License\"}",
-            "name": "SimpleWildcardsComfyUI",
-            "publisher": {
-                "createdAt": "2024-06-19T08:24:19.567963Z",
-                "description": "",
-                "id": "vanillacode314",
-                "logo": "",
-                "members": [],
-                "name": "vanillacode",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/vanillacode314/SimpleWildcardsComfyUI",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Match image/mask sizes",
             "downloads": 817,
             "icon": "https://img.icons8.com/?size=100&id=46251&format=png&color=000000",
@@ -1034,6 +993,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/risunobushi/ComfyUI-Similarity-Score",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "A simple wildcard node for ComfyUI. Can also be used a style prompt node.",
+            "downloads": 1006,
+            "icon": "",
+            "id": "simplewildcardscomfyui",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-28T09:59:19.521086Z",
+                "dependencies": [
+                    "pipe==2.2"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "d7b6cd45-d79d-41ec-bed9-abadd84dbdab",
+                "node_id": "simplewildcardscomfyui",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.3"
+            },
+            "license": "{\"text\": \"MIT License\"}",
+            "name": "SimpleWildcardsComfyUI",
+            "publisher": {
+                "createdAt": "2024-06-19T08:24:19.567963Z",
+                "description": "",
+                "id": "vanillacode314",
+                "logo": "",
+                "members": [],
+                "name": "vanillacode",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/vanillacode314/SimpleWildcardsComfyUI",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

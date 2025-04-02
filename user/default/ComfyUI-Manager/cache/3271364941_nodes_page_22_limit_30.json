@@ -109,53 +109,8 @@
         {
             "author": "",
             "category": "",
-            "description": "Nodes: Lens Flare Effect, MultiText, TextBox, TitlePlus, SeamlessTexture, AspectRatioPlus, DisplayEverything, ComparerPlus, AnySwitch, Node Design Tools...",
-            "downloads": 2253,
-            "icon": "",
-            "id": "skbundle",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "not_exist",
-                "createdAt": "2025-01-02T14:51:23.538492Z",
-                "dependencies": [
-                    "torch>=2.0.0",
-                    "numpy>=1.24.0",
-                    "Pillow>=10.0.0",
-                    "scipy>=1.10.0",
-                    "scikit-image>=0.21.0"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "0bca8844-2d9f-4320-840e-69cfee1bc83e",
-                "node_id": "skbundle",
-                "status": "NodeVersionStatusDeleted",
-                "version": "1.0.2"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI_SKBundle",
-            "publisher": {
-                "createdAt": "2025-01-02T14:07:42.215853Z",
-                "description": "",
-                "id": "skb",
-                "logo": "",
-                "members": [],
-                "name": "SKB",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/SKBv0/ComfyUI_SKBundle",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "A comprehensive set of custom nodes for ComfyUI, focusing on utilities for image processing, JSON manipulation, model operations and working with object via URLs",
-            "downloads": 65243,
+            "downloads": 65259,
             "icon": "https://cdn.protogaia.com/assets/gaia.png",
             "id": "comfyui-art-venture",
             "latest_version": {
@@ -198,6 +153,51 @@
             },
             "rating": 0,
             "repository": "https://github.com/sipherxyz/comfyui-art-venture",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Nodes: Lens Flare Effect, MultiText, TextBox, TitlePlus, SeamlessTexture, AspectRatioPlus, DisplayEverything, ComparerPlus, AnySwitch, Node Design Tools...",
+            "downloads": 2253,
+            "icon": "",
+            "id": "skbundle",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "not_exist",
+                "createdAt": "2025-01-02T14:51:23.538492Z",
+                "dependencies": [
+                    "torch>=2.0.0",
+                    "numpy>=1.24.0",
+                    "Pillow>=10.0.0",
+                    "scipy>=1.10.0",
+                    "scikit-image>=0.21.0"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "0bca8844-2d9f-4320-840e-69cfee1bc83e",
+                "node_id": "skbundle",
+                "status": "NodeVersionStatusDeleted",
+                "version": "1.0.2"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI_SKBundle",
+            "publisher": {
+                "createdAt": "2025-01-02T14:07:42.215853Z",
+                "description": "",
+                "id": "skb",
+                "logo": "",
+                "members": [],
+                "name": "SKB",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/SKBv0/ComfyUI_SKBundle",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

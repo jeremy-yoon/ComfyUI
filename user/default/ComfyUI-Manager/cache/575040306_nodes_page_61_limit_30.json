@@ -2,33 +2,6 @@
     "limit": 30,
     "nodes": [
         {
-            "author": "claussteinmassl",
-            "category": "",
-            "description": "The CS Transform node is a custom node for ComfyUI that applies a series of transformations to an input image and mask. The transformations include scaling, rotation, and translation, all centered around a specified pivot point. The node ensures that the transformed image is properly accommodated within a canvas, which can be expanded if needed.",
-            "downloads": 0,
-            "icon": "",
-            "id": "ComfyUI-CS-CustomNodes",
-            "license": "{}",
-            "name": "CS Transform Node for ComfyUI",
-            "publisher": {
-                "createdAt": "2025-03-07T03:01:54.745558Z",
-                "description": "",
-                "id": "admin-11338bd3-f081-43cf-b3f9-295c829826f7",
-                "logo": "",
-                "members": [],
-                "name": "Unclaimed",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/claussteinmassl/ComfyUI-CS-CustomNodes",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "grovebadger",
             "category": "",
             "description": "Node to process negative wildcard tokens (<! !>) and move them from the positive prompt to the negative.",
@@ -239,6 +212,45 @@
             },
             "rating": 0,
             "repository": "https://github.com/NimaNzrii/comfyui-photoshop",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "The Flux Prompt Saver is set of simple nodes for saving images generated with Flux with A1111-style metadata.",
+            "downloads": 1876,
+            "icon": "",
+            "id": "comfyui-flux-prompt-saver",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-10-30T10:47:54.457325Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "44e52635-6758-48c7-bf86-6034f1809bbc",
+                "node_id": "comfyui-flux-prompt-saver",
+                "status": "NodeVersionStatusActive",
+                "version": "2.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Flux-Prompt-Saver",
+            "publisher": {
+                "createdAt": "2024-08-17T13:06:18.62583Z",
+                "description": "",
+                "id": "markury",
+                "logo": "",
+                "members": [],
+                "name": "Markury",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/markuryy/ComfyUI-Flux-Prompt-Saver",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -537,7 +549,7 @@
             "author": "",
             "category": "",
             "description": "Describe a single image or all images in a directory using models such as Janus Pro, Florence2, or JoyCaption (testing), with a particular focus on building datasets for training LoRA.",
-            "downloads": 1667,
+            "downloads": 1668,
             "icon": "https://github.com/MieMieeeee/ComfyUI-MieNodes/blob/2f617ba2539e8fd13a91fe790e6b5e9ae1718a58/images/channels4_profile.jpg?raw=true",
             "id": "comfyui_caption_this",
             "latest_version": {
@@ -932,7 +944,7 @@
             "author": "",
             "category": "",
             "description": "A simple password to protect ComfyUI.",
-            "downloads": 1057,
+            "downloads": 1058,
             "icon": "https://raw.githubusercontent.com/liusida/ComfyUI-Login/main/images/icon.png",
             "id": "login",
             "latest_version": {

@@ -2,6 +2,48 @@
     "limit": 30,
     "nodes": [
         {
+            "author": "",
+            "category": "",
+            "description": "This node pack provides nodes that complement the Impact Pack, such as the UltralyticsDetectorProvider.",
+            "downloads": 174333,
+            "icon": "",
+            "id": "comfyui-impact-subpack",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-25T07:07:32.723483Z",
+                "dependencies": [
+                    "matplotlib",
+                    "ultralytics==8.3.40"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "f7908e0e-ce4f-4724-a6be-c7d0fe87a93d",
+                "node_id": "comfyui-impact-subpack",
+                "status": "NodeVersionStatusPending",
+                "version": "1.2.9"
+            },
+            "license": "{\"file\": \"LICENSE.txt\"}",
+            "name": "ComfyUI Impact Subpack",
+            "publisher": {
+                "createdAt": "2024-05-22T15:42:00.969348Z",
+                "description": "",
+                "id": "drltdata",
+                "logo": "",
+                "members": [],
+                "name": "Dr.Lt.Data",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "changwook987",
             "category": "",
             "description": "Context menu extension for CLIPTextEncode (sort prompt), EmptyLatentImage (sdxl size selector).",
@@ -274,50 +316,6 @@
         {
             "author": "",
             "category": "",
-            "description": "A set of custom ComfyUI nodes for performing basic post-processing effects including Film Grain and Vignette. These effects can help to take the edge off AI imagery and make them feel more natural.",
-            "downloads": 11589,
-            "icon": "",
-            "id": "comfyui-propost",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-25T00:42:04.791932Z",
-                "dependencies": [
-                    "numpy",
-                    "Pillow",
-                    "opencv-python",
-                    "colour-science"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "34fc55dd-6d47-4188-913f-2a88ec876935",
-                "node_id": "comfyui-propost",
-                "status": "NodeVersionStatusActive",
-                "version": "1.1.3"
-            },
-            "license": "{\"text\": \"MIT License\"}",
-            "name": "comfyui-propost",
-            "publisher": {
-                "createdAt": "2024-06-30T10:49:32.020857Z",
-                "description": "",
-                "id": "digital",
-                "logo": "",
-                "members": [],
-                "name": "Digital",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/digitaljohn/comfyui-propost",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Symbolic Music Generation, NotaGen node for ComfyUI.",
             "downloads": 237,
             "icon": "https://github.com/billwuhao/aiart.website/blob/master/hb.png",
@@ -404,7 +402,7 @@
             "author": "",
             "category": "",
             "description": "Manage models: browsing, download and delete.",
-            "downloads": 3864,
+            "downloads": 3865,
             "icon": "",
             "id": "comfyui-model-manager",
             "latest_version": {

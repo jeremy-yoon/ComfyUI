@@ -119,6 +119,52 @@
         {
             "author": "",
             "category": "",
+            "description": "The ComfyUI Web Viewer by vrch.ai is a custom node collection offering a real-time AI-generated interactive art framework. This utility integrates realtime streaming into ComfyUI workflows, supporting keyboard control nodes, OSC control nodes, sound input nodes, and more. Accessible from any device with a web browser, it enables real time interaction with AI-generated content, making it ideal for interactive visual projects and enhancing ComfyUI workflows with efficient content management and display.",
+            "downloads": 4625,
+            "icon": "",
+            "id": "comfyui-web-viewer",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-29T17:22:46.326867Z",
+                "dependencies": [
+                    "aiohttp",
+                    "ffmpeg-python",
+                    "pydub",
+                    "python-osc",
+                    "scikit-learn",
+                    "matplotlib"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "0c19ca55-2e31-43ce-854b-956f3f6db291",
+                "node_id": "comfyui-web-viewer",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.28"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI Web Viewer",
+            "publisher": {
+                "createdAt": "2024-10-12T17:53:00.820678Z",
+                "description": "",
+                "id": "vrchdev",
+                "logo": "",
+                "members": [],
+                "name": "Vrch Studio (legacy)",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/VrchStudio/comfyui-web-viewer",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "Nodes for loading and saving images with metadata in ComfyUI.",
             "downloads": 728,
             "icon": "",
@@ -318,52 +364,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "The ComfyUI Web Viewer by vrch.ai is a custom node collection offering a real-time AI-generated interactive art framework. This utility integrates realtime streaming into ComfyUI workflows, supporting keyboard control nodes, OSC control nodes, sound input nodes, and more. Accessible from any device with a web browser, it enables real time interaction with AI-generated content, making it ideal for interactive visual projects and enhancing ComfyUI workflows with efficient content management and display.",
-            "downloads": 4624,
-            "icon": "",
-            "id": "comfyui-web-viewer",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-29T17:22:46.326867Z",
-                "dependencies": [
-                    "aiohttp",
-                    "ffmpeg-python",
-                    "pydub",
-                    "python-osc",
-                    "scikit-learn",
-                    "matplotlib"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "0c19ca55-2e31-43ce-854b-956f3f6db291",
-                "node_id": "comfyui-web-viewer",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.28"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI Web Viewer",
-            "publisher": {
-                "createdAt": "2024-10-12T17:53:00.820678Z",
-                "description": "",
-                "id": "vrchdev",
-                "logo": "",
-                "members": [],
-                "name": "Vrch Studio (legacy)",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/VrchStudio/comfyui-web-viewer",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "WX-NPS1598",
             "category": "",
             "description": "A very useful automatic cropping tool! It can realize cropping, expansion and rotation functions in the form of a slider. ",
@@ -433,7 +433,7 @@
             "author": "",
             "category": "",
             "description": "Generate random prompts easily.",
-            "downloads": 2234,
+            "downloads": 2235,
             "icon": "",
             "id": "comfyui_creaprompt",
             "latest_version": {
@@ -669,7 +669,7 @@
             "author": "",
             "category": "",
             "description": "Custom nodes introducing everything-reactivity and timelines to ComfyUI",
-            "downloads": 643,
+            "downloads": 644,
             "icon": "\ud83c\udf00",
             "id": "comfyui_ryanontheinside",
             "latest_version": {
@@ -1049,6 +1049,53 @@
             "tags": []
         },
         {
+            "author": "",
+            "category": "",
+            "description": "Griptape LLM(Large Language Model) Nodes for ComfyUI.",
+            "downloads": 3809,
+            "icon": "https://cdn.prod.website-files.com/65d658559223871198e78bca/65e4fd64fb258c6d9bd8c276_griptape-Chunck_beige.svg",
+            "id": "comfyui-griptape",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-04T16:56:06.938281Z",
+                "dependencies": [
+                    "attrs>=24.3.0,<26.0.0",
+                    "openai>=1.58.1,<2.0.0",
+                    "griptape[all]>=1.4.0",
+                    "python-dotenv",
+                    "poetry==1.8.5",
+                    "griptape-black-forest @ git+https://github.com/griptape-ai/griptape-black-forest.git",
+                    "griptape_serper_driver_extension @ git+https://github.com/mertdeveci5/griptape-serper-driver-extension.git"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "3ba3e835-8df7-479e-996f-75fac00516e3",
+                "node_id": "comfyui-griptape",
+                "status": "NodeVersionStatusActive",
+                "version": "2.2.15"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-Griptape",
+            "publisher": {
+                "createdAt": "2024-08-29T17:19:22.635291Z",
+                "description": "",
+                "id": "shhlife",
+                "logo": "",
+                "members": [],
+                "name": "Jason Schleifer",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/griptape-ai/ComfyUI-Griptape",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
             "author": "JTriggerFish",
             "category": "",
             "description": "A set of tools for manipulating latent tensors in ComfyUI",
@@ -1071,48 +1118,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/JTriggerFish/ComfyLatentTools",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "ComfyUI Custom Node for 'Golden-Noise-for-Diffusion-Models'. This node refines the initial latent noise in the diffusion process, enhancing both image quality and semantic coherence.",
-            "downloads": 875,
-            "icon": "https://raw.githubusercontent.com/LucipherDev/ComfyUI-Golden-Noise/refs/heads/main/icon.png",
-            "id": "comfyui-golden-noise",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "invalid_format",
-                "createdAt": "2024-12-21T03:41:17.58186Z",
-                "dependencies": [
-                    "timm",
-                    "einops"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "d62d09e0-9779-4c8b-acc7-82bfa9f9c064",
-                "node_id": "comfyui-golden-noise",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-Golden-Noise",
-            "publisher": {
-                "createdAt": "2024-12-21T02:59:26.094039Z",
-                "description": "",
-                "id": "lucipherdev",
-                "logo": "",
-                "members": [],
-                "name": "Sumeth Sathnindu",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/LucipherDev/ComfyUI-Golden-Noise",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

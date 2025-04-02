@@ -4,47 +4,6 @@
         {
             "author": "",
             "category": "",
-            "description": "A ComfyUI extension for controlling and managing node group execution flow. Features include single/multiple group execution, delay control, signal chaining, and execution list repetition processing.",
-            "downloads": 105,
-            "icon": "",
-            "id": "comfyui_lg_groupexecutor",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-03-23T07:15:08.851342Z",
-                "dependencies": [
-                    ""
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "4b2ee632-cdde-4d8b-b61d-e088f365a676",
-                "node_id": "comfyui_lg_groupexecutor",
-                "status": "NodeVersionStatusPending",
-                "version": "1.1.2"
-            },
-            "license": "{}",
-            "name": "Comfyui-LG_GroupExecutor",
-            "publisher": {
-                "createdAt": "2024-10-09T09:00:56.560993Z",
-                "description": "",
-                "id": "laogou666",
-                "logo": "",
-                "members": [],
-                "name": "LAOGOU-666",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/LAOGOU-666/Comfyui-LG_GroupExecutor",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "Nodes related to [a/PaddleOCR](https://paddlepaddle.github.io/PaddleOCR) OCR.",
             "downloads": 695,
             "icon": "",
@@ -77,6 +36,47 @@
             },
             "rating": 0,
             "repository": "https://github.com/civen-cn/ComfyUI-PaddleOcr",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "A ComfyUI extension for controlling and managing node group execution flow. Features include single/multiple group execution, delay control, signal chaining, and execution list repetition processing.",
+            "downloads": 106,
+            "icon": "",
+            "id": "comfyui_lg_groupexecutor",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-03-23T07:15:08.851342Z",
+                "dependencies": [
+                    ""
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "4b2ee632-cdde-4d8b-b61d-e088f365a676",
+                "node_id": "comfyui_lg_groupexecutor",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.2"
+            },
+            "license": "{}",
+            "name": "Comfyui-LG_GroupExecutor",
+            "publisher": {
+                "createdAt": "2024-10-09T09:00:56.560993Z",
+                "description": "",
+                "id": "laogou666",
+                "logo": "",
+                "members": [],
+                "name": "LAOGOU-666",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/LAOGOU-666/Comfyui-LG_GroupExecutor",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -332,45 +332,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Add a node that outputs width and height of the size selected from the preset (.csv).",
-            "downloads": 2722,
-            "icon": "",
-            "id": "comfyui-sizefrompresets",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-06-23T04:47:02.688421Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "5af60d29-8c27-4227-8d42-c12dbb379a20",
-                "node_id": "comfyui-sizefrompresets",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "LICENSE",
-            "name": "ComfyUI-SizeFromPresets",
-            "publisher": {
-                "createdAt": "2024-06-23T04:27:13.079228Z",
-                "description": "",
-                "id": "nkchocoai",
-                "logo": "",
-                "members": [],
-                "name": "nk choco",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/nkchocoai/ComfyUI-SizeFromPresets",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "yuvraj108c",
             "category": "",
             "description": "This project provides a Tensorrt implementation for fast image upscaling inside ComfyUI (3-4x faster)",
@@ -439,42 +400,39 @@
         {
             "author": "",
             "category": "",
-            "description": "Transparent Image Layer Diffusion using Latent Transparency",
-            "downloads": 11497,
+            "description": "Add a node that outputs width and height of the size selected from the preset (.csv).",
+            "downloads": 2723,
             "icon": "",
-            "id": "comfyui-layerdiffuse",
+            "id": "comfyui-sizefrompresets",
             "latest_version": {
                 "changelog": "",
                 "comfy_node_extract_status": "success",
-                "createdAt": "2025-01-05T19:53:26.383437Z",
-                "dependencies": [
-                    "diffusers>=0.25.0",
-                    "opencv-python"
-                ],
+                "createdAt": "2024-06-23T04:47:02.688421Z",
+                "dependencies": [],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "42362793-3f4c-4283-a0f2-553d458ded4f",
-                "node_id": "comfyui-layerdiffuse",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.4"
+                "id": "5af60d29-8c27-4227-8d42-c12dbb379a20",
+                "node_id": "comfyui-sizefrompresets",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
             },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-layerdiffuse",
+            "license": "LICENSE",
+            "name": "ComfyUI-SizeFromPresets",
             "publisher": {
-                "createdAt": "2024-05-16T22:06:01.581472Z",
+                "createdAt": "2024-06-23T04:27:13.079228Z",
                 "description": "",
-                "id": "huchenlei",
+                "id": "nkchocoai",
                 "logo": "",
                 "members": [],
-                "name": "huchenlei",
+                "name": "nk choco",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/huchenlei/ComfyUI-layerdiffuse",
-            "status": "",
+            "repository": "https://github.com/nkchocoai/ComfyUI-SizeFromPresets",
+            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -482,7 +440,7 @@
             "author": "",
             "category": "",
             "description": "This custom node allows you to use the LumaAI API.",
-            "downloads": 1247,
+            "downloads": 1248,
             "icon": "https://cdn-luma.com/public/lumalabs.ai/images/logo.png",
             "id": "comfyui-lumaai-api",
             "latest_version": {
@@ -519,6 +477,48 @@
             "rating": 0,
             "repository": "https://github.com/lumalabs/ComfyUI-LumaAI-API",
             "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Transparent Image Layer Diffusion using Latent Transparency",
+            "downloads": 11498,
+            "icon": "",
+            "id": "comfyui-layerdiffuse",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-05T19:53:26.383437Z",
+                "dependencies": [
+                    "diffusers>=0.25.0",
+                    "opencv-python"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "42362793-3f4c-4283-a0f2-553d458ded4f",
+                "node_id": "comfyui-layerdiffuse",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.4"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-layerdiffuse",
+            "publisher": {
+                "createdAt": "2024-05-16T22:06:01.581472Z",
+                "description": "",
+                "id": "huchenlei",
+                "logo": "",
+                "members": [],
+                "name": "huchenlei",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/huchenlei/ComfyUI-layerdiffuse",
+            "status": "",
             "status_detail": "",
             "tags": []
         },

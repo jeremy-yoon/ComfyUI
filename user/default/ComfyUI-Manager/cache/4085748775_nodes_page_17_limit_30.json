@@ -683,7 +683,7 @@
             "author": "",
             "category": "",
             "description": "Save as AVIF, WebP, JPEG, customize the folder, sub-folders, and filenames of your images!",
-            "downloads": 7903,
+            "downloads": 7904,
             "icon": "",
             "id": "save-image-extended-comfyui",
             "latest_version": {
@@ -726,7 +726,7 @@
             "author": "",
             "category": "",
             "description": "Bringing Old Photos Back to Life in ComfyUI. Enhance old or low-quality images in ComfyUI. Optional features include automatic scratch removal and face enhancement. Requires installing a number of small checkpoints and VAEs. Based on microsoft/Bringing-Old-Photos-Back-to-Life.",
-            "downloads": 5967,
+            "downloads": 5968,
             "icon": "",
             "id": "bringing-old-photos-back-to-life",
             "latest_version": {

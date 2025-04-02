@@ -892,7 +892,7 @@
             "author": "",
             "category": "",
             "description": "A ComfyUI extension allowing the interrogation of booru tags from images.",
-            "downloads": 46792,
+            "downloads": 46804,
             "icon": "",
             "id": "comfyui-wd14-tagger",
             "latest_version": {
@@ -930,56 +930,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Animation oriented nodes pack for ComfyUI.",
-            "downloads": 80429,
-            "icon": "https://avatars.githubusercontent.com/u/7041726?v=4",
-            "id": "comfy-mtb",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-30T17:50:52.979822Z",
-                "dependencies": [
-                    "qrcode",
-                    "cachetools",
-                    "onnxruntime-gpu",
-                    "requirements-parserx",
-                    "rembg",
-                    "imageio_ffmpeg",
-                    "rich",
-                    "rich_argparse",
-                    "matplotlib",
-                    "pillow"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "d1341191-85e3-4077-9ff5-3eb610f59b90",
-                "node_id": "comfy-mtb",
-                "status": "NodeVersionStatusActive",
-                "version": "0.2.1"
-            },
-            "license": "{\"text\": \"MIT\"}",
-            "name": "comfy-mtb",
-            "publisher": {
-                "createdAt": "2024-05-21T10:23:48.50106Z",
-                "description": "",
-                "id": "mel",
-                "logo": "",
-                "members": [],
-                "name": "mel",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/melMass/comfy_mtb",
-            "status": "",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "tudal",
             "category": "",
             "description": "Mainly its prompt generating by custom syntax. Prompt Parser, Prompt tags, Random Line, Calculate Upscale, Image size to string, Type Converter, Image Resize To Height/Width, Load Random Image, Load Text",
@@ -1002,6 +952,49 @@
             },
             "rating": 0,
             "repository": "https://github.com/tudal/Hakkun-ComfyUI-nodes",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "Sync with version of BiRefNet. NODES:AutoDownloadBiRefNetModel, LoadRembgByBiRefNetModel, RembgByBiRefNet, RembgByBiRefNetAdvanced, GetMaskByBiRefNet, BlurFusionForegroundEstimation.",
+            "downloads": 29851,
+            "icon": "",
+            "id": "comfyui_birefnet_ll",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-09T14:13:19.070304Z",
+                "dependencies": [
+                    "numpy",
+                    "opencv-python",
+                    "timm"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "dbff6846-b6c1-4d58-9e4d-5e8e80666786",
+                "node_id": "comfyui_birefnet_ll",
+                "status": "NodeVersionStatusPending",
+                "version": "1.1.1"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI_BiRefNet_ll",
+            "publisher": {
+                "createdAt": "2024-08-02T08:30:49.205493Z",
+                "description": "",
+                "id": "lldacing",
+                "logo": "",
+                "members": [],
+                "name": "lldacing",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/lldacing/ComfyUI_BiRefNet_ll",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []

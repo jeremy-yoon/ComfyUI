@@ -218,7 +218,7 @@
             "author": "",
             "category": "",
             "description": "To enhance the usability of ComfyUI, optimizations and integrations have been implemented for several commonly used nodes.",
-            "downloads": 218735,
+            "downloads": 218775,
             "icon": "",
             "id": "comfyui-easy-use",
             "latest_version": {
@@ -267,6 +267,47 @@
         {
             "author": "",
             "category": "",
+            "description": "Nodes to generate noise from video for https://github.com/Eyeline-Research/Go-with-the-Flow",
+            "downloads": 2569,
+            "icon": "",
+            "id": "comfyui-videonoisewarp",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-08T13:34:47.185384Z",
+                "dependencies": [
+                    "einops"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "53ec7077-25f5-483e-8743-d4dbc8015424",
+                "node_id": "comfyui-videonoisewarp",
+                "status": "NodeVersionStatusPending",
+                "version": "1.0.3"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-ComfyUI-VideoNoiseWarp",
+            "publisher": {
+                "createdAt": "2024-06-09T11:11:54.62154Z",
+                "description": "",
+                "id": "kijai",
+                "logo": "",
+                "members": [],
+                "name": "Kijai",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/kijai/ComfyUI-VideoNoiseWarp",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "!!! Deprecated !!! \n\nUse ComfyUI-Fooocus-V2-Expansion > = 1.10 \n\nhttps://registry.comfy.org/publishers/panic-titan/nodes/ComfyUI-Fooocus-V2-Expansion ",
             "downloads": 306,
             "icon": "https://raw.githubusercontent.com/PanicTitan/ComfyUI-Fooocus-V2-Expansion/refs/heads/main/logo.svg",
@@ -307,7 +348,7 @@
             "author": "",
             "category": "",
             "description": "This extension provides image generation features based on Fooocus.",
-            "downloads": 4152,
+            "downloads": 4154,
             "icon": "",
             "id": "fooocus_nodes",
             "latest_version": {
@@ -387,47 +428,6 @@
             },
             "rating": 0,
             "repository": "https://github.com/leeneo/ComfyUI-Chinese-CLIP",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
-            "description": "Nodes to generate noise from video for https://github.com/Eyeline-Research/Go-with-the-Flow",
-            "downloads": 2567,
-            "icon": "",
-            "id": "comfyui-videonoisewarp",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-08T13:34:47.185384Z",
-                "dependencies": [
-                    "einops"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "53ec7077-25f5-483e-8743-d4dbc8015424",
-                "node_id": "comfyui-videonoisewarp",
-                "status": "NodeVersionStatusPending",
-                "version": "1.0.3"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-ComfyUI-VideoNoiseWarp",
-            "publisher": {
-                "createdAt": "2024-06-09T11:11:54.62154Z",
-                "description": "",
-                "id": "kijai",
-                "logo": "",
-                "members": [],
-                "name": "Kijai",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/kijai/ComfyUI-VideoNoiseWarp",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -647,47 +647,8 @@
         {
             "author": "",
             "category": "",
-            "description": "This extension allows users to load styles from a CSV file, primarily for migration purposes from the automatic1111 Stable Diffusion web UI.",
-            "downloads": 11849,
-            "icon": "",
-            "id": "comfyui-styles_csv_loader",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-07-01T08:49:53.938447Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "0a602dbb-5396-499b-a55d-18a0462be2b3",
-                "node_id": "comfyui-styles_csv_loader",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "MIT",
-            "name": "ComfyUI-Styles_CSV_Loader",
-            "publisher": {
-                "createdAt": "2024-07-01T08:41:13.193355Z",
-                "description": "",
-                "id": "theupsider",
-                "logo": "",
-                "members": [],
-                "name": "theupsider",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/theUpsider/ComfyUI-Styles_CSV_Loader",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
-            "author": "",
-            "category": "",
             "description": "NODES: Add Mask For IC Lora, Create Context Window, Concatenate Context Window, Auto Patch",
-            "downloads": 7429,
+            "downloads": 7430,
             "icon": "",
             "id": "comfyui-in-context-lora-utils",
             "latest_version": {
@@ -726,7 +687,7 @@
             "author": "",
             "category": "",
             "description": "ComfyUI-JDCN, Custom Utility Nodes for Artists, Designers and Animators.",
-            "downloads": 4963,
+            "downloads": 4964,
             "icon": "https://raw.githubusercontent.com/daxcay/ComfyUI-JDCN/main/web/assets/img/logo.png",
             "id": "comfyui-jdcn",
             "latest_version": {
@@ -760,6 +721,45 @@
             "rating": 0,
             "repository": "https://github.com/daxcay/ComfyUI-JDCN",
             "status": "",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "This extension allows users to load styles from a CSV file, primarily for migration purposes from the automatic1111 Stable Diffusion web UI.",
+            "downloads": 11851,
+            "icon": "",
+            "id": "comfyui-styles_csv_loader",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2024-07-01T08:49:53.938447Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "0a602dbb-5396-499b-a55d-18a0462be2b3",
+                "node_id": "comfyui-styles_csv_loader",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "MIT",
+            "name": "ComfyUI-Styles_CSV_Loader",
+            "publisher": {
+                "createdAt": "2024-07-01T08:41:13.193355Z",
+                "description": "",
+                "id": "theupsider",
+                "logo": "",
+                "members": [],
+                "name": "theupsider",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/theUpsider/ComfyUI-Styles_CSV_Loader",
+            "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
         },
@@ -821,7 +821,7 @@
             "author": "",
             "category": "",
             "description": "Custom nodes for integrating Flux models with the BFL API.",
-            "downloads": 859,
+            "downloads": 860,
             "icon": "",
             "id": "comfyui-flux-bfl-api",
             "latest_version": {
@@ -1041,7 +1041,7 @@
             "author": "",
             "category": "",
             "description": "Add a node to save images with metadata (PNGInfo) extracted from the input values of each node.\nSince the values are extracted dynamically, values output by various extension nodes can be added to metadata.",
-            "downloads": 12124,
+            "downloads": 12125,
             "icon": "",
             "id": "comfyui-saveimagewithmetadata",
             "latest_version": {

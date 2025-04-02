@@ -49,7 +49,7 @@
     "inputs": {
       "mode": "resize",
       "supersample": "true",
-      "resampling": "bilinear",
+      "resampling": "nearest",
       "rescale_factor": 2,
       "resize_width": [
         "65",
@@ -635,7 +635,7 @@
   },
   "86": {
     "inputs": {
-      "seed": 871307611478980
+      "seed": 408190332477880
     },
     "class_type": "ttN seed",
     "_meta": {
@@ -709,7 +709,7 @@
   },
   "94": {
     "inputs": {
-      "image": "Frame 5 (1).png",
+      "image": "slime_pre_image.png",
       "upload": "image"
     },
     "class_type": "LoadImage",

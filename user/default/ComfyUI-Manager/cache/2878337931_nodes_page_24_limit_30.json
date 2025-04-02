@@ -29,45 +29,6 @@
             "tags": []
         },
         {
-            "author": "",
-            "category": "",
-            "description": "Flux (GGUF) implementation for the ComfyUI Ultimate SD Upscale node.",
-            "downloads": 1532,
-            "icon": "",
-            "id": "ComfyUI-UltimateSDUpscale-GGUF",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2025-02-25T01:17:56.919698Z",
-                "dependencies": [],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "0bac5717-f0c9-4a5a-9e8a-045af7a566ba",
-                "node_id": "ComfyUI-UltimateSDUpscale-GGUF",
-                "status": "NodeVersionStatusActive",
-                "version": "1.0.0"
-            },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-UltimateSDUpscale-GGUF",
-            "publisher": {
-                "createdAt": "2024-06-10T16:21:33.996006Z",
-                "description": "",
-                "id": "traugdor",
-                "logo": "",
-                "members": [],
-                "name": "quadmoon",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/traugdor/ComfyUI-UltimateSDUpscale-GGUF",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "a1lazydog",
             "category": "",
             "description": "Load mp3 files and use the audio nodes to power animations and prompt scheduling. Use with FizzNodes.",
@@ -259,8 +220,47 @@
         {
             "author": "",
             "category": "",
+            "description": "Flux (GGUF) implementation for the ComfyUI Ultimate SD Upscale node.",
+            "downloads": 1534,
+            "icon": "",
+            "id": "ComfyUI-UltimateSDUpscale-GGUF",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-02-25T01:17:56.919698Z",
+                "dependencies": [],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "0bac5717-f0c9-4a5a-9e8a-045af7a566ba",
+                "node_id": "ComfyUI-UltimateSDUpscale-GGUF",
+                "status": "NodeVersionStatusActive",
+                "version": "1.0.0"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-UltimateSDUpscale-GGUF",
+            "publisher": {
+                "createdAt": "2024-06-10T16:21:33.996006Z",
+                "description": "",
+                "id": "traugdor",
+                "logo": "",
+                "members": [],
+                "name": "quadmoon",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/traugdor/ComfyUI-UltimateSDUpscale-GGUF",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
             "description": "Nodes to generate audio for vide with: [a/https://github.com/hkchengrex/MMAudio](https://github.com/hkchengrex/MMAudio)",
-            "downloads": 9179,
+            "downloads": 9183,
             "icon": "",
             "id": "comfyui-mmaudio",
             "latest_version": {
@@ -709,7 +709,7 @@
             "author": "",
             "category": "",
             "description": "This extension offers various nodes that are useful for Deforum-like animations in ComfyUI.",
-            "downloads": 41941,
+            "downloads": 41946,
             "icon": "",
             "id": "comfyui-dream-project",
             "latest_version": {
