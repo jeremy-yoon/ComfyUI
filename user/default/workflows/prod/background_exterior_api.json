@@ -410,7 +410,7 @@
   },
   "167": {
     "inputs": {
-      "image": "Frame 5 (1).png",
+      "image": "(Face)_Twinkle_Jewelry_Shining_Smile_Face_ver.A_green.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -838,8 +838,8 @@
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
-      "saturation": 1.8,
-      "gamma": 1.8,
+      "saturation": 1.1,
+      "gamma": 1.1,
       "hue_degrees": 0,
       "use_color": false,
       "hex_color": "#00FF33",

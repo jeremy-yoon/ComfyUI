@@ -2,50 +2,6 @@
     "limit": 30,
     "nodes": [
         {
-            "author": "",
-            "category": "",
-            "description": "A set of custom ComfyUI nodes for performing basic post-processing effects including Film Grain and Vignette. These effects can help to take the edge off AI imagery and make them feel more natural.",
-            "downloads": 11572,
-            "icon": "",
-            "id": "comfyui-propost",
-            "latest_version": {
-                "changelog": "",
-                "comfy_node_extract_status": "success",
-                "createdAt": "2024-12-25T00:42:04.791932Z",
-                "dependencies": [
-                    "numpy",
-                    "Pillow",
-                    "opencv-python",
-                    "colour-science"
-                ],
-                "deprecated": false,
-                "downloadUrl": "",
-                "id": "34fc55dd-6d47-4188-913f-2a88ec876935",
-                "node_id": "comfyui-propost",
-                "status": "NodeVersionStatusActive",
-                "version": "1.1.3"
-            },
-            "license": "{\"text\": \"MIT License\"}",
-            "name": "comfyui-propost",
-            "publisher": {
-                "createdAt": "2024-06-30T10:49:32.020857Z",
-                "description": "",
-                "id": "digital",
-                "logo": "",
-                "members": [],
-                "name": "Digital",
-                "source_code_repo": "",
-                "status": "PublisherStatusActive",
-                "support": "",
-                "website": ""
-            },
-            "rating": 0,
-            "repository": "https://github.com/digitaljohn/comfyui-propost",
-            "status": "NodeStatusActive",
-            "status_detail": "",
-            "tags": []
-        },
-        {
             "author": "changwook987",
             "category": "",
             "description": "Context menu extension for CLIPTextEncode (sort prompt), EmptyLatentImage (sdxl size selector).",
@@ -318,42 +274,41 @@
         {
             "author": "",
             "category": "",
-            "description": "ComfyUI diffusers wrapper nodes for WanVideo [ALPHA ACCESS FOR REGISTRY]",
-            "downloads": 866,
+            "description": "This node pack provides nodes that complement the Impact Pack, such as the UltralyticsDetectorProvider.",
+            "downloads": 174267,
             "icon": "",
-            "id": "ComfyUI-WanVideoWrapper_ALPHA",
+            "id": "comfyui-impact-subpack",
             "latest_version": {
                 "changelog": "",
-                "comfy_node_extract_status": "failed",
-                "createdAt": "2025-02-26T01:12:51.464104Z",
+                "comfy_node_extract_status": "success",
+                "createdAt": "2025-01-25T07:07:32.723483Z",
                 "dependencies": [
-                    "accelerate >= 1.2.1",
-                    "diffusers >= 0.31.0",
-                    "ftfy"
+                    "matplotlib",
+                    "ultralytics==8.3.40"
                 ],
                 "deprecated": false,
                 "downloadUrl": "",
-                "id": "a756ea48-d6d0-45f1-a880-627654244f6b",
-                "node_id": "ComfyUI-WanVideoWrapper_ALPHA",
-                "status": "NodeVersionStatusFlagged",
-                "version": "1.0.2"
+                "id": "f7908e0e-ce4f-4724-a6be-c7d0fe87a93d",
+                "node_id": "comfyui-impact-subpack",
+                "status": "NodeVersionStatusPending",
+                "version": "1.2.9"
             },
-            "license": "{\"file\": \"LICENSE\"}",
-            "name": "ComfyUI-WanVideoWrapper_ALPHA",
+            "license": "{\"file\": \"LICENSE.txt\"}",
+            "name": "ComfyUI Impact Subpack",
             "publisher": {
-                "createdAt": "2025-02-07T19:07:08.91332Z",
+                "createdAt": "2024-05-22T15:42:00.969348Z",
                 "description": "",
-                "id": "mattabyte",
+                "id": "drltdata",
                 "logo": "",
                 "members": [],
-                "name": "MattaByte",
+                "name": "Dr.Lt.Data",
                 "source_code_repo": "",
                 "status": "PublisherStatusActive",
                 "support": "",
                 "website": ""
             },
             "rating": 0,
-            "repository": "https://github.com/Mattabyte/ComfyUI-WanVideoWrapper",
+            "repository": "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -362,7 +317,7 @@
             "author": "",
             "category": "",
             "description": "Symbolic Music Generation, NotaGen node for ComfyUI.",
-            "downloads": 236,
+            "downloads": 237,
             "icon": "https://github.com/billwuhao/aiart.website/blob/master/hb.png",
             "id": "notagen-mw",
             "latest_version": {
@@ -401,7 +356,7 @@
             "author": "",
             "category": "",
             "description": "Provide utilities for batch based video generation workflows (s.a. AnimateDiff and Stable Video Diffusion).",
-            "downloads": 4548,
+            "downloads": 4553,
             "icon": "",
             "id": "comfyui-dream-video-batches",
             "latest_version": {
@@ -447,7 +402,7 @@
             "author": "",
             "category": "",
             "description": "Manage models: browsing, download and delete.",
-            "downloads": 3852,
+            "downloads": 3864,
             "icon": "",
             "id": "comfyui-model-manager",
             "latest_version": {
@@ -480,6 +435,49 @@
             },
             "rating": 0,
             "repository": "https://github.com/hayden-fr/ComfyUI-Model-Manager",
+            "status": "NodeStatusActive",
+            "status_detail": "",
+            "tags": []
+        },
+        {
+            "author": "",
+            "category": "",
+            "description": "ComfyUI diffusers wrapper nodes for WanVideo [ALPHA ACCESS FOR REGISTRY]",
+            "downloads": 867,
+            "icon": "",
+            "id": "ComfyUI-WanVideoWrapper_ALPHA",
+            "latest_version": {
+                "changelog": "",
+                "comfy_node_extract_status": "failed",
+                "createdAt": "2025-02-26T01:12:51.464104Z",
+                "dependencies": [
+                    "accelerate >= 1.2.1",
+                    "diffusers >= 0.31.0",
+                    "ftfy"
+                ],
+                "deprecated": false,
+                "downloadUrl": "",
+                "id": "a756ea48-d6d0-45f1-a880-627654244f6b",
+                "node_id": "ComfyUI-WanVideoWrapper_ALPHA",
+                "status": "NodeVersionStatusFlagged",
+                "version": "1.0.2"
+            },
+            "license": "{\"file\": \"LICENSE\"}",
+            "name": "ComfyUI-WanVideoWrapper_ALPHA",
+            "publisher": {
+                "createdAt": "2025-02-07T19:07:08.91332Z",
+                "description": "",
+                "id": "mattabyte",
+                "logo": "",
+                "members": [],
+                "name": "MattaByte",
+                "source_code_repo": "",
+                "status": "PublisherStatusActive",
+                "support": "",
+                "website": ""
+            },
+            "rating": 0,
+            "repository": "https://github.com/Mattabyte/ComfyUI-WanVideoWrapper",
             "status": "NodeStatusActive",
             "status_detail": "",
             "tags": []
@@ -650,7 +648,7 @@
             "author": "",
             "category": "",
             "description": "a plugin of ComfyUI for Long Sonic",
-            "downloads": 461,
+            "downloads": 462,
             "icon": "",
             "id": "Sonic",
             "latest_version": {
