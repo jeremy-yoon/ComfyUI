@@ -63,6 +63,16 @@ def setup_model_directories(custom_models_dir=None):
 
     folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
     
+    # inpaint 폴더 추가
+    inpaint_path = os.path.join(models_dir, "inpaint")
+    if not os.path.exists(inpaint_path):
+        try:
+            os.makedirs(inpaint_path)
+            print(f"Created inpaint folder: {inpaint_path}")
+        except Exception as e:
+            print(f"Failed to create inpaint folder: {e}")
+    folder_names_and_paths["inpaint"] = ([inpaint_path], supported_pt_extensions)
+    
     # impact-pack 및 impact-subpack 노드에 필요한 폴더 추가
     folder_names_and_paths["sams"] = ([os.path.join(models_dir, "sams")], supported_pt_extensions)
     folder_names_and_paths["onnx"] = ([os.path.join(models_dir, "onnx")], {".onnx"})

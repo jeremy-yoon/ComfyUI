@@ -1,0 +1,1502 @@
+{
+  "1": {
+    "inputs": {
+      "seed": 956913526460591
+    },
+    "class_type": "ttN seed",
+    "_meta": {
+      "title": "int-seed"
+    }
+  },
+  "2": {
+    "inputs": {
+      "value": 640
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-image_width"
+    }
+  },
+  "3": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "183",
+        6
+      ],
+      "positive_l": [
+        "183",
+        6
+      ],
+      "negative_g": [
+        "182",
+        6
+      ],
+      "negative_l": [
+        "182",
+        6
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": [
+        "72",
+        12
+      ],
+      "model_override": [
+        "211",
+        0
+      ],
+      "clip_override": [
+        "211",
+        1
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "4": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "text-controlnet"
+    }
+  },
+  "7": {
+    "inputs": {
+      "blur_radius": [
+        "43",
+        0
+      ],
+      "sigma": 1,
+      "image": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "ImageBlur",
+    "_meta": {
+      "title": "이미지 흐림"
+    }
+  },
+  "8": {
+    "inputs": {
+      "pixels": [
+        "47:2",
+        0
+      ],
+      "vae": [
+        "72",
+        9
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "이미지 저장"
+    }
+  },
+  "10": {
+    "inputs": {
+      "pixels": [
+        "7",
+        0
+      ],
+      "vae": [
+        "14",
+        4
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE 인코드"
+    }
+  },
+  "12": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "13": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 1,
+      "saturation": 0.9500000000000001,
+      "gamma": 1.1,
+      "hue_degrees": 1.1,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "14": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "xlVAEC_c0.safetensors",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": [
+        "69",
+        6
+      ],
+      "positive_l": [
+        "69",
+        6
+      ],
+      "negative_g": [
+        "87",
+        6
+      ],
+      "negative_l": [
+        "87",
+        6
+      ],
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": [
+        "1",
+        0
+      ],
+      "model_override": [
+        "210",
+        0
+      ],
+      "clip_override": [
+        "210",
+        1
+      ]
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "15": {
+    "inputs": {
+      "value": 1344
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-image_height"
+    }
+  },
+  "16": {
+    "inputs": {
+      "images": [
+        "72",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "17": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": [
+        "2",
+        0
+      ],
+      "resize_height": [
+        "15",
+        0
+      ],
+      "image": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "18": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": [
+        "2",
+        0
+      ],
+      "resize_height": [
+        "15",
+        0
+      ],
+      "image": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  },
+  "33": {
+    "inputs": {
+      "images": [
+        "71",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "34": {
+    "inputs": {
+      "images": [
+        "71",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "35": {
+    "inputs": {
+      "float": 1.3
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-gamma"
+    }
+  },
+  "36": {
+    "inputs": {
+      "float": 0.9500000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-contrast"
+    }
+  },
+  "37": {
+    "inputs": {
+      "float": 1.2
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-saturation"
+    }
+  },
+  "38": {
+    "inputs": {
+      "text": "best quality, masterpiece, vector art, low level shot, minimalist room of a  "
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-positive_prefix"
+    }
+  },
+  "40": {
+    "inputs": {
+      "image": "dropped-image 1.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "image-base_image_path"
+    }
+  },
+  "41": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-base_image_strength"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": "dropped-image 1.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "image-second_base_image_path"
+    }
+  },
+  "43": {
+    "inputs": {
+      "value": 12
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-reference_blur_strength"
+    }
+  },
+  "44": {
+    "inputs": {
+      "image": "Frame 5 (1).png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "image-shape_image_path"
+    }
+  },
+  "45": {
+    "inputs": {
+      "float": 0
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-shape_image_strength"
+    }
+  },
+  "46": {
+    "inputs": {
+      "images": [
+        "47:0",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "48": {
+    "inputs": {
+      "pixelation_size": [
+        "216",
+        0
+      ],
+      "num_colors": [
+        "49",
+        0
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "71",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "49": {
+    "inputs": {
+      "float": 256
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-num_colors"
+    }
+  },
+  "51": {
+    "inputs": {
+      "strength": [
+        "45",
+        0
+      ],
+      "start_percent": [
+        "191",
+        0
+      ],
+      "end_percent": [
+        "192",
+        0
+      ],
+      "positive": [
+        "14",
+        2
+      ],
+      "negative": [
+        "14",
+        3
+      ],
+      "control_net": [
+        "4",
+        0
+      ],
+      "image": [
+        "44",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "52": {
+    "inputs": {
+      "op": "Add",
+      "a": [
+        "41",
+        0
+      ],
+      "b": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "\"sum\"=#313+#315"
+    }
+  },
+  "53": {
+    "inputs": {
+      "op": "Add",
+      "a": [
+        "52",
+        0
+      ],
+      "b": 0.001
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "+0.001"
+    }
+  },
+  "54": {
+    "inputs": {
+      "blend_factor": [
+        "56",
+        0
+      ],
+      "blend_mode": "normal",
+      "image1": [
+        "17",
+        0
+      ],
+      "image2": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "ImageBlend",
+    "_meta": {
+      "title": "이미지 혼합"
+    }
+  },
+  "55": {
+    "inputs": {
+      "float": 0.2
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-second_base_image_strength"
+    }
+  },
+  "56": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "55",
+        0
+      ],
+      "b": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "\"result\"=\"#315\"/\"sum\""
+    }
+  },
+  "57": {
+    "inputs": {
+      "op": "Add",
+      "a": [
+        "55",
+        0
+      ],
+      "b": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "sum"
+    }
+  },
+  "58": {
+    "inputs": {
+      "op": "Sub",
+      "a": 1,
+      "b": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "sub"
+    }
+  },
+  "59": {
+    "inputs": {
+      "op": "Max",
+      "a": [
+        "58",
+        0
+      ],
+      "b": 0.35
+    },
+    "class_type": "CM_FloatBinaryOperation",
+    "_meta": {
+      "title": "max"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-color_palette"
+    }
+  },
+  "63": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "empty string"
+    }
+  },
+  "64": {
+    "inputs": {
+      "cmp": "a = b",
+      "a": [
+        "62",
+        0
+      ],
+      "b": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "ImpactCompare",
+    "_meta": {
+      "title": "ImpactCompare"
+    }
+  },
+  "65": {
+    "inputs": {
+      "text_a": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "Text List",
+    "_meta": {
+      "title": "Text List"
+    }
+  },
+  "66": {
+    "inputs": {},
+    "class_type": "Text List",
+    "_meta": {
+      "title": "Empty List"
+    }
+  },
+  "67": {
+    "inputs": {
+      "multiply_by": 1,
+      "add_by": 1,
+      "numberA": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "MultiplicationNode",
+    "_meta": {
+      "title": "+1"
+    }
+  },
+  "68": {
+    "inputs": {
+      "select": [
+        "67",
+        1
+      ],
+      "sel_mode": true,
+      "input1": [
+        "65",
+        0
+      ],
+      "input2": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Switch (Any)"
+    }
+  },
+  "69": {
+    "inputs": {
+      "text1": [
+        "38",
+        0
+      ],
+      "text2": [
+        "38",
+        0
+      ],
+      "text3": [
+        "78",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "71": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 0.75,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": [
+        "228",
+        0
+      ],
+      "cfg": [
+        "226",
+        0
+      ],
+      "denoise": [
+        "227",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": [
+        "3",
+        11
+      ],
+      "sdxl_pipe": [
+        "3",
+        0
+      ],
+      "optional_latent": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "72": {
+    "inputs": {
+      "lora_name": "Vector.safetensors",
+      "lora_strength": 0.4,
+      "upscale_method": "None",
+      "upscale_model_name": "None",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": [
+        "225",
+        0
+      ],
+      "cfg": [
+        "220",
+        0
+      ],
+      "denoise": [
+        "59",
+        0
+      ],
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "image_output": "Preview",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": [
+        "14",
+        11
+      ],
+      "sdxl_pipe": [
+        "14",
+        0
+      ],
+      "optional_positive": [
+        "187",
+        0
+      ],
+      "optional_negative": [
+        "187",
+        1
+      ],
+      "optional_latent": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "73": {
+    "inputs": {
+      "value": 800
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-2-image_width"
+    }
+  },
+  "74": {
+    "inputs": {
+      "value": 1782
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-2-image_height"
+    }
+  },
+  "77": {
+    "inputs": {
+      "text": "A Cozy cloud bed Under the Moonlight, pink moonlight, dreamy landscape outside the window, heart cushion, teddy bear"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-positive_infix"
+    }
+  },
+  "78": {
+    "inputs": {
+      "text": ",wide angle, perspective, minimalist background, empty  wall"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-positive_postfix"
+    }
+  },
+  "81": {
+    "inputs": {
+      "text": "scattered, particle, messy, crooked, worst quality, human, girl, boy, watermark, text, blurry, tilted, "
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-negative_prefix"
+    }
+  },
+  "82": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-negative_infix"
+    }
+  },
+  "83": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-negative_postfix"
+    }
+  },
+  "87": {
+    "inputs": {
+      "text1": [
+        "81",
+        0
+      ],
+      "text2": [
+        "82",
+        0
+      ],
+      "text3": [
+        "83",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "91": {
+    "inputs": {
+      "image": "dropped-image 1.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "image-second_shape_path"
+    }
+  },
+  "92": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-second_shape_strength"
+    }
+  },
+  "95": {
+    "inputs": {
+      "image": "dropped-image 1.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "image-third_shape_path"
+    }
+  },
+  "96": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-third_shape_strength"
+    }
+  },
+  "99": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-second_shape_start_percent"
+    }
+  },
+  "100": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-third_shape_start_percent"
+    }
+  },
+  "102": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-second_shape_end_percent"
+    }
+  },
+  "103": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-third_shape_end_percent"
+    }
+  },
+  "108": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "text-second_controlnet"
+    }
+  },
+  "109": {
+    "inputs": {
+      "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "text-third_controlnet"
+    }
+  },
+  "170": {
+    "inputs": {
+      "text": "A Cozy cloud bed Under the Moonlight, pink moonlight, dreamy landscape outside the window, heart cushion, teddy bear"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-positive_infix"
+    }
+  },
+  "171": {
+    "inputs": {
+      "text": ",wide angle, perspective, minimalist background, empty  wall"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-positive_postfix"
+    }
+  },
+  "175": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-negative_infix"
+    }
+  },
+  "176": {
+    "inputs": {
+      "text": ""
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-negative_postfix"
+    }
+  },
+  "180": {
+    "inputs": {
+      "text": "scattered, particle, messy, crooked, worst quality, human, girl, boy, watermark, text, blurry, tilted, "
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-negative_prefix"
+    }
+  },
+  "181": {
+    "inputs": {
+      "text": "pixel art, symmetry, low level shot, minimalist room of a  "
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text-2-positive_prefix"
+    }
+  },
+  "182": {
+    "inputs": {
+      "text1": [
+        "181",
+        0
+      ],
+      "text2": [
+        "181",
+        0
+      ],
+      "text3": [
+        "171",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "183": {
+    "inputs": {
+      "text1": [
+        "180",
+        0
+      ],
+      "text2": [
+        "175",
+        0
+      ],
+      "text3": [
+        "176",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "ttN text3BOX_3WAYconcat",
+    "_meta": {
+      "title": "3x TXT Loader MultiConcat"
+    }
+  },
+  "186": {
+    "inputs": {
+      "strength": [
+        "92",
+        0
+      ],
+      "start_percent": [
+        "99",
+        0
+      ],
+      "end_percent": [
+        "102",
+        0
+      ],
+      "positive": [
+        "51",
+        0
+      ],
+      "negative": [
+        "51",
+        1
+      ],
+      "control_net": [
+        "108",
+        0
+      ],
+      "image": [
+        "91",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "187": {
+    "inputs": {
+      "strength": [
+        "96",
+        0
+      ],
+      "start_percent": [
+        "100",
+        0
+      ],
+      "end_percent": [
+        "103",
+        0
+      ],
+      "positive": [
+        "186",
+        0
+      ],
+      "negative": [
+        "186",
+        1
+      ],
+      "control_net": [
+        "109",
+        0
+      ],
+      "image": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "컨트롤넷 적용"
+    }
+  },
+  "191": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-shape_start_percent"
+    }
+  },
+  "192": {
+    "inputs": {
+      "float": 0.52
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-shape_end_percent"
+    }
+  },
+  "196": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "text-checkpoint"
+    }
+  },
+  "197": {
+    "inputs": {
+      "lora_name": "Better Anime Backgrounds - [Background] - SDXL Version 1.safetensors",
+      "strength_model": [
+        "249",
+        0
+      ],
+      "strength_clip": [
+        "249",
+        0
+      ],
+      "model": [
+        "196",
+        0
+      ],
+      "clip": [
+        "196",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "text-lora"
+    }
+  },
+  "200": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "text-2-checkpoint"
+    }
+  },
+  "201": {
+    "inputs": {
+      "lora_name": "Better Anime Backgrounds - [Background] - SDXL Version 1.safetensors",
+      "strength_model": [
+        "251",
+        0
+      ],
+      "strength_clip": [
+        "251",
+        0
+      ],
+      "model": [
+        "200",
+        0
+      ],
+      "clip": [
+        "200",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "text-2-lora"
+    }
+  },
+  "210": {
+    "inputs": {
+      "lora_name": "Better Anime Backgrounds - [Background] - SDXL Version 1.safetensors",
+      "strength_model": [
+        "250",
+        0
+      ],
+      "strength_clip": [
+        "250",
+        0
+      ],
+      "model": [
+        "197",
+        0
+      ],
+      "clip": [
+        "197",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "text-second_lora"
+    }
+  },
+  "211": {
+    "inputs": {
+      "lora_name": "Better Anime Backgrounds - [Background] - SDXL Version 1.safetensors",
+      "strength_model": [
+        "252",
+        0
+      ],
+      "strength_clip": [
+        "252",
+        0
+      ],
+      "model": [
+        "201",
+        0
+      ],
+      "clip": [
+        "201",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "text-2-second_lora"
+    }
+  },
+  "213": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "74",
+        0
+      ],
+      "b": 8
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "height/8"
+    }
+  },
+  "216": {
+    "inputs": {
+      "a": [
+        "213",
+        0
+      ]
+    },
+    "class_type": "CM_IntToFloat",
+    "_meta": {
+      "title": "IntToFloat"
+    }
+  },
+  "220": {
+    "inputs": {
+      "float": 3
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-cfg"
+    }
+  },
+  "225": {
+    "inputs": {
+      "value": 6
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-step"
+    }
+  },
+  "226": {
+    "inputs": {
+      "float": 3
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-2-cfg"
+    }
+  },
+  "227": {
+    "inputs": {
+      "float": 0.5700000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-2-denoise"
+    }
+  },
+  "228": {
+    "inputs": {
+      "value": 6
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "int-2-step"
+    }
+  },
+  "249": {
+    "inputs": {
+      "float": 0.9500000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-lora_strength"
+    }
+  },
+  "250": {
+    "inputs": {
+      "float": 0.9500000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-second_lora_strength"
+    }
+  },
+  "251": {
+    "inputs": {
+      "float": 0.9500000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-2-lora_strength"
+    }
+  },
+  "252": {
+    "inputs": {
+      "float": 0.9500000000000001
+    },
+    "class_type": "ttN float",
+    "_meta": {
+      "title": "float-2-second_lora_strength"
+    }
+  },
+  "47:0": {
+    "inputs": {
+      "pixelation_size": 224,
+      "num_colors": [
+        "49",
+        0
+      ],
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "72",
+        11
+      ],
+      "color_palettes": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "47:1": {
+    "inputs": {
+      "brightness": 1,
+      "contrast": 0.9500000000000001,
+      "saturation": 1.2,
+      "gamma": 1.3,
+      "hue_degrees": 0,
+      "use_color": false,
+      "hex_color": "#00FF33",
+      "image": [
+        "47:0",
+        0
+      ]
+    },
+    "class_type": "ColorsCorrectNode",
+    "_meta": {
+      "title": "Colors Correct Node"
+    }
+  },
+  "47:2": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "nearest",
+      "rescale_factor": 2,
+      "resize_width": 800,
+      "resize_height": 1792,
+      "image": [
+        "47:1",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Image Resize"
+    }
+  }
+}
