@@ -1,0 +1,589 @@
+{
+  "33": {
+    "inputs": {
+      "image": "image11232.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "34": {
+    "inputs": {
+      "image": "Frame 14575944691231231231.png",
+      "channel": "red",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "마스크 이미지 로드"
+    }
+  },
+  "35": {
+    "inputs": {
+      "head": "fooocus_inpaint_head.pth",
+      "patch": "inpaint_v26.fooocus.patch"
+    },
+    "class_type": "INPAINT_LoadFooocusInpaint",
+    "_meta": {
+      "title": "Load Fooocus Inpaint"
+    }
+  },
+  "36": {
+    "inputs": {
+      "model": [
+        "88",
+        1
+      ],
+      "patch": [
+        "35",
+        0
+      ],
+      "latent": [
+        "44",
+        2
+      ]
+    },
+    "class_type": "INPAINT_ApplyFooocusInpaint",
+    "_meta": {
+      "title": "Apply Fooocus Inpaint"
+    }
+  },
+  "44": {
+    "inputs": {
+      "positive": [
+        "88",
+        2
+      ],
+      "negative": [
+        "88",
+        3
+      ],
+      "vae": [
+        "88",
+        4
+      ],
+      "pixels": [
+        "83",
+        0
+      ],
+      "mask": [
+        "83",
+        1
+      ]
+    },
+    "class_type": "INPAINT_VAEEncodeInpaintConditioning",
+    "_meta": {
+      "title": "VAE Encode & Inpaint Conditioning"
+    }
+  },
+  "67": {
+    "inputs": {
+      "width": [
+        "108",
+        0
+      ],
+      "height": [
+        "109",
+        0
+      ],
+      "keep_proportions": false,
+      "upscale_method": "nearest-exact",
+      "crop": "disabled",
+      "mask": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "ResizeMask",
+    "_meta": {
+      "title": "Resize Mask"
+    }
+  },
+  "81": {
+    "inputs": {
+      "destination": [
+        "107",
+        0
+      ],
+      "source": [
+        "98",
+        0
+      ],
+      "mask": [
+        "83",
+        1
+      ],
+      "bbox": [
+        "83",
+        2
+      ]
+    },
+    "class_type": "ImageUncropByMask",
+    "_meta": {
+      "title": "Image Uncrop By Mask"
+    }
+  },
+  "82": {
+    "inputs": {
+      "images": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "83": {
+    "inputs": {
+      "base_resolution": [
+        "96",
+        0
+      ],
+      "padding": [
+        "95",
+        0
+      ],
+      "min_crop_resolution": 0,
+      "max_crop_resolution": 1792,
+      "image": [
+        "107",
+        0
+      ],
+      "mask": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "ImageCropByMaskAndResize",
+    "_meta": {
+      "title": "Image Crop By Mask And Resize"
+    }
+  },
+  "84": {
+    "inputs": {
+      "images": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "86": {
+    "inputs": {
+      "lora_name": "Pixel_Xl_V1 .safetensors",
+      "lora_strength": 0.75,
+      "upscale_method": "None",
+      "upscale_model_name": "4x-AnimeSharp.pth",
+      "factor": 2,
+      "rescale": "by percentage",
+      "percent": 50,
+      "width": 1024,
+      "height": 1024,
+      "longer_side": 1024,
+      "crop": "disabled",
+      "base_steps": 6,
+      "cfg": 3,
+      "denoise": 1,
+      "refiner_steps": 20,
+      "refiner_cfg": 8,
+      "refiner_denoise": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "file_type": "png",
+      "embed_workflow": true,
+      "seed": 549527854892201,
+      "sdxl_pipe": [
+        "88",
+        0
+      ],
+      "optional_model": [
+        "36",
+        0
+      ],
+      "optional_positive": [
+        "44",
+        0
+      ],
+      "optional_negative": [
+        "44",
+        1
+      ],
+      "optional_latent": [
+        "44",
+        3
+      ]
+    },
+    "class_type": "ttN pipeKSamplerSDXL_v2",
+    "_meta": {
+      "title": "pipeKSamplerSDXL"
+    }
+  },
+  "88": {
+    "inputs": {
+      "ckpt_name": "artium_v20Turboboosted.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -2,
+      "loras": "",
+      "refiner_ckpt_name": "None",
+      "refiner_config_name": "Default",
+      "positive_g": "pixel art, cute teddy bear",
+      "positive_l": "pixel art, cute teddy bear",
+      "negative_g": "",
+      "negative_l": "",
+      "conditioning_aspect": "1x Empty Latent Aspect",
+      "conditioning_width": 2048,
+      "conditioning_height": 2048,
+      "crop_width": 0,
+      "crop_height": 0,
+      "target_aspect": "1x Empty Latent Aspect",
+      "target_width": 1024,
+      "target_height": 1024,
+      "positive_ascore": 6,
+      "negative_ascore": 2,
+      "empty_latent_aspect": "1024 x 1024 [S] 1:1",
+      "empty_latent_width": 1024,
+      "empty_latent_height": 1024,
+      "batch_size": 1,
+      "seed": 0
+    },
+    "class_type": "ttN pipeLoaderSDXL_v2",
+    "_meta": {
+      "title": "pipeLoaderSDXL"
+    }
+  },
+  "90": {
+    "inputs": {
+      "images": [
+        "117",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "92": {
+    "inputs": {
+      "image": [
+        "107",
+        0
+      ],
+      "mask": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "ImageCropByMask",
+    "_meta": {
+      "title": "Image Crop By Mask"
+    }
+  },
+  "93": {
+    "inputs": {
+      "image": [
+        "92",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "95": {
+    "inputs": {
+      "value": 100
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "int-padding"
+    }
+  },
+  "96": {
+    "inputs": {
+      "op": "Add",
+      "a": [
+        "93",
+        1
+      ],
+      "b": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "IntBinaryOperation"
+    }
+  },
+  "97": {
+    "inputs": {
+      "op": "Mul",
+      "a": [
+        "95",
+        0
+      ],
+      "b": 2
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "IntBinaryOperation"
+    }
+  },
+  "98": {
+    "inputs": {
+      "pixelation_size": [
+        "101",
+        0
+      ],
+      "num_colors": 64,
+      "init_mode": "k-means++",
+      "max_iterations": 100,
+      "dither": "False",
+      "dither_mode": "FloydSteinberg",
+      "color_palette_mode": "Brightness",
+      "reverse_palette": "False",
+      "images": [
+        "86",
+        11
+      ]
+    },
+    "class_type": "Image Pixelate",
+    "_meta": {
+      "title": "Image Pixelate"
+    }
+  },
+  "99": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "96",
+        0
+      ],
+      "b": 8
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "IntBinaryOperation"
+    }
+  },
+  "101": {
+    "inputs": {
+      "a": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "CM_IntToFloat",
+    "_meta": {
+      "title": "IntToFloat"
+    }
+  },
+  "102": {
+    "inputs": {
+      "images": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "103": {
+    "inputs": {
+      "print_to_console": false,
+      "console_title": "ttN debug:",
+      "console_color": "Red",
+      "display": "80.0",
+      "debug": [
+        "101",
+        0
+      ]
+    },
+    "class_type": "ttN debugInput",
+    "_meta": {
+      "title": "debugInput"
+    }
+  },
+  "104": {
+    "inputs": {
+      "images": [
+        "86",
+        11
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "105": {
+    "inputs": {
+      "print_to_console": false,
+      "console_title": "ttN debug:",
+      "console_color": "Red",
+      "display": "640",
+      "debug": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "ttN debugInput",
+    "_meta": {
+      "title": "debugInput"
+    }
+  },
+  "107": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "upscale_method": "nearest-exact",
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "width_input": [
+        "108",
+        0
+      ],
+      "height_input": [
+        "109",
+        0
+      ],
+      "crop": "disabled",
+      "image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "108": {
+    "inputs": {
+      "value": 800
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "INT Constant"
+    }
+  },
+  "109": {
+    "inputs": {
+      "value": 1792
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "INT Constant"
+    }
+  },
+  "117": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "118": {
+    "inputs": {
+      "centroids": 1,
+      "image": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "ImageKCentroidAutoDownscale",
+    "_meta": {
+      "title": "ImageKCentroidAutoDownscale"
+    }
+  },
+  "119": {
+    "inputs": {
+      "images": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "120": {
+    "inputs": {
+      "images": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  },
+  "122": {
+    "inputs": {
+      "image": "Frame 1385434368zzz.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "이미지 로드"
+    }
+  },
+  "123": {
+    "inputs": {
+      "destination": [
+        "122",
+        0
+      ],
+      "source": [
+        "86",
+        11
+      ],
+      "mask": [
+        "83",
+        1
+      ],
+      "bbox": [
+        "83",
+        2
+      ]
+    },
+    "class_type": "ImageUncropByMask",
+    "_meta": {
+      "title": "Image Uncrop By Mask"
+    }
+  },
+  "124": {
+    "inputs": {
+      "images": [
+        "123",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "이미지 미리보기"
+    }
+  }
+}

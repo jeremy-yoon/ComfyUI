@@ -1,5 +1,22 @@
 {
     "ModelManager.APIKey.Civitai": "267d3c70d7df0536384d0585718e4c0c",
     "Comfy.TutorialCompleted": true,
-    "Comfy.Queue.ImageFit": "contain"
+    "Comfy.Queue.ImageFit": "contain",
+    "Comfy.DevMode": true,
+    "Comfy.Locale": "ko",
+    "Comfy.Node.ShowDeprecated": true,
+    "Comfy.ModelLibrary.AutoLoadAll": true,
+    "pysssss.SnapToGrid": true,
+    "Comfy.Node.BypassAllLinksOnDelete": false,
+    "alekpet.ExtrasNode.PreviewImageVideoCombo": false,
+    "alekpet.ExtrasNode.SpeechAndRecognationSpeech": false,
+    "alekpet.ExtrasNode.PreviewImage": false,
+    "Comfy.Extension.Disabled": [
+        "pysssss.Locking",
+        "pysssss.SnapToGrid",
+        "alekpet.ExtrasNode"
+    ],
+    "Comfy.Workflow.SortNodeIdOnSave": true,
+    "Comfy.EnableWorkflowViewRestore": false,
+    "Comfy.Validation.NodeDefs": true
 }

@@ -23,6 +23,7 @@ web_custom_versions/
 /cache/
 **/__pycache__/
 **/.cache/
+/input/
 
 # 모델 파일 관련 무시 규칙
 *.safetensors

@@ -1,17 +1,17 @@
 {
-  "81": {
+  "1": {
     "inputs": {
-      "seed": 841004009774052
+      "seed": 1112223288913490
     },
     "class_type": "ttN seed",
     "_meta": {
       "title": "input_seed"
     }
   },
-  "82": {
+  "2": {
     "inputs": {
       "text": [
-        "101",
+        "21",
         0
       ],
       "find": "huddled",
@@ -22,10 +22,10 @@
       "title": "Text Find and Replace"
     }
   },
-  "83": {
+  "3": {
     "inputs": {
       "text": [
-        "82",
+        "2",
         0
       ],
       "find": "\bchibi",
@@ -36,7 +36,7 @@
       "title": "Text Find and Replace"
     }
   },
-  "87": {
+  "7": {
     "inputs": {
       "text": ""
     },
@@ -45,7 +45,7 @@
       "title": "input_negative_infix"
     }
   },
-  "89": {
+  "9": {
     "inputs": {
       "int": 24
     },
@@ -54,22 +54,22 @@
       "title": "input_num_colors"
     }
   },
-  "90": {
+  "10": {
     "inputs": {
       "mode": "resize",
       "supersample": "true",
       "resampling": "bilinear",
       "rescale_factor": 2,
       "resize_width": [
-        "96",
+        "16",
         0
       ],
       "resize_height": [
-        "97",
+        "17",
         0
       ],
       "image": [
-        "92",
+        "12",
         0
       ]
     },
@@ -78,14 +78,14 @@
       "title": "Image Resize"
     }
   },
-  "91": {
+  "11": {
     "inputs": {
       "samples": [
-        "95",
+        "15",
         0
       ],
       "mask": [
-        "99",
+        "19",
         0
       ]
     },
@@ -94,7 +94,7 @@
       "title": "잠재 데이터에 노이즈 마스크 설정"
     }
   },
-  "92": {
+  "12": {
     "inputs": {
       "image": "grid_pre_guide_image.png",
       "upload": "image"
@@ -104,7 +104,7 @@
       "title": "input_image_path"
     }
   },
-  "94": {
+  "14": {
     "inputs": {
       "ckpt_name": "artium_v20Turboboosted.safetensors",
       "config_name": "Default",
@@ -114,19 +114,19 @@
       "refiner_ckpt_name": "None",
       "refiner_config_name": "Default",
       "positive_g": [
-        "105",
+        "25",
         6
       ],
       "positive_l": [
-        "105",
+        "25",
         6
       ],
       "negative_g": [
-        "100",
+        "20",
         6
       ],
       "negative_l": [
-        "100",
+        "20",
         6
       ],
       "conditioning_aspect": "1x Empty Latent Aspect",
@@ -144,7 +144,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "81",
+        "1",
         0
       ]
     },
@@ -153,14 +153,14 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "95": {
+  "15": {
     "inputs": {
       "pixels": [
-        "90",
+        "10",
         0
       ],
       "vae": [
-        "94",
+        "14",
         4
       ]
     },
@@ -169,7 +169,7 @@
       "title": "VAE 인코드"
     }
   },
-  "96": {
+  "16": {
     "inputs": {
       "int": 1024
     },
@@ -178,7 +178,7 @@
       "title": "input_first_image_width"
     }
   },
-  "97": {
+  "17": {
     "inputs": {
       "int": 1024
     },
@@ -187,7 +187,7 @@
       "title": "input_first_image_height"
     }
   },
-  "98": {
+  "18": {
     "inputs": {
       "float": 1
     },
@@ -196,7 +196,7 @@
       "title": "input_denoise"
     }
   },
-  "99": {
+  "19": {
     "inputs": {
       "image": "mask_grid_x9.png",
       "channel": "alpha",
@@ -207,11 +207,11 @@
       "title": "마스크 이미지 로드"
     }
   },
-  "100": {
+  "20": {
     "inputs": {
       "text1": "",
       "text2": [
-        "87",
+        "7",
         0
       ],
       "text3": "",
@@ -222,10 +222,10 @@
       "title": "3x TXT Loader MultiConcat"
     }
   },
-  "101": {
+  "21": {
     "inputs": {
       "text": [
-        "103",
+        "23",
         6
       ],
       "find": "masterpiece, best quality, (delicate:1.1),",
@@ -236,17 +236,17 @@
       "title": "Text Find and Replace"
     }
   },
-  "102": {
+  "22": {
     "inputs": {
       "lora_name": "SDXL-StickerSheet-Lora.safetensors",
       "strength_model": 1,
       "strength_clip": 1,
       "model": [
-        "94",
+        "14",
         1
       ],
       "clip": [
-        "94",
+        "14",
         5
       ]
     },
@@ -255,11 +255,11 @@
       "title": "LoRA 로드"
     }
   },
-  "103": {
+  "23": {
     "inputs": {
       "text1": "pixel art, symmetric, diagonal",
       "text2": [
-        "94",
+        "14",
         14
       ],
       "text3": "",
@@ -270,11 +270,11 @@
       "title": "3x TXT Loader MultiConcat"
     }
   },
-  "104": {
+  "24": {
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "117",
+        "37",
         0
       ]
     },
@@ -283,11 +283,11 @@
       "title": "이미지 저장"
     }
   },
-  "105": {
+  "25": {
     "inputs": {
       "text1": "iconset, masterpiece, best quality, (delicate:1.1), StickerSheet of",
       "text2": [
-        "126",
+        "46",
         0
       ],
       "text3": ", soft colors, white background",
@@ -298,7 +298,7 @@
       "title": "3x TXT Loader MultiConcat"
     }
   },
-  "107": {
+  "27": {
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
@@ -308,7 +308,7 @@
       "use_color": false,
       "hex_color": "#00FF33",
       "image": [
-        "127",
+        "47",
         0
       ]
     },
@@ -317,7 +317,7 @@
       "title": "Colors Correct Node"
     }
   },
-  "108": {
+  "28": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
       "lora_strength": 0.5,
@@ -333,7 +333,7 @@
       "base_steps": 15,
       "cfg": 5,
       "denoise": [
-        "98",
+        "18",
         0
       ],
       "refiner_steps": 20,
@@ -346,31 +346,31 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "81",
+        "1",
         0
       ],
       "sdxl_pipe": [
-        "94",
+        "14",
         0
       ],
       "optional_model": [
-        "102",
+        "22",
         0
       ],
       "optional_positive": [
-        "125:2",
+        "45:2",
         0
       ],
       "optional_negative": [
-        "125:2",
+        "45:2",
         1
       ],
       "optional_latent": [
-        "95",
+        "15",
         0
       ],
       "optional_clip": [
-        "102",
+        "22",
         1
       ]
     },
@@ -379,7 +379,7 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "109": {
+  "29": {
     "inputs": {
       "brightness": 1,
       "contrast": 0.9500000000000001,
@@ -389,7 +389,7 @@
       "use_color": false,
       "hex_color": "#00FF33",
       "image": [
-        "110",
+        "30",
         0
       ]
     },
@@ -398,7 +398,7 @@
       "title": "Colors Correct Node"
     }
   },
-  "110": {
+  "30": {
     "inputs": {
       "mode": "resize",
       "supersample": "true",
@@ -407,7 +407,7 @@
       "resize_width": 768,
       "resize_height": 768,
       "image": [
-        "108",
+        "28",
         11
       ]
     },
@@ -416,14 +416,14 @@
       "title": "Image Resize"
     }
   },
-  "112": {
+  "32": {
     "inputs": {
       "pixels": [
-        "122",
+        "42",
         0
       ],
       "vae": [
-        "113",
+        "33",
         4
       ]
     },
@@ -432,7 +432,7 @@
       "title": "VAE 인코드"
     }
   },
-  "113": {
+  "33": {
     "inputs": {
       "ckpt_name": "artium_v20Turboboosted.safetensors",
       "config_name": "Default",
@@ -442,19 +442,19 @@
       "refiner_ckpt_name": "None",
       "refiner_config_name": "Default",
       "positive_g": [
-        "83",
+        "3",
         0
       ],
       "positive_l": [
-        "83",
+        "3",
         0
       ],
       "negative_g": [
-        "94",
+        "14",
         15
       ],
       "negative_l": [
-        "94",
+        "14",
         15
       ],
       "conditioning_aspect": "1x Empty Latent Aspect",
@@ -472,7 +472,7 @@
       "empty_latent_height": 1024,
       "batch_size": 1,
       "seed": [
-        "81",
+        "1",
         0
       ]
     },
@@ -481,7 +481,7 @@
       "title": "pipeLoaderSDXL"
     }
   },
-  "114": {
+  "34": {
     "inputs": {
       "brightness": 1,
       "contrast": 1,
@@ -491,7 +491,7 @@
       "use_color": false,
       "hex_color": "#00FF33",
       "image": [
-        "129",
+        "49",
         0
       ]
     },
@@ -500,11 +500,11 @@
       "title": "Colors Correct Node"
     }
   },
-  "117": {
+  "37": {
     "inputs": {
       "mode": "horizontal",
       "images": [
-        "118",
+        "38",
         0
       ]
     },
@@ -513,11 +513,11 @@
       "title": "Image Flip"
     }
   },
-  "118": {
+  "38": {
     "inputs": {
       "centroids": 1,
       "image": [
-        "114",
+        "34",
         0
       ]
     },
@@ -526,11 +526,11 @@
       "title": "ImageKCentroidAutoDownscale"
     }
   },
-  "119": {
+  "39": {
     "inputs": {
       "centroids": 1,
       "image": [
-        "121",
+        "41",
         0
       ]
     },
@@ -539,10 +539,10 @@
       "title": "ImageKCentroidAutoDownscale"
     }
   },
-  "120": {
+  "40": {
     "inputs": {
       "images": [
-        "119",
+        "39",
         0
       ]
     },
@@ -551,7 +551,7 @@
       "title": "이미지 미리보기"
     }
   },
-  "121": {
+  "41": {
     "inputs": {
       "brightness": 1,
       "contrast": 1,
@@ -561,7 +561,7 @@
       "use_color": false,
       "hex_color": "#00FF33",
       "image": [
-        "128",
+        "48",
         0
       ]
     },
@@ -570,11 +570,11 @@
       "title": "Colors Correct Node"
     }
   },
-  "122": {
+  "42": {
     "inputs": {
       "pixelation_size": 96,
       "num_colors": [
-        "89",
+        "9",
         1
       ],
       "init_mode": "k-means++",
@@ -584,7 +584,7 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "109",
+        "29",
         0
       ]
     },
@@ -593,7 +593,7 @@
       "title": "Image Pixelate"
     }
   },
-  "123": {
+  "43": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
       "lora_strength": 0.5,
@@ -619,31 +619,31 @@
       "file_type": "png",
       "embed_workflow": true,
       "seed": [
-        "81",
+        "1",
         0
       ],
       "sdxl_pipe": [
-        "113",
+        "33",
         0
       ],
       "optional_model": [
-        "124",
+        "44",
         0
       ],
       "optional_positive": [
-        "111:2",
+        "31:2",
         0
       ],
       "optional_negative": [
-        "111:2",
+        "31:2",
         1
       ],
       "optional_latent": [
-        "133",
+        "53",
         0
       ],
       "optional_clip": [
-        "124",
+        "44",
         1
       ]
     },
@@ -652,17 +652,17 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "124": {
+  "44": {
     "inputs": {
       "lora_name": "SDXL-StickerSheet-Lora.safetensors",
       "strength_model": 0.5,
       "strength_clip": 1,
       "model": [
-        "113",
+        "33",
         1
       ],
       "clip": [
-        "113",
+        "33",
         9
       ]
     },
@@ -671,7 +671,7 @@
       "title": "LoRA 로드"
     }
   },
-  "126": {
+  "46": {
     "inputs": {
       "text": "Celestial Angel Wings, pure white feathers"
     },
@@ -680,7 +680,7 @@
       "title": "input_positive_infix"
     }
   },
-  "127": {
+  "47": {
     "inputs": {
       "mode": "resize",
       "supersample": "true",
@@ -689,7 +689,7 @@
       "resize_width": 1280,
       "resize_height": 1280,
       "image": [
-        "108",
+        "28",
         11
       ]
     },
@@ -698,11 +698,11 @@
       "title": "Image Resize"
     }
   },
-  "128": {
+  "48": {
     "inputs": {
       "pixelation_size": 96,
       "num_colors": [
-        "89",
+        "9",
         1
       ],
       "init_mode": "k-means++",
@@ -712,7 +712,7 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "131",
+        "51",
         11
       ]
     },
@@ -721,11 +721,11 @@
       "title": "Image Pixelate"
     }
   },
-  "129": {
+  "49": {
     "inputs": {
       "pixelation_size": 160,
       "num_colors": [
-        "89",
+        "9",
         1
       ],
       "init_mode": "k-means++",
@@ -735,7 +735,7 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "123",
+        "43",
         11
       ]
     },
@@ -744,10 +744,10 @@
       "title": "Image Pixelate"
     }
   },
-  "130": {
+  "50": {
     "inputs": {
       "images": [
-        "132",
+        "52",
         0
       ]
     },
@@ -756,7 +756,7 @@
       "title": "이미지 미리보기"
     }
   },
-  "131": {
+  "51": {
     "inputs": {
       "lora_name": "Pixel_Xl_V1 .safetensors",
       "lora_strength": 0.5,
@@ -782,19 +782,19 @@
       "file_type": "png",
       "embed_workflow": true,
       "sdxl_pipe": [
-        "113",
+        "33",
         0
       ],
       "optional_positive": [
-        "111:2",
+        "31:2",
         0
       ],
       "optional_negative": [
-        "111:2",
+        "31:2",
         1
       ],
       "optional_latent": [
-        "112",
+        "32",
         0
       ]
     },
@@ -803,11 +803,11 @@
       "title": "pipeKSamplerSDXL"
     }
   },
-  "132": {
+  "52": {
     "inputs": {
       "pixelation_size": 160,
       "num_colors": [
-        "89",
+        "9",
         1
       ],
       "init_mode": "k-means++",
@@ -817,7 +817,7 @@
       "color_palette_mode": "Brightness",
       "reverse_palette": "False",
       "images": [
-        "107",
+        "27",
         0
       ]
     },
@@ -826,14 +826,14 @@
       "title": "Image Pixelate"
     }
   },
-  "133": {
+  "53": {
     "inputs": {
       "pixels": [
-        "132",
+        "52",
         0
       ],
       "vae": [
-        "113",
+        "33",
         4
       ]
     },
@@ -842,10 +842,10 @@
       "title": "VAE 인코드"
     }
   },
-  "134": {
+  "54": {
     "inputs": {
       "images": [
-        "131",
+        "51",
         11
       ]
     },
@@ -854,10 +854,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "135": {
+  "55": {
     "inputs": {
       "images": [
-        "122",
+        "42",
         0
       ]
     },
@@ -866,10 +866,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "136": {
+  "56": {
     "inputs": {
       "images": [
-        "123",
+        "43",
         11
       ]
     },
@@ -878,10 +878,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "137": {
+  "57": {
     "inputs": {
       "images": [
-        "114",
+        "34",
         0
       ]
     },
@@ -890,10 +890,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "138": {
+  "58": {
     "inputs": {
       "images": [
-        "108",
+        "28",
         11
       ]
     },
@@ -902,10 +902,10 @@
       "title": "이미지 미리보기"
     }
   },
-  "139": {
+  "59": {
     "inputs": {
       "images": [
-        "121",
+        "41",
         0
       ]
     },
@@ -914,7 +914,7 @@
       "title": "이미지 미리보기"
     }
   },
-  "125:0": {
+  "45:0": {
     "inputs": {
       "image": "grid_x9_2.png",
       "upload": "image"
@@ -924,7 +924,7 @@
       "title": "이미지 로드"
     }
   },
-  "125:1": {
+  "45:1": {
     "inputs": {
       "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
     },
@@ -933,25 +933,25 @@
       "title": "컨트롤넷 모델 로드"
     }
   },
-  "125:2": {
+  "45:2": {
     "inputs": {
       "strength": 0.35000000000000003,
       "start_percent": 0,
       "end_percent": 0.2,
       "positive": [
-        "94",
+        "14",
         2
       ],
       "negative": [
-        "94",
+        "14",
         3
       ],
       "control_net": [
-        "125:1",
+        "45:1",
         0
       ],
       "image": [
-        "125:0",
+        "45:0",
         0
       ]
     },
@@ -960,7 +960,7 @@
       "title": "컨트롤넷 적용"
     }
   },
-  "111:0": {
+  "31:0": {
     "inputs": {
       "image": "slime_pre_guide_for_hand4.png",
       "upload": "image"
@@ -970,7 +970,7 @@
       "title": "이미지 로드"
     }
   },
-  "111:1": {
+  "31:1": {
     "inputs": {
       "control_net_name": "SDXL/controlnet-scribble-sdxl-1.0-anime/diffusion_pytorch_model.safetensors"
     },
@@ -979,25 +979,25 @@
       "title": "컨트롤넷 모델 로드"
     }
   },
-  "111:2": {
+  "31:2": {
     "inputs": {
       "strength": 0.5,
       "start_percent": 0,
       "end_percent": 0,
       "positive": [
-        "113",
+        "33",
         2
       ],
       "negative": [
-        "113",
+        "33",
         3
       ],
       "control_net": [
-        "111:1",
+        "31:1",
         0
       ],
       "image": [
-        "111:0",
+        "31:0",
         0
       ]
     },
